@@ -1,5 +1,11 @@
 # The small experiment
 
+Current checkpoint: cached reproduction and timing are complete. Candidate
+sentiment/language directions have been built at blocks 2 and 8. Neither
+pair has passed the steering validation; see the
+[direction findings](../reports/directions/findings.md). The plan below is
+the proposed experiment, and the feature sweep remains unstarted.
+
 ## 1. Understand one cached boundary
 
 Reproduce Figure 2, Wealth × Gender in Gemma-2-9B at layer 2, using the

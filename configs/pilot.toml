@@ -1,5 +1,5 @@
 # Design record only. No runner consumes this file yet.
-status = "paper_reproduction_and_local_timing_complete"
+status = "directions_built_steering_validation_not_passed"
 seed = 42
 
 [reference]
@@ -28,7 +28,11 @@ anchor_file = "UNRESOLVED_FREEZE_BEFORE_RUNNING"
 features = ["positive_minus_negative_sentiment", "spanish_minus_english"]
 crossed_training_content_items = 16
 heldout_content_items = 8
-prompt_file = "UNRESOLVED_FREEZE_BEFORE_RUNNING"
+prompt_files = ["data/direction-prompts-v1.json", "data/direction-prompts-v2.json"]
+candidate_blocks = [2, 8]
+candidate_artifacts = ["reports/directions/v1/directions.safetensors", "reports/directions/v2/directions.safetensors"]
+validation_decision = "reports/directions/decision.json"
+selected_artifact = "NONE_VALIDATED_FOR_SWEEP"
 max_abs_raw_cosine = 0.1
 
 [sweep]

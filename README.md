@@ -20,7 +20,8 @@ establish an error-correction mechanism.
 - [Findings template](notes/findings.md): record the result, including a null result.
 
 Status: cached paper Figure 2 reproduced, and a small local Qwen timing run
-completed. The feature sweep has not started. Active readouts are R/J++;
+completed. Sentiment/language candidates are built, but have not passed the
+output-steering checks. The feature sweep has not started. Active readouts are R/J++;
 J and O are deferred. The TOML file records the proposed pilot; the two
 scripts below have their own small, fixed workloads.
 
@@ -32,6 +33,9 @@ scripts below have their own small, fixed workloads.
   5-token prompts and 13 examples/s for 32-token prompts, batch size 8,
   on the local M4 Pro. Random directions only; no feature exponent measured.
 - [Findings](notes/findings.md): interpretation, sanity checks, and limits.
+- [Direction validation](reports/directions/findings.md): block-2 and block-8
+  candidate vectors, held-out recognition, random controls, and steering checks.
+  Block 8 passes recognition/overlap, but neither pair is promoted for a sweep.
 
 ## Reproduce these checks
 
@@ -57,6 +61,30 @@ That script performs full BF16 decoder forwards with a norm-preserving
 random intervention at block output 2, measures block output 30, verifies
 the zero-angle intervention, and times R/J++ decoding separately. It does
 not launch the proposed feature sweep or download model weights.
+
+## Direction validation
+
+Using the same local Python environment:
+
+```bash
+python scripts/validate_directions.py --stage extract
+python scripts/validate_directions.py --stage causal
+python scripts/validate_directions.py \
+  --protocol configs/direction-validation-v2.json \
+  --out reports/directions/v2 --stage all
+python scripts/validate_directions.py \
+  --protocol configs/direction-validation-v2-large-angle.json \
+  --out reports/directions/v2-large-angle --stage causal
+python scripts/validate_directions.py \
+  --protocol configs/direction-validation-v2-large-angle.json \
+  --out reports/directions/v2-large-angle --stage generate
+```
+
+The larger-angle follow-up reuses the exact v2 directions. Existing run
+directories reject changed data/protocol hashes; use a new version and
+directory for substantive revisions. Source snapshots preserve the exact
+implementation used by each completed stage. The current script also saves
+downstream L2 for causal scoring; earlier v1/v2 snapshots predate that field.
 
 ## Starting points
 

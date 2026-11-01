@@ -1,0 +1,48 @@
+{
+  "version": "v1",
+  "template": "{sentence}\nNote:",
+  "train": [
+    ["film", "The film was captivating.", "The film was tedious.", "La película fue cautivadora.", "La película fue tediosa."],
+    ["meal", "The meal was delicious.", "The meal was disgusting.", "La comida estaba deliciosa.", "La comida estaba asquerosa."],
+    ["hotel", "The hotel was comfortable.", "The hotel was unpleasant.", "El hotel era cómodo.", "El hotel era desagradable."],
+    ["concert", "The concert was wonderful.", "The concert was terrible.", "El concierto fue maravilloso.", "El concierto fue terrible."],
+    ["app", "The application was useful.", "The application was useless.", "La aplicación era útil.", "La aplicación era inútil."],
+    ["delivery", "The delivery was prompt.", "The delivery was late.", "La entrega fue puntual.", "La entrega llegó tarde."],
+    ["park", "The park was beautiful.", "The park was ugly.", "El parque era hermoso.", "El parque era feo."],
+    ["coffee", "The coffee tasted excellent.", "The coffee tasted awful.", "El café sabía excelente.", "El café sabía horrible."],
+    ["book", "The book was fascinating.", "The book was boring.", "El libro era fascinante.", "El libro era aburrido."],
+    ["course", "The course was rewarding.", "The course was disappointing.", "El curso fue gratificante.", "El curso fue decepcionante."],
+    ["service", "The service was helpful.", "The service was rude.", "El servicio fue atento.", "El servicio fue grosero."],
+    ["trip", "The trip was enjoyable.", "The trip was miserable.", "El viaje fue agradable.", "El viaje fue penoso."],
+    ["game", "The game was exciting.", "The game was frustrating.", "El juego fue emocionante.", "El juego fue frustrante."],
+    ["camera", "The camera was reliable.", "The camera was faulty.", "La cámara era fiable.", "La cámara era defectuosa."],
+    ["museum", "The museum was impressive.", "The museum was disappointing.", "El museo era impresionante.", "El museo era decepcionante."],
+    ["garden", "The garden was delightful.", "The garden was dreadful.", "El jardín era encantador.", "El jardín era espantoso."]
+  ],
+  "heldout": [
+    ["bakery", "The bread tasted fresh.", "The bread tasted stale.", "El pan sabía fresco.", "El pan sabía rancio."],
+    ["play", "The play was brilliant.", "The play was dreadful.", "La obra fue brillante.", "La obra fue espantosa."],
+    ["pool", "The swimming pool was pristine.", "The swimming pool was filthy.", "La piscina estaba impecable.", "La piscina estaba sucia."],
+    ["train", "The train ride was peaceful.", "The train ride was stressful.", "El viaje en tren fue tranquilo.", "El viaje en tren fue estresante."],
+    ["headphones", "The headphones sounded superb.", "The headphones sounded horrible.", "Los auriculares sonaban magníficos.", "Los auriculares sonaban horribles."],
+    ["jacket", "The jacket felt luxurious.", "The jacket felt cheap.", "La chaqueta parecía lujosa.", "La chaqueta parecía barata."],
+    ["classroom", "The classroom felt welcoming.", "The classroom felt hostile.", "El aula parecía acogedora.", "El aula parecía hostil."],
+    ["clinic", "The appointment was reassuring.", "The appointment was upsetting.", "La consulta fue tranquilizadora.", "La consulta fue angustiante."]
+  ],
+  "causal_anchors": [
+    ["aquarium_en", "en", "A visitor is writing about the aquarium.\nNote:"],
+    ["festival_en", "en", "A visitor is writing about the festival.\nNote:"],
+    ["workshop_en", "en", "A visitor is writing about the pottery workshop.\nNote:"],
+    ["boat_en", "en", "A visitor is writing about the boat tour.\nNote:"],
+    ["aquarium_es", "es", "Una persona escribe sobre el acuario.\nNote:"],
+    ["festival_es", "es", "Una persona escribe sobre el festival.\nNote:"],
+    ["workshop_es", "es", "Una persona escribe sobre el taller de cerámica.\nNote:"],
+    ["boat_es", "es", "Una persona escribe sobre el paseo en barco.\nNote:"]
+  ],
+  "continuations": {
+    "en_positive": " The experience was a pleasure.",
+    "en_negative": " The experience was a disaster.",
+    "es_positive": " La experiencia fue un placer.",
+    "es_negative": " La experiencia fue un desastre."
+  }
+}

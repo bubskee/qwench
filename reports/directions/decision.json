@@ -1,0 +1,37 @@
+{
+  "status": "not_ready_for_feature_sweep",
+  "selected_direction_artifact": null,
+  "checks": {
+    "v1": {
+      "causal_passes": {
+        "sentiment": false,
+        "language": false
+      },
+      "recognition_passes": {
+        "sentiment": false,
+        "language": true
+      },
+      "overlap_passes": false
+    },
+    "v2": {
+      "causal_passes": {
+        "sentiment": false,
+        "language": false
+      },
+      "recognition_passes": {
+        "sentiment": true,
+        "language": true
+      },
+      "overlap_passes": true
+    },
+    "v2-large-angle": {
+      "causal_passes": {
+        "sentiment": false,
+        "language": false
+      }
+    }
+  },
+  "reason": "No tested pair passes recognition, overlap, and intended output-steering gates together. Block8 recognition passes, but causal specificity does not.",
+  "interpretation": "Negative validation result for this construction and these prompts, not evidence against FSEC or against semantic features.",
+  "sweep_started": false
+}

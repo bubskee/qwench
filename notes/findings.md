@@ -1,7 +1,9 @@
 # Findings
 
-Status: cached paper reproduction and local timing complete, 2026-11-01.
-The Qwen feature sweep has not run. R/J++ are active; J and O are deferred.
+Status: cached paper reproduction, local timing, and candidate-direction
+validation complete, 2026-11-01. The candidates have not passed the intended
+steering checks, and the Qwen feature sweep has not run. R/J++ are active;
+J and O are deferred.
 
 ## Run provenance
 
@@ -73,9 +75,13 @@ fallback hybrid-model kernels, not CUDA's optimized DeltaNet path.
 
 ## Qwen geometry
 
-Not run. Direction validation and cosine overlap. Candidate and control exponents,
-fit residuals, usable crossings, per-anchor behavior, and stability checks.
-Link the plot and machine-readable raw responses.
+No FSEC geometry fit has run. The [direction validation report](../reports/directions/findings.md)
+records a block-2 failure, one block-8 revision with fresh tests, and a
+bounded larger-angle check on the same block-8 arrows. Block 8 gives
+81.25% sentiment and 100% language classification on 32 prompts from eight
+held-out contents, with raw cosine −0.00764. The intended causal steering
+does not pass the comparison against two seeded random directions.
+No feature/control exponent has been measured.
 
 ## Lens observations
 
@@ -86,12 +92,15 @@ with controls or downstream response. Keep this separate from the geometry fit.
 ## What this supports
 
 The cached fitting pipeline is reproduced, and the local machine appears
-fast enough for the small pilot. We have not measured Qwen's feature
-geometry. No conclusion about Qwen error correction or semantic features
-follows from this timing run.
+fast enough for the small pilot. Candidate directions can distinguish
+held-out text labels, but the current construction and prompts do not
+establish clean sentiment/language output steering. We have not measured
+Qwen's feature geometry. These checks do not establish error correction or
+the absence of semantic features.
 
 ## Stop or continue?
 
-Stop after reproduction and timing for now, as requested. The next proposed
-step is held-out validation of the sentiment/language directions, followed
-by the small feature/control sweep if we proceed.
+Hold the feature sweep. The next useful validation change is a cleaner
+review-continuation prompt with fresh tests; the current neutral `Note:`
+anchors often produce boilerplate even without intervention. No candidate
+is silently relabelled, reoriented, or promoted after a failed check.

@@ -1,0 +1,40 @@
+{
+  "version": "v2",
+  "data": "data/direction-prompts-v2.json",
+  "block": 8,
+  "readout_position": "last_non_padding_token",
+  "seed": 42,
+  "max_abs_raw_cosine": 0.1,
+  "min_heldout_accuracy": 0.75,
+  "min_heldout_pair_ordering": 0.75,
+  "angles_deg": [
+    -30,
+    -15,
+    0,
+    15,
+    30
+  ],
+  "causal_headline_abs_angle": 30,
+  "min_causal_correct_anchors": 6,
+  "random_control_seeds": [
+    101,
+    202
+  ],
+  "causal_score": "sum conditional token log probabilities; marginalize the other feature over four fixed bilingual continuations",
+  "causal_gate": "positive headline target contrast on at least 6/8 anchors and larger median target contrast than both random directions",
+  "generation_anchors": [
+    "exhibition_en",
+    "exhibition_es"
+  ],
+  "generation_angles_deg": [
+    -30,
+    0,
+    30
+  ],
+  "generation_max_new_tokens": 20,
+  "generation_intervention": "last original prompt token only; recomputed at that fixed position on every uncached full forward",
+  "specificity": "Report target and off-target effects; do not infer disentanglement from low input cosine alone.",
+  "scope": "Direction validation only. No FSEC surface or exponent fit.",
+  "revision_note": "One exploratory layer revision from block2 to block8 after v1 failed. Same training examples; fresh heldout contents and causal anchors, defined before running v2.",
+  "orthonormalize_for_steering": true
+}
