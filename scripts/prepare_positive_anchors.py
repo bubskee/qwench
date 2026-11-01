@@ -1,5 +1,5 @@
 """Regenerate the released FineWeb anchor recipe for both pinned tokenizers."""
-import hashlib,importlib.metadata,json
+import hashlib,importlib.metadata,json,faulthandler
 from pathlib import Path
 from datasets import load_dataset
 from transformers import AutoTokenizer
@@ -12,13 +12,18 @@ if (RUN/'anchors.json').exists():
     raise SystemExit('Anchor file already exists; do not regenerate sealed inputs.')
 tokenizers={m['key']:AutoTokenizer.from_pretrained(m['id'],revision=m['revision']) for m in protocol['models']}
 d=protocol['dataset']
+faulthandler.dump_traceback_later(45,repeat=False)
 print('STREAM_START',d,flush=True)
 ds=load_dataset(d['id'],name=d['config'],revision=d['revision'],split=d['split'],streaming=True)
+print('DATASET_READY',flush=True)
 ds=ds.shuffle(seed=d['shuffle_seed'],buffer_size=d['shuffle_buffer_size'])
+print('SHUFFLE_READY',flush=True)
 texts=[];rows=[]
 for sample in ds:
     texts.append(sample['text']);rows.append({k:sample.get(k) for k in ['id','url','dump','token_count']})
+    if len(texts)%100==0:print('STREAM_READ',len(texts),flush=True)
     if len(texts)==d['tokenizer_batch_size']:break
+faulthandler.cancel_dump_traceback_later()
 print('STREAM_BATCH',len(texts),flush=True)
 encoded={key:tok(texts,truncation=True,max_length=protocol['anchor_tokens'],add_special_tokens=True,padding=False)['input_ids'] for key,tok in tokenizers.items()}
 acceptance={key:[i for i,ids in enumerate(value) if len(ids)>=5][:30] for key,value in encoded.items()}
