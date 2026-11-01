@@ -1,0 +1,33 @@
+{
+  "version": "positive-control-v1",
+  "reference_revision": "a9355d4001500708a40a255bacfe559e6dc269c0",
+  "models": [
+    {"key": "qwen17", "id": "Qwen/Qwen3-1.7B", "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e", "measure_layer": 26},
+    {"key": "qwen35_4b", "id": "Qwen/Qwen3.5-4B", "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a", "measure_layer": 30}
+  ],
+  "dataset": {"id": "HuggingFaceFW/fineweb-edu", "config": "sample-10BT", "revision": "87f09149ef4734204d70ed1d046ddc9ca3f2b8f9", "split": "train", "streaming": true, "shuffle_seed": 42, "shuffle_buffer_size": 10000, "tokenizer_batch_size": 1000},
+  "anchors": 30,
+  "anchor_tokens": 5,
+  "anchor_rule": "Same source documents for both models: first 30 documents accepted by the original seed-42 stream-shuffle and >=5-token rule under both tokenizers. Record any acceptance differences before sweeps. Regenerated original sampling recipe; historical token cache is unavailable for identity verification.",
+  "pairs": [
+    {"id": "gender_age", "a": "Gender", "b": "Age", "kind": "contrastive", "selection": "Original saved Qwen 1.7B positive case; same released axis order."},
+    {"id": "wealth_gender", "a": "Wealth", "b": "Gender", "kind": "contrastive", "selection": "Familiar paper figure pair; same released axis order."},
+    {"id": "random_000_001", "a": "random_000", "b": "random_001", "kind": "isotropic", "selection": "First released isotropic pair; seed-42 construction verified against original directions."}
+  ],
+  "random_seed": 42,
+  "random_direction_count": 33,
+  "direction_layer": 2,
+  "direction_extraction": "Released exact prompts; one unpadded prompt per forward, tokenizer defaults including add_special_tokens=True; mean(B-A), unit normalized.",
+  "max_absolute_cosine": 0.1,
+  "angles_deg": [0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,52,54,56,58,60],
+  "batch_size": 64,
+  "dtype": "bfloat16",
+  "attention_implementation": "sdpa",
+  "intervention": "Original tangent projection, Gram-Schmidt, norm-preserving exponential map at last token. Replay the fixed single-anchor block-2 output at all positions before the native suffix, preserving causal masks and hybrid model state handling.",
+  "primary_response": "FP32 L2 to the clean single-anchor reference, as in original sweep code.",
+  "secondary_response": "FP32 L2 to a clean reference with the same suffix input and batch size; exact zero-angle parity required. A numerical check, not an outcome-based replacement metric.",
+  "threshold": "For each model/pair/reference mode, 0.5 times the smaller maximum of the two axis curves on the median surface; original exact-sine fitter.",
+  "analysis": "All planned attempts, p and fit residual, per-anchor and shared-anchor bootstrap, released-data comparison on 1.7B, same-pair cross-model comparison, reference-mode sensitivity, .5/1/2 threshold sensitivity.",
+  "stopping_rule": "Six full 30-anchor 31x31 surfaces, subject to overlap exclusions; no pair or layer rescue based on new exponents, no lens readouts, no extra sweep expansion. Numerical correctness failures are repaired before continuing.",
+  "nominal_measurements": 172980
+}
