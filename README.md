@@ -19,11 +19,11 @@ establish an error-correction mechanism.
 - [Local assets](docs/local-assets.md): located weights, layer conventions, and remaining gaps.
 - [Findings template](notes/findings.md): record the result, including a null result.
 
-Status: cached paper Figure 2 reproduced, and a small local Qwen timing run
-completed. Sentiment/language candidates are built, but have not passed the
-output-steering checks. The feature sweep has not started. Active readouts are R/J++;
-J and O are deferred. The TOML file records the proposed pilot; the two
-scripts below have their own small, fixed workloads.
+Status: cached paper Figure 2 and a broader cached audit are complete. A fresh
+Qwen3.5-4B generalization stress test is running with a sealed cohort of 37
+candidate directions, 33 tested feature pairs, and seven accepted controls.
+This geometry experiment has no output-steering gate; the earlier separate
+steering checks did not pass. R/J++ readouts remain a separate extension.
 
 ## Completed checks
 
@@ -138,3 +138,30 @@ See `reports/paper-audit/negative-case.json` for the exact command and selection
 The reference repo also contains a J-lens **direction** study on Qwen3.6-27B.
 Our lens extension examines **readouts of perturbed activations**; the primary
 directions come from matched contrastive prompts.
+
+
+## Fresh Qwen3.5-4B generalization stress test
+
+The protocol and candidate prompts were committed before inspecting the new
+exponents. The prepared pair list was also committed before the sweep.
+
+- Protocol: `configs/stress-4b-v1.json`.
+- Exact paper contrasts plus four new candidate directions: `data/stress-features-v1.json`.
+- Sealed pair selection, exclusions, anchors, and task list: `reports/stress-4b-v1/plan.json`.
+- Every attempted raw response surface and its quality receipt: `reports/stress-4b-v1/surfaces/`.
+- All finite fits, fit flags, per-anchor fits, and sensitivity checks: `reports/stress-4b-v1/analysis/`.
+
+With the pinned model cached locally and dependencies in `requirements-stress.txt`:
+
+```bash
+python scripts/stress_4b.py --stage prepare
+python scripts/stress_4b.py --stage sweep
+python scripts/analyze_stress_4b.py --bootstrap 100
+python scripts/plot_stress_4b.py
+```
+
+The sweep resumes complete surfaces with matching seals. Do not overwrite
+this run to change the protocol: use a new version and output directory.
+Analysis and plots can run directly from the saved raw surfaces without
+loading model weights. The local DCLM corpus is an explicit adaptation from
+the paper's FineWeb anchors; its provenance and hashes are sealed.
