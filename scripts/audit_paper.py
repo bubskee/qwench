@@ -241,7 +241,7 @@ def main():
     inputs += [ref / 'results/pos_pairs_gemma_L2.csv', ref / 'results/conic_comparison_gemma_L2.csv']
     inputs += [ref / r['path'] for r in selected] + [ref / p for p in random_sweeps]
     with (out / 'input-manifest.csv').open('w') as stream:
-        writer = csv.writer(stream)
+        writer = csv.writer(stream, lineterminator='\n')
         writer.writerow(['path', 'bytes', 'sha256'])
         for path in sorted(set(inputs)):
             writer.writerow([str(path.relative_to(ref)), path.stat().st_size, hashlib.sha256(path.read_bytes()).hexdigest()])
