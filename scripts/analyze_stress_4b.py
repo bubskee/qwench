@@ -215,16 +215,23 @@ def main():
         if row['tag'] != 'primary' and row['pair_id'] in primary_by_id:
             p = primary_by_id[row['pair_id']]['headline']['p']
             baseline_anchor_bank = primary_by_id[row['pair_id']]['anchor_bank']
+            data = np.load(run / 'surfaces' / (row['pair_id'] + '_primary.npz'))
+            matched_grid = np.median(data['l2'], axis=0)
             if row['tag'].startswith('signs'):
-                data = np.load(run / 'surfaces' / (row['pair_id'] + '_primary.npz'))
                 indices = [baseline_anchor_bank.index(i) for i in row['anchor_bank']]
                 matched_grid = np.median(data['l2'][indices], axis=0)
                 p = fit(data['angles_deg'], matched_grid, threshold(matched_grid))['p']
                 baseline_anchor_bank = row['anchor_bank']
             q = row['headline']['p']
+            common_threshold = threshold(matched_grid)
+            variant = np.load(run / 'surfaces' / (row['id'] + '.npz'))
+            common_fit = fit(variant['angles_deg'], np.median(variant['l2'], axis=0), common_threshold)
+            common_p = common_fit['p']
             comparison.append({'task': row['id'], 'a': row['a'], 'b': row['b'], 'tag': row['tag'],
                                'matched_primary_p': p, 'baseline_anchor_bank': baseline_anchor_bank,
-                               'diagnostic_p': q, 'difference': q - p if p is not None and q is not None else None})
+                               'diagnostic_p': q, 'difference': q - p if p is not None and q is not None else None,
+                               'common_primary_threshold': common_threshold, 'common_threshold_fit': common_fit,
+                               'common_threshold_difference': common_p - p if p is not None else None})
     # Anchor resamples are shared across every primary pair (same indices/seed).
     # These intervals describe anchor sensitivity of this fixed cohort, not independent features or models.
     anchor_contrasts = {}

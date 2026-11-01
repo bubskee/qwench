@@ -67,11 +67,36 @@ def main():
     if complete:
         assert len(records) == len(plan['tasks'])
         assert examples == plan['planned_examples']
+    overlap = []
+    for task in plan['tasks']:
+        if task['tag'] not in ['fine_grid', 'fp32']:
+            continue
+        variant_path = RUN / 'surfaces' / (task['id'] + '.npz')
+        if not variant_path.exists():
+            continue
+        variant = np.load(variant_path)
+        primary = np.load(RUN / 'surfaces' / (task['pair_id'] + '_primary.npz'))
+        indices = [int(np.flatnonzero(variant['angles_deg'] == x)[0]) for x in primary['angles_deg']]
+        changed = variant['l2'][:, indices][:, :, indices]
+        reference = primary['l2']
+        delta = np.abs(changed - reference)
+        reference_median = np.median(reference, axis=0)
+        changed_median = np.median(changed, axis=0)
+        reference_fit = A.fit(primary['angles_deg'], reference_median, A.threshold(reference_median))
+        resampled_fit = A.fit(primary['angles_deg'], changed_median, A.threshold(changed_median))
+        overlap.append({'task': task['id'], 'matched_points': int(reference.size),
+                        'max_absolute_l2_difference': float(delta.max()),
+                        'mean_absolute_l2_difference': float(delta.mean()),
+                        'relative_mean_absolute_l2_difference': float(delta.mean() / reference.mean()),
+                        'primary_grid_p': reference_fit['p'],
+                        'variant_at_primary_grid_points_p': resampled_fit['p'],
+                        'note': 'For fine grids, compare this subsampled p with the full fine-grid p to separate shared-point response changes from contour resolution.'})
     result = {'complete': complete, 'checked_surfaces': len(records), 'planned_surfaces': len(plan['tasks']),
               'checked_examples': examples, 'planned_examples': plan['planned_examples'],
               'zero_angle_l2_max': max((r['zero_angle_l2_max'] for r in records), default=0),
               'max_relative_norm_error': max((r['max_relative_norm_error'] for r in records), default=0),
               'all_artifact_assertions_passed': True, 'synthetic_fitter_calibration': calibrations,
+              'refinement_and_precision_response_comparisons': overlap,
               'note': 'Artifact and numerical checks do not validate the semantic purity of candidate directions.'}
     A.write(RUN / 'analysis' / 'quality-audit.json', result)
     print(json.dumps(A.clean(result), indent=2))

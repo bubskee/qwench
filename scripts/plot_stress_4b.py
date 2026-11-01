@@ -182,7 +182,13 @@ def sign_geometry(rows, run, out):
         data = np.load(run / 'surfaces' / (p0['id'] + '.npz'))
         median = np.median(data['l2'][:4], axis=0)
         matched = {**p0, 'headline': A.fit(data['angles_deg'], median, A.threshold(median))}
-        for r, indices in [(matched, list(range(4)))] + [(r, None) for r in variants]:
+        shared_threshold = A.threshold(median)
+        fixed_variants = []
+        for r in variants:
+            d = np.load(run / 'surfaces' / (r['id'] + '.npz'))
+            fixed = A.fit(d['angles_deg'], np.median(d['l2'], axis=0), shared_threshold)
+            fixed_variants.append(({**r, 'headline': fixed}, None))
+        for r, indices in [(matched, list(range(4)))] + fixed_variants:
             points = normalized_contour(r, run, indices)
             signs = np.array(r['signs'])
             if points is not None:
@@ -197,8 +203,33 @@ def sign_geometry(rows, run, out):
         ax.axhline(0,color='#bbbbbb',linewidth=.6); ax.axvline(0,color='#bbbbbb',linewidth=.6)
         ax.set(xlim=(-1.3,1.3),ylim=(-1.3,1.3),aspect='equal',xlabel=p0['a']+' direction',ylabel=p0['b']+' direction',title=p0['a']+' × '+p0['b'])
         ax.spines[['top','right']].set_visible(False)
-    fig.suptitle('Changing the signs of the push: identical first four English anchors\nEach quadrant normalized by its own axis crossings and threshold; this is a shape comparison.',fontsize=12)
+    fig.suptitle('Changing the signs of the push: identical first four English anchors and shared L2 threshold\nThreshold from the original quadrant; each axis normalized by its crossing at that threshold.',fontsize=12)
     save(fig,out/'sign-geometry')
+
+
+def response_traces(rows, run, out):
+    selected_ids = ['feature_000_primary', 'feature_001_primary', 'feature_006_primary', 'control_033_primary']
+    by_id = {r['id']: r for r in rows}
+    selected = [by_id[key] for key in selected_ids if key in by_id]
+    if not selected:
+        return
+    fig, axes = plt.subplots(2, 2, figsize=(11, 7.5), squeeze=False)
+    for ax, r in zip(axes.flat, selected):
+        data = np.load(run / 'surfaces' / (r['id'] + '.npz'))
+        angles = data['angles_deg']; grid = np.median(data['l2'], axis=0)
+        ax.plot(angles, grid[:, 0], '-o', markersize=3, color='#317b67', label='Pure first direction')
+        ax.plot(angles, grid[0, :], '-o', markersize=3, color='#3875a4', label='Pure second direction')
+        radius = np.sqrt(2) * angles; keep = radius <= 60
+        ax.plot(radius[keep], np.diag(grid)[keep], '-o', markersize=3, color='#9a659b', label='Equal mixture')
+        ax.axhline(r['headline']['threshold'], color='#bc713d', linestyle='--', label='Pair threshold')
+        name = r['a'] + ' × ' + r['b'] if r['kind'] != 'control' else 'Isotropic control, seed 101'
+        ax.set(xlabel='Total angular distance of push (degrees)', ylabel='Median downstream residual L2 change', title=name, xlim=(0,60))
+        ax.spines[['top','right']].set_visible(False); ax.grid(alpha=.15)
+    for ax in axes.flat[len(selected):]:
+        ax.axis('off')
+    axes.flat[0].legend(fontsize=8)
+    fig.suptitle('Raw sensitivity traces for the three fixed challenge pairs and first random control\nAxes have different strengths; the fitted p additionally normalizes by their threshold crossings.',fontsize=12)
+    save(fig,out/'response-traces')
 
 
 def main():
@@ -213,6 +244,7 @@ def main():
         gallery(primary,run,out); anchor_plot(primary,plan,out); paired_controls(primary,plan,out)
     diagnostics(rows,run,out)
     sign_geometry(rows,run,out)
+    response_traces(rows,run,out)
     print('PLOTTED',len(rows),'surfaces')
 
 if __name__=='__main__':

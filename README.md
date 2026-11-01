@@ -20,7 +20,7 @@ establish an error-correction mechanism.
 - [Findings template](notes/findings.md): record the result, including a null result.
 
 Status: cached paper Figure 2 and a broader cached audit are complete. A fresh
-Qwen3.5-4B generalization stress test is running with a sealed cohort of 37
+Qwen3.5-4B generalization stress test is complete with a sealed cohort of 37
 candidate directions, 33 tested feature pairs, and seven accepted controls.
 This geometry experiment has no output-steering gate; the earlier separate
 steering checks did not pass. R/J++ readouts remain a separate extension.
@@ -142,6 +142,12 @@ directions come from matched contrastive prompts.
 
 ## Fresh Qwen3.5-4B generalization stress test
 
+[Findings](reports/stress-4b-v1/findings.md): 25/33 feature pairs and 5/7 controls
+have p > 2, with medians 2.187 and 2.152. The clean feature/control split does
+not emerge in this pilot. Context and sign changes are material; some strong
+individual feature geometries survive. All 56 surfaces and 74,896 response
+measurements are complete, including fixed grid and precision checks.
+
 The protocol and candidate prompts were committed before inspecting the new
 exponents. The prepared pair list was also committed before the sweep.
 
@@ -156,7 +162,7 @@ With the pinned model cached locally and dependencies in `requirements-stress.tx
 ```bash
 python scripts/stress_4b.py --stage prepare
 python scripts/stress_4b.py --stage sweep
-python scripts/analyze_stress_4b.py --bootstrap 100
+python scripts/analyze_stress_4b.py --bootstrap 500
 python scripts/plot_stress_4b.py
 ```
 

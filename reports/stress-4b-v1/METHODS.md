@@ -86,3 +86,9 @@ on the tested pair graph, not a population-of-models confidence interval.
 Pair counts do not imply independent observations; controls are too few to
 justify strong equivalence claims. Low-residual fits are shown alongside all
 fits, not used to discard failures from the headline result.
+
+The final anchor bootstrap uses 500 shared resamples. Additional analysis of
+the already fixed diagnostic surfaces also holds the matched primary L2
+threshold constant across conditions. This separates threshold recalibration
+from sign, context, grid, and precision changes. It was added after inspecting
+the first sign results; the underlying model runs were fixed beforehand.
