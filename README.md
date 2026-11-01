@@ -182,3 +182,13 @@ median 1.999. Our feature distribution is similar; both models have weaker
 geometry on the same 26-pair stress-test intersection. This is cached original
 data versus fresh 4B data, not fresh 1.7B inference. A strict fresh-model
 positive control remains the next validation step.
+
+
+## Fresh positive control (running)
+
+The [frozen small protocol](configs/positive-control-v1.json) runs two exact
+contrastive pairs and the first isotropic pair on fresh Qwen3-1.7B, followed
+by Qwen3.5-4B. Both use 30 regenerated seed-42 FineWeb-Edu anchors and the
+original 2-degree grid. [Methods and fidelity checks](reports/positive-control-v1/METHODS.md)
+document the original-reference measurement and batch-matched numerical check.
+Both models passed preparation and eligibility checks before the sweeps.

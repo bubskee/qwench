@@ -87,8 +87,24 @@ def main():
             valid=draws[np.isfinite(draws)]
             differences.append({'pair':pair['id'],'mode':mode,'delta_p_4b_minus_17':b['fit']['p']-a['fit']['p'] if b['fit']['p'] is not None and a['fit']['p'] is not None else None,
                                 'paired_anchor_interval_90':np.percentile(valid,[5,95]).tolist() if len(valid) else None})
+    control_comparisons=[]
+    for model in ['original_qwen17','qwen17','qwen35_4b']:
+        for mode in ['paper','matched']:
+            control=lookup.get((model,'random_000_001',mode))
+            if not control:continue
+            for pair in protocol['pairs']:
+                if pair['kind']!='contrastive':continue
+                feature=lookup.get((model,pair['id'],mode))
+                if not feature:continue
+                draws=np.array([np.nan if p is None else p for p in feature['bootstrap_p']])-np.array([np.nan if p is None else p for p in control['bootstrap_p']])
+                valid=draws[np.isfinite(draws)]
+                control_comparisons.append({'model':model,'pair':pair['id'],'mode':mode,
+                    'delta_p_feature_minus_fixed_control':feature['fit']['p']-control['fit']['p'] if feature['fit']['p'] is not None and control['fit']['p'] is not None else None,
+                    'paired_anchor_interval_90':np.percentile(valid,[5,95]).tolist() if len(valid) else None,
+                    'scope':'Comparison with one fixed isotropic pair, conditional on these anchors and directions.'})
     complete=all((RUN/m['key']/'COMPLETE.json').exists() for m in protocol['models'])
     summary={'complete':complete,'records':records,'cross_model_differences':differences,
+             'fixed_control_comparisons':control_comparisons,
              'analysis_source_sha256':source_hash,'bootstrap':args.bootstrap,
              'scope':'Two fixed feature pairs and one fixed isotropic pair per model. Procedural positive control and matched transfer; no population-level feature-specificity inference.',
              'anchor_identity':'Regenerated pinned FineWeb-Edu seed-42 recipe; historical original token identity unverified.'}
@@ -99,7 +115,7 @@ def main():
             r=lookup.get((model,pair['id'],mode))
             if r:rows.append(f"{pair['id']},{model},{mode},{r['fit']['p']},{r['fit']['mean_radial_frac']},{r['origin_l2_max']}")
     (out/'results.csv').write_text('pair,model,reference_mode,p,mean_radial_fraction,origin_l2_max\n'+'\n'.join(rows)+'\n')
-    fig,axes=plt.subplots(1,3,figsize=(14,4.8))
+    fig,axes=plt.subplots(1,3,figsize=(14,4.8),sharey=True)
     styles=[('original_qwen17','paper','Cached\n1.7B','#888888'),('qwen17','paper','Fresh\n1.7B','#3875a4'),('qwen17','matched','1.7B\nmatched','#87a9bf'),('qwen35_4b','paper','Fresh\n4B','#317b67'),('qwen35_4b','matched','4B\nmatched','#8abbad')]
     for ax,pair in zip(axes,protocol['pairs']):
         for i,(model,mode,label,color) in enumerate(styles):
