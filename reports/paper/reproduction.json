@@ -1,0 +1,53 @@
+{
+  "experiment": "Cached paper Figure 2 reproduction; not a new model experiment",
+  "repository": "https://github.com/FranciscoHS/fsec-paper",
+  "revision": "a9355d4001500708a40a255bacfe559e6dc269c0",
+  "cache_path": "results/sweeps_2d/sweep2d_gemma_L2_Wealth__Gender_fineweb_60deg.pkl",
+  "cache_git_blob": "a3c0ac5524dd7ec841a3a899d74dddce925ae998",
+  "cache_sha256": "3c08cf97f594c0386b76aa16d23b0e83250f0aec1ebe2313a3f53be70a1efffb",
+  "cache_bytes": 116684,
+  "source_sha256": {
+    "LICENSE": "3d9685342ea6ef1a6e2f4a58cabba83b856c75623ed8862470aff97037aceb48",
+    "scripts/lib/superellipse.py": "47d19c99147577d6670f5727eb23a8de5336f5677d3d2f6c342974d20dd0da0d",
+    "scripts/plotting/plot_fig3_boundary.py": "2a2da0c04be1aa78007239a2b01d9c469351894b67be6892f960438d5d893d40"
+  },
+  "command": [
+    "/Users/bubskee/.cache/uv/builds-v0/.tmpzwu4vz/bin/python",
+    "scripts/plotting/plot_fig3_boundary.py",
+    "--target",
+    "gemma",
+    "--layer",
+    "2",
+    "--d1",
+    "Wealth",
+    "--d2",
+    "Gender",
+    "--exact"
+  ],
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "response_shape": [
+    30,
+    31,
+    31
+  ],
+  "threshold_l2": 138.60028076171875,
+  "axis_intercepts_deg": {
+    "Wealth": 46.985518991947174,
+    "Gender": 38.473893374204636
+  },
+  "fit": {
+    "p": 2.4041530050104303,
+    "mean_radial_frac": 0.012194834732439815,
+    "max_radial_frac": 0.02827629943637755,
+    "n_pts": 41
+  },
+  "paper_comparison": {
+    "reported_p_rounded": 2.4,
+    "matches_to_2_decimals": true
+  },
+  "normalization": "exact sine geodesic; threshold on median-over-anchor grid"
+}

@@ -1,0 +1,64 @@
+# Design record only. No runner consumes this file yet.
+status = "paper_reproduction_and_local_timing_complete"
+seed = 42
+
+[reference]
+repository = "https://github.com/FranciscoHS/fsec-paper"
+revision = "a9355d4001500708a40a255bacfe559e6dc269c0"
+figure = 2
+
+[model]
+id = "Qwen/Qwen3.5-4B"
+revision = "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
+dtype = "bfloat16"
+prompt_format = "plain_text_add_special_tokens_false"
+use_cache = false
+
+[measurement]
+paper_perturbation_layer_label = 2
+perturbation_hook = "model.layers.2_forward_output"
+response_hook = "model.layers.30_forward_output_before_final_norm"
+token = "last_non_padding_prompt_token"
+metric = "unsquared_l2"
+perturbation = "norm_preserving_geodesic"
+primary_anchor_count = 4
+anchor_file = "UNRESOLVED_FREEZE_BEFORE_RUNNING"
+
+[directions]
+features = ["positive_minus_negative_sentiment", "spanish_minus_english"]
+crossed_training_content_items = 16
+heldout_content_items = 8
+prompt_file = "UNRESOLVED_FREEZE_BEFORE_RUNNING"
+max_abs_raw_cosine = 0.1
+
+[sweep]
+mixing_angles_deg = [0, 11.25, 22.5, 33.75, 45, 56.25, 67.5, 78.75, 90]
+perturbation_min_deg = 0
+perturbation_max_deg = 60
+perturbation_step_deg = 2.5
+
+[fit]
+threshold_fraction_of_smaller_axis_max = 0.5
+anchor_aggregation = "median"
+normalization = "exact_sine_geodesic"
+p_bounds = [0.5, 10.0]
+threshold_sensitivity_factors = [0.5, 1.5]
+
+[controls]
+families = ["isotropic_gaussian", "random_activation_difference_mean"]
+seeds = [101, 202]
+pairs_per_family = 2
+
+[lenses]
+names = ["R", "J++"]
+deferred_names = ["J", "O"]
+asset_inventory = "local-assets.json"
+j_status = "UNRESOLVED_CHECKPOINT_NOT_LOCATED"
+linear_readout_layers = [8, 16, 26, 30]
+o_readout_layers = [26, 30]
+o_variant = "expanded"
+layer_convention = "zero_based_decoder_block_output_before_final_norm"
+linear_target_block = 31
+o_runtime_status = "L26_MPS_PORT_EXISTS_L30_REQUIRES_ADAPTATION"
+mixing_angles_deg = [0, 45, 90]
+crossing_angle_factors = [0.5, 1.0, 1.25]

@@ -1,0 +1,359 @@
+{
+  "purpose": "Timing and intervention sanity check only; random directions, no feature fit",
+  "model": {
+    "id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "dtype": "bfloat16"
+  },
+  "device": "mps",
+  "model_load_seconds": 2.820441249990836,
+  "packages": {
+    "torch": "2.14.1",
+    "transformers": "5.14.1",
+    "numpy": "2.5.4"
+  },
+  "script_sha256": "d1c1f9baba1690b729255407af0963e022b100a9cd5c1e5dc5bbb71c99e5268c",
+  "perturbation": {
+    "block": 2,
+    "position": "last token",
+    "mixing_angle_deg": 45,
+    "angle_deg": 15,
+    "directions": "seed42 isotropic Gaussian projected and orthonormalized"
+  },
+  "measurement": {
+    "block": 30,
+    "layer_convention": "zero-based block output before final norm",
+    "metric": "unsquared FP32 L2 of BF16 forward activations"
+  },
+  "prompt_format": "plain text, add_special_tokens=False",
+  "examples": {
+    "5": {
+      "ids": [
+        760,
+        35935,
+        557,
+        19823,
+        1724
+      ],
+      "zero_angle_l2": 0.0,
+      "random_15deg_l2": 1.8617734909057617,
+      "norm_relative_error_fp32": 0.0,
+      "norm_relative_error_after_bf16": 0.0001550912857055664
+    },
+    "32": {
+      "ids": [
+        760,
+        35935,
+        557,
+        19823,
+        1724,
+        383,
+        279,
+        1898,
+        28428,
+        264,
+        10212,
+        314,
+        14799,
+        13,
+        561,
+        35935,
+        557,
+        19823,
+        1724,
+        383,
+        279,
+        1898,
+        28428,
+        264,
+        10212,
+        314,
+        14799,
+        13,
+        561,
+        35935,
+        557,
+        19823
+      ],
+      "zero_angle_l2": 0.0,
+      "random_15deg_l2": 1.598047137260437,
+      "norm_relative_error_fp32": 0.0,
+      "norm_relative_error_after_bf16": 7.909536361694336e-05
+    }
+  },
+  "forward_timings": [
+    {
+      "sequence_length": 5,
+      "batch_size": 1,
+      "seconds_per_batch_samples": [
+        0.11103000002913177,
+        0.10908454202581197
+      ],
+      "seconds_per_batch_median": 0.11005727102747187,
+      "examples_per_second": 9.086178411150915,
+      "mps_allocated_bytes": 8415429376,
+      "mps_driver_bytes": 8850833408
+    },
+    {
+      "sequence_length": 5,
+      "batch_size": 4,
+      "seconds_per_batch_samples": [
+        0.20646841707639396,
+        0.2062784159788862
+      ],
+      "seconds_per_batch_median": 0.20637341652764007,
+      "examples_per_second": 19.382341327204177,
+      "mps_allocated_bytes": 8415613952,
+      "mps_driver_bytes": 8869822464
+    },
+    {
+      "sequence_length": 5,
+      "batch_size": 8,
+      "seconds_per_batch_samples": [
+        0.303773625055328,
+        0.3041050829924643
+      ],
+      "seconds_per_batch_median": 0.30393935402389616,
+      "examples_per_second": 26.321040345999513,
+      "mps_allocated_bytes": 8415859968,
+      "mps_driver_bytes": 8870985728
+    },
+    {
+      "sequence_length": 32,
+      "batch_size": 1,
+      "seconds_per_batch_samples": [
+        0.1488350419094786,
+        0.15020537504460663
+      ],
+      "seconds_per_batch_median": 0.14952020847704262,
+      "examples_per_second": 6.688059160601962,
+      "mps_allocated_bytes": 8415429376,
+      "mps_driver_bytes": 8871100416
+    },
+    {
+      "sequence_length": 32,
+      "batch_size": 4,
+      "seconds_per_batch_samples": [
+        0.3362821670016274,
+        0.33624545799102634
+      ],
+      "seconds_per_batch_median": 0.33626381249632686,
+      "examples_per_second": 11.895422139852451,
+      "mps_allocated_bytes": 8415614720,
+      "mps_driver_bytes": 8883798016
+    },
+    {
+      "sequence_length": 32,
+      "batch_size": 8,
+      "seconds_per_batch_samples": [
+        0.6028259999584407,
+        0.605081457993947
+      ],
+      "seconds_per_batch_median": 0.6039537289761938,
+      "examples_per_second": 13.246047861251533,
+      "mps_allocated_bytes": 8415861504,
+      "mps_driver_bytes": 8890204160
+    }
+  ],
+  "readout_timings": [
+    {
+      "kind": "r",
+      "layer": 8,
+      "batch_size": 8,
+      "seconds_median": 0.019858625426422805,
+      "samples": [
+        0.019941458944231272,
+        0.019775791908614337
+      ],
+      "example_top5_token_ids": [
+        303,
+        506,
+        440,
+        364,
+        1546
+      ],
+      "example_top5_tokens": [
+        " in",
+        " at",
+        " with",
+        " for",
+        " very"
+      ]
+    },
+    {
+      "kind": "r",
+      "layer": 16,
+      "batch_size": 8,
+      "seconds_median": 0.019915833487175405,
+      "samples": [
+        0.01988304196856916,
+        0.01994862500578165
+      ],
+      "example_top5_token_ids": [
+        303,
+        506,
+        383,
+        1495,
+        264
+      ],
+      "example_top5_tokens": [
+        " in",
+        " at",
+        " on",
+        " again",
+        " a"
+      ]
+    },
+    {
+      "kind": "r",
+      "layer": 26,
+      "batch_size": 8,
+      "seconds_median": 0.01995539601193741,
+      "samples": [
+        0.019848791998811066,
+        0.020062000025063753
+      ],
+      "example_top5_token_ids": [
+        1724,
+        28428,
+        2428,
+        1727,
+        8660
+      ],
+      "example_top5_tokens": [
+        " open",
+        " beside",
+        "open",
+        " next",
+        " opened"
+      ]
+    },
+    {
+      "kind": "r",
+      "layer": 30,
+      "batch_size": 8,
+      "seconds_median": 0.019871416501700878,
+      "samples": [
+        0.01976808300241828,
+        0.019974750000983477
+      ],
+      "example_top5_token_ids": [
+        1724,
+        2428,
+        5097,
+        4841,
+        24868
+      ],
+      "example_top5_tokens": [
+        " open",
+        "open",
+        " Open",
+        "Open",
+        "-open"
+      ]
+    },
+    {
+      "kind": "jpp",
+      "layer": 8,
+      "batch_size": 8,
+      "seconds_median": 0.019949103996623307,
+      "samples": [
+        0.020015666028484702,
+        0.019882541964761913
+      ],
+      "example_top5_token_ids": [
+        303,
+        506,
+        314,
+        1441,
+        383
+      ],
+      "example_top5_tokens": [
+        " in",
+        " at",
+        " of",
+        " down",
+        " on"
+      ]
+    },
+    {
+      "kind": "jpp",
+      "layer": 16,
+      "batch_size": 8,
+      "seconds_median": 0.019855604507029057,
+      "samples": [
+        0.01994029199704528,
+        0.019770917017012835
+      ],
+      "example_top5_token_ids": [
+        506,
+        303,
+        383,
+        314,
+        440
+      ],
+      "example_top5_tokens": [
+        " at",
+        " in",
+        " on",
+        " of",
+        " with"
+      ]
+    },
+    {
+      "kind": "jpp",
+      "layer": 26,
+      "batch_size": 8,
+      "seconds_median": 0.019809396064374596,
+      "samples": [
+        0.019854959100484848,
+        0.019763833028264344
+      ],
+      "example_top5_token_ids": [
+        1724,
+        19823,
+        20833,
+        14094,
+        83037
+      ],
+      "example_top5_tokens": [
+        " open",
+        " lying",
+        " Lie",
+        " Li",
+        " LY"
+      ]
+    },
+    {
+      "kind": "jpp",
+      "layer": 30,
+      "batch_size": 8,
+      "seconds_median": 0.019868041505105793,
+      "samples": [
+        0.01993795798625797,
+        0.019798125023953617
+      ],
+      "example_top5_token_ids": [
+        1724,
+        2428,
+        5097,
+        4841,
+        24868
+      ],
+      "example_top5_tokens": [
+        " open",
+        "open",
+        " Open",
+        "Open",
+        "-open"
+      ]
+    }
+  ],
+  "readout_policy": "FP32 transport, offset RMSNorm, native tied head, release vocabulary filter",
+  "limitations": [
+    "Repeated copies of one anchor; workload may differ for independent anchors.",
+    "Two timing repeats by default; indicative throughput, not a stable benchmark.",
+    "Full forwards include the final decoder block and norm, but no LM head.",
+    "No O-lens, semantic directions, superellipse fit, or sweep in this run."
+  ]
+}

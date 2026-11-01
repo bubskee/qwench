@@ -1,0 +1,141 @@
+{
+  "checked_date": "2026-11-01",
+  "verification": "Metadata and weight checksums only; no model forward or lens inference in this audit.",
+  "model": {
+    "id": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "snapshot": "/Users/bubskee/.cache/huggingface/hub/models--Qwen--Qwen3.5-4B/snapshots/851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "shards": [
+      {
+        "file": "model.safetensors-00001-of-00002.safetensors",
+        "bytes": 5329398688
+      },
+      {
+        "file": "model.safetensors-00002-of-00002.safetensors",
+        "bytes": 3990429408
+      }
+    ],
+    "weight_verification": "All shards referenced by cached index exist; not rehashed."
+  },
+  "r_jpp_release": {
+    "repository": "bubskee/qwen3.5-4b-r-jpp-lenses",
+    "revision": "c1b9747f3861977df31482adc142eb3b38811546",
+    "directory": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/hf-rjpp-release-v0.1",
+    "reader": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/hf-rjpp-release-v0.1/read_lenses.py",
+    "source_layer_convention": "zero-based decoder block outputs before final RMSNorm",
+    "target_block": 31,
+    "norm": "FP32 Qwen3.5 RMSNorm with 1+weight gain"
+  },
+  "assets": {
+    "r": {
+      "path": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/hf-rjpp-release-v0.1/lenses/r.pt",
+      "bytes": 812654295,
+      "sha256": "c54ddcf5c9b635556bd1cefc12419ea2a2e6067a62d39f76691c3302bfa351a0",
+      "release_checksum_matches": true,
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "jpp": {
+      "path": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/hf-rjpp-release-v0.1/lenses/jpp.pt",
+      "bytes": 812654369,
+      "sha256": "c69e15ff3e9a730ac81d91d39e1b103a191e14fe1bf08d7cb7ced1b1186a123b",
+      "release_checksum_matches": true,
+      "layers": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "o_l26": {
+      "directory": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/neuron-pirates-evil-v1/o-release/l26/expanded",
+      "adapter_path": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/neuron-pirates-evil-v1/o-release/l26/expanded/adapter/adapter_model.safetensors",
+      "adapter_bytes": 129927008,
+      "adapter_sha256": "8e95281ab397bc795f37aeaba408c4b45e18e6df555995303c30edab735240d2",
+      "contract_sha256": "1d5dc1f47ab825aff83b02d2744281fc34a41080d750affded8d35fccdc85209",
+      "matches_hf_revision": "7ae55833fb8ebce2353bde72f2fda2671838fe26",
+      "tensor_count": 496,
+      "historical_base_revision": null
+    },
+    "o_l30": {
+      "directory": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/l30-local-release/l30/expanded",
+      "adapter_path": "/Users/bubskee/Documents/Codex/2026-10-27/alri-3/outputs/qwen35-overnight-20261027/l30-local-release/l30/expanded/adapter/adapter_model.safetensors",
+      "adapter_bytes": 129927008,
+      "adapter_sha256": "56d55e6583d0c5ca570c9357895ae27caf6234291af94d5ac83fb2b88a551cbb",
+      "contract_sha256": "6f2e2a812fbea03c9a62404fe04effd7438c072e92ce99c99783ba5fe7301c04",
+      "matches_hf_revision": "7ae55833fb8ebce2353bde72f2fda2671838fe26",
+      "tensor_count": 496,
+      "historical_base_revision": null
+    },
+    "j": {
+      "status": "not_located",
+      "note": "Searched local workspace/output/cache filenames and matching bubskee HF model releases. Prior euphoria-axis bootstrap references an external workspace-lenses/qwen3.5-4b/j-lens/lens.pt; that checkout was not located."
+    }
+  },
+  "local_runtime": {
+    "python": "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/bin/python",
+    "torch": "2.14.1",
+    "mps_available": true,
+    "hardware": "Apple M4 Pro, 48 GB unified memory",
+    "existing_l26_mps_reader": "/Users/bubskee/workspace/qwen35-4b-lenses/scripts/read_olens_local35.py",
+    "o_lens_runtime_note": "Public reader requires CUDA. Existing local exploratory MPS port is L26-specific; L30 needs adaptation and verification."
+  }
+}
