@@ -172,5 +172,9 @@
     60.0
   ],
   "analysis": "Original exact-geodesic fitter, report all attempts and flags; per-anchor fits, leave-one-anchor-out, threshold sensitivity and tilted-ellipse comparisons. Geometry only, no lens-based selection.",
-  "no_rescue_rule": "Do not switch layers, change labels, thresholds or pair selection to recover a positive result. Refinements/diagnostics follow the fixed rules above."
+  "no_rescue_rule": "Do not switch layers, change labels, thresholds or pair selection to recover a positive result. Refinements/diagnostics follow the fixed rules above.",
+  "primary_dtype": "bfloat16",
+  "precision_diagnostic": "The same two pairs chosen for grid refinement also run in FP32, at the coarse grid, after the BF16 tasks. No selection using measured p.",
+  "model_id": "Qwen/Qwen3.5-4B",
+  "model_revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a"
 }
