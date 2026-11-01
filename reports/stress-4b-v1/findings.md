@@ -1,5 +1,11 @@
 # Qwen3.5-4B: geometry often survives; specificity is weak here
 
+Follow-up: [the original Qwen3-1.7B comparison](../qwen17-comparison/findings.md)
+shows similar full feature distributions. The same 26 named stress-test pairs
+are also weaker on their model (median 2.040 versus 2.163 on ours). Cohort and
+protocol differences therefore prevent treating this pilot as a clean failed
+replication. The measurements below remain unchanged.
+
 The frozen fresh-model test is complete: **37 candidate directions, 33 feature
 pairs, seven controls, 56 surfaces, and 74,896 response measurements**. We kept
 block outputs 2 → 30 and eight fixed five-token English DCLM anchors, with

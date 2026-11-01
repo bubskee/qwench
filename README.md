@@ -171,3 +171,14 @@ this run to change the protocol: use a new version and output directory.
 Analysis and plots can run directly from the saved raw surfaces without
 loading model weights. The local DCLM corpus is an explicit adaptation from
 the paper's FineWeb anchors; its provenance and hashes are sealed.
+
+
+## Small-model reference comparison
+
+[Qwen3-1.7B comparison](reports/qwen17-comparison/findings.md) puts the 4B
+stress test beside the paper’s tested small model. The original feature median
+is 2.226 and the 17 available original isotropic-control raw refits have
+median 1.999. Our feature distribution is similar; both models have weaker
+geometry on the same 26-pair stress-test intersection. This is cached original
+data versus fresh 4B data, not fresh 1.7B inference. A strict fresh-model
+positive control remains the next validation step.

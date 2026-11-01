@@ -1,0 +1,5751 @@
+{
+  "scope": "Original 1.7B data reanalysis versus fresh 4B adapted pilot; no fresh 1.7B model forwards.",
+  "reference_revision": "a9355d4001500708a40a255bacfe559e6dc269c0",
+  "cohorts": {
+    "qwen17_original_features": {
+      "n": 310,
+      "median": 2.225715841644891,
+      "mean": 2.270225027541164,
+      "count_gt_2": 243,
+      "fraction_gt_2": 0.7838709677419354,
+      "min": 1.5911781146754955,
+      "max": 3.5482835942342033
+    },
+    "qwen17_own_model_overlap_only": {
+      "n": 326,
+      "median": 2.217248892164577,
+      "mean": 2.263169638317543,
+      "count_gt_2": 257,
+      "fraction_gt_2": 0.7883435582822086,
+      "min": 1.5911781146754955,
+      "max": 3.5482835942342033
+    },
+    "qwen17_original_isotropic_controls": {
+      "n": 17,
+      "median": 1.9989590816727771,
+      "mean": 1.9606860878893968,
+      "count_gt_2": 8,
+      "fraction_gt_2": 0.47058823529411764,
+      "min": 1.697976796607169,
+      "max": 2.1617694654559654
+    },
+    "qwen35_4b_paper_features": {
+      "n": 28,
+      "median": 2.207762445617486,
+      "mean": 2.495372593963835,
+      "count_gt_2": 22,
+      "fraction_gt_2": 0.7857142857142857,
+      "min": 1.7280780797239714,
+      "max": 8.507622855579388
+    },
+    "qwen35_4b_isotropic_controls": {
+      "n": 3,
+      "median": 2.131419855274246,
+      "mean": 2.192087344594149,
+      "count_gt_2": 2,
+      "fraction_gt_2": 0.6666666666666666,
+      "min": 1.9790729369851061,
+      "max": 2.4657692415230965
+    },
+    "qwen17_common_named_pairs": {
+      "n": 26,
+      "median": 2.039513436477268,
+      "mean": 2.1483845407213393,
+      "count_gt_2": 21,
+      "fraction_gt_2": 0.8076923076923077,
+      "min": 1.668383089221754,
+      "max": 2.8391391188461443
+    },
+    "qwen35_4b_common_named_pairs": {
+      "n": 26,
+      "median": 2.162649208691895,
+      "mean": 2.213963346970206,
+      "count_gt_2": 20,
+      "fraction_gt_2": 0.7692307692307693,
+      "min": 1.7280780797239714,
+      "max": 2.768412199495747
+    }
+  },
+  "matched_pairs": [
+    {
+      "pair": [
+        "Gender",
+        "Wealth"
+      ],
+      "qwen17_cached_p": 2.0382929695379506,
+      "qwen35_4b_fresh_p": 2.2282267589480393
+    },
+    {
+      "pair": [
+        "Era",
+        "Tense"
+      ],
+      "qwen17_cached_p": 2.004926779050785,
+      "qwen35_4b_fresh_p": 2.187298132286932
+    },
+    {
+      "pair": [
+        "Number",
+        "Tense"
+      ],
+      "qwen17_cached_p": 2.005772138550881,
+      "qwen35_4b_fresh_p": 2.4423539604922806
+    },
+    {
+      "pair": [
+        "Era",
+        "Wealth"
+      ],
+      "qwen17_cached_p": 2.0007091691959107,
+      "qwen35_4b_fresh_p": 2.128138930486237
+    },
+    {
+      "pair": [
+        "Era",
+        "Number"
+      ],
+      "qwen17_cached_p": 2.040733903416585,
+      "qwen35_4b_fresh_p": 2.1161522807714754
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Tense"
+      ],
+      "qwen17_cached_p": 2.4461923136940524,
+      "qwen35_4b_fresh_p": 2.1182634072237474
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Spanish"
+      ],
+      "qwen17_cached_p": 2.031807638817481,
+      "qwen35_4b_fresh_p": 1.8146554681704694
+    },
+    {
+      "pair": [
+        "Health",
+        "Lisp"
+      ],
+      "qwen17_cached_p": 2.273048467147015,
+      "qwen35_4b_fresh_p": 2.1380002850968576
+    },
+    {
+      "pair": [
+        "Cpp",
+        "Person"
+      ],
+      "qwen17_cached_p": 2.010013682505284,
+      "qwen35_4b_fresh_p": 2.50132700073264
+    },
+    {
+      "pair": [
+        "Portuguese",
+        "Sentiment"
+      ],
+      "qwen17_cached_p": 2.0131584078076727,
+      "qwen35_4b_fresh_p": 2.3021587675941353
+    },
+    {
+      "pair": [
+        "French",
+        "Wealth"
+      ],
+      "qwen17_cached_p": 2.0675603649816727,
+      "qwen35_4b_fresh_p": 2.746662486398813
+    },
+    {
+      "pair": [
+        "Age",
+        "Gender"
+      ],
+      "qwen17_cached_p": 2.414523886246999,
+      "qwen35_4b_fresh_p": 2.265695138545495
+    },
+    {
+      "pair": [
+        "Literary",
+        "Tense"
+      ],
+      "qwen17_cached_p": 1.7169882361966855,
+      "qwen35_4b_fresh_p": 2.102455996953678
+    },
+    {
+      "pair": [
+        "Gender",
+        "Python"
+      ],
+      "qwen17_cached_p": 2.15680538964648,
+      "qwen35_4b_fresh_p": 2.768412199495747
+    },
+    {
+      "pair": [
+        "Health",
+        "Italian"
+      ],
+      "qwen17_cached_p": 1.854960371687188,
+      "qwen35_4b_fresh_p": 2.4076971432973893
+    },
+    {
+      "pair": [
+        "JavaScript",
+        "Refusal"
+      ],
+      "qwen17_cached_p": 2.470434225759527,
+      "qwen35_4b_fresh_p": 2.3024888043615466
+    },
+    {
+      "pair": [
+        "Java",
+        "Number"
+      ],
+      "qwen17_cached_p": 1.7509534906428426,
+      "qwen35_4b_fresh_p": 2.300444156553773
+    },
+    {
+      "pair": [
+        "German",
+        "Honesty"
+      ],
+      "qwen17_cached_p": 2.3620359452367743,
+      "qwen35_4b_fresh_p": 1.915044963514086
+    },
+    {
+      "pair": [
+        "TypeScript",
+        "Wealth"
+      ],
+      "qwen17_cached_p": 1.668383089221754,
+      "qwen35_4b_fresh_p": 1.9761743057353482
+    },
+    {
+      "pair": [
+        "Rust",
+        "Wealth"
+      ],
+      "qwen17_cached_p": 1.8167163328696705,
+      "qwen35_4b_fresh_p": 1.8040611222811387
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Russian"
+      ],
+      "qwen17_cached_p": 2.7276906749292675,
+      "qwen35_4b_fresh_p": 2.107124160047583
+    },
+    {
+      "pair": [
+        "French",
+        "Status"
+      ],
+      "qwen17_cached_p": 2.033198471218694,
+      "qwen35_4b_fresh_p": 2.706322021246906
+    },
+    {
+      "pair": [
+        "Go",
+        "Literary"
+      ],
+      "qwen17_cached_p": 2.0955675757839467,
+      "qwen35_4b_fresh_p": 2.1064585276196603
+    },
+    {
+      "pair": [
+        "Dutch",
+        "Honesty"
+      ],
+      "qwen17_cached_p": 2.5136902682371645,
+      "qwen35_4b_fresh_p": 1.9078720952430628
+    },
+    {
+      "pair": [
+        "Arabic",
+        "Person"
+      ],
+      "qwen17_cached_p": 2.8391391188461443,
+      "qwen35_4b_fresh_p": 2.4414808284043508
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Chinese"
+      ],
+      "qwen17_cached_p": 2.5046951475264008,
+      "qwen35_4b_fresh_p": 1.7280780797239714
+    }
+  ],
+  "original_feature_fits": [
+    {
+      "pair": [
+        "Age",
+        "Arabic"
+      ],
+      "p": 2.8680135204571178
+    },
+    {
+      "pair": [
+        "Age",
+        "Chinese"
+      ],
+      "p": 2.8582988131927065
+    },
+    {
+      "pair": [
+        "Age",
+        "Cpp"
+      ],
+      "p": 2.5471574682459166
+    },
+    {
+      "pair": [
+        "Age",
+        "Dutch"
+      ],
+      "p": 2.5839023446733287
+    },
+    {
+      "pair": [
+        "Age",
+        "Era"
+      ],
+      "p": 2.224048663663207
+    },
+    {
+      "pair": [
+        "Age",
+        "French"
+      ],
+      "p": 2.211830176858698
+    },
+    {
+      "pair": [
+        "Age",
+        "German"
+      ],
+      "p": 2.603138240015863
+    },
+    {
+      "pair": [
+        "Age",
+        "Go"
+      ],
+      "p": 2.5221130497000845
+    },
+    {
+      "pair": [
+        "Age",
+        "Haskell"
+      ],
+      "p": 2.397087957722052
+    },
+    {
+      "pair": [
+        "Age",
+        "Honesty"
+      ],
+      "p": 2.018869708167938
+    },
+    {
+      "pair": [
+        "Age",
+        "Italian"
+      ],
+      "p": 2.304825962348998
+    },
+    {
+      "pair": [
+        "Age",
+        "Japanese"
+      ],
+      "p": 2.705720827305613
+    },
+    {
+      "pair": [
+        "Age",
+        "JavaScript"
+      ],
+      "p": 2.747019353317654
+    },
+    {
+      "pair": [
+        "Age",
+        "Java"
+      ],
+      "p": 2.9908182915988353
+    },
+    {
+      "pair": [
+        "Age",
+        "Lisp"
+      ],
+      "p": 2.6702325139765013
+    },
+    {
+      "pair": [
+        "Age",
+        "Literary"
+      ],
+      "p": 1.9053299115647149
+    },
+    {
+      "pair": [
+        "Age",
+        "Number"
+      ],
+      "p": 1.7596302279446576
+    },
+    {
+      "pair": [
+        "Age",
+        "Person"
+      ],
+      "p": 2.483244777653029
+    },
+    {
+      "pair": [
+        "Age",
+        "Portuguese"
+      ],
+      "p": 2.3382259497168505
+    },
+    {
+      "pair": [
+        "Age",
+        "Python"
+      ],
+      "p": 2.874973780829832
+    },
+    {
+      "pair": [
+        "Age",
+        "Refusal"
+      ],
+      "p": 2.0319973044952
+    },
+    {
+      "pair": [
+        "Age",
+        "Russian"
+      ],
+      "p": 2.5866155717762784
+    },
+    {
+      "pair": [
+        "Age",
+        "Rust"
+      ],
+      "p": 2.396798242981072
+    },
+    {
+      "pair": [
+        "Age",
+        "Spanish"
+      ],
+      "p": 2.220945274470334
+    },
+    {
+      "pair": [
+        "Age",
+        "Status"
+      ],
+      "p": 1.6824108831087743
+    },
+    {
+      "pair": [
+        "Age",
+        "Tense"
+      ],
+      "p": 2.5094622284713792
+    },
+    {
+      "pair": [
+        "Age",
+        "TypeScript"
+      ],
+      "p": 2.5403367586022476
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Age"
+      ],
+      "p": 2.170052590494741
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Arabic"
+      ],
+      "p": 3.254382135791504
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Chinese"
+      ],
+      "p": 2.5046951475264008
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Cpp"
+      ],
+      "p": 2.5454280598631893
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Dutch"
+      ],
+      "p": 2.835593413319553
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Era"
+      ],
+      "p": 2.1669499794699587
+    },
+    {
+      "pair": [
+        "Certainty",
+        "French"
+      ],
+      "p": 2.33063685900845
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Gender"
+      ],
+      "p": 2.1742264805394536
+    },
+    {
+      "pair": [
+        "Certainty",
+        "German"
+      ],
+      "p": 2.6401963370201025
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Go"
+      ],
+      "p": 2.475462271501372
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Haskell"
+      ],
+      "p": 2.447203875544712
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Italian"
+      ],
+      "p": 2.2183765761771657
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Japanese"
+      ],
+      "p": 2.7236142932806233
+    },
+    {
+      "pair": [
+        "Certainty",
+        "JavaScript"
+      ],
+      "p": 2.502642906285196
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Java"
+      ],
+      "p": 2.5243640418185405
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Lisp"
+      ],
+      "p": 2.697835071550367
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Literary"
+      ],
+      "p": 1.8695048024986403
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Number"
+      ],
+      "p": 2.1444826282247176
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Person"
+      ],
+      "p": 2.251562185329785
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Portuguese"
+      ],
+      "p": 2.125566103143094
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Python"
+      ],
+      "p": 2.587239725420891
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Russian"
+      ],
+      "p": 2.7276906749292675
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Rust"
+      ],
+      "p": 2.405341150240054
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Spanish"
+      ],
+      "p": 2.2248011839574953
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Status"
+      ],
+      "p": 2.391055636529577
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Tense"
+      ],
+      "p": 2.430243981332954
+    },
+    {
+      "pair": [
+        "Certainty",
+        "TypeScript"
+      ],
+      "p": 2.4880091671827236
+    },
+    {
+      "pair": [
+        "Era",
+        "Arabic"
+      ],
+      "p": 3.1708432239820556
+    },
+    {
+      "pair": [
+        "Era",
+        "Chinese"
+      ],
+      "p": 2.977483621508173
+    },
+    {
+      "pair": [
+        "Era",
+        "Cpp"
+      ],
+      "p": 1.8958930998722396
+    },
+    {
+      "pair": [
+        "Era",
+        "Dutch"
+      ],
+      "p": 3.5482835942342033
+    },
+    {
+      "pair": [
+        "Era",
+        "French"
+      ],
+      "p": 2.685370951231642
+    },
+    {
+      "pair": [
+        "Era",
+        "German"
+      ],
+      "p": 2.98520915611109
+    },
+    {
+      "pair": [
+        "Era",
+        "Go"
+      ],
+      "p": 1.946291742259051
+    },
+    {
+      "pair": [
+        "Era",
+        "Haskell"
+      ],
+      "p": 1.9966425604428506
+    },
+    {
+      "pair": [
+        "Era",
+        "Honesty"
+      ],
+      "p": 2.327201668174707
+    },
+    {
+      "pair": [
+        "Era",
+        "Italian"
+      ],
+      "p": 2.838010883840906
+    },
+    {
+      "pair": [
+        "Era",
+        "Japanese"
+      ],
+      "p": 3.4630967586289287
+    },
+    {
+      "pair": [
+        "Era",
+        "JavaScript"
+      ],
+      "p": 1.9105219979083325
+    },
+    {
+      "pair": [
+        "Era",
+        "Java"
+      ],
+      "p": 1.8453010060299242
+    },
+    {
+      "pair": [
+        "Era",
+        "Lisp"
+      ],
+      "p": 1.8308768540376459
+    },
+    {
+      "pair": [
+        "Era",
+        "Literary"
+      ],
+      "p": 2.025058082666742
+    },
+    {
+      "pair": [
+        "Era",
+        "Number"
+      ],
+      "p": 2.040733903416585
+    },
+    {
+      "pair": [
+        "Era",
+        "Portuguese"
+      ],
+      "p": 2.6571469263896983
+    },
+    {
+      "pair": [
+        "Era",
+        "Python"
+      ],
+      "p": 1.950471122336032
+    },
+    {
+      "pair": [
+        "Era",
+        "Refusal"
+      ],
+      "p": 2.3496448477500564
+    },
+    {
+      "pair": [
+        "Era",
+        "Russian"
+      ],
+      "p": 3.126760722690748
+    },
+    {
+      "pair": [
+        "Era",
+        "Rust"
+      ],
+      "p": 1.9121643698029673
+    },
+    {
+      "pair": [
+        "Era",
+        "Spanish"
+      ],
+      "p": 2.519138615493407
+    },
+    {
+      "pair": [
+        "Status",
+        "Era"
+      ],
+      "p": 2.822142451082942
+    },
+    {
+      "pair": [
+        "Tense",
+        "Era"
+      ],
+      "p": 2.004926779050785
+    },
+    {
+      "pair": [
+        "Era",
+        "TypeScript"
+      ],
+      "p": 1.9367237396642585
+    },
+    {
+      "pair": [
+        "Gender",
+        "Age"
+      ],
+      "p": 2.414523886246999
+    },
+    {
+      "pair": [
+        "Gender",
+        "Arabic"
+      ],
+      "p": 2.6710159488603096
+    },
+    {
+      "pair": [
+        "Gender",
+        "Chinese"
+      ],
+      "p": 3.1131065363240165
+    },
+    {
+      "pair": [
+        "Gender",
+        "Cpp"
+      ],
+      "p": 2.0015974197373825
+    },
+    {
+      "pair": [
+        "Gender",
+        "Dutch"
+      ],
+      "p": 2.50203140305554
+    },
+    {
+      "pair": [
+        "Gender",
+        "Era"
+      ],
+      "p": 1.9345566966991488
+    },
+    {
+      "pair": [
+        "Gender",
+        "French"
+      ],
+      "p": 2.2617096604962463
+    },
+    {
+      "pair": [
+        "Gender",
+        "German"
+      ],
+      "p": 2.3922794994533505
+    },
+    {
+      "pair": [
+        "Gender",
+        "Go"
+      ],
+      "p": 2.154881075647637
+    },
+    {
+      "pair": [
+        "Gender",
+        "Haskell"
+      ],
+      "p": 1.914082280150958
+    },
+    {
+      "pair": [
+        "Gender",
+        "Italian"
+      ],
+      "p": 2.1193328963537135
+    },
+    {
+      "pair": [
+        "Gender",
+        "Japanese"
+      ],
+      "p": 2.325244255022238
+    },
+    {
+      "pair": [
+        "Gender",
+        "JavaScript"
+      ],
+      "p": 2.1088905794441546
+    },
+    {
+      "pair": [
+        "Gender",
+        "Java"
+      ],
+      "p": 2.043444499835778
+    },
+    {
+      "pair": [
+        "Gender",
+        "Lisp"
+      ],
+      "p": 1.893869503457307
+    },
+    {
+      "pair": [
+        "Gender",
+        "Literary"
+      ],
+      "p": 2.1423490207288727
+    },
+    {
+      "pair": [
+        "Gender",
+        "Number"
+      ],
+      "p": 2.028209031749981
+    },
+    {
+      "pair": [
+        "Gender",
+        "Portuguese"
+      ],
+      "p": 2.268396846805126
+    },
+    {
+      "pair": [
+        "Gender",
+        "Python"
+      ],
+      "p": 2.15680538964648
+    },
+    {
+      "pair": [
+        "Gender",
+        "Refusal"
+      ],
+      "p": 2.0672093539229275
+    },
+    {
+      "pair": [
+        "Gender",
+        "Russian"
+      ],
+      "p": 2.559516660147656
+    },
+    {
+      "pair": [
+        "Gender",
+        "Rust"
+      ],
+      "p": 2.157548307553536
+    },
+    {
+      "pair": [
+        "Gender",
+        "Sentiment"
+      ],
+      "p": 2.0319377760496216
+    },
+    {
+      "pair": [
+        "Gender",
+        "Spanish"
+      ],
+      "p": 2.1712412968320045
+    },
+    {
+      "pair": [
+        "Gender",
+        "Status"
+      ],
+      "p": 2.1161757218994977
+    },
+    {
+      "pair": [
+        "Gender",
+        "Tense"
+      ],
+      "p": 2.5183657219744977
+    },
+    {
+      "pair": [
+        "Gender",
+        "TypeScript"
+      ],
+      "p": 2.3393518628951355
+    },
+    {
+      "pair": [
+        "Health",
+        "Age"
+      ],
+      "p": 2.116721798716822
+    },
+    {
+      "pair": [
+        "Health",
+        "Chinese"
+      ],
+      "p": 2.3180923880492483
+    },
+    {
+      "pair": [
+        "Health",
+        "Cpp"
+      ],
+      "p": 2.511231512229196
+    },
+    {
+      "pair": [
+        "Health",
+        "Era"
+      ],
+      "p": 2.0604618458803143
+    },
+    {
+      "pair": [
+        "Health",
+        "French"
+      ],
+      "p": 1.6517589793783474
+    },
+    {
+      "pair": [
+        "Health",
+        "Gender"
+      ],
+      "p": 2.4644992499362197
+    },
+    {
+      "pair": [
+        "Health",
+        "German"
+      ],
+      "p": 1.7143732017799156
+    },
+    {
+      "pair": [
+        "Health",
+        "Go"
+      ],
+      "p": 2.3984622224200556
+    },
+    {
+      "pair": [
+        "Health",
+        "Haskell"
+      ],
+      "p": 2.2527170712923255
+    },
+    {
+      "pair": [
+        "Health",
+        "Italian"
+      ],
+      "p": 1.854960371687188
+    },
+    {
+      "pair": [
+        "Health",
+        "Japanese"
+      ],
+      "p": 2.0345487718682045
+    },
+    {
+      "pair": [
+        "Health",
+        "JavaScript"
+      ],
+      "p": 2.5144642981803322
+    },
+    {
+      "pair": [
+        "Health",
+        "Java"
+      ],
+      "p": 2.4650853768091343
+    },
+    {
+      "pair": [
+        "Health",
+        "Lisp"
+      ],
+      "p": 2.273048467147015
+    },
+    {
+      "pair": [
+        "Health",
+        "Literary"
+      ],
+      "p": 2.102746785536768
+    },
+    {
+      "pair": [
+        "Health",
+        "Number"
+      ],
+      "p": 2.4774150390955483
+    },
+    {
+      "pair": [
+        "Health",
+        "Person"
+      ],
+      "p": 2.0189289340647587
+    },
+    {
+      "pair": [
+        "Health",
+        "Portuguese"
+      ],
+      "p": 1.729294269582927
+    },
+    {
+      "pair": [
+        "Health",
+        "Python"
+      ],
+      "p": 2.656385987185005
+    },
+    {
+      "pair": [
+        "Health",
+        "Russian"
+      ],
+      "p": 2.114940374740154
+    },
+    {
+      "pair": [
+        "Health",
+        "Rust"
+      ],
+      "p": 2.400661992546914
+    },
+    {
+      "pair": [
+        "Health",
+        "Spanish"
+      ],
+      "p": 1.7782240302482941
+    },
+    {
+      "pair": [
+        "Health",
+        "Status"
+      ],
+      "p": 2.213841627351594
+    },
+    {
+      "pair": [
+        "Health",
+        "Tense"
+      ],
+      "p": 2.2593660269470357
+    },
+    {
+      "pair": [
+        "Health",
+        "TypeScript"
+      ],
+      "p": 2.5933871795686243
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Chinese"
+      ],
+      "p": 2.6889069356892654
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Dutch"
+      ],
+      "p": 2.5136902682371645
+    },
+    {
+      "pair": [
+        "Honesty",
+        "French"
+      ],
+      "p": 2.0471941780175618
+    },
+    {
+      "pair": [
+        "Honesty",
+        "German"
+      ],
+      "p": 2.3620359452367743
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Go"
+      ],
+      "p": 2.3799903596188567
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Literary"
+      ],
+      "p": 1.8881581268164993
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Rust"
+      ],
+      "p": 2.1692680989877395
+    },
+    {
+      "pair": [
+        "Honesty",
+        "TypeScript"
+      ],
+      "p": 2.173429388058725
+    },
+    {
+      "pair": [
+        "Literary",
+        "Chinese"
+      ],
+      "p": 2.259046666321708
+    },
+    {
+      "pair": [
+        "Literary",
+        "Dutch"
+      ],
+      "p": 2.6380641967959964
+    },
+    {
+      "pair": [
+        "Literary",
+        "French"
+      ],
+      "p": 2.1135709015728126
+    },
+    {
+      "pair": [
+        "Literary",
+        "German"
+      ],
+      "p": 2.4826998963441844
+    },
+    {
+      "pair": [
+        "Literary",
+        "Italian"
+      ],
+      "p": 2.226630499332286
+    },
+    {
+      "pair": [
+        "Literary",
+        "Japanese"
+      ],
+      "p": 2.0919612541691803
+    },
+    {
+      "pair": [
+        "Literary",
+        "Portuguese"
+      ],
+      "p": 1.7435958542618026
+    },
+    {
+      "pair": [
+        "Literary",
+        "Russian"
+      ],
+      "p": 2.039202529510283
+    },
+    {
+      "pair": [
+        "Literary",
+        "Spanish"
+      ],
+      "p": 1.8272178702996973
+    },
+    {
+      "pair": [
+        "Tense",
+        "Literary"
+      ],
+      "p": 1.7169882361966855
+    },
+    {
+      "pair": [
+        "Number",
+        "Arabic"
+      ],
+      "p": 2.5114458310731016
+    },
+    {
+      "pair": [
+        "Number",
+        "Chinese"
+      ],
+      "p": 2.223530612338575
+    },
+    {
+      "pair": [
+        "Number",
+        "Cpp"
+      ],
+      "p": 1.7237809861688993
+    },
+    {
+      "pair": [
+        "Number",
+        "Dutch"
+      ],
+      "p": 3.063993210147642
+    },
+    {
+      "pair": [
+        "Number",
+        "French"
+      ],
+      "p": 2.6346623082978327
+    },
+    {
+      "pair": [
+        "Number",
+        "German"
+      ],
+      "p": 2.619446063624739
+    },
+    {
+      "pair": [
+        "Number",
+        "Go"
+      ],
+      "p": 1.8097658633235367
+    },
+    {
+      "pair": [
+        "Number",
+        "Haskell"
+      ],
+      "p": 1.916310090413529
+    },
+    {
+      "pair": [
+        "Number",
+        "Honesty"
+      ],
+      "p": 2.549113812645985
+    },
+    {
+      "pair": [
+        "Number",
+        "Italian"
+      ],
+      "p": 2.1064549501289136
+    },
+    {
+      "pair": [
+        "Number",
+        "Japanese"
+      ],
+      "p": 2.2118313795503988
+    },
+    {
+      "pair": [
+        "Number",
+        "JavaScript"
+      ],
+      "p": 1.7996554964278886
+    },
+    {
+      "pair": [
+        "Number",
+        "Java"
+      ],
+      "p": 1.7509534906428426
+    },
+    {
+      "pair": [
+        "Number",
+        "Lisp"
+      ],
+      "p": 1.8754902544361844
+    },
+    {
+      "pair": [
+        "Number",
+        "Literary"
+      ],
+      "p": 2.0276190073898825
+    },
+    {
+      "pair": [
+        "Number",
+        "Portuguese"
+      ],
+      "p": 2.1353307792061096
+    },
+    {
+      "pair": [
+        "Number",
+        "Python"
+      ],
+      "p": 1.7926770296400651
+    },
+    {
+      "pair": [
+        "Number",
+        "Refusal"
+      ],
+      "p": 1.9656663620019108
+    },
+    {
+      "pair": [
+        "Number",
+        "Russian"
+      ],
+      "p": 2.7940953933301786
+    },
+    {
+      "pair": [
+        "Number",
+        "Rust"
+      ],
+      "p": 1.7471345412944115
+    },
+    {
+      "pair": [
+        "Number",
+        "Spanish"
+      ],
+      "p": 2.3608151029352284
+    },
+    {
+      "pair": [
+        "Number",
+        "Status"
+      ],
+      "p": 1.89175253300432
+    },
+    {
+      "pair": [
+        "Tense",
+        "Number"
+      ],
+      "p": 2.005772138550881
+    },
+    {
+      "pair": [
+        "Number",
+        "TypeScript"
+      ],
+      "p": 1.8976732945901942
+    },
+    {
+      "pair": [
+        "Person",
+        "Arabic"
+      ],
+      "p": 2.8391391188461443
+    },
+    {
+      "pair": [
+        "Person",
+        "Chinese"
+      ],
+      "p": 2.5074352590377873
+    },
+    {
+      "pair": [
+        "Person",
+        "Cpp"
+      ],
+      "p": 2.010013682505284
+    },
+    {
+      "pair": [
+        "Person",
+        "Dutch"
+      ],
+      "p": 3.2716854691447335
+    },
+    {
+      "pair": [
+        "Person",
+        "French"
+      ],
+      "p": 2.6998530971174657
+    },
+    {
+      "pair": [
+        "Person",
+        "German"
+      ],
+      "p": 2.400047699183305
+    },
+    {
+      "pair": [
+        "Person",
+        "Go"
+      ],
+      "p": 2.218068079962989
+    },
+    {
+      "pair": [
+        "Person",
+        "Haskell"
+      ],
+      "p": 1.9327263633789873
+    },
+    {
+      "pair": [
+        "Person",
+        "Honesty"
+      ],
+      "p": 2.0739090360921923
+    },
+    {
+      "pair": [
+        "Person",
+        "Italian"
+      ],
+      "p": 2.662325642710661
+    },
+    {
+      "pair": [
+        "Person",
+        "Japanese"
+      ],
+      "p": 2.228237622572038
+    },
+    {
+      "pair": [
+        "Person",
+        "JavaScript"
+      ],
+      "p": 2.1826492377552595
+    },
+    {
+      "pair": [
+        "Person",
+        "Java"
+      ],
+      "p": 2.260943477890963
+    },
+    {
+      "pair": [
+        "Person",
+        "Lisp"
+      ],
+      "p": 2.1616279339543674
+    },
+    {
+      "pair": [
+        "Person",
+        "Literary"
+      ],
+      "p": 2.048300395986525
+    },
+    {
+      "pair": [
+        "Person",
+        "Portuguese"
+      ],
+      "p": 2.934767404716663
+    },
+    {
+      "pair": [
+        "Person",
+        "Python"
+      ],
+      "p": 1.877308864087287
+    },
+    {
+      "pair": [
+        "Person",
+        "Refusal"
+      ],
+      "p": 2.3994332749014626
+    },
+    {
+      "pair": [
+        "Person",
+        "Russian"
+      ],
+      "p": 2.6693356012493132
+    },
+    {
+      "pair": [
+        "Person",
+        "Rust"
+      ],
+      "p": 1.8540960687948427
+    },
+    {
+      "pair": [
+        "Person",
+        "Spanish"
+      ],
+      "p": 2.6616414179087173
+    },
+    {
+      "pair": [
+        "Person",
+        "Status"
+      ],
+      "p": 1.9105794558105624
+    },
+    {
+      "pair": [
+        "Tense",
+        "Person"
+      ],
+      "p": 2.5150008672244244
+    },
+    {
+      "pair": [
+        "Person",
+        "TypeScript"
+      ],
+      "p": 2.055335112410179
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Arabic"
+      ],
+      "p": 2.3075232327343738
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Chinese"
+      ],
+      "p": 3.0133455537958325
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Cpp"
+      ],
+      "p": 2.549477490934597
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Dutch"
+      ],
+      "p": 2.707411933100984
+    },
+    {
+      "pair": [
+        "Refusal",
+        "French"
+      ],
+      "p": 2.2074684935989115
+    },
+    {
+      "pair": [
+        "Refusal",
+        "German"
+      ],
+      "p": 2.6983709012453376
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Go"
+      ],
+      "p": 2.2829394651182513
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Haskell"
+      ],
+      "p": 2.2919075225263157
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Italian"
+      ],
+      "p": 2.216429704366165
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Japanese"
+      ],
+      "p": 2.5029399142306406
+    },
+    {
+      "pair": [
+        "Refusal",
+        "JavaScript"
+      ],
+      "p": 2.470434225759527
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Java"
+      ],
+      "p": 2.412973229176407
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Lisp"
+      ],
+      "p": 2.4960266714502666
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Literary"
+      ],
+      "p": 2.0002180259445064
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Portuguese"
+      ],
+      "p": 2.3642516764167736
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Python"
+      ],
+      "p": 2.278240124441969
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Russian"
+      ],
+      "p": 2.6587236173745397
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Rust"
+      ],
+      "p": 2.502810462556604
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Spanish"
+      ],
+      "p": 2.3875844935373394
+    },
+    {
+      "pair": [
+        "Refusal",
+        "TypeScript"
+      ],
+      "p": 2.63409591393899
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Age"
+      ],
+      "p": 2.036138489573108
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Arabic"
+      ],
+      "p": 2.4630993580059704
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Chinese"
+      ],
+      "p": 2.8100134348817267
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Cpp"
+      ],
+      "p": 2.219923175486663
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Dutch"
+      ],
+      "p": 2.184330456498388
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Era"
+      ],
+      "p": 2.2347558027541723
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "French"
+      ],
+      "p": 1.7933946252252289
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "German"
+      ],
+      "p": 2.188160813096343
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Go"
+      ],
+      "p": 2.3897323788614937
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Haskell"
+      ],
+      "p": 2.8198066227831626
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Italian"
+      ],
+      "p": 2.0625724114726545
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Japanese"
+      ],
+      "p": 2.2031222452735433
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "JavaScript"
+      ],
+      "p": 2.5031617442533225
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Java"
+      ],
+      "p": 2.322345763285304
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Lisp"
+      ],
+      "p": 2.3979874566496604
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Literary"
+      ],
+      "p": 1.5911781146754955
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Number"
+      ],
+      "p": 1.6161886347596164
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Person"
+      ],
+      "p": 1.871687160476064
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Portuguese"
+      ],
+      "p": 2.0131584078076727
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Python"
+      ],
+      "p": 2.307005908852248
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Russian"
+      ],
+      "p": 2.183890577064958
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Rust"
+      ],
+      "p": 2.2513866761724635
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Spanish"
+      ],
+      "p": 2.031807638817481
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Status"
+      ],
+      "p": 1.790195200947604
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Tense"
+      ],
+      "p": 1.8343507780095751
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "TypeScript"
+      ],
+      "p": 2.523237942493896
+    },
+    {
+      "pair": [
+        "Status",
+        "Chinese"
+      ],
+      "p": 2.3151992453146093
+    },
+    {
+      "pair": [
+        "Status",
+        "Cpp"
+      ],
+      "p": 2.310680240270886
+    },
+    {
+      "pair": [
+        "Status",
+        "Dutch"
+      ],
+      "p": 2.204443083664272
+    },
+    {
+      "pair": [
+        "Status",
+        "French"
+      ],
+      "p": 2.033198471218694
+    },
+    {
+      "pair": [
+        "Status",
+        "German"
+      ],
+      "p": 2.5476492516442697
+    },
+    {
+      "pair": [
+        "Status",
+        "Go"
+      ],
+      "p": 2.5691822290057407
+    },
+    {
+      "pair": [
+        "Status",
+        "Haskell"
+      ],
+      "p": 2.24181634312046
+    },
+    {
+      "pair": [
+        "Status",
+        "Italian"
+      ],
+      "p": 1.8271039079154143
+    },
+    {
+      "pair": [
+        "Status",
+        "Japanese"
+      ],
+      "p": 2.0804506281802673
+    },
+    {
+      "pair": [
+        "Status",
+        "JavaScript"
+      ],
+      "p": 2.506344211424109
+    },
+    {
+      "pair": [
+        "Status",
+        "Java"
+      ],
+      "p": 2.610170462047827
+    },
+    {
+      "pair": [
+        "Status",
+        "Lisp"
+      ],
+      "p": 2.114604477994069
+    },
+    {
+      "pair": [
+        "Status",
+        "Literary"
+      ],
+      "p": 1.8609941672140453
+    },
+    {
+      "pair": [
+        "Status",
+        "Portuguese"
+      ],
+      "p": 1.7944239099079902
+    },
+    {
+      "pair": [
+        "Status",
+        "Python"
+      ],
+      "p": 2.5262196052734174
+    },
+    {
+      "pair": [
+        "Status",
+        "Refusal"
+      ],
+      "p": 2.0633920123039022
+    },
+    {
+      "pair": [
+        "Status",
+        "Rust"
+      ],
+      "p": 2.344387019613134
+    },
+    {
+      "pair": [
+        "Status",
+        "Spanish"
+      ],
+      "p": 1.8720618729807705
+    },
+    {
+      "pair": [
+        "Status",
+        "TypeScript"
+      ],
+      "p": 2.530682328178204
+    },
+    {
+      "pair": [
+        "Tense",
+        "Arabic"
+      ],
+      "p": 2.8618315460255612
+    },
+    {
+      "pair": [
+        "Tense",
+        "Chinese"
+      ],
+      "p": 2.362846434555683
+    },
+    {
+      "pair": [
+        "Tense",
+        "Cpp"
+      ],
+      "p": 2.101393027106858
+    },
+    {
+      "pair": [
+        "Tense",
+        "Dutch"
+      ],
+      "p": 2.4257415196484917
+    },
+    {
+      "pair": [
+        "Tense",
+        "French"
+      ],
+      "p": 2.1311406006261437
+    },
+    {
+      "pair": [
+        "Tense",
+        "German"
+      ],
+      "p": 2.1583069673826
+    },
+    {
+      "pair": [
+        "Tense",
+        "Go"
+      ],
+      "p": 2.1794470520951115
+    },
+    {
+      "pair": [
+        "Tense",
+        "Haskell"
+      ],
+      "p": 2.0585648394433167
+    },
+    {
+      "pair": [
+        "Tense",
+        "Honesty"
+      ],
+      "p": 2.4189109698875244
+    },
+    {
+      "pair": [
+        "Tense",
+        "Italian"
+      ],
+      "p": 1.8943268775529054
+    },
+    {
+      "pair": [
+        "Tense",
+        "Japanese"
+      ],
+      "p": 2.6958543556390535
+    },
+    {
+      "pair": [
+        "Tense",
+        "JavaScript"
+      ],
+      "p": 2.2682201462110068
+    },
+    {
+      "pair": [
+        "Tense",
+        "Java"
+      ],
+      "p": 2.0747860779668423
+    },
+    {
+      "pair": [
+        "Tense",
+        "Lisp"
+      ],
+      "p": 2.035309044538869
+    },
+    {
+      "pair": [
+        "Tense",
+        "Portuguese"
+      ],
+      "p": 2.078757796158673
+    },
+    {
+      "pair": [
+        "Tense",
+        "Python"
+      ],
+      "p": 2.087930441915192
+    },
+    {
+      "pair": [
+        "Tense",
+        "Refusal"
+      ],
+      "p": 2.4461923136940524
+    },
+    {
+      "pair": [
+        "Tense",
+        "Rust"
+      ],
+      "p": 2.1873667901074767
+    },
+    {
+      "pair": [
+        "Tense",
+        "Spanish"
+      ],
+      "p": 2.165563775098892
+    },
+    {
+      "pair": [
+        "Tense",
+        "Status"
+      ],
+      "p": 1.864338423767351
+    },
+    {
+      "pair": [
+        "Tense",
+        "TypeScript"
+      ],
+      "p": 2.2834177798429782
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Age"
+      ],
+      "p": 1.9935378116715023
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Arabic"
+      ],
+      "p": 2.298087063727705
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Chinese"
+      ],
+      "p": 2.3711287870283666
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Cpp"
+      ],
+      "p": 1.8261029668203357
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Dutch"
+      ],
+      "p": 2.526558370229004
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Era"
+      ],
+      "p": 2.0007091691959107
+    },
+    {
+      "pair": [
+        "Wealth",
+        "French"
+      ],
+      "p": 2.0675603649816727
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Gender"
+      ],
+      "p": 2.0382929695379506
+    },
+    {
+      "pair": [
+        "Wealth",
+        "German"
+      ],
+      "p": 2.462053707628619
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Go"
+      ],
+      "p": 1.7725583960211373
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Haskell"
+      ],
+      "p": 1.7737924391287248
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Italian"
+      ],
+      "p": 1.8524569631640173
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Japanese"
+      ],
+      "p": 2.39957575283535
+    },
+    {
+      "pair": [
+        "Wealth",
+        "JavaScript"
+      ],
+      "p": 1.7799293135219352
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Java"
+      ],
+      "p": 1.7625597976042986
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Lisp"
+      ],
+      "p": 1.792239831401561
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Literary"
+      ],
+      "p": 1.6890635450177303
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Number"
+      ],
+      "p": 1.9373236541442982
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Person"
+      ],
+      "p": 1.9215132378776776
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Portuguese"
+      ],
+      "p": 2.1816532935845934
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Python"
+      ],
+      "p": 1.9042779398278489
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Refusal"
+      ],
+      "p": 2.166832341978403
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Russian"
+      ],
+      "p": 2.4135360313966077
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Rust"
+      ],
+      "p": 1.8167163328696705
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Spanish"
+      ],
+      "p": 2.0690867143125646
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Tense"
+      ],
+      "p": 1.7846573235187921
+    },
+    {
+      "pair": [
+        "Wealth",
+        "TypeScript"
+      ],
+      "p": 1.668383089221754
+    }
+  ],
+  "qwen_own_overlap_feature_fits": [
+    {
+      "pair": [
+        "Age",
+        "Arabic"
+      ],
+      "p": 2.8680135204571178
+    },
+    {
+      "pair": [
+        "Age",
+        "Chinese"
+      ],
+      "p": 2.8582988131927065
+    },
+    {
+      "pair": [
+        "Age",
+        "Cpp"
+      ],
+      "p": 2.5471574682459166
+    },
+    {
+      "pair": [
+        "Age",
+        "Dutch"
+      ],
+      "p": 2.5839023446733287
+    },
+    {
+      "pair": [
+        "Age",
+        "Era"
+      ],
+      "p": 2.224048663663207
+    },
+    {
+      "pair": [
+        "Age",
+        "French"
+      ],
+      "p": 2.211830176858698
+    },
+    {
+      "pair": [
+        "Age",
+        "German"
+      ],
+      "p": 2.603138240015863
+    },
+    {
+      "pair": [
+        "Age",
+        "Go"
+      ],
+      "p": 2.5221130497000845
+    },
+    {
+      "pair": [
+        "Age",
+        "Haskell"
+      ],
+      "p": 2.397087957722052
+    },
+    {
+      "pair": [
+        "Age",
+        "Honesty"
+      ],
+      "p": 2.018869708167938
+    },
+    {
+      "pair": [
+        "Age",
+        "Italian"
+      ],
+      "p": 2.304825962348998
+    },
+    {
+      "pair": [
+        "Age",
+        "Japanese"
+      ],
+      "p": 2.705720827305613
+    },
+    {
+      "pair": [
+        "Age",
+        "JavaScript"
+      ],
+      "p": 2.747019353317654
+    },
+    {
+      "pair": [
+        "Age",
+        "Java"
+      ],
+      "p": 2.9908182915988353
+    },
+    {
+      "pair": [
+        "Age",
+        "Lisp"
+      ],
+      "p": 2.6702325139765013
+    },
+    {
+      "pair": [
+        "Age",
+        "Literary"
+      ],
+      "p": 1.9053299115647149
+    },
+    {
+      "pair": [
+        "Age",
+        "Number"
+      ],
+      "p": 1.7596302279446576
+    },
+    {
+      "pair": [
+        "Age",
+        "Person"
+      ],
+      "p": 2.483244777653029
+    },
+    {
+      "pair": [
+        "Age",
+        "Portuguese"
+      ],
+      "p": 2.3382259497168505
+    },
+    {
+      "pair": [
+        "Age",
+        "Python"
+      ],
+      "p": 2.874973780829832
+    },
+    {
+      "pair": [
+        "Age",
+        "Refusal"
+      ],
+      "p": 2.0319973044952
+    },
+    {
+      "pair": [
+        "Age",
+        "Russian"
+      ],
+      "p": 2.5866155717762784
+    },
+    {
+      "pair": [
+        "Age",
+        "Rust"
+      ],
+      "p": 2.396798242981072
+    },
+    {
+      "pair": [
+        "Age",
+        "Spanish"
+      ],
+      "p": 2.220945274470334
+    },
+    {
+      "pair": [
+        "Age",
+        "Status"
+      ],
+      "p": 1.6824108831087743
+    },
+    {
+      "pair": [
+        "Age",
+        "Tense"
+      ],
+      "p": 2.5094622284713792
+    },
+    {
+      "pair": [
+        "Age",
+        "TypeScript"
+      ],
+      "p": 2.5403367586022476
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Age"
+      ],
+      "p": 2.170052590494741
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Arabic"
+      ],
+      "p": 3.254382135791504
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Chinese"
+      ],
+      "p": 2.5046951475264008
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Cpp"
+      ],
+      "p": 2.5454280598631893
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Dutch"
+      ],
+      "p": 2.835593413319553
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Era"
+      ],
+      "p": 2.1669499794699587
+    },
+    {
+      "pair": [
+        "Certainty",
+        "French"
+      ],
+      "p": 2.33063685900845
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Gender"
+      ],
+      "p": 2.1742264805394536
+    },
+    {
+      "pair": [
+        "Certainty",
+        "German"
+      ],
+      "p": 2.6401963370201025
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Go"
+      ],
+      "p": 2.475462271501372
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Haskell"
+      ],
+      "p": 2.447203875544712
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Italian"
+      ],
+      "p": 2.2183765761771657
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Japanese"
+      ],
+      "p": 2.7236142932806233
+    },
+    {
+      "pair": [
+        "Certainty",
+        "JavaScript"
+      ],
+      "p": 2.502642906285196
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Java"
+      ],
+      "p": 2.5243640418185405
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Lisp"
+      ],
+      "p": 2.697835071550367
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Literary"
+      ],
+      "p": 1.8695048024986403
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Number"
+      ],
+      "p": 2.1444826282247176
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Person"
+      ],
+      "p": 2.251562185329785
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Portuguese"
+      ],
+      "p": 2.125566103143094
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Python"
+      ],
+      "p": 2.587239725420891
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Russian"
+      ],
+      "p": 2.7276906749292675
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Rust"
+      ],
+      "p": 2.405341150240054
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Spanish"
+      ],
+      "p": 2.2248011839574953
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Status"
+      ],
+      "p": 2.391055636529577
+    },
+    {
+      "pair": [
+        "Certainty",
+        "Tense"
+      ],
+      "p": 2.430243981332954
+    },
+    {
+      "pair": [
+        "Certainty",
+        "TypeScript"
+      ],
+      "p": 2.4880091671827236
+    },
+    {
+      "pair": [
+        "Era",
+        "Arabic"
+      ],
+      "p": 3.1708432239820556
+    },
+    {
+      "pair": [
+        "Era",
+        "Chinese"
+      ],
+      "p": 2.977483621508173
+    },
+    {
+      "pair": [
+        "Era",
+        "Cpp"
+      ],
+      "p": 1.8958930998722396
+    },
+    {
+      "pair": [
+        "Era",
+        "Dutch"
+      ],
+      "p": 3.5482835942342033
+    },
+    {
+      "pair": [
+        "Era",
+        "French"
+      ],
+      "p": 2.685370951231642
+    },
+    {
+      "pair": [
+        "Era",
+        "German"
+      ],
+      "p": 2.98520915611109
+    },
+    {
+      "pair": [
+        "Era",
+        "Go"
+      ],
+      "p": 1.946291742259051
+    },
+    {
+      "pair": [
+        "Era",
+        "Haskell"
+      ],
+      "p": 1.9966425604428506
+    },
+    {
+      "pair": [
+        "Era",
+        "Honesty"
+      ],
+      "p": 2.327201668174707
+    },
+    {
+      "pair": [
+        "Era",
+        "Italian"
+      ],
+      "p": 2.838010883840906
+    },
+    {
+      "pair": [
+        "Era",
+        "Japanese"
+      ],
+      "p": 3.4630967586289287
+    },
+    {
+      "pair": [
+        "Era",
+        "JavaScript"
+      ],
+      "p": 1.9105219979083325
+    },
+    {
+      "pair": [
+        "Era",
+        "Java"
+      ],
+      "p": 1.8453010060299242
+    },
+    {
+      "pair": [
+        "Era",
+        "Lisp"
+      ],
+      "p": 1.8308768540376459
+    },
+    {
+      "pair": [
+        "Era",
+        "Literary"
+      ],
+      "p": 2.025058082666742
+    },
+    {
+      "pair": [
+        "Era",
+        "Number"
+      ],
+      "p": 2.040733903416585
+    },
+    {
+      "pair": [
+        "Era",
+        "Portuguese"
+      ],
+      "p": 2.6571469263896983
+    },
+    {
+      "pair": [
+        "Era",
+        "Python"
+      ],
+      "p": 1.950471122336032
+    },
+    {
+      "pair": [
+        "Era",
+        "Refusal"
+      ],
+      "p": 2.3496448477500564
+    },
+    {
+      "pair": [
+        "Era",
+        "Russian"
+      ],
+      "p": 3.126760722690748
+    },
+    {
+      "pair": [
+        "Era",
+        "Rust"
+      ],
+      "p": 1.9121643698029673
+    },
+    {
+      "pair": [
+        "Era",
+        "Spanish"
+      ],
+      "p": 2.519138615493407
+    },
+    {
+      "pair": [
+        "Status",
+        "Era"
+      ],
+      "p": 2.822142451082942
+    },
+    {
+      "pair": [
+        "Tense",
+        "Era"
+      ],
+      "p": 2.004926779050785
+    },
+    {
+      "pair": [
+        "Era",
+        "TypeScript"
+      ],
+      "p": 1.9367237396642585
+    },
+    {
+      "pair": [
+        "Gender",
+        "Age"
+      ],
+      "p": 2.414523886246999
+    },
+    {
+      "pair": [
+        "Gender",
+        "Arabic"
+      ],
+      "p": 2.6710159488603096
+    },
+    {
+      "pair": [
+        "Gender",
+        "Chinese"
+      ],
+      "p": 3.1131065363240165
+    },
+    {
+      "pair": [
+        "Gender",
+        "Cpp"
+      ],
+      "p": 2.0015974197373825
+    },
+    {
+      "pair": [
+        "Gender",
+        "Dutch"
+      ],
+      "p": 2.50203140305554
+    },
+    {
+      "pair": [
+        "Gender",
+        "Era"
+      ],
+      "p": 1.9345566966991488
+    },
+    {
+      "pair": [
+        "Gender",
+        "French"
+      ],
+      "p": 2.2617096604962463
+    },
+    {
+      "pair": [
+        "Gender",
+        "German"
+      ],
+      "p": 2.3922794994533505
+    },
+    {
+      "pair": [
+        "Gender",
+        "Go"
+      ],
+      "p": 2.154881075647637
+    },
+    {
+      "pair": [
+        "Gender",
+        "Haskell"
+      ],
+      "p": 1.914082280150958
+    },
+    {
+      "pair": [
+        "Gender",
+        "Italian"
+      ],
+      "p": 2.1193328963537135
+    },
+    {
+      "pair": [
+        "Gender",
+        "Japanese"
+      ],
+      "p": 2.325244255022238
+    },
+    {
+      "pair": [
+        "Gender",
+        "JavaScript"
+      ],
+      "p": 2.1088905794441546
+    },
+    {
+      "pair": [
+        "Gender",
+        "Java"
+      ],
+      "p": 2.043444499835778
+    },
+    {
+      "pair": [
+        "Gender",
+        "Lisp"
+      ],
+      "p": 1.893869503457307
+    },
+    {
+      "pair": [
+        "Gender",
+        "Literary"
+      ],
+      "p": 2.1423490207288727
+    },
+    {
+      "pair": [
+        "Gender",
+        "Number"
+      ],
+      "p": 2.028209031749981
+    },
+    {
+      "pair": [
+        "Gender",
+        "Portuguese"
+      ],
+      "p": 2.268396846805126
+    },
+    {
+      "pair": [
+        "Gender",
+        "Python"
+      ],
+      "p": 2.15680538964648
+    },
+    {
+      "pair": [
+        "Gender",
+        "Refusal"
+      ],
+      "p": 2.0672093539229275
+    },
+    {
+      "pair": [
+        "Gender",
+        "Russian"
+      ],
+      "p": 2.559516660147656
+    },
+    {
+      "pair": [
+        "Gender",
+        "Rust"
+      ],
+      "p": 2.157548307553536
+    },
+    {
+      "pair": [
+        "Gender",
+        "Sentiment"
+      ],
+      "p": 2.0319377760496216
+    },
+    {
+      "pair": [
+        "Gender",
+        "Spanish"
+      ],
+      "p": 2.1712412968320045
+    },
+    {
+      "pair": [
+        "Gender",
+        "Status"
+      ],
+      "p": 2.1161757218994977
+    },
+    {
+      "pair": [
+        "Gender",
+        "Tense"
+      ],
+      "p": 2.5183657219744977
+    },
+    {
+      "pair": [
+        "Gender",
+        "TypeScript"
+      ],
+      "p": 2.3393518628951355
+    },
+    {
+      "pair": [
+        "Health",
+        "Age"
+      ],
+      "p": 2.116721798716822
+    },
+    {
+      "pair": [
+        "Health",
+        "Chinese"
+      ],
+      "p": 2.3180923880492483
+    },
+    {
+      "pair": [
+        "Health",
+        "Cpp"
+      ],
+      "p": 2.511231512229196
+    },
+    {
+      "pair": [
+        "Health",
+        "Era"
+      ],
+      "p": 2.0604618458803143
+    },
+    {
+      "pair": [
+        "Health",
+        "French"
+      ],
+      "p": 1.6517589793783474
+    },
+    {
+      "pair": [
+        "Health",
+        "Gender"
+      ],
+      "p": 2.4644992499362197
+    },
+    {
+      "pair": [
+        "Health",
+        "German"
+      ],
+      "p": 1.7143732017799156
+    },
+    {
+      "pair": [
+        "Health",
+        "Go"
+      ],
+      "p": 2.3984622224200556
+    },
+    {
+      "pair": [
+        "Health",
+        "Haskell"
+      ],
+      "p": 2.2527170712923255
+    },
+    {
+      "pair": [
+        "Health",
+        "Italian"
+      ],
+      "p": 1.854960371687188
+    },
+    {
+      "pair": [
+        "Health",
+        "Japanese"
+      ],
+      "p": 2.0345487718682045
+    },
+    {
+      "pair": [
+        "Health",
+        "JavaScript"
+      ],
+      "p": 2.5144642981803322
+    },
+    {
+      "pair": [
+        "Health",
+        "Java"
+      ],
+      "p": 2.4650853768091343
+    },
+    {
+      "pair": [
+        "Health",
+        "Lisp"
+      ],
+      "p": 2.273048467147015
+    },
+    {
+      "pair": [
+        "Health",
+        "Literary"
+      ],
+      "p": 2.102746785536768
+    },
+    {
+      "pair": [
+        "Health",
+        "Number"
+      ],
+      "p": 2.4774150390955483
+    },
+    {
+      "pair": [
+        "Health",
+        "Person"
+      ],
+      "p": 2.0189289340647587
+    },
+    {
+      "pair": [
+        "Health",
+        "Portuguese"
+      ],
+      "p": 1.729294269582927
+    },
+    {
+      "pair": [
+        "Health",
+        "Python"
+      ],
+      "p": 2.656385987185005
+    },
+    {
+      "pair": [
+        "Health",
+        "Russian"
+      ],
+      "p": 2.114940374740154
+    },
+    {
+      "pair": [
+        "Health",
+        "Rust"
+      ],
+      "p": 2.400661992546914
+    },
+    {
+      "pair": [
+        "Health",
+        "Spanish"
+      ],
+      "p": 1.7782240302482941
+    },
+    {
+      "pair": [
+        "Health",
+        "Status"
+      ],
+      "p": 2.213841627351594
+    },
+    {
+      "pair": [
+        "Health",
+        "Tense"
+      ],
+      "p": 2.2593660269470357
+    },
+    {
+      "pair": [
+        "Health",
+        "TypeScript"
+      ],
+      "p": 2.5933871795686243
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Chinese"
+      ],
+      "p": 2.6889069356892654
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Cpp"
+      ],
+      "p": 2.1909094937491562
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Dutch"
+      ],
+      "p": 2.5136902682371645
+    },
+    {
+      "pair": [
+        "Honesty",
+        "French"
+      ],
+      "p": 2.0471941780175618
+    },
+    {
+      "pair": [
+        "Honesty",
+        "German"
+      ],
+      "p": 2.3620359452367743
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Go"
+      ],
+      "p": 2.3799903596188567
+    },
+    {
+      "pair": [
+        "Honesty",
+        "JavaScript"
+      ],
+      "p": 2.0934962095772307
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Java"
+      ],
+      "p": 2.1978563482763716
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Literary"
+      ],
+      "p": 1.8881581268164993
+    },
+    {
+      "pair": [
+        "Honesty",
+        "Rust"
+      ],
+      "p": 2.1692680989877395
+    },
+    {
+      "pair": [
+        "Honesty",
+        "TypeScript"
+      ],
+      "p": 2.173429388058725
+    },
+    {
+      "pair": [
+        "Literary",
+        "Arabic"
+      ],
+      "p": 1.9783631982733396
+    },
+    {
+      "pair": [
+        "Literary",
+        "Chinese"
+      ],
+      "p": 2.259046666321708
+    },
+    {
+      "pair": [
+        "Literary",
+        "Cpp"
+      ],
+      "p": 2.122054508280653
+    },
+    {
+      "pair": [
+        "Literary",
+        "Dutch"
+      ],
+      "p": 2.6380641967959964
+    },
+    {
+      "pair": [
+        "Literary",
+        "French"
+      ],
+      "p": 2.1135709015728126
+    },
+    {
+      "pair": [
+        "Literary",
+        "German"
+      ],
+      "p": 2.4826998963441844
+    },
+    {
+      "pair": [
+        "Literary",
+        "Go"
+      ],
+      "p": 2.0955675757839467
+    },
+    {
+      "pair": [
+        "Literary",
+        "Haskell"
+      ],
+      "p": 2.16256442214983
+    },
+    {
+      "pair": [
+        "Literary",
+        "Italian"
+      ],
+      "p": 2.226630499332286
+    },
+    {
+      "pair": [
+        "Literary",
+        "Japanese"
+      ],
+      "p": 2.0919612541691803
+    },
+    {
+      "pair": [
+        "Literary",
+        "JavaScript"
+      ],
+      "p": 2.1235877866160573
+    },
+    {
+      "pair": [
+        "Literary",
+        "Java"
+      ],
+      "p": 2.0572844806802424
+    },
+    {
+      "pair": [
+        "Literary",
+        "Lisp"
+      ],
+      "p": 2.0875243186363983
+    },
+    {
+      "pair": [
+        "Literary",
+        "Portuguese"
+      ],
+      "p": 1.7435958542618026
+    },
+    {
+      "pair": [
+        "Literary",
+        "Python"
+      ],
+      "p": 2.031872980138421
+    },
+    {
+      "pair": [
+        "Literary",
+        "Russian"
+      ],
+      "p": 2.039202529510283
+    },
+    {
+      "pair": [
+        "Literary",
+        "Rust"
+      ],
+      "p": 2.166276590358906
+    },
+    {
+      "pair": [
+        "Literary",
+        "Spanish"
+      ],
+      "p": 1.8272178702996973
+    },
+    {
+      "pair": [
+        "Tense",
+        "Literary"
+      ],
+      "p": 1.7169882361966855
+    },
+    {
+      "pair": [
+        "Literary",
+        "TypeScript"
+      ],
+      "p": 2.1461939434672934
+    },
+    {
+      "pair": [
+        "Number",
+        "Arabic"
+      ],
+      "p": 2.5114458310731016
+    },
+    {
+      "pair": [
+        "Number",
+        "Chinese"
+      ],
+      "p": 2.223530612338575
+    },
+    {
+      "pair": [
+        "Number",
+        "Cpp"
+      ],
+      "p": 1.7237809861688993
+    },
+    {
+      "pair": [
+        "Number",
+        "Dutch"
+      ],
+      "p": 3.063993210147642
+    },
+    {
+      "pair": [
+        "Number",
+        "French"
+      ],
+      "p": 2.6346623082978327
+    },
+    {
+      "pair": [
+        "Number",
+        "German"
+      ],
+      "p": 2.619446063624739
+    },
+    {
+      "pair": [
+        "Number",
+        "Go"
+      ],
+      "p": 1.8097658633235367
+    },
+    {
+      "pair": [
+        "Number",
+        "Haskell"
+      ],
+      "p": 1.916310090413529
+    },
+    {
+      "pair": [
+        "Number",
+        "Honesty"
+      ],
+      "p": 2.549113812645985
+    },
+    {
+      "pair": [
+        "Number",
+        "Italian"
+      ],
+      "p": 2.1064549501289136
+    },
+    {
+      "pair": [
+        "Number",
+        "Japanese"
+      ],
+      "p": 2.2118313795503988
+    },
+    {
+      "pair": [
+        "Number",
+        "JavaScript"
+      ],
+      "p": 1.7996554964278886
+    },
+    {
+      "pair": [
+        "Number",
+        "Java"
+      ],
+      "p": 1.7509534906428426
+    },
+    {
+      "pair": [
+        "Number",
+        "Lisp"
+      ],
+      "p": 1.8754902544361844
+    },
+    {
+      "pair": [
+        "Number",
+        "Literary"
+      ],
+      "p": 2.0276190073898825
+    },
+    {
+      "pair": [
+        "Number",
+        "Portuguese"
+      ],
+      "p": 2.1353307792061096
+    },
+    {
+      "pair": [
+        "Number",
+        "Python"
+      ],
+      "p": 1.7926770296400651
+    },
+    {
+      "pair": [
+        "Number",
+        "Refusal"
+      ],
+      "p": 1.9656663620019108
+    },
+    {
+      "pair": [
+        "Number",
+        "Russian"
+      ],
+      "p": 2.7940953933301786
+    },
+    {
+      "pair": [
+        "Number",
+        "Rust"
+      ],
+      "p": 1.7471345412944115
+    },
+    {
+      "pair": [
+        "Number",
+        "Spanish"
+      ],
+      "p": 2.3608151029352284
+    },
+    {
+      "pair": [
+        "Number",
+        "Status"
+      ],
+      "p": 1.89175253300432
+    },
+    {
+      "pair": [
+        "Tense",
+        "Number"
+      ],
+      "p": 2.005772138550881
+    },
+    {
+      "pair": [
+        "Number",
+        "TypeScript"
+      ],
+      "p": 1.8976732945901942
+    },
+    {
+      "pair": [
+        "Person",
+        "Arabic"
+      ],
+      "p": 2.8391391188461443
+    },
+    {
+      "pair": [
+        "Person",
+        "Chinese"
+      ],
+      "p": 2.5074352590377873
+    },
+    {
+      "pair": [
+        "Person",
+        "Cpp"
+      ],
+      "p": 2.010013682505284
+    },
+    {
+      "pair": [
+        "Person",
+        "Dutch"
+      ],
+      "p": 3.2716854691447335
+    },
+    {
+      "pair": [
+        "Person",
+        "French"
+      ],
+      "p": 2.6998530971174657
+    },
+    {
+      "pair": [
+        "Person",
+        "German"
+      ],
+      "p": 2.400047699183305
+    },
+    {
+      "pair": [
+        "Person",
+        "Go"
+      ],
+      "p": 2.218068079962989
+    },
+    {
+      "pair": [
+        "Person",
+        "Haskell"
+      ],
+      "p": 1.9327263633789873
+    },
+    {
+      "pair": [
+        "Person",
+        "Honesty"
+      ],
+      "p": 2.0739090360921923
+    },
+    {
+      "pair": [
+        "Person",
+        "Italian"
+      ],
+      "p": 2.662325642710661
+    },
+    {
+      "pair": [
+        "Person",
+        "Japanese"
+      ],
+      "p": 2.228237622572038
+    },
+    {
+      "pair": [
+        "Person",
+        "JavaScript"
+      ],
+      "p": 2.1826492377552595
+    },
+    {
+      "pair": [
+        "Person",
+        "Java"
+      ],
+      "p": 2.260943477890963
+    },
+    {
+      "pair": [
+        "Person",
+        "Lisp"
+      ],
+      "p": 2.1616279339543674
+    },
+    {
+      "pair": [
+        "Person",
+        "Literary"
+      ],
+      "p": 2.048300395986525
+    },
+    {
+      "pair": [
+        "Person",
+        "Portuguese"
+      ],
+      "p": 2.934767404716663
+    },
+    {
+      "pair": [
+        "Person",
+        "Python"
+      ],
+      "p": 1.877308864087287
+    },
+    {
+      "pair": [
+        "Person",
+        "Refusal"
+      ],
+      "p": 2.3994332749014626
+    },
+    {
+      "pair": [
+        "Person",
+        "Russian"
+      ],
+      "p": 2.6693356012493132
+    },
+    {
+      "pair": [
+        "Person",
+        "Rust"
+      ],
+      "p": 1.8540960687948427
+    },
+    {
+      "pair": [
+        "Person",
+        "Spanish"
+      ],
+      "p": 2.6616414179087173
+    },
+    {
+      "pair": [
+        "Person",
+        "Status"
+      ],
+      "p": 1.9105794558105624
+    },
+    {
+      "pair": [
+        "Tense",
+        "Person"
+      ],
+      "p": 2.5150008672244244
+    },
+    {
+      "pair": [
+        "Person",
+        "TypeScript"
+      ],
+      "p": 2.055335112410179
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Arabic"
+      ],
+      "p": 2.3075232327343738
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Chinese"
+      ],
+      "p": 3.0133455537958325
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Cpp"
+      ],
+      "p": 2.549477490934597
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Dutch"
+      ],
+      "p": 2.707411933100984
+    },
+    {
+      "pair": [
+        "Refusal",
+        "French"
+      ],
+      "p": 2.2074684935989115
+    },
+    {
+      "pair": [
+        "Refusal",
+        "German"
+      ],
+      "p": 2.6983709012453376
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Go"
+      ],
+      "p": 2.2829394651182513
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Haskell"
+      ],
+      "p": 2.2919075225263157
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Italian"
+      ],
+      "p": 2.216429704366165
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Japanese"
+      ],
+      "p": 2.5029399142306406
+    },
+    {
+      "pair": [
+        "Refusal",
+        "JavaScript"
+      ],
+      "p": 2.470434225759527
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Java"
+      ],
+      "p": 2.412973229176407
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Lisp"
+      ],
+      "p": 2.4960266714502666
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Literary"
+      ],
+      "p": 2.0002180259445064
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Portuguese"
+      ],
+      "p": 2.3642516764167736
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Python"
+      ],
+      "p": 2.278240124441969
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Russian"
+      ],
+      "p": 2.6587236173745397
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Rust"
+      ],
+      "p": 2.502810462556604
+    },
+    {
+      "pair": [
+        "Refusal",
+        "Spanish"
+      ],
+      "p": 2.3875844935373394
+    },
+    {
+      "pair": [
+        "Refusal",
+        "TypeScript"
+      ],
+      "p": 2.63409591393899
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Age"
+      ],
+      "p": 2.036138489573108
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Arabic"
+      ],
+      "p": 2.4630993580059704
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Chinese"
+      ],
+      "p": 2.8100134348817267
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Cpp"
+      ],
+      "p": 2.219923175486663
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Dutch"
+      ],
+      "p": 2.184330456498388
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Era"
+      ],
+      "p": 2.2347558027541723
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "French"
+      ],
+      "p": 1.7933946252252289
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "German"
+      ],
+      "p": 2.188160813096343
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Go"
+      ],
+      "p": 2.3897323788614937
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Haskell"
+      ],
+      "p": 2.8198066227831626
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Italian"
+      ],
+      "p": 2.0625724114726545
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Japanese"
+      ],
+      "p": 2.2031222452735433
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "JavaScript"
+      ],
+      "p": 2.5031617442533225
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Java"
+      ],
+      "p": 2.322345763285304
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Lisp"
+      ],
+      "p": 2.3979874566496604
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Literary"
+      ],
+      "p": 1.5911781146754955
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Number"
+      ],
+      "p": 1.6161886347596164
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Person"
+      ],
+      "p": 1.871687160476064
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Portuguese"
+      ],
+      "p": 2.0131584078076727
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Python"
+      ],
+      "p": 2.307005908852248
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Russian"
+      ],
+      "p": 2.183890577064958
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Rust"
+      ],
+      "p": 2.2513866761724635
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Spanish"
+      ],
+      "p": 2.031807638817481
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Status"
+      ],
+      "p": 1.790195200947604
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "Tense"
+      ],
+      "p": 1.8343507780095751
+    },
+    {
+      "pair": [
+        "Sentiment",
+        "TypeScript"
+      ],
+      "p": 2.523237942493896
+    },
+    {
+      "pair": [
+        "Status",
+        "Arabic"
+      ],
+      "p": 2.0813335654769114
+    },
+    {
+      "pair": [
+        "Status",
+        "Chinese"
+      ],
+      "p": 2.3151992453146093
+    },
+    {
+      "pair": [
+        "Status",
+        "Cpp"
+      ],
+      "p": 2.310680240270886
+    },
+    {
+      "pair": [
+        "Status",
+        "Dutch"
+      ],
+      "p": 2.204443083664272
+    },
+    {
+      "pair": [
+        "Status",
+        "French"
+      ],
+      "p": 2.033198471218694
+    },
+    {
+      "pair": [
+        "Status",
+        "German"
+      ],
+      "p": 2.5476492516442697
+    },
+    {
+      "pair": [
+        "Status",
+        "Go"
+      ],
+      "p": 2.5691822290057407
+    },
+    {
+      "pair": [
+        "Status",
+        "Haskell"
+      ],
+      "p": 2.24181634312046
+    },
+    {
+      "pair": [
+        "Status",
+        "Italian"
+      ],
+      "p": 1.8271039079154143
+    },
+    {
+      "pair": [
+        "Status",
+        "Japanese"
+      ],
+      "p": 2.0804506281802673
+    },
+    {
+      "pair": [
+        "Status",
+        "JavaScript"
+      ],
+      "p": 2.506344211424109
+    },
+    {
+      "pair": [
+        "Status",
+        "Java"
+      ],
+      "p": 2.610170462047827
+    },
+    {
+      "pair": [
+        "Status",
+        "Lisp"
+      ],
+      "p": 2.114604477994069
+    },
+    {
+      "pair": [
+        "Status",
+        "Literary"
+      ],
+      "p": 1.8609941672140453
+    },
+    {
+      "pair": [
+        "Status",
+        "Portuguese"
+      ],
+      "p": 1.7944239099079902
+    },
+    {
+      "pair": [
+        "Status",
+        "Python"
+      ],
+      "p": 2.5262196052734174
+    },
+    {
+      "pair": [
+        "Status",
+        "Refusal"
+      ],
+      "p": 2.0633920123039022
+    },
+    {
+      "pair": [
+        "Status",
+        "Russian"
+      ],
+      "p": 1.9310196797574204
+    },
+    {
+      "pair": [
+        "Status",
+        "Rust"
+      ],
+      "p": 2.344387019613134
+    },
+    {
+      "pair": [
+        "Status",
+        "Spanish"
+      ],
+      "p": 1.8720618729807705
+    },
+    {
+      "pair": [
+        "Status",
+        "TypeScript"
+      ],
+      "p": 2.530682328178204
+    },
+    {
+      "pair": [
+        "Tense",
+        "Arabic"
+      ],
+      "p": 2.8618315460255612
+    },
+    {
+      "pair": [
+        "Tense",
+        "Chinese"
+      ],
+      "p": 2.362846434555683
+    },
+    {
+      "pair": [
+        "Tense",
+        "Cpp"
+      ],
+      "p": 2.101393027106858
+    },
+    {
+      "pair": [
+        "Tense",
+        "Dutch"
+      ],
+      "p": 2.4257415196484917
+    },
+    {
+      "pair": [
+        "Tense",
+        "French"
+      ],
+      "p": 2.1311406006261437
+    },
+    {
+      "pair": [
+        "Tense",
+        "German"
+      ],
+      "p": 2.1583069673826
+    },
+    {
+      "pair": [
+        "Tense",
+        "Go"
+      ],
+      "p": 2.1794470520951115
+    },
+    {
+      "pair": [
+        "Tense",
+        "Haskell"
+      ],
+      "p": 2.0585648394433167
+    },
+    {
+      "pair": [
+        "Tense",
+        "Honesty"
+      ],
+      "p": 2.4189109698875244
+    },
+    {
+      "pair": [
+        "Tense",
+        "Italian"
+      ],
+      "p": 1.8943268775529054
+    },
+    {
+      "pair": [
+        "Tense",
+        "Japanese"
+      ],
+      "p": 2.6958543556390535
+    },
+    {
+      "pair": [
+        "Tense",
+        "JavaScript"
+      ],
+      "p": 2.2682201462110068
+    },
+    {
+      "pair": [
+        "Tense",
+        "Java"
+      ],
+      "p": 2.0747860779668423
+    },
+    {
+      "pair": [
+        "Tense",
+        "Lisp"
+      ],
+      "p": 2.035309044538869
+    },
+    {
+      "pair": [
+        "Tense",
+        "Portuguese"
+      ],
+      "p": 2.078757796158673
+    },
+    {
+      "pair": [
+        "Tense",
+        "Python"
+      ],
+      "p": 2.087930441915192
+    },
+    {
+      "pair": [
+        "Tense",
+        "Refusal"
+      ],
+      "p": 2.4461923136940524
+    },
+    {
+      "pair": [
+        "Tense",
+        "Russian"
+      ],
+      "p": 2.5576384525359543
+    },
+    {
+      "pair": [
+        "Tense",
+        "Rust"
+      ],
+      "p": 2.1873667901074767
+    },
+    {
+      "pair": [
+        "Tense",
+        "Spanish"
+      ],
+      "p": 2.165563775098892
+    },
+    {
+      "pair": [
+        "Tense",
+        "Status"
+      ],
+      "p": 1.864338423767351
+    },
+    {
+      "pair": [
+        "Tense",
+        "TypeScript"
+      ],
+      "p": 2.2834177798429782
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Age"
+      ],
+      "p": 1.9935378116715023
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Arabic"
+      ],
+      "p": 2.298087063727705
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Chinese"
+      ],
+      "p": 2.3711287870283666
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Cpp"
+      ],
+      "p": 1.8261029668203357
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Dutch"
+      ],
+      "p": 2.526558370229004
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Era"
+      ],
+      "p": 2.0007091691959107
+    },
+    {
+      "pair": [
+        "Wealth",
+        "French"
+      ],
+      "p": 2.0675603649816727
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Gender"
+      ],
+      "p": 2.0382929695379506
+    },
+    {
+      "pair": [
+        "Wealth",
+        "German"
+      ],
+      "p": 2.462053707628619
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Go"
+      ],
+      "p": 1.7725583960211373
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Haskell"
+      ],
+      "p": 1.7737924391287248
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Italian"
+      ],
+      "p": 1.8524569631640173
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Japanese"
+      ],
+      "p": 2.39957575283535
+    },
+    {
+      "pair": [
+        "Wealth",
+        "JavaScript"
+      ],
+      "p": 1.7799293135219352
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Java"
+      ],
+      "p": 1.7625597976042986
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Lisp"
+      ],
+      "p": 1.792239831401561
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Literary"
+      ],
+      "p": 1.6890635450177303
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Number"
+      ],
+      "p": 1.9373236541442982
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Person"
+      ],
+      "p": 1.9215132378776776
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Portuguese"
+      ],
+      "p": 2.1816532935845934
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Python"
+      ],
+      "p": 1.9042779398278489
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Refusal"
+      ],
+      "p": 2.166832341978403
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Russian"
+      ],
+      "p": 2.4135360313966077
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Rust"
+      ],
+      "p": 1.8167163328696705
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Spanish"
+      ],
+      "p": 2.0690867143125646
+    },
+    {
+      "pair": [
+        "Wealth",
+        "Tense"
+      ],
+      "p": 1.7846573235187921
+    },
+    {
+      "pair": [
+        "Wealth",
+        "TypeScript"
+      ],
+      "p": 1.668383089221754
+    }
+  ],
+  "original_random_control_refits": [
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_000__random_001_fineweb_60deg_dirrandom.pkl",
+      "sha256": "c25f3de5f762f3ba9f3f7f29f6b943c18548efe8fa5604be7c2b9ad3d5f39016",
+      "pair": [
+        "random_000",
+        "random_001"
+      ],
+      "fit": {
+        "p": 1.697976796607169,
+        "mean_radial_frac": 0.012445683166825247,
+        "max_radial_frac": 0.02666629775444096,
+        "n_pts": 39,
+        "intercepts": [
+          40.66324734687805,
+          43.9307816028595
+        ],
+        "threshold": 479.4504699707031,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.007219554856419563,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_002__random_003_fineweb_60deg_dirrandom.pkl",
+      "sha256": "05c257e7bae1562022d76b59b7aac31fc2503c127f6f8843d042d80f20b0ac58",
+      "pair": [
+        "random_002",
+        "random_003"
+      ],
+      "fit": {
+        "p": 2.0012514369944414,
+        "mean_radial_frac": 0.011362365413351446,
+        "max_radial_frac": 0.030771669857926454,
+        "n_pts": 38,
+        "intercepts": [
+          42.63759070634842,
+          40.49637770652771
+        ],
+        "threshold": 573.2393188476562,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.007708184886723757,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_004__random_005_fineweb_60deg_dirrandom.pkl",
+      "sha256": "725d44f68af34c2b717ec3216b1498c4128490cd4bbe729bbac8c2649e853553",
+      "pair": [
+        "random_004",
+        "random_005"
+      ],
+      "fit": {
+        "p": 2.101389225969783,
+        "mean_radial_frac": 0.010088040573877398,
+        "max_radial_frac": 0.030407702981747997,
+        "n_pts": 41,
+        "intercepts": [
+          42.954227328300476,
+          42.12152900546789
+        ],
+        "threshold": 581.8017578125,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.0390193834900856,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_006__random_007_fineweb_60deg_dirrandom.pkl",
+      "sha256": "2d1ffac075b707a4787404e565faea0617acd214290fcb962e6f801483dd7482",
+      "pair": [
+        "random_006",
+        "random_007"
+      ],
+      "fit": {
+        "p": 1.8445922826800862,
+        "mean_radial_frac": 0.008412946746841468,
+        "max_radial_frac": 0.022848444358396947,
+        "n_pts": 41,
+        "intercepts": [
+          43.20531511306763,
+          44.51172214746475
+        ],
+        "threshold": 568.0606079101562,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.024308737367391586,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_008__random_009_fineweb_60deg_dirrandom.pkl",
+      "sha256": "51bd765018a54072c8f889a528a311ee503601ef3ed4e8b26a2d4e1b689945b1",
+      "pair": [
+        "random_008",
+        "random_009"
+      ],
+      "fit": {
+        "p": 1.8950237399154661,
+        "mean_radial_frac": 0.03650871942848456,
+        "max_radial_frac": 0.07317719418448687,
+        "n_pts": 41,
+        "intercepts": [
+          41.481497287750244,
+          43.93248414993286
+        ],
+        "threshold": 516.2900390625,
+        "flags": [
+          "radial_residual_over_2pct"
+        ]
+      },
+      "raw_absolute_cosine": 0.0008243704214692116,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_010__random_011_fineweb_60deg_dirrandom.pkl",
+      "sha256": "97ae44f2a2869db43df0d9f2971e683a3059cb5398a2b48c56f44b9aec711654",
+      "pair": [
+        "random_010",
+        "random_011"
+      ],
+      "fit": {
+        "p": 2.1617694654559654,
+        "mean_radial_frac": 0.010829377960627405,
+        "max_radial_frac": 0.028489838845339954,
+        "n_pts": 42,
+        "intercepts": [
+          44.50533473491669,
+          45.44918501377106
+        ],
+        "threshold": 561.9984741210938,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.04259975254535675,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_012__random_013_fineweb_60deg_dirrandom.pkl",
+      "sha256": "b7b1a435926e2ffafc9190ff0a7319096327e309b2edf73f491d36c00b2be0cc",
+      "pair": [
+        "random_012",
+        "random_013"
+      ],
+      "fit": {
+        "p": 1.9176246948706737,
+        "mean_radial_frac": 0.013396458397589977,
+        "max_radial_frac": 0.02860076158870606,
+        "n_pts": 41,
+        "intercepts": [
+          42.58702802658081,
+          44.41894918680191
+        ],
+        "threshold": 569.8375244140625,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.0034639141522347927,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_014__random_015_fineweb_60deg_dirrandom.pkl",
+      "sha256": "09a7e3a580225703207cbd291b5ef2a3030ed6ec6c84778e240262735a996d04",
+      "pair": [
+        "random_014",
+        "random_015"
+      ],
+      "fit": {
+        "p": 2.046867145546815,
+        "mean_radial_frac": 0.02602401064507579,
+        "max_radial_frac": 0.06065347560584666,
+        "n_pts": 43,
+        "intercepts": [
+          43.135841369628906,
+          43.485963344573975
+        ],
+        "threshold": 602.392333984375,
+        "flags": [
+          "radial_residual_over_2pct"
+        ]
+      },
+      "raw_absolute_cosine": 0.028551844879984856,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_016__random_017_fineweb_60deg_dirrandom.pkl",
+      "sha256": "456d715b51e23cf9aac70e458f61e19e45ebd68fb9778827c7f7d2ce480ec216",
+      "pair": [
+        "random_016",
+        "random_017"
+      ],
+      "fit": {
+        "p": 2.14799307356681,
+        "mean_radial_frac": 0.006416868912846432,
+        "max_radial_frac": 0.014248048925078916,
+        "n_pts": 40,
+        "intercepts": [
+          40.97287338972092,
+          44.13542442023754
+        ],
+        "threshold": 566.7532958984375,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.013880765996873379,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_018__random_019_fineweb_60deg_dirrandom.pkl",
+      "sha256": "1083847f5bafa8f2350468dd0de85fbbba0938337bcc750bc7efc6771da0c5dd",
+      "pair": [
+        "random_018",
+        "random_019"
+      ],
+      "fit": {
+        "p": 1.8157721829017655,
+        "mean_radial_frac": 0.01113112095990172,
+        "max_radial_frac": 0.021940939344374688,
+        "n_pts": 39,
+        "intercepts": [
+          41.309653878211975,
+          43.02334475517273
+        ],
+        "threshold": 556.7420654296875,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.014970159158110619,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_020__random_021_fineweb_60deg_dirrandom.pkl",
+      "sha256": "d33b9975bf510dfa862a824d9a6ab191604812914b9ec829e19fb0e4b83fe4cf",
+      "pair": [
+        "random_020",
+        "random_021"
+      ],
+      "fit": {
+        "p": 1.8416999292530039,
+        "mean_radial_frac": 0.0076483834890277436,
+        "max_radial_frac": 0.01512629774533858,
+        "n_pts": 44,
+        "intercepts": [
+          48.07662707567215,
+          46.199407801032066
+        ],
+        "threshold": 586.4495239257812,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.008360568434000015,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_022__random_023_fineweb_60deg_dirrandom.pkl",
+      "sha256": "66725bfaf94c88dcad7b7b31b0e9374303f071d01638f7abfc00ed512956b63f",
+      "pair": [
+        "random_022",
+        "random_023"
+      ],
+      "fit": {
+        "p": 2.107367172437597,
+        "mean_radial_frac": 0.006665600528447073,
+        "max_radial_frac": 0.01563042166473383,
+        "n_pts": 42,
+        "intercepts": [
+          39.979551672935486,
+          39.85495185852051
+        ],
+        "threshold": 501.1293640136719,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.009163271635770798,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_024__random_025_fineweb_60deg_dirrandom.pkl",
+      "sha256": "db3ef9d116aa39e8e0dfe6fec9a98be631082de718bd3256663ec42459f99fc5",
+      "pair": [
+        "random_024",
+        "random_025"
+      ],
+      "fit": {
+        "p": 2.0302879209798834,
+        "mean_radial_frac": 0.006395635436699634,
+        "max_radial_frac": 0.018881035600633256,
+        "n_pts": 38,
+        "intercepts": [
+          40.48563429713249,
+          40.30871909856796
+        ],
+        "threshold": 452.77813720703125,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.021058613434433937,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_026__random_027_fineweb_60deg_dirrandom.pkl",
+      "sha256": "7c8f0c0e2aec1e66b7386efbf59cb35c8f643f7f03770f7824d747ddb382e52a",
+      "pair": [
+        "random_026",
+        "random_027"
+      ],
+      "fit": {
+        "p": 1.869522558227364,
+        "mean_radial_frac": 0.007060934587284265,
+        "max_radial_frac": 0.01734023752851388,
+        "n_pts": 40,
+        "intercepts": [
+          40.47991359233856,
+          44.4338159263134
+        ],
+        "threshold": 522.2512817382812,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.03475513681769371,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_028__random_029_fineweb_60deg_dirrandom.pkl",
+      "sha256": "7e4d3d14648f86b769c4e05b14c2fd6d9b95a16713aaded9afec04455f29898a",
+      "pair": [
+        "random_028",
+        "random_029"
+      ],
+      "fit": {
+        "p": 1.9989590816727771,
+        "mean_radial_frac": 0.006139579295455205,
+        "max_radial_frac": 0.015401391412889764,
+        "n_pts": 38,
+        "intercepts": [
+          41.61014771461487,
+          42.54521983861923
+        ],
+        "threshold": 542.303466796875,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.016039256006479263,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_030__random_031_fineweb_60deg_dirrandom.pkl",
+      "sha256": "bab7112ed355c117f199dc35696a90fe4a514f3d1438e07b30e6f958d271b9aa",
+      "pair": [
+        "random_030",
+        "random_031"
+      ],
+      "fit": {
+        "p": 1.74877568118897,
+        "mean_radial_frac": 0.017791926478122198,
+        "max_radial_frac": 0.056488020732474165,
+        "n_pts": 41,
+        "intercepts": [
+          47.17803990840912,
+          40.94704478979111
+        ],
+        "threshold": 518.4754028320312,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.069691963493824,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    },
+    {
+      "path": "results/sweeps_2d/sweep2d_qwen_L2_random_032__random_000_fineweb_60deg_dirrandom.pkl",
+      "sha256": "83cff0af0d4cdea0df363e821fd20459e0c52c2e35a393a671735e6294fab6b4",
+      "pair": [
+        "random_032",
+        "random_000"
+      ],
+      "fit": {
+        "p": 2.1047911058511746,
+        "mean_radial_frac": 0.015294160900840702,
+        "max_radial_frac": 0.03875428141459514,
+        "n_pts": 37,
+        "intercepts": [
+          41.45603287220001,
+          40.14603917300701
+        ],
+        "threshold": 459.6083984375,
+        "flags": []
+      },
+      "raw_absolute_cosine": 0.012432217597961426,
+      "origin_l2_max": 68.14628601074219,
+      "n_anchors": 30,
+      "angles_deg": [
+        0.0,
+        2.0,
+        4.0,
+        6.0,
+        8.0,
+        10.0,
+        12.0,
+        14.0,
+        16.0,
+        18.0,
+        20.0,
+        22.0,
+        24.0,
+        26.0,
+        28.0,
+        30.0,
+        32.0,
+        34.0,
+        36.0,
+        38.0,
+        40.0,
+        42.0,
+        44.0,
+        46.0,
+        48.0,
+        50.0,
+        52.0,
+        54.0,
+        56.0,
+        58.0,
+        60.0
+      ],
+      "model_full": "qwen3-1.7b",
+      "perturb_layer": 2,
+      "measure_layer": 26
+    }
+  ],
+  "caveats": [
+    "Different anchor corpus/count, grid, pair cohort, hardware/runtime, and model architecture. No causal attribution to model identity.",
+    "Only isotropic controls are compared here. No Qwen-specific random-activation-difference fit cache is present in the pinned release.",
+    "Original raw control data contain the recorded origin responses; no numerical-floor correction is applied.",
+    "The common-pair comparison uses the deterministic intersection of eligible named contrasts, not matched latent directions.",
+    "The published-figure plotting path filters model columns by their own overlaps and then by the target Gemma overlaps. This gives 310 Qwen pairs; the Qwen-only cutoff gives 326. Ordered historical duplicates are collapsed with the original last-entry-wins rule."
+  ]
+}
