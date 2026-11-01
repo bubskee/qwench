@@ -23,9 +23,10 @@ def save(fig, path):
     plt.close(fig)
 
 
-def normalized_contour(record, run):
+def normalized_contour(record, run, anchor_indices=None):
     data = np.load(run / 'surfaces' / (record['id'] + '.npz'))
-    angles, median = data['angles_deg'], np.median(data['l2'], axis=0)
+    grid = data['l2'] if anchor_indices is None else data['l2'][anchor_indices]
+    angles, median = data['angles_deg'], np.median(grid, axis=0)
     t1, t2 = record['headline'].get('intercepts', [None, None])
     if t1 is None or t2 is None:
         return None
@@ -166,6 +167,40 @@ def diagnostics(rows, run, out):
     save(fig,out/'fixed-diagnostics')
 
 
+def sign_geometry(rows, run, out):
+    primary = {r['pair_id']: r for r in rows if r['tag'] == 'primary'}
+    by_pair = {}
+    for r in rows:
+        if r['tag'].startswith('signs'):
+            by_pair.setdefault(r['pair_id'], []).append(r)
+    ready = {key: values for key, values in by_pair.items() if len(values) == 3}
+    if not ready:
+        return
+    fig, axes = plt.subplots(1, len(ready), figsize=(5 * len(ready), 5), squeeze=False)
+    for ax, (key, variants) in zip(axes.flat, ready.items()):
+        p0 = primary[key]
+        data = np.load(run / 'surfaces' / (p0['id'] + '.npz'))
+        median = np.median(data['l2'][:4], axis=0)
+        matched = {**p0, 'headline': A.fit(data['angles_deg'], median, A.threshold(median))}
+        for r, indices in [(matched, list(range(4)))] + [(r, None) for r in variants]:
+            points = normalized_contour(r, run, indices)
+            signs = np.array(r['signs'])
+            if points is not None:
+                points = points * signs
+                ax.plot(points[:, 0], points[:, 1], color='#317b67', linewidth=2)
+            p = r['headline']['p']
+            label = 'no fit' if p is None else f'p={p:.2f}'
+            ax.text(.65 * signs[0], .68 * signs[1], label, ha='center', fontsize=10,
+                    bbox={'facecolor':'white','edgecolor':'none','alpha':.8})
+        theta = np.linspace(0,2*np.pi,300)
+        ax.plot(np.cos(theta),np.sin(theta),':',color='#999999',linewidth=1)
+        ax.axhline(0,color='#bbbbbb',linewidth=.6); ax.axvline(0,color='#bbbbbb',linewidth=.6)
+        ax.set(xlim=(-1.3,1.3),ylim=(-1.3,1.3),aspect='equal',xlabel=p0['a']+' direction',ylabel=p0['b']+' direction',title=p0['a']+' × '+p0['b'])
+        ax.spines[['top','right']].set_visible(False)
+    fig.suptitle('Changing the signs of the push: identical first four English anchors\nEach quadrant normalized by its own axis crossings and threshold; this is a shape comparison.',fontsize=12)
+    save(fig,out/'sign-geometry')
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--run',type=Path,default=ROOT/'reports/stress-4b-v1')
@@ -177,6 +212,7 @@ def main():
     if primary:
         gallery(primary,run,out); anchor_plot(primary,plan,out); paired_controls(primary,plan,out)
     diagnostics(rows,run,out)
+    sign_geometry(rows,run,out)
     print('PLOTTED',len(rows),'surfaces')
 
 if __name__=='__main__':

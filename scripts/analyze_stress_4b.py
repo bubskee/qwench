@@ -187,6 +187,10 @@ def main():
         if r['kind'] == 'control':
             groups.setdefault(r['stratum'], []).append(r)
     grouped = {name: {**summarize(values), 'direction_bootstrap': direction_bootstrap(values)} for name, values in groups.items()}
+    strata = {label: summarize([r for r in primary if r['kind'] != 'control' and r['stratum'] == label])
+              for label in sorted({r['stratum'] for r in primary if r['kind'] != 'control'})}
+    unflagged = {name: summarize([r for r in values if not r['headline'].get('flags')])
+                 for name, values in groups.items()}
     # Same-pair reference comparisons use only the paper's own eligible Gemma CSV.
     paired_reference = []
     reference_path = args.reference_dir / 'results/conic_comparison_gemma_L2.csv'
@@ -240,38 +244,56 @@ def main():
                                   'scope': 'Fixed feature/control cohort, shared anchor resamples; control families pooled descriptively.'}
     summary = {'complete': (run / 'COMPLETE.json').exists(), 'completed_surfaces': len(rows), 'planned_surfaces': len(plan['tasks']),
                'primary_completed': len(primary), 'groups': grouped, 'paired_gemma_reference': paired_reference,
+               'feature_strata': strata, 'unflagged_sensitivity_only': unflagged,
                'fixed_cohort_anchor_contrasts': anchor_contrasts,
                'eligibility': {k: {'possible': n, 'eligible': n - rejections[k]} for k, n in eligibility.items()},
                'diagnostics': comparison, 'source_sha256': source_hash,
                'scope': 'One new model and a prospective stress cohort; feature coverage is not a random sample of all latent features. Controls and feature pairs are few and share directions.'}
     write(out / 'summary.json', summary)
+    with (out / 'primary-results.csv').open('w', newline='') as handle:
+        writer = csv.DictWriter(handle, fieldnames=['id', 'a', 'b', 'kind', 'stratum', 'reasons', 'cosine', 'p',
+                                                    'radial_residual', 'n_contour_points', 'flags', 'anchor_lo90', 'anchor_hi90'])
+        writer.writeheader()
+        for r in primary:
+            interval = r.get('anchor_bootstrap', {}).get('interval_90') or [None, None]
+            writer.writerow({'id': r['pair_id'], 'a': r['a'], 'b': r['b'], 'kind': r['kind'], 'stratum': r['stratum'],
+                             'reasons': ';'.join(pairs[r['pair_id']]['reasons']), 'cosine': pairs[r['pair_id']]['cosine'],
+                             'p': r['headline']['p'], 'radial_residual': r['headline']['mean_radial_frac'],
+                             'n_contour_points': r['headline']['n_pts'], 'flags': ';'.join(r['headline'].get('flags', [])),
+                             'anchor_lo90': interval[0], 'anchor_hi90': interval[1]})
     # Summary distribution: every finite fit is included; flagged fits are hollow.
     labels = [('paper_features', 'Paper\nfeatures'), ('novel_features', 'New\nfeatures'),
               ('isotropic_random', 'Isotropic\nrandom'), ('random_activation_difference_mean30', 'Random\nactivation diff.'),
               ('same_prompt_random_relabelling', 'Same prompts,\nrandom labels')]
-    fig, axes = plt.subplots(1, 2, figsize=(12, 4.8), gridspec_kw={'width_ratios': [1.5, 1]})
+    fig, axes = plt.subplots(1, 3, figsize=(17, 4.8), gridspec_kw={'width_ratios': [1.3, 1.3, 1]})
     for i, (key, label) in enumerate(labels):
         values = groups.get(key, [])
         valid = [r for r in values if r['headline']['p'] is not None]
         jitter = np.linspace(-.18, .18, len(valid))
         color = '#367d68' if i < 2 else '#777d8a'
         for offset, row in zip(jitter, valid):
-            axes[0].scatter(i + offset, row['headline']['p'], s=40, edgecolor=color,
-                            facecolor='none' if row['headline'].get('flags') else color, zorder=3)
+            for ax in axes[:2]:
+                ax.scatter(i + offset, row['headline']['p'], s=40, edgecolor=color,
+                           facecolor='none' if row['headline'].get('flags') else color, zorder=3)
         ps = finite_ps(values)
         if len(ps):
-            axes[0].plot([i - .28, i + .28], [np.median(ps)] * 2, color=color, linewidth=2)
-    axes[0].axhline(2, color='#b66b36', linestyle='--', linewidth=1.3)
-    axes[0].set(xticks=range(len(labels)), xticklabels=[x[1] for x in labels], ylabel='Fitted superellipse p', title='Fresh 4B geometry: all completed primary fits')
+            for ax in axes[:2]:
+                ax.plot([i - .28, i + .28], [np.median(ps)] * 2, color=color, linewidth=2)
+    for ax in axes[:2]:
+        ax.axhline(2, color='#b66b36', linestyle='--', linewidth=1.3)
+        ax.set(xticks=range(len(labels)), xticklabels=[x[1] for x in labels], ylabel='Fitted superellipse p')
+        ax.tick_params(axis='x', labelsize=8)
+    axes[0].set_title('All completed primary fits')
+    axes[1].set(ylim=(1.5, 3.5), title='Same points, central range enlarged')
     finite_reference = [r for r in paired_reference if r['qwen4b_p'] is not None]
     if finite_reference:
         x = [r['gemma_cached_p'] for r in finite_reference]; y = [r['qwen4b_p'] for r in finite_reference]
-        axes[1].scatter(x, y, color='#367d9c', alpha=.8)
+        axes[2].scatter(x, y, color='#367d9c', alpha=.8)
         extent = [min(.5, min(x+y)), max(3., max(x+y))]
-        axes[1].plot(extent, extent, color='#777777', linestyle=':')
-        axes[1].axhline(2, color='#b66b36', linestyle='--', linewidth=1)
-        axes[1].axvline(2, color='#b66b36', linestyle='--', linewidth=1)
-    axes[1].set(xlabel='Gemma cached p, same eligible named pair', ylabel='Fresh Qwen3.5-4B p', title='Does the same pair transfer?')
+        axes[2].plot(extent, extent, color='#777777', linestyle=':')
+        axes[2].axhline(2, color='#b66b36', linestyle='--', linewidth=1)
+        axes[2].axvline(2, color='#b66b36', linestyle='--', linewidth=1)
+    axes[2].set(xlabel='Gemma cached p, same eligible named pair', ylabel='Fresh Qwen3.5-4B p', title='Same named pairs, adapted setup')
     for ax in axes:
         ax.spines[['top', 'right']].set_visible(False)
         ax.grid(alpha=.16); ax.set_axisbelow(True)
