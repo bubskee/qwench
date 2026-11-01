@@ -104,3 +104,25 @@ Hold the feature sweep. The next useful validation change is a cleaner
 review-continuation prompt with fresh tests; the current neutral `Note:`
 anchors often produce boilerplate even without intervention. No candidate
 is silently relabelled, reoriented, or promoted after a failed check.
+
+## Broader paper audit
+
+The [cached-paper audit](../reports/paper-audit/findings.md) reproduces the
+main family summaries, rotation curve, robustness conditions, and overlap
+counts. Eighteen selected raw-grid point fits match the cached fits within
+4.02e-9; the toy boundary was freshly evaluated at the released scalar
+settings and returns printed p=2.907. All eight original plotting scripts
+completed after fetching the token-position pair-list CSV.
+
+The distribution includes exceptions: 39/318 filtered contrastive pairs
+have p≤2, including Era × Tense at p≈1.539 with a 0.70% fit residual. The
+current residual figure's exact dot/clipping counts differ from the arXiv
+v1 caption. Later repository controls include shuffled weights, tilted
+ellipses, and J-lens perturbation directions; these are recorded separately
+from the paper's v1 appendices.
+
+Clarification: our output-steering gates are extra requirements for the
+semantic interpretation of our lens extension. They are not prerequisites
+used by the paper to select all candidate directions for geometry fitting.
+Our previous failures therefore do not settle whether those Qwen directions
+have privileged response geometry. That fresh LLM measurement remains unrun.

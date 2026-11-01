@@ -1,0 +1,42 @@
+{
+  "scope": "Fresh deterministic toy forward responses and boundary fit, using cached scalar hyperparameters; not scalar-parameter retraining or LLM inference.",
+  "revision": "a9355d4001500708a40a255bacfe559e6dc269c0",
+  "command": [
+    "python",
+    "-u",
+    "-m",
+    "scripts.plot_toy_boundary",
+    "--phase2_npz",
+    "runs/misalignment_sweep_H1024/phase2_d8192_H1024.npz",
+    "--out_dir",
+    "<qwench>/reports/paper-audit/toy-boundary"
+  ],
+  "working_directory": "<reference>/toy_model",
+  "device": "cpu",
+  "OMP_NUM_THREADS": "6",
+  "seed": 42,
+  "pair": [
+    2,
+    3
+  ],
+  "n_phis": 120,
+  "n_alpha": 2500,
+  "alpha_max": 25,
+  "threshold_fraction": 0.5,
+  "p_as_printed": 2.907,
+  "mean_radial_fraction_as_printed": 0.0013,
+  "matches_paper_rounded_2p91": true,
+  "checkpoint_sha256": "85b0dd200a63d255360b1b02a284037248bbb2a6c281a690bc951c6ff7df8151",
+  "source_sha256": {
+    "toy_model/scripts/plot_toy_boundary.py": "b7728cc745f96e4d4c7c3f02247267314e2ebfc87f3a3620210f55a2d4e05c5b",
+    "toy_model/scripts/random_sparse_baseline.py": "48760736e093b79da9edcd7e490f64b87bf562f8fa57b29040c67d4279e1e23b",
+    "toy_model/scripts/random_sparse_perturb.py": "e3c395e81dfb4ed2ac03fa6290483eeb3f325ad6fc0048e1044ca0ab23e78fee",
+    "toy_model/scripts/random_sparse_lp_beeswarm.py": "e15027c7749ce06aae7b5bbae4f2f51868c6d7accc4a9cb64df15f86ce7046ee",
+    "toy_model/scripts/random_sparse_misalignment_sweep.py": "6bac05515bda7502bbe7ec245417b1ef53e4f0af2d3e2e12a2228cf55dc547bd",
+    "toy_model/mft_denoising/nn.py": "447e39553bf031790ec5b322c9ccc390d87e332391ef99430ce25909a31d1ca5"
+  },
+  "output_sha256": {
+    "toy-boundary/toy_boundary_d8192_H1024_pair2-3_taufrac0.5.pdf": "83f10a7102cddec405223be4f15ab09dd6dd5cc11a1cf2a7bf74e9758cd2ab6d",
+    "toy-boundary/toy_boundary_d8192_H1024_pair2-3_taufrac0.5.png": "2cfae27e7d62098fb9d94eaa90b88bd926a7f4b72eb8c171e94cbfc1b74accec"
+  }
+}

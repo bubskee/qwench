@@ -1,0 +1,135 @@
+[
+  {
+    "name": "figure1_response",
+    "argv": [
+      "scripts/plotting/plot_combo_sweep.py",
+      "--target",
+      "gemma",
+      "--layer",
+      "2",
+      "--d1",
+      "Wealth",
+      "--d2",
+      "Gender",
+      "--max_angle",
+      "60",
+      "--out_tag",
+      "thrpair"
+    ],
+    "returncode": 0,
+    "seconds": 0.44305254193022847,
+    "copied_artifacts": [
+      "figures/figure1_response.png",
+      "figures/figure1_response.pdf"
+    ]
+  },
+  {
+    "name": "figure4_families",
+    "argv": [
+      "scripts/plotting/plot_beeswarm_direction_types.py",
+      "--target",
+      "gemma",
+      "--layer",
+      "2",
+      "--max_overlap",
+      ".10",
+      "--exclude_dirs",
+      "HonestyShort,TensePresent,Formal",
+      "--use_thrpair",
+      "--exact"
+    ],
+    "returncode": 0,
+    "seconds": 1.714917792007327,
+    "copied_artifacts": [
+      "figures/figure4_families.png",
+      "figures/figure4_families.pdf"
+    ]
+  },
+  {
+    "name": "figure5_rotation",
+    "argv": [
+      "scripts/plotting/plot_misalignment_llm.py",
+      "--target",
+      "gemma",
+      "--layer",
+      "2",
+      "--exact"
+    ],
+    "returncode": 0,
+    "seconds": 0.520611833082512,
+    "copied_artifacts": [
+      "figures/figure5_rotation.png",
+      "figures/figure5_rotation.pdf"
+    ]
+  },
+  {
+    "name": "figure6_ablations",
+    "argv": [
+      "scripts/plotting/plot_robustness_beeswarm.py",
+      "--target",
+      "gemma",
+      "--layer",
+      "2",
+      "--max_overlap",
+      ".10",
+      "--exclude_dirs",
+      "Formal,HonestyShort,TensePresent",
+      "--use_thrpair",
+      "--exact"
+    ],
+    "returncode": 0,
+    "seconds": 4.655627415981144,
+    "copied_artifacts": [
+      "figures/figure6_ablations.pdf",
+      "figures/figure6_ablations.png"
+    ]
+  },
+  {
+    "name": "appendixA_overlap",
+    "argv": [
+      "scripts/plotting/build_directions_appendix.py"
+    ],
+    "returncode": 0,
+    "seconds": 1.167977208038792,
+    "copied_artifacts": [
+      "figures/appendixA_overlap.pdf",
+      "figures/appendixA_overlap.png"
+    ]
+  },
+  {
+    "name": "appendixB_residuals",
+    "argv": [
+      "scripts/plotting/plot_residuals_beeswarm.py"
+    ],
+    "returncode": 0,
+    "seconds": 4.096260584075935,
+    "copied_artifacts": [
+      "figures/appendixB_residuals.pdf",
+      "figures/appendixB_residuals.png"
+    ]
+  },
+  {
+    "name": "figure7_toy_rotation_cached",
+    "argv": [
+      "toy_model/scripts/plot_misalignment_lp.py",
+      "--npz",
+      "/Users/bubskee/Documents/Codex/2026-11-01/alri/work/fsec-reference/toy_model/runs/misalignment_sweep_H1024/lp_vs_angle_no_feature_orth.npz",
+      "--out",
+      "/Users/bubskee/Documents/Codex/2026-11-01/alri/outputs/qwench/reports/paper-audit/figures/figure7_toy_rotation_cached.png"
+    ],
+    "returncode": 0,
+    "seconds": 0.3766967080300674,
+    "copied_artifacts": []
+  },
+  {
+    "name": "jlens_later_addition",
+    "argv": [
+      "jlens/plot_beeswarm.py",
+      "--out",
+      "/Users/bubskee/Documents/Codex/2026-11-01/alri/outputs/qwench/reports/paper-audit/figures/jlens_later_addition"
+    ],
+    "returncode": 0,
+    "seconds": 0.6731242089299485,
+    "copied_artifacts": []
+  }
+]

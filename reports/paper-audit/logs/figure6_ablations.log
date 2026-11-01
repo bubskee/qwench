@@ -1,0 +1,43 @@
+Columns with data:
+  Model              gemma-2-9b  n=318
+  Model              qwen3-1.7b  n=310
+  Model              llama-3.1-8b  n=318
+  Model              mistral-7b-v0.3  n=307
+  Model              aya-expanse-8b  n=314
+  Model               yi-1.5-9b  n=236
+  Perturb. layer            L=2  n=318
+  Perturb. layer            L=5  n=316
+  Perturb. layer           L=10  n=314
+  Perturb. layer           L=20  n=301
+  Measure layer          penult  n=318
+  Measure layer        penult-5  n=318
+  Measure layer       penult-10  n=318
+  Fit metric              $L^2$  n=318
+  Fit metric           $1-\cos$  n=318
+  Fit metric                 KL  n=318
+  Response threshold      0.5xT  n=318
+  Response threshold      1.0xT  n=318
+  Response threshold      2.0xT  n=318
+  Perturb. method    norm-matched  n=318
+  Perturb. method      additive  n=318
+  Anchor source      FineWeb-edu  n=318
+  Anchor source      Wikipedia (en)  n=318
+  Anchor source      Wikipedia (zh)  n=318
+  Anchor source            Code  n=318
+  Token position       pos $-1$  n=318
+  Token position       pos $-2$  n=318
+  Token position       pos $-3$  n=318
+
+Direction-bootstrap 95% CIs (pooled per column):
+  Model               mean=2.4086  CI=[2.3388, 2.4833]  half-width=0.0722
+  Perturb. layer      mean=2.4355  CI=[2.3522, 2.5292]  half-width=0.0885
+  Measure layer       mean=2.3463  CI=[2.2707, 2.4405]  half-width=0.0849
+  Fit metric          mean=2.3818  CI=[2.2874, 2.4960]  half-width=0.1043
+  Response threshold  mean=2.3665  CI=[2.2803, 2.4698]  half-width=0.0947
+  Perturb. method     mean=2.4128  CI=[2.2964, 2.5598]  half-width=0.1317
+  Anchor source       mean=2.2913  CI=[2.2257, 2.3615]  half-width=0.0679
+  Token position      mean=2.4406  CI=[2.3455, 2.5588]  half-width=0.1066
+saved results/figures/robustness_beeswarm_gemma_L2_ov0p1_excl-Formal-HonestyShort-TensePresent_thrpair_exact.png
+saved results/figures/robustness_beeswarm_gemma_L2_ov0p1_excl-Formal-HonestyShort-TensePresent_thrpair_exact.pdf
+findfont: Failed to find font weight medium for DejaVu Sans, now using 400.
+findfont: Failed to find font weight medium for DejaVu Sans, now using 400.

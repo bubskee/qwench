@@ -108,3 +108,9 @@ our semantic interpretation.
 - Each run records input hashes and source snapshots. The large-angle receipts also hash the reused direction tensor.
 
 The vectors are small saved artifacts, not copies of model weights.
+
+Later paper-audit clarification: the output-steering gates above were local
+requirements for our intended semantic interpretation, not selection rules
+for every candidate pair in the paper. These failed checks do not predict
+the directions' FSEC exponents; no such Qwen geometry fit has been run.
+See the [paper audit](../paper-audit/findings.md).

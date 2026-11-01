@@ -1,0 +1,11 @@
+axis maxes (median grid): 277.20 / 404.94  (base = min = 277.20)
+threshold T = 138.60
+random baseline: pooled 10 sweeps from results/sweeps_2d/sweep2d_gemma_L2_*__*_fineweb_60deg_dirrandom.pkl
+plateau-breaking angles:  Wealth=46.99  Gender=38.47  combo=45.48  random=49.52  (deg)
+
+paired per-anchor stats vs random reference (median over 10 dirs), angles in (0, 60] deg, 10000 anchor-bootstrap resamples:
+  Wealth                   min frac(anchors with diff>0) = 0.63   min 95% CI lower edge = 0.18   CI excludes 0 at all 30 angles: True
+  Gender                   min frac(anchors with diff>0) = 0.63   min 95% CI lower edge = 0.27   CI excludes 0 at all 30 angles: True
+  Wealth + Gender          min frac(anchors with diff>0) = 0.70   min 95% CI lower edge = 0.52   CI excludes 0 at all 21 angles: True
+saved results/figures/combo_sweep_gemma_L2_Wealth_Gender_to60deg_thrpair.png
+saved results/figures/combo_sweep_gemma_L2_Wealth_Gender_to60deg_thrpair.pdf

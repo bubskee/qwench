@@ -1,0 +1,31 @@
+{
+  "selection": "Post-hoc illustrative negative case: lowest cached p among the 318 overlap-filtered contrastive pairs. Not a representative sample.",
+  "pair": [
+    "Era",
+    "Tense"
+  ],
+  "cached_headline_p": 1.5386841930571453,
+  "original_boundary_plot_p_as_printed": 1.539,
+  "cache_sha256": "e86b84e0528825dd7854325d047e9198f27f7c3e2c87795ca896e3cd9d8425a0",
+  "command": [
+    "python",
+    "scripts/plotting/plot_fig3_boundary.py",
+    "--target",
+    "gemma",
+    "--layer",
+    "2",
+    "--d1",
+    "Era",
+    "--d2",
+    "Tense",
+    "--exact"
+  ],
+  "note": "Population count of p <= 2 is computed over all 318 pairs; this single case was selected to illustrate the lower tail.",
+  "cache_path": "results/sweeps_2d/sweep2d_gemma_L2_Era__Tense_fineweb_60deg.pkl",
+  "prepare_command": [
+    "git",
+    "sparse-checkout",
+    "add",
+    "/results/sweeps_2d/sweep2d_gemma_L2_Era__Tense_fineweb_60deg.pkl"
+  ]
+}

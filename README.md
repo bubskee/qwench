@@ -36,6 +36,10 @@ scripts below have their own small, fixed workloads.
 - [Direction validation](reports/directions/findings.md): block-2 and block-8
   candidate vectors, held-out recognition, random controls, and steering checks.
   Block 8 passes recognition/overlap, but neither pair is promoted for a sweep.
+- [Paper audit](reports/paper-audit/findings.md): eight original plotting
+  scripts, 18 sampled raw-grid refits, the recomputed toy boundary,
+  lower-tail counterexamples, and the appendices' limitations. Main cached
+  numerical patterns reproduce; the residual figure's exact caption counts differ.
 
 ## Reproduce these checks
 
@@ -85,6 +89,44 @@ directories reject changed data/protocol hashes; use a new version and
 directory for substantive revisions. Source snapshots preserve the exact
 implementation used by each completed stage. The current script also saves
 downstream L2 for causal scoring; earlier v1/v2 snapshots predate that field.
+
+## Broader cached-paper audit
+
+In an environment with `requirements-paper-audit.txt`, first obtain the
+reference checkout with `scripts/reproduce_paper.py`, then run:
+
+```bash
+python scripts/audit_paper.py --reference-dir /path/to/fsec-reference
+python scripts/audit_conic.py --reference-dir /path/to/fsec-reference
+python scripts/plot_paper_audit.py
+```
+
+The audit fetches fit/direction caches and a small selected set of raw
+sweeps with git. It does not fetch LLM weights or the full sweep archive.
+Locally, we reused the existing PyTorch environment without modifying it:
+
+```bash
+PYTHONPATH=/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages \
+uv run --no-project \
+  --python /Users/bubskee/workspace/qwen35-4b-lenses/.venv/bin/python \
+  --with-requirements requirements-reproduction.txt \
+  python scripts/audit_paper.py --reference-dir ../../work/fsec-reference
+```
+
+Use the same prefix for `scripts/audit_conic.py`. The plotting-only command
+needs the reproduction dependencies. To recompute the toy boundary, run
+inside the reference checkout's `toy_model/`, with PyTorch and the plotting
+dependencies available:
+
+```bash
+OMP_NUM_THREADS=6 python -m scripts.plot_toy_boundary \
+  --phase2_npz runs/misalignment_sweep_H1024/phase2_d8192_H1024.npz \
+  --out_dir /path/to/qwench/reports/paper-audit/toy-boundary
+```
+
+The negative-case boundary uses the original figure script with `--d1 Era
+--d2 Tense --exact`, after adding its one raw sweep to the sparse checkout.
+See `reports/paper-audit/negative-case.json` for the exact command and selection note.
 
 ## Starting points
 
