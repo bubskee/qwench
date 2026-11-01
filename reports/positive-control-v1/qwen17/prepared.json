@@ -1,0 +1,121 @@
+{
+  "seal": {
+    "protocol_sha256": "3ce94084a9c5d80a5114563fdc3c0b4554f9a1a7435f28b987530fedd44425e3",
+    "anchors_sha256": "4d01664295ae440ff095d33f89edc1a6bc7c7e12633af23ca09b1522629647af",
+    "feature_bank_sha256": "c9f55134a24c7ade5a1cbd468abc0d5a229bf8ca1ca6ae00b9b05f283a1851dd",
+    "reference_revision": "a9355d4001500708a40a255bacfe559e6dc269c0"
+  },
+  "model": {
+    "key": "qwen17",
+    "id": "Qwen/Qwen3-1.7B",
+    "revision": "70d244cc86ccca08cf5af4e1e306ecf908b1ad5e",
+    "measure_layer": 26
+  },
+  "pairs": [
+    {
+      "id": "gender_age",
+      "a": "Gender",
+      "b": "Age",
+      "kind": "contrastive",
+      "selection": "Original saved Qwen 1.7B positive case; same released axis order.",
+      "raw_cosine": -0.07321149110794067,
+      "eligible": true
+    },
+    {
+      "id": "wealth_gender",
+      "a": "Wealth",
+      "b": "Gender",
+      "kind": "contrastive",
+      "selection": "Familiar paper figure pair; same released axis order.",
+      "raw_cosine": 0.05944811552762985,
+      "eligible": true
+    },
+    {
+      "id": "random_000_001",
+      "a": "random_000",
+      "b": "random_001",
+      "kind": "isotropic",
+      "selection": "First released isotropic pair; seed-42 construction verified against original directions.",
+      "raw_cosine": 0.007219552993774414,
+      "eligible": true
+    }
+  ],
+  "directions": {
+    "Age": {
+      "pairs": 30,
+      "raw_norm": 12.930317878723145,
+      "released_prompt_hashes_match": true,
+      "prompts_a_sha256": "398098baedfb9df568c7910e3297f6d818a380d5b5a60745c06033620528742b",
+      "prompts_b_sha256": "b5ae2697b3385338df05b23d7689a3080f3acc1ba6f70429c7e07fbecb909381"
+    },
+    "Gender": {
+      "pairs": 30,
+      "raw_norm": 9.685738563537598,
+      "released_prompt_hashes_match": true,
+      "prompts_a_sha256": "13a8c71cb6a3430a9c314a52c62588afca238d4300de786db7d4563716e3e7e5",
+      "prompts_b_sha256": "e83506c8da1b67751df6fa5bfde4423386cec081b2733cac6c51155ca11be1fb"
+    },
+    "Wealth": {
+      "pairs": 30,
+      "raw_norm": 16.495258331298828,
+      "released_prompt_hashes_match": true,
+      "prompts_a_sha256": "94e12a323e97e9d4853755c361eb60378d8356f6de2103ecb8da89d05a60235e",
+      "prompts_b_sha256": "47256b317b18e1505d26cfbeeca9a0a862b8d79020638bf34d29728d16727797"
+    }
+  },
+  "original_direction_cosines": {
+    "Age": 0.9999940395355225,
+    "Gender": 0.9999850988388062,
+    "Wealth": 0.9999955296516418,
+    "random_000": 1.0,
+    "random_001": 1.0
+  },
+  "validation": {
+    "stop_full_layer_2": 0.0,
+    "stop_full_layer_26": 0.0,
+    "fixed_prefix_replay_vs_native": 0.0,
+    "original_suffix_parity": [
+      {
+        "batch": 1,
+        "coordinates": [
+          0.0,
+          0.0
+        ],
+        "max_absolute_error": 0.0
+      },
+      {
+        "batch": 1,
+        "coordinates": [
+          8.0,
+          6.0
+        ],
+        "max_absolute_error": 0.0
+      },
+      {
+        "batch": 8,
+        "coordinates": [
+          0.0,
+          0.0
+        ],
+        "max_absolute_error": 0.0
+      },
+      {
+        "batch": 8,
+        "coordinates": [
+          8.0,
+          6.0
+        ],
+        "max_absolute_error": 0.0
+      }
+    ],
+    "timing": {
+      "examples": 192,
+      "seconds": 0.611792791984044,
+      "examples_per_second": 313.8317458388877,
+      "estimated_seconds_per_30_anchor_surface": 91.86451142135412
+    }
+  },
+  "mean_anchor_norm": 30.66249656677246,
+  "directions_sha256": "06522a3318f0fa5f41f03006d55e986f53bfc4f8c9654c016aa63200ebb93a0c",
+  "prefixes_sha256": "558d663971866370280c4728ce5fd096cf1914219e3d816bac93ba9e97a3b8a0"
+}
