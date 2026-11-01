@@ -1,0 +1,176 @@
+{
+  "version": "stress-4b-v1",
+  "scope": "Fresh Qwen3.5-4B geometry stress test; no steering-quality gate. Fixed protocol before inspecting new exponents.",
+  "feature_data": "data/stress-features-v1.json",
+  "corpus_path": "/Users/bubskee/Documents/Codex/2026-10-30/che/outputs/qwen35-s-lens/corpus/dclm-256.json",
+  "corpus_sha256": "1161846d9828822b38b020e4253606703310703c4293ee38ed96ba1aa7624cf1",
+  "corpus_provenance_path": "/Users/bubskee/Documents/Codex/2026-10-30/che/outputs/qwen35-s-lens/corpus/dclm-256.provenance.json",
+  "corpus_provenance_sha256": "ad4896b4b69750933eb4ef5800fe556e0cbbec83db4043d3c7250cf43bfdb975",
+  "anchor_count": 8,
+  "anchor_tokens": 5,
+  "anchor_seed": 20261101,
+  "direction_layer": 2,
+  "measurement_layer": 30,
+  "batch_size": 64,
+  "angles_deg": [
+    0,
+    5,
+    10,
+    15,
+    20,
+    25,
+    30,
+    35,
+    40,
+    45,
+    50,
+    55,
+    60
+  ],
+  "threshold_fraction": 0.5,
+  "threshold_factors": [
+    0.5,
+    1,
+    2
+  ],
+  "max_abs_cosine": 0.1,
+  "selection_seed": 147,
+  "paper_pairs_per_stratum": 2,
+  "novel_pairs_per_stratum": 1,
+  "coverage_rule": "After stratified sampling and fixed pairs, add seed-shuffled eligible edges until all possible feature names are covered or 40 feature pairs are reached. No replacement using measured p.",
+  "max_feature_pairs": 40,
+  "fixed_pairs": [
+    [
+      "Gender",
+      "Wealth"
+    ],
+    [
+      "Era",
+      "Tense"
+    ],
+    [
+      "Number",
+      "Tense"
+    ],
+    [
+      "Era",
+      "Wealth"
+    ],
+    [
+      "Era",
+      "Number"
+    ],
+    [
+      "Refusal",
+      "Tense"
+    ],
+    [
+      "Sentiment",
+      "Spanish"
+    ],
+    [
+      "Size",
+      "Temperature"
+    ]
+  ],
+  "control_seeds": [
+    101,
+    202,
+    303
+  ],
+  "controls": [
+    "isotropic_random",
+    "random_activation_difference_mean30",
+    "same_prompt_random_relabelling"
+  ],
+  "label_shuffle_sources": [
+    [
+      "Gender",
+      "Wealth"
+    ],
+    [
+      "Sentiment",
+      "Spanish"
+    ],
+    [
+      "Size",
+      "Temperature"
+    ]
+  ],
+  "control_overlap_policy": "Apply the same raw absolute-cosine filter; report excluded controls without replacing them.",
+  "challenge_pairs": [
+    [
+      "Gender",
+      "Wealth"
+    ],
+    [
+      "Era",
+      "Tense"
+    ],
+    [
+      "Sentiment",
+      "Spanish"
+    ],
+    [
+      "Size",
+      "Temperature"
+    ]
+  ],
+  "challenge_anchors": [
+    "El puente de madera estaba",
+    "Despu\u00e9s del desayuno abri\u00f3 la puerta",
+    "def calculate_total(items): return sum(items)",
+    "for item in records: print(item)"
+  ],
+  "challenge_notes": "First five tokens, two Spanish and two code anchors; separate from primary English-web results.",
+  "sign_check_primary_anchor_indices": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "sign_check_quadrants": [
+    [
+      1,
+      -1
+    ],
+    [
+      -1,
+      1
+    ],
+    [
+      -1,
+      -1
+    ]
+  ],
+  "refinement_rule": "Refine the first eligible fixed feature pair and first eligible isotropic control pair to 2.5-degree Cartesian spacing on all eight primary anchors. These are fixed before p is observed.",
+  "fine_angles_deg": [
+    0.0,
+    2.5,
+    5.0,
+    7.5,
+    10.0,
+    12.5,
+    15.0,
+    17.5,
+    20.0,
+    22.5,
+    25.0,
+    27.5,
+    30.0,
+    32.5,
+    35.0,
+    37.5,
+    40.0,
+    42.5,
+    45.0,
+    47.5,
+    50.0,
+    52.5,
+    55.0,
+    57.5,
+    60.0
+  ],
+  "analysis": "Original exact-geodesic fitter, report all attempts and flags; per-anchor fits, leave-one-anchor-out, threshold sensitivity and tilted-ellipse comparisons. Geometry only, no lens-based selection.",
+  "no_rescue_rule": "Do not switch layers, change labels, thresholds or pair selection to recover a positive result. Refinements/diagnostics follow the fixed rules above."
+}
