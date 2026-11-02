@@ -1,0 +1,14 @@
+{
+  "version": "toy-characterization-diagnostics-v1",
+  "status": "Secondary diagnostic designed after inspecting orthogonal-code aggregate results; not a prespecified primary test.",
+  "reason": "The separable control knows the true encoder and removes observation noise perpendicular to its span. Compare a projection-matched natural network to distinguish that information advantage from cross-latent interactions. Also quantify effects of the known [0,1] target bounds.",
+  "families": ["toy-characterization-v1", "toy-characterization-coupled-v1"],
+  "checkpoints": [0, 100000],
+  "networks": "all 60 networks per family, both fixed endpoints; no selection by p or recovery",
+  "data": "Reuse exactly the already sealed recovery examples, contexts and Gaussian draws at std 0/0.15/0.35/0.6",
+  "methods": ["natural raw", "natural clipped to [0,1]", "natural after known-context orthogonal projection onto the encoder column span", "projected natural clipped to [0,1]", "separable raw", "separable clipped to [0,1]"],
+  "projection": "P_B=B*(B^T B)^-1*B^T; context left unchanged. Natural and separable now receive the same known-subspace filtering. This is oracle preprocessing, not a learned correction stage.",
+  "geometry_invariance": "For feature-axis perturbations of clean encoded inputs, projection leaves the input unchanged. Verify projected/natural outputs agree on the entire first-pair 31x31 absent ++ grid at each context. Thus projection changes recovery to isotropic observation noise while preserving the primary feature-plane geometry.",
+  "metrics": ["pooled all-feature MSE", "positive-bit MSE", "inactive-bit MSE", "clean MSE and its increase under corruption"],
+  "scope": "Do not claim output clipping preserves geometry. Do not infer a specific learned correction mechanism from a raw-versus-projected difference. The projection uses ground-truth generative information supplied to the analytic controls. No new training or model selection."
+}
