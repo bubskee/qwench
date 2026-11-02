@@ -1,0 +1,39 @@
+{
+  "version": "squared-recovery-v1",
+  "question": "Does a trained squared-ReLU toy differ from an independent-feature squared-ReLU control in boundary geometry or fixed-target corruption recovery?",
+  "scope": "Post-hoc follow-up to known p≈4 geometry, not a blinded replication or a trained denoising model. New control/recovery outcomes are not used to tune this protocol.",
+  "trained_id": "relu2_50_L2_s0",
+  "source_report": "toy-scalar-comparison-v1",
+  "control": "100→50→100, bias-free squared ReLU. One hidden unit per competent feature in ascending index order. Encoder coefficient equals the trained encoder-column norm; decoder coefficient matches the trained isolated positive unit-feature self-output. All other connections zero. No cross-feature computation; scalar clipping/squaring can itself suppress noise. Width and positive single-feature responses are matched, not trainable degrees of freedom or full off-axis behavior.",
+  "geometry": {
+    "pair": "first competence-conditioned pair in the saved trained-model plan",
+    "backgrounds": "the same four frozen sparse backgrounds from the source report",
+    "anchor_values": [0, 0.5, -0.5],
+    "sign": [1, 1],
+    "kinds": ["encoder_columns", "gram_matched_random"],
+    "random_seed": 44201,
+    "grid_points": 41,
+    "amplitude_max": 1.5,
+    "threshold_fractions": [0.25, 0.5, 0.75],
+    "primary_fraction": 0.5,
+    "response": "L2 distance to each model's own clean output, median over four backgrounds; same original additive fitter and flags"
+  },
+  "corruption": {
+    "samples": 2048,
+    "noise_draws_per_sample": 4,
+    "data_seed": 44701,
+    "noise_seed": 44702,
+    "activation_probability": 0.02,
+    "values": "signed Uniform(-1,1) when present, all 100 input dimensions",
+    "coordinate_noise_std": [0, 0.025, 0.075, 0.15],
+    "primary_std": 0.075,
+    "target": "ReLU(clean x), held fixed as Gaussian input corruption varies",
+    "reference": "ReLU(corrupted x): perform the original task on the corrupted input without restoring the clean input",
+    "methods": ["natural_squared_relu", "clean_anchor_jacobian_oracle"],
+    "oracle": "f(clean x)+J(clean x)·noise; shares the natural model's clean output and first derivative. Has privileged clean-anchor access and is only a diagnostic ablation, not a deployable denoiser.",
+    "primary_outputs": "the same 50 trained competent features for both networks and the reference",
+    "metrics": ["clean and noisy task MSE", "MSE on positive-active supported features", "MSE on absent supported features", "MSE on negative-present supported features", "inactive fraction predicted >0.1", "distance to each model's clean output", "full 100-output task MSE", "paired trained-minus-control error differences"],
+    "bootstrap": {"replicates": 256, "seed": 44703, "unit": "clean example, keeping its four noise draws together"}
+  },
+  "stopping_rule": "One trained checkpoint, one analytic independent-feature control, one pair, three activity states, four small noise levels. No training, extra seeds, feature search, or expansion based on results. Save plots, all fits/flags, raw per-example error sums/counts and a short findings note."
+}
