@@ -1,6 +1,6 @@
 """Assemble completed, separately tracked scalar training cohorts without retraining."""
 from pathlib import Path
-import json,shutil
+import json,shutil,torch
 from safetensors.torch import load_file,save_file
 import scalar_comparison_runtime as R
 import train_scalar_core as C
@@ -9,6 +9,11 @@ import train_scalar_additions as E
 def main():
  assert not (R.OUT/'TRAINING-COMPLETE.json').exists(),'Do not overwrite completed aggregation'
  assert C.sha(C.WORK/'data.safetensors')==E.sha(E.WORK/'data.safetensors')
+ cstate=torch.load(C.WORK/'resume.pt',map_location='cpu',weights_only=True)
+ estate=torch.load(E.WORK/'resume.pt',map_location='cpu',weights_only=True)
+ assert cstate['step']==estate['step']==100000
+ assert torch.equal(cstate['rng'],estate['rng']),'Final minibatch generator states differ'
+ R.write(R.OUT/'final-minibatch-check.json',{'updates_each':100000,'final_generator_state_identical':True,'dataset_sha256':C.sha(C.WORK/'data.safetensors'),'sampling':'Same seeded torch.randint call per update; checkpoint continuation and fresh controls have the same final RNG state.'})
  weights={};proof={};seals=[]
  for source in [C,E]:
   marker=source.OUT/'TRAINING-COMPLETE.json';done=json.loads(marker.read_text());assert done['step']==100000
