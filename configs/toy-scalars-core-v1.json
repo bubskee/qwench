@@ -1,0 +1,132 @@
+{
+  "version": "toy-scalars-core-v1",
+  "question": "How does activation choice affect learned feature computation, functional neuron sharing and FSEC-style geometry?",
+  "reference_recipe": "FranciscoHS/toy-model-cis-code at 8c827b8c07bcf39097ee21707c62641a9201a216, train_from_scratch.py",
+  "task": {
+    "features": 100,
+    "activation_probability": 0.02,
+    "values": "Uniform(-1,1) when present",
+    "target": "ReLU(x) for every architecture",
+    "train_pool_size": 800000,
+    "train_data_seed": 31337,
+    "eval_size": 65536,
+    "eval_seed": 9999
+  },
+  "architectures": [
+    {
+      "name": "relu50",
+      "activation": "relu",
+      "width": 50,
+      "parameters": 10000
+    },
+    {
+      "name": "gelu50",
+      "activation": "gelu",
+      "width": 50,
+      "parameters": 10000
+    },
+    {
+      "name": "silu50",
+      "activation": "silu",
+      "width": 50,
+      "parameters": 10000
+    }
+  ],
+  "comparisons": {
+    "primary": "ReLU, GELU and SiLU, all width 50 and 10000 parameters"
+  },
+  "loss_exponents": [
+    2,
+    4
+  ],
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "training": {
+    "steps": 100000,
+    "batch_size": 8192,
+    "optimizer": "Adam",
+    "lr": 0.01,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0,
+    "schedule": "cosine to zero over exactly 100000 updates",
+    "dtype": "float32",
+    "device": "mps",
+    "cpu_threads": 2,
+    "minibatch_seed": 54321,
+    "checkpoint_every": 10000,
+    "log_every": 1000,
+    "validation_every": 10000
+  },
+  "initialization": "For each seed, draw full 50x100 W_gate in Uniform(-.1,.1), 100x50 W_out in Uniform(-.15,.15), then independent W_value in Uniform(-.1,.1). Identical role-matched values across architectures/losses, truncated for width 33. SwiGLU has an independent value projection. No activation-specific scaling/tuning.",
+  "pairing": "Every architecture/objective/initialization sees the same fixed training pool and minibatch sequence. Seeds vary initialization. Loss is a sum of per-network batch/feature means, preserving individual Adam gradient scale.",
+  "task_metrics": [
+    "per-feature MSE conditioned on positive input",
+    "coverage with MSE<0.05 and correct unit-probe argmax/gain>=0.25",
+    "inactive RMSE and fraction output>0.1",
+    "negative-present error",
+    "isolated versus multi-feature active error"
+  ],
+  "sharing_metrics": "Per-feature/per-neuron diagonal task contributions W_out[j,n]*h_n(e_j), their participation ratios, and coverage relative to width. These are operational sharing/competence indicators, not a universal proof or scalar amount of CiS. ReLU-only binary-code assumptions are not imposed on other activations.",
+  "geometry": {
+    "selection_seed": 20261102,
+    "fixed_pairs": 6,
+    "eligible_pairs": 3,
+    "selection": "Before training: six pairs from seeded permutation of all features. After training, before inspecting p: first three eligible pairs in a fixed seeded ordering of all feature pairs for each network. Log overlap/exclusions, no p-based selection. Separate fixed-pair and competence-conditioned cohorts.",
+    "eligibility": "Both features have positive-active MSE<0.05, unit self-gain>=0.25 and correct unit-probe argmax",
+    "backgrounds": 4,
+    "background_seed": 20261103,
+    "pair_anchor_values": [
+      0,
+      0.5,
+      -0.5
+    ],
+    "signs": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        -1,
+        -1
+      ]
+    ],
+    "direction_kinds": [
+      "encoder_columns",
+      "gram_matched_random"
+    ],
+    "gated_directions": "Concatenate gate and value encoder columns; perturb both preactivation branches. Random directions match norms/cosine in this joint space.",
+    "amplitude_max": 1.5,
+    "grid_points": 41,
+    "threshold_fractions": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "primary_fraction": 0.5,
+    "fit": "Original additive superellipse fitter plus PSD tilted quadratic, same as toy-cis-v1; report all flags and invalids",
+    "fine_check": "First competence-conditioned pair per network if available, ++ sign, negative pair anchor, encoder and random directions, 81x81"
+  },
+  "interpretation": "Compare held-out task fidelity and functional sharing independently of p. Different p may reflect nonlinear function shape; failures to learn under the fixed optimizer/init are training-regime results. One shared task and three initialization seeds do not establish a general activation ranking or grokking tendency.",
+  "stopping_rule": "Continue all 18 scalar networks to exactly 100000 updates; no SwiGLU training. Other scalar functions, if requested, will be separately trained cohorts.",
+  "continuation": {
+    "parent_run": "reports/toy-trained-v1",
+    "checkpoint_step": 30000,
+    "reason": "User explicitly abandoned SwiGLU; preserve scalar-network weights, optimizer, scheduler and RNG state.",
+    "networks": 18
+  }
+}
