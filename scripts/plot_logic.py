@@ -27,6 +27,7 @@ def get_score(record, which='natural', sigma=.35):
 
 def summarize(source):
     records = [json.loads(path.read_text()) for path in sorted((source / 'analysis').glob('*_t*.json'))]
+    controls = json.loads((source / 'projection-check.json').read_text())['records']
     assert len(records) == 180
     networks = []
     for record in records:
@@ -37,6 +38,12 @@ def summarize(source):
         row['clean_mse'] = get_score(record, 'natural', 0.)['all_mse']
         row['clean_balanced_mse'] = get_score(record, 'natural', 0.)['balanced_mse']
         row['noise_penalty'] = row['natural_all_mse'] - row['clean_mse']
+        for metric in ['all_mse', 'positive_mse', 'negative_mse', 'balanced_mse']:
+            row['projected_clipped_' + metric] = None
+            if meta['step'] == 30000:
+                score = next(r for r in controls if r['network']['key'] == meta['key'] and r['sigma'] == .35
+                             and r['map'] == 'projected_clipped_natural')
+                row['projected_clipped_' + metric] = score[metric]
         for name in ['within', 'across']:
             case = next(case for case in record['geometry'] if case['pair']['name'] == name and case['state'] == [0, 0])
             selected = case['backgrounds'][3]; fit = selected['fit']
@@ -75,13 +82,38 @@ def plot(source, out):
         writer = csv.DictWriter(stream, fieldnames=list(networks[0])); writer.writeheader()
         writer.writerows({k: json.dumps(v) if isinstance(v, list) else v for k, v in row.items()} for row in networks)
     final = [r for r in networks if r['step'] == 30000]
+    lines = ['# Numerical summary', '', 'Final checkpoints; means over five activations and three initialization seeds. Noise std 0.35. MSE targets remain clean logical labels.', '',
+             '| Task / training | Raw MSE | Clipped MSE | Projected + clipped MSE | Valid within fits | Valid across fits |',
+             '|---|---:|---:|---:|---:|---:|']
+    for task in ['and_clean', 'and_denoise', 'xor_clean', 'xor_denoise']:
+        selected = [r for r in final if r['task'] == task]
+        values = [S.mean(r[key] for r in selected) for key in ['natural_all_mse', 'clipped_natural_all_mse', 'projected_clipped_all_mse']]
+        good = [sum(r[pair + '_p'] is not None and not r[pair + '_flags'] for r in selected) for pair in ['within', 'across']]
+        lines.append(f'| {task} | {values[0]:.6f} | {values[1]:.6f} | {values[2]:.6f} | {good[0]}/15 | {good[1]}/15 |')
+    lines += ['', 'Noise-trained activations; each cell uses three initialization seeds. Geometry uses the across pair at the prespecified 00/background-3 slice. Only unflagged p values contribute to p means; validity counts are shown.', '',
+              '| Activation | AND p (valid) | AND projected/clipped MSE | XOR p (valid) | XOR projected/clipped MSE |',
+              '|---|---:|---:|---:|---:|']
+    for name in COLORS:
+        values = []
+        for task in ['and_denoise', 'xor_denoise']:
+            selected = [r for r in final if r['activation'] == name and r['task'] == task]
+            ps = [r['across_p'] for r in selected if r['across_p'] is not None and not r['across_flags']]
+            values += [(f'{S.mean(ps):.3f} ({len(ps)}/3)' if ps else 'NA (0/3)'), f'{S.mean(r["projected_clipped_all_mse"] for r in selected):.6f}']
+        lines.append('| ' + LABELS[name] + ' | ' + ' | '.join(values) + ' |')
+    lines += ['', 'Projected/clipped class errors:', '', '| Task / training | Positive MSE | Negative MSE | Class-balanced MSE |', '|---|---:|---:|---:|']
+    for task in ['and_clean', 'and_denoise', 'xor_clean', 'xor_denoise']:
+        selected = [r for r in final if r['task'] == task]
+        values = [S.mean(r['projected_clipped_' + key] for r in selected) for key in ['positive_mse', 'negative_mse', 'balanced_mse']]
+        lines.append('| ' + task + ' | ' + ' | '.join(f'{value:.6f}' for value in values) + ' |')
+    (out / 'numerical-summary.md').write_text('\n'.join(lines) + '\n')
+    p_top = max(6., 1.1 * max(r[pair + '_p'] for r in final for pair in ['within', 'across'] if r[pair + '_p'] is not None))
     fig, axes = plt.subplots(2, 3, figsize=(14, 7.7))
     for ri, task in enumerate(['and', 'xor']):
         for offset, regime, alpha in [(-.18, 'clean', .4), (.18, 'denoise', 1.)]:
             selected = [r for r in final if r['task'] == task + '_' + regime]
-            means = [S.mean(r['natural_all_mse'] for r in selected if r['activation'] == name) for name in COLORS]
-            low = [mean - min(r['natural_all_mse'] for r in selected if r['activation'] == name) for name, mean in zip(COLORS, means)]
-            high = [max(r['natural_all_mse'] for r in selected if r['activation'] == name) - mean for name, mean in zip(COLORS, means)]
+            means = [S.mean(r['projected_clipped_all_mse'] for r in selected if r['activation'] == name) for name in COLORS]
+            low = [mean - min(r['projected_clipped_all_mse'] for r in selected if r['activation'] == name) for name, mean in zip(COLORS, means)]
+            high = [max(r['projected_clipped_all_mse'] for r in selected if r['activation'] == name) - mean for name, mean in zip(COLORS, means)]
             axes[ri, 0].bar(np.arange(5) + offset, means, .33, color=list(COLORS.values()), alpha=alpha,
                            yerr=[low, high], capsize=2, label='Clean training' if regime == 'clean' else 'Noise training')
             for ci, pair in enumerate(['within', 'across'], 1):
@@ -95,18 +127,18 @@ def plot(source, out):
         example = next(r for r in final if r['task'].startswith(task))
         axes[ri, 0].axhline(example['Bayes_oracle_all_mse'], color='#368866', ls='--', label='Exact denoiser')
         axes[ri, 0].axhline(example['plugin_reference_all_mse'], color='#888888', ls=':', label='Linear-decode logic reference')
-        axes[ri, 0].set(ylabel=task.upper() + '\nFixed-target noisy MSE', title='Actual recovery, noise std 0.35')
+        axes[ri, 0].set(ylabel=task.upper() + '\nFixed-target noisy MSE', title='Recovery after projection + clipping')
         for ci, pair in enumerate(['within', 'across'], 1):
             axes[ri, ci].axhline(2, color='#aaaaaa', ls=':', lw=1)
             axes[ri, ci].set(title='Two bits feeding one output' if pair == 'within' else 'Bits feeding separate outputs',
-                             ylabel=task.upper() + '\nNominal fitted p', ylim=(.4, 10.15))
+                             ylabel=task.upper() + '\nNominal fitted p', ylim=(.4, p_top))
         for ax in axes[ri]:
             ax.set_xticks(range(5), [LABELS[name].replace(' ', '\n') for name in COLORS], fontsize=8); style(ax)
     handles, labels = axes[0, 0].get_legend_handles_labels()
     fig.legend(handles, labels, loc='lower center', ncol=4, fontsize=8)
-    fig.suptitle('AND/XOR: task recovery and conditional geometry\nRecovery: mean/range of 3 seeds. Geometry: individual seeds; circles clean-trained, triangles noise-trained; hollow = flagged.', fontsize=12)
+    fig.suptitle('AND/XOR: task recovery and conditional geometry\nRecovery: noise std 0.35, mean/range of 3 seeds. Geometry: circles clean-trained, triangles noise-trained; hollow = flagged.', fontsize=12)
     fig.tight_layout(rect=(0, .08, 1, .91))
-    fig.text(.5, .055, 'Geometry uses the prespecified 00 anchor and background 3; across-pair AND partners are both on. Flagged p values are not reliable exponents.', ha='center', fontsize=9)
+    fig.text(.5, .055, 'Recovery panels use the final-only fairness check. Geometry uses the primary 00 anchor/background 3; across-pair AND partners are on.\nFlagged p values are not reliable exponents; missing points have no fitted exponent.', ha='center', fontsize=9)
     fig.savefig(out / 'overview.png', dpi=160, bbox_inches='tight'); plt.close(fig)
 
     fig, axes = plt.subplots(2, 2, figsize=(10, 8))
@@ -131,7 +163,7 @@ def plot(source, out):
                     measured = 'fit flagged' if fit['all_flags'] else f'p={fit["p"]:.2f}'
                     exact = 'fit flagged' if oracle_fit['all_flags'] else f'p={oracle_fit["p"]:.2f}'
                     ax.set(title=f'{task.upper()}, {pair} pair\nModel: {measured}; exact denoiser: {exact}',
-                           xlabel='First bit: fraction of a 0 → 1 flip', ylabel='Second bit: fraction of a 0 → 1 flip', aspect='equal')
+                           xlabel='First bit (0 → 1)', ylabel='Second bit (0 → 1)', aspect='equal')
     fig.suptitle('ReLU, noise-trained, seed 0: same assay on a network and an exact denoiser', fontsize=12)
     fig.tight_layout(rect=(0, .12, 1, .94))
     fig.text(.5, .035, 'Heat: model output-change norm / grid maximum. White contour: model; orange dashed: exact denoiser.\nEach contour uses half its own smaller maximum axis response. Interior curves are continuous probes between Boolean corners.', ha='center', fontsize=9)
@@ -150,9 +182,9 @@ def plot(source, out):
                 ax.plot(np.array(steps) + 1, [S.mean(r['natural_all_mse'] for r in selected if r['step'] == step) for step in steps], color=color, marker='o', label=LABELS[name])
             ref = next(r for r in networks if r['task'] == task + '_' + regime)
             ax.axhline(ref['Bayes_oracle_all_mse'], color='#368866', ls='--', lw=1)
-            ax.set_xscale('log'); ax.set_xticks([1, 5001, 30001], ['0', '5k', '30k'])
+            ax.set_xscale('log'); ax.set_yscale('log'); ax.set_xticks([1, 5001, 30001], ['0', '5k', '30k'])
             ax.set(title=task.upper() + ', ' + ('clean training' if regime == 'clean' else 'noise training'),
-                   xlabel='Training updates', ylabel='Fixed-target noisy MSE (std 0.35)'); style(ax)
+                   xlabel='Training updates', ylabel='Unclipped noisy MSE (std 0.35)'); style(ax)
     handles, labels = axes[0, 0].get_legend_handles_labels(); fig.legend(handles, labels, loc='lower center', ncol=5, fontsize=8)
     fig.suptitle('Learning the clean truth table and recovering corrupted answers\nThick: seed mean; faint: individual seeds; dashed green: exact denoiser.', fontsize=12)
     fig.tight_layout(rect=(0, .055, 1, .91)); fig.savefig(out / 'training-recovery.png', dpi=170, bbox_inches='tight'); plt.close(fig)

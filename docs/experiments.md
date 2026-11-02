@@ -21,6 +21,7 @@ links or rewriting historical evidence.
 | Five activations trained independently | [Findings](../reports/toy-scalar-comparison-v1/findings.md), [methods](../reports/toy-scalar-comparison-v1/METHODS.md) | `reproduce.py toy-figures/toy-refit/toy-train`; `configs/toy-scalar-comparison-v1.json` |
 | Squared-ReLU matched control and fixed-target recovery | [Findings](../reports/squared-recovery-v1/findings.md), [methods](../reports/squared-recovery-v1/METHODS.md) | `squared_recovery.py`, `plot_squared_recovery.py`, `audit_squared_recovery.py`; `configs/squared-recovery-v1.json`; one checkpoint, no new training |
 | Training/task/activation characterization | [Findings](../reports/toy-characterization-study-v1/findings.md), [methods](../reports/toy-characterization-study-v1/METHODS.md) | `reproduce.py study-figures/study-run/study-verify`; 120 new networks, 810 checkpoint frames, exact denoisers and separate recovery tests |
+| AND/XOR logical-task pilot | [Findings](../reports/toy-logic-v1/findings.md), [methods](../reports/toy-logic-v1/METHODS.md) | `run_logic.py`, `plot_logic.py`, `verify_logic.py`; 60 fresh networks, paired clean/noise training, exact logical denoisers and fixed-target recovery |
 | Formula-written toy weights | [Findings](../reports/toy-handwritten-v1/findings.md) | `write_toy_weights.py`, `evaluate_written_toys.py`; 11 constructed models versus 150 saved trained networks on fresh samples |
 
 Script names in the table are relative to `scripts/`. Commands for the older

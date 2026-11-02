@@ -190,6 +190,28 @@ uses one saved checkpoint and an independent-feature control. Its fixed-target
 corruption measurement runs on CPU with `requirements/toy.txt`; plotting and
 artifact checks need only `requirements/figures.txt`. It performs no training.
 
+## AND/XOR logical tasks
+
+The [logical-task pilot](../reports/toy-logic-v1/METHODS.md) trains 60 small
+networks from scratch on AND/XOR, with clean or noisy observations. With the
+full toy dependencies installed:
+
+```bash
+.venv/bin/python scripts/run_logic.py --prepare-only
+.venv/bin/python scripts/run_logic.py --resume
+```
+
+The new run stays in `work/reproductions/toy-logic-v1/`. To redraw the three
+saved figures on CPU, without training, use the figure dependencies and:
+
+```bash
+.venv/bin/python scripts/plot_logic.py --out work/reproductions/logic-figures
+.venv/bin/python scripts/verify_logic.py
+```
+
+The latter command checks the committed logical-pilot manifest and saved audit
+status; it does not repeat numerical checks or training.
+
 ## Earlier LLM experiments
 
 See the [experiment index](experiments.md) for every result and its original

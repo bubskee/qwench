@@ -1,0 +1,3228 @@
+{
+  "network": {
+    "activation": "relu",
+    "task": "xor_denoise",
+    "seed": 0,
+    "member": 9,
+    "step": 30000,
+    "key": "relu_xor_denoise_s0_t030000"
+  },
+  "geometry": [
+    {
+      "pair": {
+        "name": "within",
+        "bits": [
+          0,
+          1
+        ]
+      },
+      "state": [
+        0,
+        0
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.20458104345259245,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.8193214098817208,
+            0.8183241738103698
+          ],
+          "p": 1.3400843080268057,
+          "flags": [],
+          "mean_radial_frac": 0.018852782457221412,
+          "max_radial_frac": 0.04045537956591194,
+          "n_pts": 20,
+          "intercepts_feature_units": [
+            0.3564705620850735,
+            0.3548599632086982
+          ],
+          "quadratic": {
+            "cross_term": 0.3843746188364891,
+            "unconstrained_cross_term": 0.3843746188364891,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.024049196373086446,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.07365334624094501,
+          "min_axis_to_full_grid_range": 0.9987828511993908
+        },
+        "0.5": {
+          "threshold": 0.4091620869051849,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8193214098817208,
+            0.8183241738103698
+          ],
+          "p": 0.6104025091226601,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 1.5500872358616815,
+          "max_radial_frac": 3.1028351376691043,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.4663635688025758,
+            0.4646293862557372
+          ],
+          "quadratic": {
+            "cross_term": -0.6164155567055161,
+            "unconstrained_cross_term": -0.6164155567055161,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.20858041730981522,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.07365334624094501,
+          "min_axis_to_full_grid_range": 0.9987828511993908
+        },
+        "0.75": {
+          "threshold": 0.6137431303577774,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.8193214098817208,
+            0.8183241738103698
+          ],
+          "p": 1.2695099562842518,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.42051181758541367,
+          "max_radial_frac": 0.9117869794461735,
+          "n_pts": 48,
+          "intercepts_feature_units": [
+            0.5760015268836466,
+            0.5743906267826179
+          ],
+          "quadratic": {
+            "cross_term": -0.5210899441267154,
+            "unconstrained_cross_term": -0.5210899441267154,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.11446283846660983,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.07365334624094501,
+          "min_axis_to_full_grid_range": 0.9987828511993908
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.4088310913587856,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.8176621827175712
+            ],
+            "p": 0.6102841221345269,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.5485234513340893,
+            "max_radial_frac": 3.110936457072312,
+            "n_pts": 34,
+            "intercepts_feature_units": [
+              0.4641445486869329,
+              0.4625797017717233
+            ],
+            "quadratic": {
+              "cross_term": -0.6172116649255123,
+              "unconstrained_cross_term": -0.6172116649255123,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20904278471283286,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07369007441444823,
+            "min_axis_to_full_grid_range": 0.9984306006561153
+          },
+          "mean_vector_interaction_residual": 0.4982817234383309
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.4094930824515842,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735422,
+              0.8189861649031684
+            ],
+            "p": 0.5154643974720315,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 2.2365242214993604,
+            "max_radial_frac": 4.131988449447325,
+            "n_pts": 36,
+            "intercepts_feature_units": [
+              0.4685824351356112,
+              0.46667904681804856
+            ],
+            "quadratic": {
+              "cross_term": -0.6386605003974685,
+              "unconstrained_cross_term": -0.6386605003974685,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20795014324349867,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07361940322522245,
+            "min_axis_to_full_grid_range": 0.9991347803264442
+          },
+          "mean_vector_interaction_residual": 0.4908258551182519
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.4088310913587856,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.8176621827175712
+            ],
+            "p": 0.6102841221345269,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.5485234513340893,
+            "max_radial_frac": 3.110936457072312,
+            "n_pts": 34,
+            "intercepts_feature_units": [
+              0.4641445486869329,
+              0.4625797017717233
+            ],
+            "quadratic": {
+              "cross_term": -0.6172116649255123,
+              "unconstrained_cross_term": -0.6172116649255123,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20904278471283286,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07369007441444823,
+            "min_axis_to_full_grid_range": 0.9984306006561153
+          },
+          "mean_vector_interaction_residual": 0.4982817234383309
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.4094930824515842,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735422,
+              0.8189861649031684
+            ],
+            "p": 0.5154643974720315,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 2.2365242214993604,
+            "max_radial_frac": 4.131988449447325,
+            "n_pts": 36,
+            "intercepts_feature_units": [
+              0.4685824351356112,
+              0.46667904681804856
+            ],
+            "quadratic": {
+              "cross_term": -0.6386605003974685,
+              "unconstrained_cross_term": -0.6386605003974685,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20795014324349867,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07361940322522245,
+            "min_axis_to_full_grid_range": 0.9991347803264442
+          },
+          "mean_vector_interaction_residual": 0.4908258551182519,
+          "axis_vector_null_fit": {
+            "threshold": 0.40949308245158456,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735427,
+              0.8189861649031691
+            ],
+            "p": 2.4329374619158948,
+            "flags": [],
+            "mean_radial_frac": 0.010234669721599683,
+            "max_radial_frac": 0.021273192178733247,
+            "n_pts": 27,
+            "intercepts_feature_units": [
+              0.46858243513561115,
+              0.4666790468180484
+            ],
+            "quadratic": {
+              "cross_term": -0.10453344249507632,
+              "unconstrained_cross_term": -0.10453344249507632,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.014902107386428946,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0,
+            "min_axis_to_full_grid_range": 0.49979162102059355
+          },
+          "output0_only_fit": {
+            "threshold": 0.40943481836645546,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.819591493134918,
+              0.8188696367329109
+            ],
+            "p": 0.5158122700300135,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 2.2334443347885444,
+            "max_radial_frac": 4.126790320540867,
+            "n_pts": 36,
+            "intercepts_feature_units": [
+              0.46857564943205254,
+              0.4666810211636778
+            ],
+            "quadratic": {
+              "cross_term": -0.6385185666269979,
+              "unconstrained_cross_term": -0.6385185666269979,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20788339394901656,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07365496499157514,
+            "min_axis_to_full_grid_range": 0.9991192485426539
+          }
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "within",
+        "bits": [
+          0,
+          1
+        ]
+      },
+      "state": [
+        0,
+        1
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.19684122193986017,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.7873648877594407,
+            0.8183241738103697
+          ],
+          "p": 5.1844728209514415,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.050923355830386215,
+          "max_radial_frac": 0.10780879125392229,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.40088771261302875,
+            0.4214366485378707
+          ],
+          "quadratic": {
+            "cross_term": -0.393401282382349,
+            "unconstrained_cross_term": -0.393401282382349,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.026294017910075077,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.0759937579357829,
+          "min_axis_to_full_grid_range": 0.9621674550969538
+        },
+        "0.5": {
+          "threshold": 0.39368244387972035,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7873648877594407,
+            0.8183241738103697
+          ],
+          "p": 0.897054140934372,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.8299624983866978,
+          "max_radial_frac": 1.528930772687676,
+          "n_pts": 42,
+          "intercepts_feature_units": [
+            0.5095737771116987,
+            0.5270623673186524
+          ],
+          "quadratic": {
+            "cross_term": -0.5850622243171494,
+            "unconstrained_cross_term": -0.5850622243171494,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.09124593500269014,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.0759937579357829,
+          "min_axis_to_full_grid_range": 0.9621674550969538
+        },
+        "0.75": {
+          "threshold": 0.5905236658195805,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.7873648877594407,
+            0.8183241738103697
+          ],
+          "p": 1.0053647772467944,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.5536661619397597,
+          "max_radial_frac": 1.0477864502746503,
+          "n_pts": 39,
+          "intercepts_feature_units": [
+            0.619078059194775,
+            0.6326740396445172
+          ],
+          "quadratic": {
+            "cross_term": -0.7854201190806318,
+            "unconstrained_cross_term": -0.7854201190806318,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.04619047525950498,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.0759937579357829,
+          "min_axis_to_full_grid_range": 0.9621674550969538
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.3915799594798124,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596248,
+              0.8176621827175712
+            ],
+            "p": 0.8952799908184178,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.8355034728370606,
+            "max_radial_frac": 1.5276672702233376,
+            "n_pts": 42,
+            "intercepts_feature_units": [
+              0.5061048407410422,
+              0.5281610771857499
+            ],
+            "quadratic": {
+              "cross_term": -0.5829240241720135,
+              "unconstrained_cross_term": -0.5829240241720135,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.09057560986782619,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07605442937485508,
+            "min_axis_to_full_grid_range": 0.9578037672681948
+          },
+          "mean_vector_interaction_residual": 0.5164557084537864
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.3957849282796283,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592566,
+              0.8189861649031682
+            ],
+            "p": 0.8998470672283242,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.8225698379702943,
+            "max_radial_frac": 1.5624738211116616,
+            "n_pts": 42,
+            "intercepts_feature_units": [
+              0.5130428080724048,
+              0.5259637302368959
+            ],
+            "quadratic": {
+              "cross_term": -0.5868576020708278,
+              "unconstrained_cross_term": -0.5868576020708278,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.09146910680441736,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07593624029173743,
+            "min_axis_to_full_grid_range": 0.9665240885392086
+          },
+          "mean_vector_interaction_residual": 0.5175536537388675
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.3915799594798124,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596248,
+              0.8176621827175712
+            ],
+            "p": 0.8952799908184178,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.8355034728370606,
+            "max_radial_frac": 1.5276672702233376,
+            "n_pts": 42,
+            "intercepts_feature_units": [
+              0.5061048407410422,
+              0.5281610771857499
+            ],
+            "quadratic": {
+              "cross_term": -0.5829240241720135,
+              "unconstrained_cross_term": -0.5829240241720135,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.09057560986782619,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07605442937485508,
+            "min_axis_to_full_grid_range": 0.9578037672681948
+          },
+          "mean_vector_interaction_residual": 0.5164557084537864
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.3957849282796283,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592566,
+              0.8189861649031682
+            ],
+            "p": 0.8998470672283242,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.8225698379702943,
+            "max_radial_frac": 1.5624738211116616,
+            "n_pts": 42,
+            "intercepts_feature_units": [
+              0.5130428080724048,
+              0.5259637302368959
+            ],
+            "quadratic": {
+              "cross_term": -0.5868576020708278,
+              "unconstrained_cross_term": -0.5868576020708278,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.09146910680441736,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07593624029173743,
+            "min_axis_to_full_grid_range": 0.9665240885392086
+          },
+          "mean_vector_interaction_residual": 0.5175536537388675
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "within",
+        "bits": [
+          0,
+          1
+        ]
+      },
+      "state": [
+        1,
+        0
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.19711449753539578,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.8193214098817205,
+            0.7884579901415831
+          ],
+          "p": 5.230242802407334,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.05242633453713751,
+          "max_radial_frac": 0.10170739277780938,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.4194436593593429,
+            0.39844041936815344
+          ],
+          "quadratic": {
+            "cross_term": -0.397130442563834,
+            "unconstrained_cross_term": -0.397130442563834,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.027262233494377765,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.07582765895010636,
+          "min_axis_to_full_grid_range": 0.9623305098977055
+        },
+        "0.5": {
+          "threshold": 0.39422899507079157,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8193214098817205,
+            0.7884579901415831
+          ],
+          "p": 0.8723393581859541,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.8749412441352499,
+          "max_radial_frac": 1.6178656614503337,
+          "n_pts": 42,
+          "intercepts_feature_units": [
+            0.5250931934209729,
+            0.5073716011805426
+          ],
+          "quadratic": {
+            "cross_term": -0.5897737213702964,
+            "unconstrained_cross_term": -0.5897737213702964,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.09332663871889527,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.07582765895010636,
+          "min_axis_to_full_grid_range": 0.9623305098977055
+        },
+        "0.75": {
+          "threshold": 0.5913434926061873,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.8193214098817205,
+            0.7884579901415831
+          ],
+          "p": 0.9951055007531805,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.5662439599813158,
+          "max_radial_frac": 1.065466412322833,
+          "n_pts": 39,
+          "intercepts_feature_units": [
+            0.6307322909807233,
+            0.6174924127097268
+          ],
+          "quadratic": {
+            "cross_term": -0.7910732483902531,
+            "unconstrained_cross_term": -0.7910732483902531,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.04697380045977103,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.07582765895010636,
+          "min_axis_to_full_grid_range": 0.9623305098977055
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.392275897539979,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.784551795079958
+            ],
+            "p": 0.8719220489809756,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.8782370386235654,
+            "max_radial_frac": 1.586143371964953,
+            "n_pts": 42,
+            "intercepts_feature_units": [
+              0.5262862492261626,
+              0.5039891630391581
+            ],
+            "quadratic": {
+              "cross_term": -0.5869746905026776,
+              "unconstrained_cross_term": -0.5869746905026776,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.09243522380777942,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07586092187425077,
+            "min_axis_to_full_grid_range": 0.9580001821829185
+          },
+          "mean_vector_interaction_residual": 0.5181567085879889
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.3961820926016042,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735418,
+              0.7923641852032084
+            ],
+            "p": 0.9560348653292147,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.7404690014899964,
+            "max_radial_frac": 1.407106915698312,
+            "n_pts": 41,
+            "intercepts_feature_units": [
+              0.5239001755290866,
+              0.5107541914625583
+            ],
+            "quadratic": {
+              "cross_term": -0.5769610440778733,
+              "unconstrained_cross_term": -0.5769610440778733,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.0878875974967052,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07579442637720955,
+            "min_axis_to_full_grid_range": 0.9666568863408734
+          },
+          "mean_vector_interaction_residual": 0.5202885090500354
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.392275897539979,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.784551795079958
+            ],
+            "p": 0.8719220489809756,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.8782370386235654,
+            "max_radial_frac": 1.586143371964953,
+            "n_pts": 42,
+            "intercepts_feature_units": [
+              0.5262862492261626,
+              0.5039891630391581
+            ],
+            "quadratic": {
+              "cross_term": -0.5869746905026776,
+              "unconstrained_cross_term": -0.5869746905026776,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.09243522380777942,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07586092187425077,
+            "min_axis_to_full_grid_range": 0.9580001821829185
+          },
+          "mean_vector_interaction_residual": 0.5181567085879889
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.3961820926016042,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735418,
+              0.7923641852032084
+            ],
+            "p": 0.9560348653292147,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 0.7404690014899964,
+            "max_radial_frac": 1.407106915698312,
+            "n_pts": 41,
+            "intercepts_feature_units": [
+              0.5239001755290866,
+              0.5107541914625583
+            ],
+            "quadratic": {
+              "cross_term": -0.5769610440778733,
+              "unconstrained_cross_term": -0.5769610440778733,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.0878875974967052,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.07579442637720955,
+            "min_axis_to_full_grid_range": 0.9666568863408734
+          },
+          "mean_vector_interaction_residual": 0.5202885090500354
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "within",
+        "bits": [
+          0,
+          1
+        ]
+      },
+      "state": [
+        1,
+        1
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.1968412219398602,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.7873648877594408,
+            0.7884579901415832
+          ],
+          "p": 1.47908500684475,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.021262524260633055,
+          "max_radial_frac": 0.04835669769956352,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.38088151706069273,
+            0.38230596858816224
+          ],
+          "quadratic": {
+            "cross_term": 0.2524078509867313,
+            "unconstrained_cross_term": 0.2524078509867313,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02644726724544426,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.07884616112354854,
+          "min_axis_to_full_grid_range": 0.9986136200079015
+        },
+        "0.5": {
+          "threshold": 0.3936824438797204,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7873648877594408,
+            0.7884579901415832
+          ],
+          "p": 0.5298871275703331,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 2.1515427152509816,
+          "max_radial_frac": 3.8501893635735582,
+          "n_pts": 40,
+          "intercepts_feature_units": [
+            0.49041263329918144,
+            0.4923104122718542
+          ],
+          "quadratic": {
+            "cross_term": -0.6249691126498294,
+            "unconstrained_cross_term": -0.6249691126498294,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.18903943133609274,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.07884616112354854,
+          "min_axis_to_full_grid_range": 0.9986136200079015
+        },
+        "0.75": {
+          "threshold": 0.5905236658195806,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.7873648877594408,
+            0.7884579901415832
+          ],
+          "p": 1.1312384649406215,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.5242221604126687,
+          "max_radial_frac": 1.0642111563077385,
+          "n_pts": 46,
+          "intercepts_feature_units": [
+            0.5991053431356597,
+            0.6010999781476275
+          ],
+          "quadratic": {
+            "cross_term": -0.5541104786619874,
+            "unconstrained_cross_term": -0.5541104786619874,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.1270153749854943,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.07884616112354854,
+          "min_axis_to_full_grid_range": 0.9986136200079015
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.39157995947981256,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596251,
+              0.7845517950799581
+            ],
+            "p": 0.5400642297358003,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 2.07452858798601,
+            "max_radial_frac": 3.7043564703282703,
+            "n_pts": 40,
+            "intercepts_feature_units": [
+              0.4938855770927186,
+              0.4956140557955919
+            ],
+            "quadratic": {
+              "cross_term": -0.6199750559609201,
+              "unconstrained_cross_term": -0.6199750559609201,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.18681061120912676,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07924012348269227,
+            "min_axis_to_full_grid_range": 0.9982258964557068
+          },
+          "mean_vector_interaction_residual": 0.46971315559241417
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.3957849282796282,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592564,
+              0.7923641852032084
+            ],
+            "p": 0.5594746283871674,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.9071652106030763,
+            "max_radial_frac": 3.545884169812795,
+            "n_pts": 39,
+            "intercepts_feature_units": [
+              0.4869393327271814,
+              0.48900632841868746
+            ],
+            "quadratic": {
+              "cross_term": -0.6203749686735666,
+              "unconstrained_cross_term": -0.6203749686735666,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.19110511305265254,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07845750836128905,
+            "min_axis_to_full_grid_range": 0.998997520762819
+          },
+          "mean_vector_interaction_residual": 0.47893052509590317
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.39157995947981256,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596251,
+              0.7845517950799581
+            ],
+            "p": 0.5400642297358003,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 2.07452858798601,
+            "max_radial_frac": 3.7043564703282703,
+            "n_pts": 40,
+            "intercepts_feature_units": [
+              0.4938855770927186,
+              0.4956140557955919
+            ],
+            "quadratic": {
+              "cross_term": -0.6199750559609201,
+              "unconstrained_cross_term": -0.6199750559609201,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.18681061120912676,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07924012348269227,
+            "min_axis_to_full_grid_range": 0.9982258964557068
+          },
+          "mean_vector_interaction_residual": 0.46971315559241417
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.3957849282796282,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592564,
+              0.7923641852032084
+            ],
+            "p": 0.5594746283871674,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.9071652106030763,
+            "max_radial_frac": 3.545884169812795,
+            "n_pts": 39,
+            "intercepts_feature_units": [
+              0.4869393327271814,
+              0.48900632841868746
+            ],
+            "quadratic": {
+              "cross_term": -0.6203749686735666,
+              "unconstrained_cross_term": -0.6203749686735666,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.19110511305265254,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.07845750836128905,
+            "min_axis_to_full_grid_range": 0.998997520762819
+          },
+          "mean_vector_interaction_residual": 0.47893052509590317
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "across",
+        "bits": [
+          0,
+          2
+        ]
+      },
+      "state": [
+        0,
+        0
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.2013146618561445,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.805258647424578,
+            0.8208466759688583
+          ],
+          "p": 5.258320295524804,
+          "flags": [],
+          "mean_radial_frac": 0.009203665032967778,
+          "max_radial_frac": 0.023322223351946336,
+          "n_pts": 21,
+          "intercepts_feature_units": [
+            0.37870498030856997,
+            0.35948649628791624
+          ],
+          "quadratic": {
+            "cross_term": -0.29505856491561383,
+            "unconstrained_cross_term": -0.29505856491561383,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03602915045891723,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00017458257751558337,
+          "min_axis_to_full_grid_range": 0.6992173239227194
+        },
+        "0.5": {
+          "threshold": 0.402629323712289,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.805258647424578,
+            0.8208466759688583
+          ],
+          "p": 4.832423243208583,
+          "flags": [],
+          "mean_radial_frac": 0.0028958347706433962,
+          "max_radial_frac": 0.01093251483458424,
+          "n_pts": 28,
+          "intercepts_feature_units": [
+            0.48820205111947534,
+            0.47819978218115117
+          ],
+          "quadratic": {
+            "cross_term": -0.2882808683217638,
+            "unconstrained_cross_term": -0.2882808683217638,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.027227867576979998,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00017458257751558337,
+          "min_axis_to_full_grid_range": 0.6992173239227194
+        },
+        "0.75": {
+          "threshold": 0.6039439855684334,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.805258647424578,
+            0.8208466759688583
+          ],
+          "p": 3.96805817915509,
+          "flags": [],
+          "mean_radial_frac": 0.0037126846722098225,
+          "max_radial_frac": 0.013709177604731337,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.5976959442845194,
+            0.5962108475329718
+          ],
+          "quadratic": {
+            "cross_term": -0.25672566073464903,
+            "unconstrained_cross_term": -0.25672566073464903,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.018750046279868503,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00017458257751558337,
+          "min_axis_to_full_grid_range": 0.6992173239227194
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.4094737191449497,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.9066362473480346
+            ],
+            "p": 4.56832734319197,
+            "flags": [],
+            "mean_radial_frac": 0.0050341160878712606,
+            "max_radial_frac": 0.017075410208894803,
+            "n_pts": 26,
+            "intercepts_feature_units": [
+              0.4644889593890665,
+              0.44642239933307887
+            ],
+            "quadratic": {
+              "cross_term": -0.2788731943754774,
+              "unconstrained_cross_term": -0.2788731943754774,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.028552844439016678,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00023159817555919103,
+            "min_axis_to_full_grid_range": 0.6639913296723459
+          },
+          "mean_vector_interaction_residual": 0.002222036786550786
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.36629462401019514,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735422,
+              0.7325892480203903
+            ],
+            "p": 5.056939904350793,
+            "flags": [],
+            "mean_radial_frac": 0.002774057621067338,
+            "max_radial_frac": 0.010109989971356148,
+            "n_pts": 27,
+            "intercepts_feature_units": [
+              0.4454321121645121,
+              0.4917367159156057
+            ],
+            "quadratic": {
+              "cross_term": -0.2955840041984163,
+              "unconstrained_cross_term": -0.2955840041984163,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.027233451310806962,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0001411866943623603,
+            "min_axis_to_full_grid_range": 0.6642423140247636
+          },
+          "mean_vector_interaction_residual": 0.0022131031929863826
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.3915799594798124,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596248,
+              0.9146790602028978
+            ],
+            "p": 5.182977301169777,
+            "flags": [],
+            "mean_radial_frac": 0.005821701082699824,
+            "max_radial_frac": 0.01653103241000453,
+            "n_pts": 28,
+            "intercepts_feature_units": [
+              0.5061048407410422,
+              0.4416929764861998
+            ],
+            "quadratic": {
+              "cross_term": -0.29547899494290436,
+              "unconstrained_cross_term": -0.29547899494290436,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.032183175681436964,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0002960196199847188,
+            "min_axis_to_full_grid_range": 0.6524050500021163
+          },
+          "mean_vector_interaction_residual": 0.0026639941126532537
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.367528552294841,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592566,
+              0.735057104589682
+            ],
+            "p": 5.355452857101139,
+            "flags": [],
+            "mean_radial_frac": 0.0030693013168931987,
+            "max_radial_frac": 0.012623217618743743,
+            "n_pts": 28,
+            "intercepts_feature_units": [
+              0.4974411384144013,
+              0.4968219158134463
+            ],
+            "quadratic": {
+              "cross_term": -0.30295346740761186,
+              "unconstrained_cross_term": -0.30295346740761186,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.02924395553569516,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00024875803571186166,
+            "min_axis_to_full_grid_range": 0.6766484948575601
+          },
+          "mean_vector_interaction_residual": 0.0026802179558091262,
+          "axis_vector_null_fit": {
+            "threshold": 0.36752855229484105,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592568,
+              0.7350571045896821
+            ],
+            "p": 5.194059479014059,
+            "flags": [],
+            "mean_radial_frac": 0.0029728006838200738,
+            "max_radial_frac": 0.013062908678310503,
+            "n_pts": 28,
+            "intercepts_feature_units": [
+              0.49744113841440124,
+              0.4968219158134463
+            ],
+            "quadratic": {
+              "cross_term": -0.29868568005524737,
+              "unconstrained_cross_term": -0.29868568005524737,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.028899037145610727,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0,
+            "min_axis_to_full_grid_range": 0.6810147006291281
+          }
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "across",
+        "bits": [
+          0,
+          2
+        ]
+      },
+      "state": [
+        0,
+        1
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.2026002067914518,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.8104008271658072,
+            0.8208466759688577
+          ],
+          "p": 4.965748652790799,
+          "flags": [],
+          "mean_radial_frac": 0.011250860717247175,
+          "max_radial_frac": 0.027947343232764155,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.38253002854525686,
+            0.3952762724144403
+          ],
+          "quadratic": {
+            "cross_term": -0.2882507174241808,
+            "unconstrained_cross_term": -0.2882507174241808,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.035946403048804546,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00023134312906446683,
+          "min_axis_to_full_grid_range": 0.7016648507307336
+        },
+        "0.5": {
+          "threshold": 0.4052004135829036,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8104008271658072,
+            0.8208466759688577
+          ],
+          "p": 4.611031924459413,
+          "flags": [],
+          "mean_radial_frac": 0.0032943096149730773,
+          "max_radial_frac": 0.00973805699948782,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.4927280502038469,
+            0.5148857833848753
+          ],
+          "quadratic": {
+            "cross_term": -0.2803111515665593,
+            "unconstrained_cross_term": -0.2803111515665593,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.027379983605630098,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00023134312906446683,
+          "min_axis_to_full_grid_range": 0.7016648507307336
+        },
+        "0.75": {
+          "threshold": 0.6078006203743553,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.8104008271658072,
+            0.8208466759688577
+          ],
+          "p": 3.825943775453574,
+          "flags": [],
+          "mean_radial_frac": 0.003230232069612308,
+          "max_radial_frac": 0.009579188213024059,
+          "n_pts": 37,
+          "intercepts_feature_units": [
+            0.6029215358593267,
+            0.6336401499463835
+          ],
+          "quadratic": {
+            "cross_term": -0.24709936761471363,
+            "unconstrained_cross_term": -0.24709936761471363,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01945848950741745,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00023134312906446683,
+          "min_axis_to_full_grid_range": 0.7016648507307336
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.4116750541724458,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8233501083448916,
+              0.9066362473480344
+            ],
+            "p": 4.828926848363682,
+            "flags": [],
+            "mean_radial_frac": 0.003344377848064988,
+            "max_radial_frac": 0.010395325448142811,
+            "n_pts": 29,
+            "intercepts_feature_units": [
+              0.4675746060477107,
+              0.5078591606806863
+            ],
+            "quadratic": {
+              "cross_term": -0.2841844472428663,
+              "unconstrained_cross_term": -0.2841844472428663,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.02994584418447096,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00027017291855739166,
+            "min_axis_to_full_grid_range": 0.6762366547945216
+          },
+          "mean_vector_interaction_residual": 0.004166264030347677
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.36629462401019547,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8239216143625064,
+              0.7325892480203909
+            ],
+            "p": 4.880717110422185,
+            "flags": [],
+            "mean_radial_frac": 0.0026746931798116674,
+            "max_radial_frac": 0.008274304415935463,
+            "n_pts": 28,
+            "intercepts_feature_units": [
+              0.4473827238161589,
+              0.5082622819714866
+            ],
+            "quadratic": {
+              "cross_term": -0.2874180369451753,
+              "unconstrained_cross_term": -0.2874180369451753,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.02825952576481881,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 7.659251353785794e-05,
+            "min_axis_to_full_grid_range": 0.6652566787600194
+          },
+          "mean_vector_interaction_residual": 0.00270900963712411
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.3945266636210057,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7890533272420114,
+              0.9146790602028981
+            ],
+            "p": 4.864976851524409,
+            "flags": [],
+            "mean_radial_frac": 0.006525986662246758,
+            "max_radial_frac": 0.01761666295925146,
+            "n_pts": 29,
+            "intercepts_feature_units": [
+              0.5120711776300791,
+              0.4895390794674918
+            ],
+            "quadratic": {
+              "cross_term": -0.2856402780366018,
+              "unconstrained_cross_term": -0.2856402780366018,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.032364198100032826,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0,
+            "min_axis_to_full_grid_range": 0.6527985073829657
+          },
+          "mean_vector_interaction_residual": 0.0023853275967576372
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.3675285522948406,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7974515459867226,
+              0.7350571045896812
+            ],
+            "p": 5.123246551508783,
+            "flags": [],
+            "mean_radial_frac": 0.003025327974292872,
+            "max_radial_frac": 0.011789284876305262,
+            "n_pts": 30,
+            "intercepts_feature_units": [
+              0.5017822569324152,
+              0.5031770110739086
+            ],
+            "quadratic": {
+              "cross_term": -0.29180653650536276,
+              "unconstrained_cross_term": -0.29180653650536276,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.030682504543751283,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00019902563049338108,
+            "min_axis_to_full_grid_range": 0.67991661707693
+          },
+          "mean_vector_interaction_residual": 0.0031489951344884546
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "across",
+        "bits": [
+          0,
+          2
+        ]
+      },
+      "state": [
+        1,
+        0
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.20131466185614447,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.8052586474245779,
+            0.8248737495279943
+          ],
+          "p": 4.6724716488515945,
+          "flags": [],
+          "mean_radial_frac": 0.009731967955332916,
+          "max_radial_frac": 0.028067200354664035,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.4043642709032074,
+            0.3629301675325884
+          ],
+          "quadratic": {
+            "cross_term": -0.27959550635448205,
+            "unconstrained_cross_term": -0.27959550635448205,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03486784152122172,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 2.4735463316990855e-05,
+          "min_axis_to_full_grid_range": 0.6972126257827673
+        },
+        "0.5": {
+          "threshold": 0.40262932371228893,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8052586474245779,
+            0.8248737495279943
+          ],
+          "p": 4.49715007190131,
+          "flags": [],
+          "mean_radial_frac": 0.0035986692983596097,
+          "max_radial_frac": 0.011441266238307213,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.5138753984602846,
+            0.481563038785295
+          ],
+          "quadratic": {
+            "cross_term": -0.27526131801630555,
+            "unconstrained_cross_term": -0.27526131801630555,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.026488251434123623,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 2.4735463316990855e-05,
+          "min_axis_to_full_grid_range": 0.6972126257827673
+        },
+        "0.75": {
+          "threshold": 0.6039439855684334,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.8052586474245779,
+            0.8248737495279943
+          ],
+          "p": 3.8007681934445823,
+          "flags": [],
+          "mean_radial_frac": 0.003499038120007044,
+          "max_radial_frac": 0.011181869795402921,
+          "n_pts": 35,
+          "intercepts_feature_units": [
+            0.6233740893059864,
+            0.5995925200339295
+          ],
+          "quadratic": {
+            "cross_term": -0.24690634423962124,
+            "unconstrained_cross_term": -0.24690634423962124,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01819573544113784,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 2.4735463316990855e-05,
+          "min_axis_to_full_grid_range": 0.6972126257827673
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.4094737191449497,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.9127498364406288
+            ],
+            "p": 4.922209389665943,
+            "flags": [],
+            "mean_radial_frac": 0.005219254527900741,
+            "max_radial_frac": 0.015287057709487906,
+            "n_pts": 29,
+            "intercepts_feature_units": [
+              0.53550340372004,
+              0.45029967412593636
+            ],
+            "quadratic": {
+              "cross_term": -0.28857884644577014,
+              "unconstrained_cross_term": -0.28857884644577014,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.0317569656987119,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00018573753569772002,
+            "min_axis_to_full_grid_range": 0.6726206391530872
+          },
+          "mean_vector_interaction_residual": 0.002560605803116075
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.3679818506323228,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735418,
+              0.7359637012646456
+            ],
+            "p": 5.217029229022486,
+            "flags": [],
+            "mean_radial_frac": 0.0033406761705012016,
+            "max_radial_frac": 0.013418961318094391,
+            "n_pts": 29,
+            "intercepts_feature_units": [
+              0.5087866901741364,
+              0.495374137567481
+            ],
+            "quadratic": {
+              "cross_term": -0.29798442058291325,
+              "unconstrained_cross_term": -0.29798442058291325,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.029220748546575196,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 8.625316508909721e-05,
+            "min_axis_to_full_grid_range": 0.6683209846640034
+          },
+          "mean_vector_interaction_residual": 0.0026714436188196586
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.39157995947981256,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596251,
+              0.9107635916685249
+            ],
+            "p": 4.6016502862642,
+            "flags": [],
+            "mean_radial_frac": 0.006890239963350586,
+            "max_radial_frac": 0.02005470234601081,
+            "n_pts": 27,
+            "intercepts_feature_units": [
+              0.4938855770927186,
+              0.44571127692244267
+            ],
+            "quadratic": {
+              "cross_term": -0.2799719843608812,
+              "unconstrained_cross_term": -0.2799719843608812,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.02895093926103436,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0001906888178003265,
+            "min_axis_to_full_grid_range": 0.6479227809937402
+          },
+          "mean_vector_interaction_residual": 0.004085696810906682
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.3694919536937319,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592564,
+              0.7389839073874638
+            ],
+            "p": 4.781103490966219,
+            "flags": [],
+            "mean_radial_frac": 0.002797348453137895,
+            "max_radial_frac": 0.008950641542488702,
+            "n_pts": 29,
+            "intercepts_feature_units": [
+              0.47241912925898827,
+              0.500457603642519
+            ],
+            "quadratic": {
+              "cross_term": -0.2857225495675519,
+              "unconstrained_cross_term": -0.2857225495675519,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.02641704154091207,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 3.8162654870240626e-06,
+            "min_axis_to_full_grid_range": 0.683548849807592
+          },
+          "mean_vector_interaction_residual": 0.004431062197479849
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "across",
+        "bits": [
+          0,
+          2
+        ]
+      },
+      "state": [
+        1,
+        1
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.20260020679145171,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.8104008271658069,
+            0.8248737495279941
+          ],
+          "p": 4.958161826824693,
+          "flags": [],
+          "mean_radial_frac": 0.007430437173584472,
+          "max_radial_frac": 0.02332384676365573,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.3991889594869617,
+            0.38832345829110587
+          ],
+          "quadratic": {
+            "cross_term": -0.29094130969632154,
+            "unconstrained_cross_term": -0.29094130969632154,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03350143375803454,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.0002524393963421055,
+          "min_axis_to_full_grid_range": 0.7036823503701732
+        },
+        "0.5": {
+          "threshold": 0.40520041358290343,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8104008271658069,
+            0.8248737495279941
+          ],
+          "p": 4.983549521209788,
+          "flags": [],
+          "mean_radial_frac": 0.002815316596061153,
+          "max_radial_frac": 0.00823236832462304,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.5093952858008147,
+            0.5087428831701769
+          ],
+          "quadratic": {
+            "cross_term": -0.2895180493918354,
+            "unconstrained_cross_term": -0.2895180493918354,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02851791395449149,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.0002524393963421055,
+          "min_axis_to_full_grid_range": 0.7036823503701732
+        },
+        "0.75": {
+          "threshold": 0.6078006203743551,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.8104008271658069,
+            0.8248737495279941
+          ],
+          "p": 4.106218938438476,
+          "flags": [],
+          "mean_radial_frac": 0.0038485026275246314,
+          "max_radial_frac": 0.012156428396103758,
+          "n_pts": 36,
+          "intercepts_feature_units": [
+            0.6195915248968367,
+            0.6274733880262681
+          ],
+          "quadratic": {
+            "cross_term": -0.26317639985389363,
+            "unconstrained_cross_term": -0.26317639985389363,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.019908508295262837,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.0002524393963421055,
+          "min_axis_to_full_grid_range": 0.7036823503701732
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.41167505417244543,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8233501083448909,
+              0.9127498364406288
+            ],
+            "p": 5.27659148628384,
+            "flags": [],
+            "mean_radial_frac": 0.0043045564950345465,
+            "max_radial_frac": 0.013902484445651453,
+            "n_pts": 30,
+            "intercepts_feature_units": [
+              0.5324144013487434,
+              0.5007012447060055
+            ],
+            "quadratic": {
+              "cross_term": -0.29723288077404353,
+              "unconstrained_cross_term": -0.29723288077404353,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.033107413541029175,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00010045861343584127,
+            "min_axis_to_full_grid_range": 0.6675609540551105
+          },
+          "mean_vector_interaction_residual": 0.004459390848532985
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.3679818506323235,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8239216143625059,
+              0.735963701264647
+            ],
+            "p": 5.446472202903516,
+            "flags": [],
+            "mean_radial_frac": 0.0028511269025794594,
+            "max_radial_frac": 0.013360800292515407,
+            "n_pts": 30,
+            "intercepts_feature_units": [
+              0.5045697448523716,
+              0.5046248223248687
+            ],
+            "quadratic": {
+              "cross_term": -0.3001411216512107,
+              "unconstrained_cross_term": -0.3001411216512107,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.030779847169467744,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00015012650171198353,
+            "min_axis_to_full_grid_range": 0.6673019475610054
+          },
+          "mean_vector_interaction_residual": 0.0030967448995431112
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.3945266636210056,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7890533272420112,
+              0.9107635916685249
+            ],
+            "p": 5.250732095483712,
+            "flags": [],
+            "mean_radial_frac": 0.003459351548861333,
+            "max_radial_frac": 0.011677997374475835,
+            "n_pts": 28,
+            "intercepts_feature_units": [
+              0.48792307771557003,
+              0.4875814413162846
+            ],
+            "quadratic": {
+              "cross_term": -0.298848856311134,
+              "unconstrained_cross_term": -0.298848856311134,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.03157082810314419,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00029873222787971614,
+            "min_axis_to_full_grid_range": 0.6573145062090441
+          },
+          "mean_vector_interaction_residual": 0.0038572540101281536
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.36949195369373156,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7974515459867229,
+              0.7389839073874631
+            ],
+            "p": 5.130546316041202,
+            "flags": [],
+            "mean_radial_frac": 0.0018310784265106615,
+            "max_radial_frac": 0.008088269290416061,
+            "n_pts": 29,
+            "intercepts_feature_units": [
+              0.46483672948996785,
+              0.4995412689958963
+            ],
+            "quadratic": {
+              "cross_term": -0.29434175690663694,
+              "unconstrained_cross_term": -0.29434175690663694,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.02924044258588358,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00042879822572172206,
+            "min_axis_to_full_grid_range": 0.6802632687113608
+          },
+          "mean_vector_interaction_residual": 0.0049159775930178624
+        }
+      ]
+    }
+  ],
+  "fine_geometry": [
+    {
+      "pair": {
+        "name": "within",
+        "bits": [
+          0,
+          1
+        ]
+      },
+      "state": [
+        0,
+        0
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.20458104345259245,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.8193214098817208,
+            0.8183241738103698
+          ],
+          "p": 1.3402526690618206,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.020225931030122612,
+          "max_radial_frac": 0.04430817019190192,
+          "n_pts": 40,
+          "intercepts_feature_units": [
+            0.3567205944508222,
+            0.35486040683148756
+          ],
+          "quadratic": {
+            "cross_term": 0.3832521461447555,
+            "unconstrained_cross_term": 0.3832521461447555,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.025481930934834873,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.03682878735654505,
+          "min_axis_to_full_grid_range": 0.9987828511993908
+        },
+        "0.5": {
+          "threshold": 0.4091620869051849,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8193214098817208,
+            0.8183241738103698
+          ],
+          "p": 0.5869586422140043,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 1.6916559840182412,
+          "max_radial_frac": 3.3278523994984175,
+          "n_pts": 69,
+          "intercepts_feature_units": [
+            0.46636356979154514,
+            0.4646293962638011
+          ],
+          "quadratic": {
+            "cross_term": -0.6237980627861919,
+            "unconstrained_cross_term": -0.6237980627861919,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.20966061536169123,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "multiple_below_threshold_components",
+            "diagonal_recross_below_threshold",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 2,
+          "diagonal_recross": true,
+          "max_interior_step_drop_fraction": 0.03682878735654505,
+          "min_axis_to_full_grid_range": 0.9987828511993908
+        },
+        "0.75": {
+          "threshold": 0.6137431303577774,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.8193214098817208,
+            0.8183241738103698
+          ],
+          "p": 1.210748548348175,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.45987553281287086,
+          "max_radial_frac": 0.9949853671146067,
+          "n_pts": 95,
+          "intercepts_feature_units": [
+            0.5760015335887105,
+            0.5743906351603875
+          ],
+          "quadratic": {
+            "cross_term": -0.5304124824519844,
+            "unconstrained_cross_term": -0.5304124824519844,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.12670805962792606,
+            "better_than_superellipse": true
+          },
+          "assay_flags": [
+            "interior_nonmonotone_over_1pct"
+          ],
+          "all_flags": [
+            "superellipse_residual_over_2pct",
+            "interior_nonmonotone_over_1pct"
+          ],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.03682878735654505,
+          "min_axis_to_full_grid_range": 0.9987828511993908
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.4088310913587856,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.8176621827175712
+            ],
+            "p": 0.5652779611465855,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.8326808496486564,
+            "max_radial_frac": 3.518318326471901,
+            "n_pts": 70,
+            "intercepts_feature_units": [
+              0.46414456104539226,
+              0.46257971710522056
+            ],
+            "quadratic": {
+              "cross_term": -0.6287249310492393,
+              "unconstrained_cross_term": -0.6287249310492393,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.2087607683702116,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.036846493944213195,
+            "min_axis_to_full_grid_range": 0.9984306006561153
+          },
+          "mean_vector_interaction_residual": 0.4981501699461355
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.4094930824515842,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735422,
+              0.8189861649031684
+            ],
+            "p": 0.5624698240142271,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.8572811856066376,
+            "max_radial_frac": 3.5879929159484147,
+            "n_pts": 70,
+            "intercepts_feature_units": [
+              0.46858243709707387,
+              0.46667904686561434
+            ],
+            "quadratic": {
+              "cross_term": -0.6293751151662841,
+              "unconstrained_cross_term": -0.6293751151662841,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20992545295249604,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.03681170686882391,
+            "min_axis_to_full_grid_range": 0.9991347803264442
+          },
+          "mean_vector_interaction_residual": 0.49039356085235924
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.4088310913587856,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.8176621827175712
+            ],
+            "p": 0.5652779611465855,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.8326808496486564,
+            "max_radial_frac": 3.518318326471901,
+            "n_pts": 70,
+            "intercepts_feature_units": [
+              0.46414456104539226,
+              0.46257971710522056
+            ],
+            "quadratic": {
+              "cross_term": -0.6287249310492393,
+              "unconstrained_cross_term": -0.6287249310492393,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.2087607683702116,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.036846493944213195,
+            "min_axis_to_full_grid_range": 0.9984306006561153
+          },
+          "mean_vector_interaction_residual": 0.4981501699461355
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.4094930824515842,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735422,
+              0.8189861649031684
+            ],
+            "p": 0.5624698240142271,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.8572811856066376,
+            "max_radial_frac": 3.5879929159484147,
+            "n_pts": 70,
+            "intercepts_feature_units": [
+              0.46858243709707387,
+              0.46667904686561434
+            ],
+            "quadratic": {
+              "cross_term": -0.6293751151662841,
+              "unconstrained_cross_term": -0.6293751151662841,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20992545295249604,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.03681170686882391,
+            "min_axis_to_full_grid_range": 0.9991347803264442
+          },
+          "mean_vector_interaction_residual": 0.49039356085235924,
+          "axis_vector_null_fit": {
+            "threshold": 0.40949308245158456,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735427,
+              0.8189861649031691
+            ],
+            "p": 2.434105479700261,
+            "flags": [],
+            "mean_radial_frac": 0.010569361560900947,
+            "max_radial_frac": 0.021136728467613386,
+            "n_pts": 53,
+            "intercepts_feature_units": [
+              0.46858243709707376,
+              0.4666790468656142
+            ],
+            "quadratic": {
+              "cross_term": -0.10459428176828758,
+              "unconstrained_cross_term": -0.10459428176828758,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.015244624216666783,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0,
+            "min_axis_to_full_grid_range": 0.49979162102059355
+          },
+          "output0_only_fit": {
+            "threshold": 0.40943481836645546,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.819591493134918,
+              0.8188696367329109
+            ],
+            "p": 0.5628708218876748,
+            "flags": [
+              "superellipse_residual_over_2pct"
+            ],
+            "mean_radial_frac": 1.8546477251668219,
+            "max_radial_frac": 3.5834922690952613,
+            "n_pts": 70,
+            "intercepts_feature_units": [
+              0.46857564943205254,
+              0.4666810211636778
+            ],
+            "quadratic": {
+              "cross_term": -0.6292230055752153,
+              "unconstrained_cross_term": -0.6292230055752153,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.20985363536926946,
+              "better_than_superellipse": true
+            },
+            "assay_flags": [
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "all_flags": [
+              "superellipse_residual_over_2pct",
+              "multiple_below_threshold_components",
+              "diagonal_recross_below_threshold",
+              "interior_nonmonotone_over_1pct"
+            ],
+            "below_threshold_components": 2,
+            "diagonal_recross": true,
+            "max_interior_step_drop_fraction": 0.03682748249578787,
+            "min_axis_to_full_grid_range": 0.9991192485426539
+          }
+        }
+      ]
+    },
+    {
+      "pair": {
+        "name": "across",
+        "bits": [
+          0,
+          2
+        ]
+      },
+      "state": [
+        0,
+        0
+      ],
+      "median_fits": {
+        "0.25": {
+          "threshold": 0.2013146618561445,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.805258647424578,
+            0.8208466759688583
+          ],
+          "p": 5.282254265381371,
+          "flags": [],
+          "mean_radial_frac": 0.008016589962695048,
+          "max_radial_frac": 0.022160100935338933,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            0.37870513626686764,
+            0.3601777668449016
+          ],
+          "quadratic": {
+            "cross_term": -0.29684465992035325,
+            "unconstrained_cross_term": -0.29684465992035325,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03526462120351006,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00013036102961094817,
+          "min_axis_to_full_grid_range": 0.6992173239227194
+        },
+        "0.5": {
+          "threshold": 0.402629323712289,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.805258647424578,
+            0.8208466759688583
+          ],
+          "p": 4.827756381484879,
+          "flags": [],
+          "mean_radial_frac": 0.0029041948477732124,
+          "max_radial_frac": 0.01102233529392671,
+          "n_pts": 55,
+          "intercepts_feature_units": [
+            0.4882020704320463,
+            0.4781998343070397
+          ],
+          "quadratic": {
+            "cross_term": -0.28701506578052505,
+            "unconstrained_cross_term": -0.28701506578052505,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.028214328203597053,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00013036102961094817,
+          "min_axis_to_full_grid_range": 0.6992173239227194
+        },
+        "0.75": {
+          "threshold": 0.6039439855684334,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.805258647424578,
+            0.8208466759688583
+          ],
+          "p": 3.9766563523104437,
+          "flags": [],
+          "mean_radial_frac": 0.003893962669418048,
+          "max_radial_frac": 0.013556695899815452,
+          "n_pts": 68,
+          "intercepts_feature_units": [
+            0.5976959454298015,
+            0.5962108534451145
+          ],
+          "quadratic": {
+            "cross_term": -0.256903040176654,
+            "unconstrained_cross_term": -0.256903040176654,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.018632857872590756,
+            "better_than_superellipse": false
+          },
+          "assay_flags": [],
+          "all_flags": [],
+          "below_threshold_components": 1,
+          "diagonal_recross": false,
+          "max_interior_step_drop_fraction": 0.00013036102961094817,
+          "min_axis_to_full_grid_range": 0.6992173239227194
+        }
+      },
+      "backgrounds": [
+        {
+          "background": 0,
+          "fit": {
+            "threshold": 0.4094737191449497,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8189474382898994,
+              0.9066362473480346
+            ],
+            "p": 4.566860755244833,
+            "flags": [],
+            "mean_radial_frac": 0.005560985468974067,
+            "max_radial_frac": 0.016911555050188265,
+            "n_pts": 51,
+            "intercepts_feature_units": [
+              0.46448897005990225,
+              0.4464224405390857
+            ],
+            "quadratic": {
+              "cross_term": -0.27801711490205383,
+              "unconstrained_cross_term": -0.27801711490205383,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.029492509452148406,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0001167572787563164,
+            "min_axis_to_full_grid_range": 0.6639913296723459
+          },
+          "mean_vector_interaction_residual": 0.0022849036873798644
+        },
+        {
+          "background": 1,
+          "fit": {
+            "threshold": 0.36629462401019514,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.8196953814735422,
+              0.7325892480203903
+            ],
+            "p": 5.048968122986737,
+            "flags": [],
+            "mean_radial_frac": 0.0026921477934377905,
+            "max_radial_frac": 0.010404357230389127,
+            "n_pts": 53,
+            "intercepts_feature_units": [
+              0.44543213183490965,
+              0.49173677317606507
+            ],
+            "quadratic": {
+              "cross_term": -0.2946168367477288,
+              "unconstrained_cross_term": -0.2946168367477288,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.027595012283184096,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 8.090568044070801e-05,
+            "min_axis_to_full_grid_range": 0.6642423140247636
+          },
+          "mean_vector_interaction_residual": 0.00224589111887688
+        },
+        {
+          "background": 2,
+          "fit": {
+            "threshold": 0.3915799594798124,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7831599189596248,
+              0.9146790602028978
+            ],
+            "p": 5.17802885643416,
+            "flags": [],
+            "mean_radial_frac": 0.005845641090411158,
+            "max_radial_frac": 0.0165829326809519,
+            "n_pts": 54,
+            "intercepts_feature_units": [
+              0.5061048493193879,
+              0.4416930089886035
+            ],
+            "quadratic": {
+              "cross_term": -0.2963643834189446,
+              "unconstrained_cross_term": -0.2963643834189446,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.03202189208190868,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00020611880324503026,
+            "min_axis_to_full_grid_range": 0.6524050500021163
+          },
+          "mean_vector_interaction_residual": 0.0027132304658716
+        },
+        {
+          "background": 3,
+          "fit": {
+            "threshold": 0.367528552294841,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592566,
+              0.735057104589682
+            ],
+            "p": 5.380533888854889,
+            "flags": [],
+            "mean_radial_frac": 0.0032482685437353253,
+            "max_radial_frac": 0.012917061539606589,
+            "n_pts": 56,
+            "intercepts_feature_units": [
+              0.49744114489263486,
+              0.49682194089160653
+            ],
+            "quadratic": {
+              "cross_term": -0.3037641261936944,
+              "unconstrained_cross_term": -0.3037641261936944,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.029206074426842383,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.00012929730577923486,
+            "min_axis_to_full_grid_range": 0.6766484948575601
+          },
+          "mean_vector_interaction_residual": 0.0027280498954893565,
+          "axis_vector_null_fit": {
+            "threshold": 0.36752855229484105,
+            "threshold_fraction": 0.5,
+            "axis_max_response": [
+              0.7915698565592568,
+              0.7350571045896821
+            ],
+            "p": 5.217634469506563,
+            "flags": [],
+            "mean_radial_frac": 0.0031339321567684713,
+            "max_radial_frac": 0.012773840622292143,
+            "n_pts": 56,
+            "intercepts_feature_units": [
+              0.49744114489263486,
+              0.4968219408916064
+            ],
+            "quadratic": {
+              "cross_term": -0.29943443494083244,
+              "unconstrained_cross_term": -0.29943443494083244,
+              "psd_boundary": false,
+              "mean_radial_frac": 0.028859455623359287,
+              "better_than_superellipse": false
+            },
+            "assay_flags": [],
+            "all_flags": [],
+            "below_threshold_components": 1,
+            "diagonal_recross": false,
+            "max_interior_step_drop_fraction": 0.0,
+            "min_axis_to_full_grid_range": 0.6810147006291281
+          }
+        }
+      ]
+    }
+  ],
+  "recovery": [
+    {
+      "map": "natural",
+      "sigma": 0,
+      "all_mse": 0.013141219299113466,
+      "positive_mse": 0.01366452522558518,
+      "negative_mse": 0.012621732194776067,
+      "balanced_mse": 0.013143128710180623,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 0.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "clipped_natural",
+      "sigma": 0,
+      "all_mse": 0.013141219299113466,
+      "positive_mse": 0.01366452522558518,
+      "negative_mse": 0.012621732194776067,
+      "balanced_mse": 0.013143128710180623,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 0.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "plugin_reference",
+      "sigma": 0,
+      "all_mse": 1.6839111549805262e-31,
+      "positive_mse": 1.4520520736111463e-31,
+      "negative_mse": 1.9140782459726057e-31,
+      "balanced_mse": 1.6830651597918759e-31,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 0.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "Bayes_oracle",
+      "sigma": 0,
+      "all_mse": 0.0,
+      "positive_mse": 0.0,
+      "negative_mse": 0.0,
+      "balanced_mse": 0.0,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 0.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "constant_prior",
+      "sigma": 0,
+      "all_mse": 0.25,
+      "positive_mse": 0.25,
+      "negative_mse": 0.25,
+      "balanced_mse": 0.25,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 1.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "natural",
+      "sigma": 0.2,
+      "all_mse": 0.03222587421783586,
+      "positive_mse": 0.032333196876818786,
+      "negative_mse": 0.03211933474536949,
+      "balanced_mse": 0.03222626581109414,
+      "positive_miss_rate": 0.014947316834109287,
+      "negative_false_positive_rate": 0.014108489418632936,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "clipped_natural",
+      "sigma": 0.2,
+      "all_mse": 0.03208175289552346,
+      "positive_mse": 0.03218668860815875,
+      "negative_mse": 0.03197758295067678,
+      "balanced_mse": 0.032082135779417764,
+      "positive_miss_rate": 0.014947316834109287,
+      "negative_false_positive_rate": 0.014108489418632936,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "plugin_reference",
+      "sigma": 0.2,
+      "all_mse": 0.04251373926953117,
+      "positive_mse": 0.04231116880532162,
+      "negative_mse": 0.042714831476886844,
+      "balanced_mse": 0.042513000141104235,
+      "positive_miss_rate": 0.014212202891448174,
+      "negative_false_positive_rate": 0.014230114327414254,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "Bayes_oracle",
+      "sigma": 0.2,
+      "all_mse": 0.010486558308352012,
+      "positive_mse": 0.010422501501528908,
+      "negative_mse": 0.010550147660977914,
+      "balanced_mse": 0.010486324581253412,
+      "positive_miss_rate": 0.014212202891448174,
+      "negative_false_positive_rate": 0.014230114327414254,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "constant_prior",
+      "sigma": 0.2,
+      "all_mse": 0.25,
+      "positive_mse": 0.25,
+      "negative_mse": 0.25,
+      "balanced_mse": 0.25,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 1.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "natural",
+      "sigma": 0.35,
+      "all_mse": 0.107133641718408,
+      "positive_mse": 0.10570562238854922,
+      "negative_mse": 0.10855124008502287,
+      "balanced_mse": 0.10712843123678605,
+      "positive_miss_rate": 0.14530752266601324,
+      "negative_false_positive_rate": 0.14765263926052055,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "clipped_natural",
+      "sigma": 0.35,
+      "all_mse": 0.10514989215745846,
+      "positive_mse": 0.10369519388249765,
+      "negative_mse": 0.10659397477971946,
+      "balanced_mse": 0.10514458433110856,
+      "positive_miss_rate": 0.14530752266601324,
+      "negative_false_positive_rate": 0.14765263926052055,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "plugin_reference",
+      "sigma": 0.35,
+      "all_mse": 0.10946467811571906,
+      "positive_mse": 0.10827584846737746,
+      "negative_mse": 0.11064483228620846,
+      "balanced_mse": 0.10946034037679296,
+      "positive_miss_rate": 0.1437147757902475,
+      "negative_false_positive_rate": 0.14619314035514475,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "Bayes_oracle",
+      "sigma": 0.35,
+      "all_mse": 0.10255579079733229,
+      "positive_mse": 0.10159704075307105,
+      "negative_mse": 0.1035075443683929,
+      "balanced_mse": 0.10255229256073198,
+      "positive_miss_rate": 0.1437147757902475,
+      "negative_false_positive_rate": 0.14619314035514475,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "constant_prior",
+      "sigma": 0.35,
+      "all_mse": 0.25,
+      "positive_mse": 0.25,
+      "negative_mse": 0.25,
+      "balanced_mse": 0.25,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 1.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "natural",
+      "sigma": 0.6,
+      "all_mse": 0.255329757201185,
+      "positive_mse": 0.24971523740933135,
+      "negative_mse": 0.2609033050655866,
+      "balanced_mse": 0.255309271237459,
+      "positive_miss_rate": 0.32381769174222,
+      "negative_false_positive_rate": 0.33568474823643885,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "clipped_natural",
+      "sigma": 0.6,
+      "all_mse": 0.23427538173688198,
+      "positive_mse": 0.22913977538565417,
+      "negative_mse": 0.23937351102886947,
+      "balanced_mse": 0.2342566432072618,
+      "positive_miss_rate": 0.32381769174222,
+      "negative_false_positive_rate": 0.33568474823643885,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "plugin_reference",
+      "sigma": 0.6,
+      "all_mse": 0.2231632689155252,
+      "positive_mse": 0.21975654257903143,
+      "negative_mse": 0.2265451346852239,
+      "balanced_mse": 0.22315083863212765,
+      "positive_miss_rate": 0.3225925018377849,
+      "negative_false_positive_rate": 0.3281440038919971,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "Bayes_oracle",
+      "sigma": 0.6,
+      "all_mse": 0.20267621392473362,
+      "positive_mse": 0.20056817227295062,
+      "negative_mse": 0.2047688721541003,
+      "balanced_mse": 0.20266852221352546,
+      "positive_miss_rate": 0.3225925018377849,
+      "negative_false_positive_rate": 0.3281440038919971,
+      "positive_count": 8162,
+      "negative_count": 8222
+    },
+    {
+      "map": "constant_prior",
+      "sigma": 0.6,
+      "all_mse": 0.25,
+      "positive_mse": 0.25,
+      "negative_mse": 0.25,
+      "balanced_mse": 0.25,
+      "positive_miss_rate": 0.0,
+      "negative_false_positive_rate": 1.0,
+      "positive_count": 8162,
+      "negative_count": 8222
+    }
+  ],
+  "dependencies": {
+    "sources": {
+      "configs/toy-logic-v1.json": "8cf7be2df8fdaf30b86d5ee40f966d7501dcf4b8493e4d61a4c0053c4c3c1add",
+      "scripts/logic_core.py": "8d88e40b37fb7c065952e6c32ae8519d7aebca69207637e00d9929f6f8239d66",
+      "scripts/train_logic.py": "79e1db9cb411edad63910aabc5e32ed5408c9e4cca48fdb18430581584b18f15",
+      "scripts/check_logic.py": "a5b06790cca7452a7a9bfcd61e21d9819d46ba85fee333c0b508e63d9613ecc0",
+      "scripts/analyze_logic.py": "16afaebe896bbd06c7e58d1c86a215888ad36a3c6a593a7d2eb0ace1316205a8",
+      "scripts/characterization_core.py": "15eb89bd1515d12b2f00d24835284f8ef6401892e0090c83861e9c3674ade5eb",
+      "scripts/analyze_toy_cis.py": "b5e49e67fe0ea5015fef32397ae18e3242f558b98bd0d05fe430402528d79dc0",
+      "configs/toy-characterization-v1.json": "09d75bd7215d25e90862290429e3c1174dbb6c48e4336e9177c6068adeff0d80",
+      "configs/toy-cis-v1.json": "868649ce6be8de21bb89b2fca5f4aeb61e40a977b759eb17b22f676bdc90a16f",
+      "reports/toy-cis-v1/prepared.json": "73eb440d9d6815ee658fb75e28d9e956bc1a5266158c5bcd45baf57946caad21",
+      "vendor/fsec/scripts/lib/superellipse.py": "47d19c99147577d6670f5727eb23a8de5336f5677d3d2f6c342974d20dd0da0d"
+    },
+    "assets_sha256": "0a429eab746e47e3d19369c62e31178a75d9933ec50bdda6006b42c83a9ea6ae",
+    "weights_sha256": "9e32511ec6b4deb328f5286d3c531192f6f9938fa71948bd34b3f16a52f35f41"
+  },
+  "raw_sha256": "30f4a085710bb893fea6b61acdccaad5974f5f3fd537fe91512e61cf49391302"
+}
