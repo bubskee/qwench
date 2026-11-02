@@ -177,6 +177,13 @@ An interruption between writing a cohort's final checkpoint and completion marke
 can be resumed too. Available disk should accommodate generated datasets,
 optimizer checkpoints, and raw response grids (several hundred MB each).
 
+## Tiny matched-control recovery follow-up
+
+The separate [squared-ReLU matched-control/recovery follow-up](../reports/squared-recovery-v1/METHODS.md)
+uses one saved checkpoint and an independent-feature control. Its fixed-target
+corruption measurement runs on CPU with `requirements/toy.txt`; plotting and
+artifact checks need only `requirements/figures.txt`. It performs no training.
+
 ## Earlier LLM experiments
 
 See the [experiment index](experiments.md) for every result and its original

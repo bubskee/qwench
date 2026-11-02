@@ -19,6 +19,7 @@ links or rewriting historical evidence.
 | Sampler correction and implementation audit | [Findings](../reports/implementation-audit-v1/findings.md), [methods](../reports/implementation-audit-v1/METHODS.md) | `recover_legacy_anchors.py`, `replay_legacy_anchors.py`, `analyze_implementation_audit.py`, audit/check scripts; recovered anchors stored in the report |
 | Released-checkpoint toy-CiS pilot | [Findings](../reports/toy-cis-v1/findings.md), [protocol](toy-cis-pilot-v1.md) | `run_toy_cis.py`, `analyze_toy_cis.py`, `check_toy_cis.py`; `configs/toy-cis-v1.json` |
 | Five activations trained independently | [Findings](../reports/toy-scalar-comparison-v1/findings.md), [methods](../reports/toy-scalar-comparison-v1/METHODS.md) | `reproduce.py toy-figures/toy-refit/toy-train`; `configs/toy-scalar-comparison-v1.json` |
+| Squared-ReLU matched control and fixed-target recovery | [Findings](../reports/squared-recovery-v1/findings.md), [methods](../reports/squared-recovery-v1/METHODS.md) | `squared_recovery.py`, `plot_squared_recovery.py`, `audit_squared_recovery.py`; `configs/squared-recovery-v1.json`; one checkpoint, no new training |
 
 Script names in the table are relative to `scripts/`. Commands for the older
 runs are retained in [legacy reproduction notes](legacy-reproduction.md).
