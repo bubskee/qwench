@@ -1,0 +1,11 @@
+{
+  "version": "toy-characterization-axis-null-v1",
+  "status": "Secondary derived diagnostic, specified after orthogonal-study aggregates and before computing this null; no new training or inputs.",
+  "families": ["toy-characterization-v1", "toy-characterization-coupled-v1"],
+  "records": "All new and historical frames; feature-axis, absent-pair, ++ primary slice; both fixed pairs and both natural/separable maps; no fit-based selection.",
+  "null": "For each background separately: R_null(a,b)=sqrt(R(a,0)^2+R(0,b)^2). Then take the median across the same four backgrounds and apply exactly the same fitter/threshold fractions.",
+  "matching": "Exactly matches the full measured single-axis response norms at the tested background. No encoder knowledge, target labels, training, or fit parameters are supplied.",
+  "expected_identity": "For the coordinate-separable map, orthogonal output coordinates make this equality exact to numerical precision. Verify raw saved grids satisfy it.",
+  "metrics": ["primary p and all flags", "threshold sensitivity at 0.25/0.5/0.75", "per-background primary fits", "full-grid normalized response residual", "natural-minus-axis-null p difference", "separable-grid algebra error"],
+  "limits": "Assumes orthogonal output effects. A discrepancy may reflect output-vector angles or nonlinear interaction, and is not by itself evidence for correction. Compare tilted-quadratic residuals as well. Passing this null does not mean the feature directions are unprivileged; it explains that privileging through one-dimensional nonlinear sensitivity."
+}
