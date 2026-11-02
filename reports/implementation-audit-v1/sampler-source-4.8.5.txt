@@ -1,0 +1,173 @@
+class BufferShuffledExamplesIterable(_BaseExamplesIterable):
+    def __init__(self, ex_iterable: _BaseExamplesIterable, buffer_size: int, generator: np.random.Generator):
+        super().__init__()
+        self.ex_iterable = ex_iterable
+        self.buffer_size = buffer_size
+        self.generator = generator
+
+    def shift_rngs(self, value: int) -> "_BaseExamplesIterable":
+        rng = deepcopy(self.generator)
+        new_seed = rng.integers(0, 1 << 63) - value
+        return BufferShuffledExamplesIterable(
+            ex_iterable=self.ex_iterable,
+            buffer_size=self.buffer_size,
+            generator=np.random.default_rng(seed=new_seed),
+        )
+
+    @property
+    def is_typed(self):
+        return self.ex_iterable.is_typed
+
+    @property
+    def features(self):
+        return self.ex_iterable.features
+
+    @property
+    def iter_arrow(self):
+        return self._iter_arrow if self.ex_iterable.iter_arrow else None
+
+    def _init_state_dict(self) -> dict:
+        self._state_dict = self.ex_iterable._init_state_dict()
+        self._original_state_dict = self.state_dict()
+        return self._state_dict
+
+    def load_state_dict(self, state_dict: dict) -> dict:
+        if self._state_dict:
+            if state_dict != self._original_state_dict:
+                logger.warning(
+                    "Loading a state dict of a shuffle buffer of a dataset without the buffer content."
+                    "The shuffle buffer will be refilled before starting to yield new examples."
+                )
+        return super().load_state_dict(state_dict)
+
+    @staticmethod
+    def _iter_random_indices(rng: np.random.Generator, buffer_size: int, random_batch_size=1000) -> Iterator[int]:
+        while True:
+            yield from (int(i) for i in rng.integers(0, buffer_size, size=random_batch_size))
+
+    def __iter__(self):
+        buffer_size = self.buffer_size
+        rng = deepcopy(self.generator)
+        indices_iterator = self._iter_random_indices(rng, buffer_size)
+        # this is the shuffle buffer that we keep in memory
+        mem_buffer = []
+        for x in self.ex_iterable:
+            if len(mem_buffer) == buffer_size:  # if the buffer is full, pick and example from it
+                i = next(indices_iterator)
+                yield mem_buffer[i]
+                mem_buffer[i] = x  # replace the picked example by a new one
+            else:  # otherwise, keep filling the buffer
+                mem_buffer.append(x)
+        # when we run out of examples, we shuffle the remaining examples in the buffer and yield them
+        rng.shuffle(mem_buffer)
+        yield from mem_buffer
+
+    def _iter_arrow(self):
+        buffer_size = self.buffer_size
+        rng = deepcopy(self.generator)
+        indices_iterator = self._iter_random_indices(rng, buffer_size)
+        # this is the shuffle buffer that we keep in memory
+        mem_buffer = []
+        for key, pa_table in self.ex_iterable.iter_arrow():
+            if len(mem_buffer) == buffer_size:  # if the buffer is full, pick and example from it
+                i = next(indices_iterator)
+                yield mem_buffer[i]
+                mem_buffer[i] = (key, pa_table)  # replace the picked example by a new one
+            else:  # otherwise, keep filling the buffer
+                mem_buffer.append((key, pa_table))
+        # when we run out of examples, we shuffle the remaining examples in the buffer and yield them
+        rng.shuffle(mem_buffer)
+        yield from mem_buffer
+
+    def shuffle_data_sources(self, generator: np.random.Generator) -> "BufferShuffledExamplesIterable":
+        """Shuffle the wrapped examples iterable as well as the shuffling buffer."""
+        return BufferShuffledExamplesIterable(
+            self.ex_iterable.shuffle_data_sources(generator), buffer_size=self.buffer_size, generator=self.generator
+        )
+
+    def shard_data_sources(self, num_shards: int, index: int, contiguous=True) -> "BufferShuffledExamplesIterable":
+        """Keep only the requested shard."""
+        return BufferShuffledExamplesIterable(
+            self.ex_iterable.shard_data_sources(num_shards, index, contiguous=contiguous),
+            buffer_size=self.buffer_size,
+            generator=self.generator,
+        )
+
+    def reshard_data_sources(self) -> "BufferShuffledExamplesIterable":
+        return BufferShuffledExamplesIterable(
+            self.ex_iterable.reshard_data_sources(),
+            buffer_size=self.buffer_size,
+            generator=self.generator,
+        )
+
+    @property
+    def num_shards(self) -> int:
+        return self.ex_iterable.num_shards
+    def shuffle(
+        self, seed=None, generator: Optional[np.random.Generator] = None, buffer_size: int = 1000
+    ) -> "IterableDataset":
+        """
+        Randomly shuffles the elements of this dataset.
+
+        This dataset fills a buffer with `buffer_size` elements, then randomly samples elements from this buffer,
+        replacing the selected elements with new elements. For perfect shuffling, a buffer size greater than or
+        equal to the full size of the dataset is required.
+
+        For instance, if your dataset contains 10,000 elements but `buffer_size` is set to 1000, then `shuffle` will
+        initially select a random element from only the first 1000 elements in the buffer. Once an element is
+        selected, its space in the buffer is replaced by the next (i.e. 1,001-st) element,
+        maintaining the 1000 element buffer.
+
+        If the dataset is made of several shards, it also does shuffle the order of the shards.
+        However if the order has been fixed by using [`~datasets.IterableDataset.skip`] or [`~datasets.IterableDataset.take`]
+        then the order of the shards is kept unchanged.
+
+        Args:
+            seed (`int`, *optional*, defaults to `None`):
+                Random seed that will be used to shuffle the dataset.
+                It is used to sample from the shuffle buffer and also to shuffle the data shards.
+            generator (`numpy.random.Generator`, *optional*):
+                Numpy random Generator to use to compute the permutation of the dataset rows.
+                If `generator=None` (default), uses `np.random.default_rng` (the default BitGenerator (PCG64) of NumPy).
+            buffer_size (`int`, defaults to `1000`):
+                Size of the buffer.
+
+        Example:
+
+        ```py
+        >>> from datasets import load_dataset
+        >>> ds = load_dataset("cornell-movie-review-data/rotten_tomatoes", split="train", streaming=True)
+        >>> list(ds.take(3))
+        [{'label': 1,
+         'text': 'the rock is destined to be the 21st century\'s new " conan " and that he\'s going to make a splash even greater than arnold schwarzenegger , jean-claud van damme or steven segal .'},
+         {'label': 1,
+         'text': 'the gorgeously elaborate continuation of " the lord of the rings " trilogy is so huge that a column of words cannot adequately describe co-writer/director peter jackson\'s expanded vision of j . r . r . tolkien\'s middle-earth .'},
+         {'label': 1, 'text': 'effective but too-tepid biopic'}]
+        >>> shuffled_ds = ds.shuffle(seed=42)
+        >>> list(shuffled_ds.take(3))
+        [{'label': 1,
+         'text': "a sports movie with action that's exciting on the field and a story you care about off it ."},
+         {'label': 1,
+         'text': 'at its best , the good girl is a refreshingly adult take on adultery . . .'},
+         {'label': 1,
+         'text': "sam jones became a very lucky filmmaker the day wilco got dropped from their record label , proving that one man's ruin may be another's fortune ."}]
+        ```
+        """
+        if generator is None:
+            generator = np.random.default_rng(seed)
+        else:
+            generator = deepcopy(generator)
+        return IterableDataset(
+            BufferShuffledExamplesIterable(
+                RebatchedArrowExamplesIterable(self._ex_iterable.shuffle_data_sources(generator), batch_size=1)
+                if self._ex_iterable.iter_arrow
+                else self._ex_iterable.shuffle_data_sources(generator),
+                buffer_size=buffer_size,
+                generator=generator,
+            ),
+            info=self._info.copy(),
+            split=self._split,
+            formatting=self._formatting,
+            distributed=copy.deepcopy(self._distributed),
+            token_per_repo_id=self._token_per_repo_id,
+        )

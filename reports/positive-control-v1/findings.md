@@ -1,5 +1,7 @@
 # Fresh 1.7B control and matched 4B comparison
 
+**Sampler correction:** The follow-up [implementation audit](../implementation-audit-v1/findings.md) found that `datasets` 5.1 changed the streaming shuffle. These frozen v1 runs used different anchors from the paper. Regeneration with the pre-paper sampler recovers the original response patterns and the strong Gender×Age positive case. The figures and numbers below describe the original attempt, retained for transparency.
+
 **The intended 1.7B positive control was inconclusive; these fixed cases do
 not show a clear difference between the fresh models.** The saved 1.7B feature
 point estimates were not cleanly recovered, so this does not isolate a failure

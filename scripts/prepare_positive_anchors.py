@@ -1,9 +1,13 @@
-"""Regenerate the released FineWeb anchor recipe for both pinned tokenizers."""
+"""Regenerate frozen v1 sampling (datasets 5.1), not historical paper inputs.
+
+Use recover_legacy_anchors.py for the audited pre-paper sampler.
+"""
 import hashlib,importlib.metadata,json,faulthandler
 from pathlib import Path
 from datasets import load_dataset
 from transformers import AutoTokenizer
 
+assert importlib.metadata.version("datasets")=="5.1.0", "V1 reconstruction requires its original sampler version"
 ROOT=Path(__file__).resolve().parents[1]
 RUN=ROOT/'reports/positive-control-v1'
 protocol=json.loads((ROOT/'configs/positive-control-v1.json').read_text())

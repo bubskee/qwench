@@ -184,7 +184,7 @@ data versus fresh 4B data, not fresh 1.7B inference. The [fresh positive-control
 is now complete and qualifies that comparison further.
 
 
-## Fresh positive control (complete)
+## Fresh positive control (complete; sampler corrected in follow-up audit)
 
 The [frozen small protocol](configs/positive-control-v1.json) runs two exact
 contrastive pairs and the first isotropic pair on fresh Qwen3-1.7B, followed
@@ -225,3 +225,22 @@ The sweep resumes complete anchors only with matching seals and source.
 recipe; it refuses to overwrite the stored input file. The historical
 authors’ token cache is unavailable, so historical input identity is not
 verified. Both fresh models use the same saved source documents.
+
+
+## Why the first 1.7B positive control missed
+
+The [implementation audit](reports/implementation-audit-v1/findings.md) found
+a data-sampling mismatch: `datasets` 5.1 changes both the streaming buffer
+shuffle and default shard interleaving. Seed 42 therefore selected 30 entirely
+different documents. A single pre-paper sampler, `datasets==4.8.5`, reconstructs
+anchors whose per-anchor response patterns match the published grids.
+
+Using the original sweep functions and released vectors, the recovered-anchor
+Gender×Age estimate is **2.442**, versus published **2.415** and first-run
+**1.997**. Wealth×Gender returns to approximately 2. The exact original token
+file remains unavailable; ordered full-response fingerprints strongly support
+input recovery. See the [audit methods](reports/implementation-audit-v1/METHODS.md),
+[recovered token windows](reports/implementation-audit-v1/legacy-anchor-windows.tsv),
+and [comparison plot](reports/implementation-audit-v1/sampler-comparison.png).
+The frozen v1 inputs/results are preserved. No further 4B inference was run
+during this audit.
