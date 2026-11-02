@@ -1,0 +1,11 @@
+{
+  "version": "toy-characterization-pair-diagnostic-v1",
+  "status": "Secondary structural diagnostic after observing similar p with different denoising benefit. The main low-overlap probe pairs lie across independent code blocks; test a directly coupled pair before interpreting that result.",
+  "models": "All final 120 new networks; both encoder families, all tasks, five activations and three seeds. No retraining or outcome-based selection.",
+  "pairs": [[0, 1], [4, 9]],
+  "pair_meaning": "In overlapping-code family, (0,1) is directly coupled with cosine 0.6 and (4,9) is uncoupled with cosine zero. In orthogonal family both have cosine zero.",
+  "settings": "Same four fixed backgrounds, pair absent (0), ++ and +- signs, 31x31 amplitudes 0..1.5, natural and separable maps, same per-pair threshold and all quality flags.",
+  "vector_additive_null": "At each clean background: predicted full output is f(x+a*d1)+f(x+b*d2)-f(x). Match the entire clean output and both full single-axis output-vector curves, then remove only the two-direction nonlinear interaction. Fit the L2 response of that prediction at the same threshold.",
+  "metrics": ["original and vector-null p with flags", "response interaction residual normalized by response range", "PSD tilted-quadratic residual", "input-direction cosine", "agreement with already saved surfaces where available"],
+  "limits": "The directly coupled directions fail the original paper's low-overlap filter. Its p is a latent-coefficient-chart diagnostic, not a directly comparable paper-style result. A vector-null discrepancy identifies nonlinear interaction, not necessarily error correction. This null has clean-anchor/axis-response access and is not a deployable recovery model."
+}
