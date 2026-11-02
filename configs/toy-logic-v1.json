@@ -1,0 +1,56 @@
+{
+  "version": "toy-logic-v1",
+  "question": "How does FSEC-style geometry relate to fixed-target corruption recovery when outputs require AND or XOR of two latent input bits?",
+  "scope": "Small exploratory extension. Fresh weights; one orthogonal encoder; no context or overlapping-code extension; no population-level activation ranking or CiS claim.",
+  "activations": ["relu", "gelu", "silu", "leaky_relu", "relu2"],
+  "seeds": [0, 1, 2],
+  "tasks": ["and_clean", "and_denoise", "xor_clean", "xor_denoise"],
+  "task": {
+    "latent_bits": 16,
+    "observed_dimensions": 32,
+    "feature_probability": 0.5,
+    "reason_for_prior": "Balanced inputs give all four pair states equal probability. AND positives have probability 0.25 and XOR positives 0.5; report class-conditional error, rather than ranking tasks by unadjusted MSE.",
+    "outputs": "Eight fixed disjoint pairs (0,1),(2,3),...,(14,15); AND is a*b, XOR is a+b-2*a*b for clean binary bits.",
+    "encoder_seed": 55101,
+    "encoder": "Same orthonormal-column 32x16 Gaussian QR encoder as the earlier study. No context coordinate.",
+    "training_noise_std": 0.35,
+    "target": "The clean AND/XOR outputs, fixed while independent Gaussian noise corrupts the 32 observations. Clean conditions multiply the same noise draws by zero."
+  },
+  "network": {"inputs": 32, "hidden": 64, "outputs": 8, "parameters": 2632, "hidden_bias": true, "output_bias": true, "initialization": "Per seed, gate normal std 1/sqrt(32), out normal std 1/sqrt(64), biases zero; exact role-matched initial weights across tasks and activations."},
+  "training": {
+    "steps": 30000, "checkpoints": [0, 5000, 30000], "batch_size": 512,
+    "optimizer": "Adam", "learning_rate": 0.001, "betas": [0.9, 0.999], "eps": 1e-8,
+    "weight_decay": 0, "schedule": "cosine decay to zero over 30000 updates",
+    "objective": "Sum of per-network batch/output mean squared errors, independently updated parameter slices.",
+    "train_pool_size": 32768, "eval_size": 2048,
+    "data_seed": 56101, "eval_seed": 56102, "minibatch_seed": 56103,
+    "log_every": 1000, "resume_every": 1000, "device": "mps", "dtype": "float32"
+  },
+  "geometry": {
+    "pairs": [{"name": "within", "bits": [0, 1]}, {"name": "across", "bits": [0, 2]}],
+    "states": [[0, 0], [0, 1], [1, 0], [1, 1]],
+    "directions": "From each binary corner, turn each input bit toward its opposite value: sign_i=1-2*state_i. Additive interventions on unit encoder columns.",
+    "amplitude_max": 1.0, "grid_points": 31, "fine_grid_points": 61,
+    "background_seed": 56104,
+    "backgrounds": "One frozen nuisance-bit vector copied four times; set partners (1,3) to 00,01,10,11 before setting the probe bits. Save every background separately.",
+    "threshold_fractions": [0.25, 0.5, 0.75], "primary_fraction": 0.5,
+    "fitter": "Unchanged original additive superellipse fitter with chart coordinates 0..60. Rescale its reported intercept units by amplitude_max/1.5; p itself is unchanged.",
+    "measurement": "Full eight-output L2 change from each map's own clean-anchor output. Also record within-pair output-0-only response to expose nuisance-output leakage.",
+    "primary_comparison": "Within pair (0,1), state 00, background 3; across pair (0,2), state 00, background 3, where both AND partners are on. Choose by task structure, before outcomes. Report all states/backgrounds and all flags.",
+    "controls": ["Exact posterior-mean logical denoiser at sigma=0.35", "Known linear bit decode, clipped to [0,1], followed by Boolean multilinear AND/XOR extension", "Full-vector additive axis null for geometry only: f(x+a*d1)+f(x+b*d2)-f(x). It is not treated as a global recovery map."],
+    "diagnostics": ["Original fit flags", "Multiple connected below-threshold components", "Diagonal threshold crossing then return below threshold", "Coordinatewise response decreases inside the quadrant", "Full-vector interaction residual"],
+    "diagnostic_thresholds": {"component_min_cells": 3, "connectivity": 4, "interior_single_step_drop_fraction": 0.01, "diagonal_crossing_relative_margin": 1e-6, "diagonal_touch_counts": "Reaching the threshold within tolerance, then returning below, counts. Exact XOR is tangent at the half-axis threshold."},
+    "fine_check": "Final checkpoint, seed 0, both pairs, state 00, all four backgrounds, all activations and tasks. Report jointly unflagged comparisons separately from flagged fits.",
+    "caveat": "The candidate directions are underlying input bits, not logical output features. AND/XOR may violate the monotone single-plateau assumption even for an exact denoiser. Continuous probes still interpolate between discrete training codewords."
+  },
+  "recovery": {
+    "samples": 1024, "draws": 2, "data_seed": 56105, "noise_seed": 56106,
+    "noise_std": [0, 0.2, 0.35, 0.6], "primary_std": 0.35,
+    "maps": ["natural", "clipped_natural", "plugin_reference", "Bayes_oracle", "constant_prior"],
+    "metrics": ["all-output MSE", "positive-output MSE", "negative-output MSE", "class-balanced MSE", "positive miss rate", "negative false-positive rate", "clean-to-noisy error increase"],
+    "reference_caveat": "Analytic references know the generative encoder/prior/noise. They are task benchmarks, not equal-capacity trained controls. Clean sigma-zero oracle is evaluated only on exact clean codewords.",
+    "storage": "Save natural-network recovery predictions in float32; compute all reported recovery metrics in float64 from exactly those stored predictions. Geometry remains float64."
+  },
+  "verification": ["Boolean truth tables", "Batched versus separate gradients and Adam updates", "Exact initialization pairing", "Independent NumPy/Torch forward parity", "Exact posterior versus all 65536 clean latent states", "Analytic p2/p4 fit calibration with correct amplitude units", "Exact checkpoint resume", "Saved prediction parity at every checkpoint", "Recovery scores reconstructed from raw predictions", "Fresh noise distinct from training/evaluation", "Fine-grid and threshold checks"],
+  "stopping_rule": "Finish these 60 networks at the fixed 30000-step budget and three checkpoints; one compact report and figures, with fit failures and task failures retained. No activation-specific tuning or further task/architecture expansion."
+}
