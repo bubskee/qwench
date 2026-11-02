@@ -1,0 +1,28 @@
+{
+  "version": "toy-characterization-validation-v1",
+  "status": "Final secondary robustness pass after the primary study; all final networks included, no new training or tuning.",
+  "families": ["toy-characterization-v1", "toy-characterization-coupled-v1"],
+  "recovery": {
+    "samples": 4096,
+    "noise_draws": 2,
+    "data_seed": 55301,
+    "noise_seed": 55302,
+    "noise_std": 0.35,
+    "target": "fresh independent draws of the same sparse clean bits, held fixed under fresh Gaussian observation noise",
+    "maps": ["natural", "projected natural", "separable", "clipped natural", "clipped projected natural", "clipped separable", "clipped dual linear reference", "exact posterior denoiser"],
+    "matching": "same fresh latent examples, contexts and standard observation noise across both families and every network",
+    "interpretation": "Independent sampled-observation validation; discrete clean bit patterns may recur in the training distribution. Summarize initialization seeds separately."
+  },
+  "partner_state": {
+    "models": "all final networks in both families",
+    "pair": [4, 9],
+    "partners": [5, 8],
+    "states": [0, 1],
+    "backgrounds": "same four original backgrounds and contexts, with only the two partner bits reset together to 0 or 1; pair itself absent",
+    "maps": ["natural", "separable"],
+    "grid": "31x31, ++, 0..1.5, original threshold fractions and flags",
+    "reason": "Original backgrounds have partners active in only one of four cases; medians can hide that conditional dependence. This paired intervention keeps all other context fixed.",
+    "limits": "This does not add a new task or identify an error-correction module. Partner activity can change individual response curves as well as joint computation."
+  },
+  "stopping_rule": "Finish these fixed validation inputs and partner-state controls, complete independent checks, plots and the findings note. No further experiments in this run."
+}
