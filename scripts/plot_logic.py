@@ -79,7 +79,7 @@ def plot(source, out):
     (out / 'networks.json').write_text(json.dumps(networks, indent=2) + '\n')
     (out / 'seed-summary.json').write_text(json.dumps(groups, indent=2) + '\n')
     with (out / 'networks.csv').open('w') as stream:
-        writer = csv.DictWriter(stream, fieldnames=list(networks[0])); writer.writeheader()
+        writer = csv.DictWriter(stream, fieldnames=list(networks[0]), lineterminator='\n'); writer.writeheader()
         writer.writerows({k: json.dumps(v) if isinstance(v, list) else v for k, v in row.items()} for row in networks)
     final = [r for r in networks if r['step'] == 30000]
     lines = ['# Numerical summary', '', 'Final checkpoints; means over five activations and three initialization seeds. Noise std 0.35. MSE targets remain clean logical labels.', '',
