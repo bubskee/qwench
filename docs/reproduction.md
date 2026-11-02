@@ -84,6 +84,24 @@ The wrapper restricts output to this clone's `work/` and refuses an existing
 directory. It copies inputs and leaves committed reports intact. No environment
 variables or knowledge of the old local directory layout are required.
 
+### README boundary visual
+
+The README uses a smaller two-panel view of actual toy measurements. Rebuild it
+with the same CPU analysis environment:
+
+```bash
+.venv/bin/python scripts/plot_readme_boundary.py
+```
+
+It writes `work/reproductions/readme-boundary.png` and a JSON provenance receipt.
+The checked-in version is `docs/images/toy-boundaries.png`. Both panels use seed
+0, L2 training, the first competence-conditioned feature pair (10, 65), absent
+pair inputs, positive encoder-column perturbations, and the original per-pair
+threshold. They show the median over four backgrounds, normalized by each axis
+intercept. The curves are extracted from saved grids; p comes from the saved
+fits. No quadrants are reflected and no new inference or fitting is performed.
+This is an illustrative slice, not an average over seeds or a full response map.
+
 ## Reproduce the cached paper figure
 
 ```bash
