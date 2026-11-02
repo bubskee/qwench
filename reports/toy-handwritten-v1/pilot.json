@@ -1,0 +1,71 @@
+{
+  "samples": 8192,
+  "seed": 62001,
+  "code_seed": 62002,
+  "tested_code_ones": [
+    5,
+    10,
+    15,
+    25
+  ],
+  "gain": 0.9,
+  "selection": "Retain axis selector and code sizes 5 and 10 for fresh evaluation. Pilot inspected positive MSE, coverage, total MSE, inactive RMSE and fourth-power loss; this is development, not a preregistered experiment.",
+  "results": [
+    {
+      "model": "axis50",
+      "all_mse": 0.001735024736262858,
+      "positive_mse": 0.17302915453910828,
+      "positive_mse_below_005_count": 50,
+      "inactive_rmse": 0.0,
+      "fourth_power_loss": 0.0010540611110627651
+    },
+    {
+      "model": "code5",
+      "all_mse": 0.0031384965404868126,
+      "positive_mse": 0.012545564211905003,
+      "positive_mse_below_005_count": 100,
+      "inactive_rmse": 0.0551256500184536,
+      "fourth_power_loss": 9.364923607790843e-05
+    },
+    {
+      "model": "code10",
+      "all_mse": 0.0033093332313001156,
+      "positive_mse": 0.019292017444968224,
+      "positive_mse_below_005_count": 100,
+      "inactive_rmse": 0.05564766004681587,
+      "fourth_power_loss": 9.659765055403113e-05
+    },
+    {
+      "model": "code15",
+      "all_mse": 0.003472085576504469,
+      "positive_mse": 0.027592431753873825,
+      "positive_mse_below_005_count": 100,
+      "inactive_rmse": 0.0557880662381649,
+      "fourth_power_loss": 0.00012191378482384607
+    },
+    {
+      "model": "code25",
+      "all_mse": 0.003771199844777584,
+      "positive_mse": 0.04503776505589485,
+      "positive_mse_below_005_count": 74,
+      "inactive_rmse": 0.05558697134256363,
+      "fourth_power_loss": 0.00021071905212011188
+    },
+    {
+      "model": "trained_relu_L2_s0",
+      "all_mse": 0.0016749415080994368,
+      "positive_mse": 0.156215101480484,
+      "positive_mse_below_005_count": 50,
+      "inactive_rmse": 0.010375259444117546,
+      "fourth_power_loss": 0.0008769482374191284
+    },
+    {
+      "model": "trained_relu_L4_s0",
+      "all_mse": 0.0024582939222455025,
+      "positive_mse": 0.02183770202100277,
+      "positive_mse_below_005_count": 100,
+      "inactive_rmse": 0.04744136333465576,
+      "fourth_power_loss": 3.572605419321917e-05
+    }
+  ]
+}

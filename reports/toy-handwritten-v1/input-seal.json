@@ -1,0 +1,173 @@
+{
+  "git_revision": "84f4428761c6674c27412691fd1ac32047a68c5c",
+  "sources": {
+    "configs/toy-handwritten-v1.json": "66c9871bc4df3b1a3a63e21c38099f166710bf66b0514d6b1e38fe94b90bfab0",
+    "scripts/evaluate_written_toys.py": "6702c2f0fc7b7ecd23d2e86e9116d0b4d939588a95e12cc2a717639557c00b9b",
+    "scripts/write_toy_weights.py": "5dcf518c870ed58719cc94f838eb7170c5e3733bcea262cac29b5e0762290161",
+    "scripts/characterization_core.py": "15eb89bd1515d12b2f00d24835284f8ef6401892e0090c83861e9c3674ade5eb",
+    "scripts/coupled_characterization.py": "1be6e684cff3c1a301947c3afec70479912858d638816fc1c3e9edcd0a046b2f",
+    "scripts/plot_written_toys.py": "f4cea2b46c738efd3aac803abe500ae42aa49cb6ed6c7bff2aaf455ef5c7633f",
+    "tests/test_written_toys.py": "6cef37077ef5c8690c6268568935d03bd23748adffafc901df42bf011ca5ffa8"
+  },
+  "written_weights_sha256": "93b540c1a898a7f5351d6c53b6fb2bdd7ccdfa75bb9f078cdd4277cdf6a95db8",
+  "baseline_weights": {
+    "reports/toy-scalar-comparison-v1/weights-100000.safetensors": "3db7bfc09d60f39b839336a6ddbd4806c7f6d5b0399ebe751d796c3aa96c44e8",
+    "reports/toy-characterization-v1/weights-100000.safetensors": "0c9c4f91ad9eae8416426c3f16d567a0b9769637d87a2476fb678108b7d1dcde",
+    "reports/toy-characterization-coupled-v1/weights-100000.safetensors": "d00334fc87047363dfc7412aad5b5cd65761643eb060db99a8388423d327a43c"
+  },
+  "protocol": {
+    "version": "toy-handwritten-v1",
+    "scope": "Exploratory formula-written weights, no training, distillation, copied weights, or data-fitted coefficients.",
+    "pilot": {
+      "samples": 8192,
+      "seed": 62001,
+      "code_seed": 62002,
+      "tested_code_ones": [
+        5,
+        10,
+        15,
+        25
+      ],
+      "gain": 0.9,
+      "selection": "Retain axis selector and code sizes 5 and 10 for fresh evaluation. Pilot inspected positive MSE, coverage, total MSE, inactive RMSE and fourth-power loss; this is development, not a preregistered experiment.",
+      "results": [
+        {
+          "model": "axis50",
+          "all_mse": 0.001735024736262858,
+          "positive_mse": 0.17302915453910828,
+          "positive_mse_below_005_count": 50,
+          "inactive_rmse": 0.0,
+          "fourth_power_loss": 0.0010540611110627651
+        },
+        {
+          "model": "code5",
+          "all_mse": 0.0031384965404868126,
+          "positive_mse": 0.012545564211905003,
+          "positive_mse_below_005_count": 100,
+          "inactive_rmse": 0.0551256500184536,
+          "fourth_power_loss": 9.364923607790843e-05
+        },
+        {
+          "model": "code10",
+          "all_mse": 0.0033093332313001156,
+          "positive_mse": 0.019292017444968224,
+          "positive_mse_below_005_count": 100,
+          "inactive_rmse": 0.05564766004681587,
+          "fourth_power_loss": 9.659765055403113e-05
+        },
+        {
+          "model": "code15",
+          "all_mse": 0.003472085576504469,
+          "positive_mse": 0.027592431753873825,
+          "positive_mse_below_005_count": 100,
+          "inactive_rmse": 0.0557880662381649,
+          "fourth_power_loss": 0.00012191378482384607
+        },
+        {
+          "model": "code25",
+          "all_mse": 0.003771199844777584,
+          "positive_mse": 0.04503776505589485,
+          "positive_mse_below_005_count": 74,
+          "inactive_rmse": 0.05558697134256363,
+          "fourth_power_loss": 0.00021071905212011188
+        },
+        {
+          "model": "trained_relu_L2_s0",
+          "all_mse": 0.0016749415080994368,
+          "positive_mse": 0.156215101480484,
+          "positive_mse_below_005_count": 50,
+          "inactive_rmse": 0.010375259444117546,
+          "fourth_power_loss": 0.0008769482374191284
+        },
+        {
+          "model": "trained_relu_L4_s0",
+          "all_mse": 0.0024582939222455025,
+          "positive_mse": 0.02183770202100277,
+          "positive_mse_below_005_count": 100,
+          "inactive_rmse": 0.04744136333465576,
+          "fourth_power_loss": 3.572605419321917e-05
+        }
+      ]
+    },
+    "evaluation": {
+      "seeds": [
+        62101,
+        62102,
+        62103
+      ],
+      "samples_per_seed": 16384,
+      "binary_noise_std": [
+        0,
+        0.35,
+        0.6
+      ],
+      "dtype": "float32",
+      "device": "cpu",
+      "cpu_threads": 2,
+      "prediction": "Raw network output, without external clipping or projection for either contestant. Same inputs and targets for every applicable model."
+    },
+    "bottleneck": {
+      "features": 100,
+      "width": 50,
+      "bias": false,
+      "activation_probability": 0.02,
+      "target": "ReLU(x)",
+      "competence": "Per-feature positive MSE <0.05, unit self-gain >=0.25, correct unit-probe argmax. Report existing participation metrics separately.",
+      "candidates": [
+        "axis50",
+        "code5_gain09",
+        "code10_gain09"
+      ],
+      "baselines": "All 30 saved scalar networks at step 100000; focus on matched ReLU L2 and L4, retain all activations."
+    },
+    "binary": {
+      "inputs": 33,
+      "width": 64,
+      "outputs": 16,
+      "parameters": 3216,
+      "families": [
+        "orthogonal",
+        "coupled"
+      ],
+      "tasks": [
+        "linear_clean",
+        "linear_denoise",
+        "context_clean",
+        "context_denoise"
+      ],
+      "baselines": "All 120 saved final networks, within their original family/task. Include exact posterior as an explicitly unconstrained reference.",
+      "prior": 0.125,
+      "design_noise_std": 0.35,
+      "simple_denoise_logit_knots": [
+        -3,
+        -1,
+        1,
+        3
+      ],
+      "simple_denoise_values": [
+        0,
+        0.25,
+        0.75,
+        1
+      ],
+      "context_denoise_logit_knots": [
+        -2,
+        2
+      ],
+      "context_denoise_values": [
+        0,
+        1
+      ],
+      "context_off_shift": 8
+    },
+    "caveats": [
+      "Constructors know the task distribution and binary encoder; trained nets learn from examples. This tests weight construction, not equally informed learning algorithms.",
+      "Random code geometry is fixed-seed and algebraically inverted; pseudoinverse is not a fit to training examples.",
+      "Fresh seeds quantify evaluation-set variation, not uncertainty over construction seeds or learning algorithms.",
+      "Coupled threshold decoders discard neighboring evidence; their shortfall against trained denoisers must be reported.",
+      "No candidate changes after fresh evaluation. Geometry p is outside this task-performance experiment."
+    ]
+  },
+  "numpy": "2.5.4",
+  "torch": "2.14.1"
+}
