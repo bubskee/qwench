@@ -61,6 +61,14 @@ def main():
    ax.plot(np.arange(1,101),values.mean(0),color=COLORS[name],label=LABELS[name],lw=1.8)
   ax.axhline(.05,color='#aaa',ls='--',label='Competence MSE cutoff');ax.set(title=f'L{exp}: all feature errors',xlabel='Feature rank, sorted within each network',ylabel='Positive-active MSE');ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.12)
  axes[0].legend(fontsize=8);fig.tight_layout();fig.savefig(OUT/'feature-errors.png',dpi=170,bbox_inches='tight');plt.close(fig)
+ fig,axes=plt.subplots(2,5,figsize=(16,6.8),sharey=True)
+ for ri,exp in enumerate([2,4]):
+  for ci,name in enumerate(names):
+   ax=axes[ri,ci]
+   for r in final:
+    if r['architecture']==name and r['loss_exponent']==exp:ax.scatter(r['feature_contribution_participation'],r['per_feature_positive_mse'],s=9,alpha=.35,color=COLORS[name])
+   ax.axhline(.05,color='#aaa',ls='--');ax.set(title=f'{LABELS[name]}, L{exp}',xlabel='Effective contributing units per feature',ylabel='Positive-active MSE' if ci==0 else '');ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.12)
+ fig.suptitle('Task fidelity and distributed contributions, feature by feature\nAll 100 features from all three seeds; dashed line is the declared competence threshold. Distributed contributions alone are not CiS proof.',fontsize=12);fig.tight_layout();fig.savefig(OUT/'feature-sharing-and-error.png',dpi=170,bbox_inches='tight');plt.close(fig)
  records=[]
  for row in final:
   result={k:row[k] for k in ['id','architecture','activation','width','parameters','loss_exponent','seed','competent_features','mean_per_feature_positive_mse','inactive_rmse','inactive_false_positive_rate','isolated_active_mse','multi_input_active_mse','mean_competent_feature_participation','mean_neuron_feature_participation']}
