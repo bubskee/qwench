@@ -113,7 +113,8 @@ tasks, widths and optimized training recipes is untested.
 
 The useful outcome is a learned counterexample to interpreting **larger p as
 more CiS**, alongside a reproducible loss-driven change in competent sharing.
-All requested training and measurement stages are complete. Results remain local.
+All requested training and measurement stages are complete. Checkpoints and raw
+measurements are included with this report.
 
 [Methods and reproduction](METHODS.md) · [Numerical summary](numerical-summary.md) ·
 [Per-network CSV](models.csv) · [Full contour cohorts](analysis/cohorts.csv) ·

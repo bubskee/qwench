@@ -117,5 +117,5 @@ python scripts/audit_trained_toys.py
 ```
 
 These notes describe the frozen design. Completion markers and the final
-findings identify which stages actually finished. No new remote publication is
-part of this local experiment.
+findings identify which stages actually finished. The completed training
+artifacts and measurement grids are included with this report.
