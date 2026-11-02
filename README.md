@@ -18,8 +18,11 @@ perturbations are shown; the axes are rescaled to compare shapes.*
 
 ## What we've found
 
-- **Toy networks:** similar shapes can hide different amounts of noise repair.
-  [Training/recovery study](reports/toy-characterization-study-v1/findings.md) ·
+- **Toy networks:** we trained 120 tiny networks. Learning to clean up noise often
+  made their boundaries squarer, but similar shapes could hide different repair
+  ability. Turning other features on also changed the shape. **p describes the
+  boundary; it isn't a repair score.**
+  [Full report](reports/toy-characterization-study-v1/findings.md) ·
   [Earlier neuron-sharing test](reports/toy-scalar-comparison-v1/findings.md).
 - **Qwen3-1.7B:** fixing an anchor-sampling mismatch recovered a strong paper
   result: p = 2.442 versus 2.415. [Sampler audit](reports/implementation-audit-v1/findings.md).
