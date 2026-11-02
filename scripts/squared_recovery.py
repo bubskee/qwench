@@ -27,7 +27,19 @@ def sha(path):
 
 
 def write(path, value):
-    path.write_text(json.dumps(value, indent=2, allow_nan=False) + '\n')
+    def clean(item):
+        if isinstance(item, dict):
+            return {str(key): clean(val) for key, val in item.items()}
+        if isinstance(item, (list, tuple)):
+            return [clean(val) for val in item]
+        if isinstance(item, np.ndarray):
+            return clean(item.tolist())
+        if isinstance(item, (float, np.floating)):
+            return float(item) if np.isfinite(item) else None
+        if isinstance(item, np.integer):
+            return int(item)
+        return item
+    path.write_text(json.dumps(clean(value), indent=2, allow_nan=False) + '\n')
 
 
 def tensor(value):
