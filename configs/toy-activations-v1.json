@@ -1,0 +1,23 @@
+{
+  "version": "toy-activations-v1",
+  "parent_protocol": "configs/toy-cis-v1.json",
+  "parent_run": "reports/toy-cis-v1",
+  "activations": ["relu", "gelu", "silu", "swiglu_tied"],
+  "definitions": {
+    "relu": "max(z,0)",
+    "gelu": "z * Phi(z), exact erf implementation, approximate=none",
+    "silu": "z * sigmoid(z)",
+    "swiglu_tied": "SiLU(z) * z; gate and value projections both equal the frozen W_in. Both branches are co-perturbed. This is an explicit tied-projection special case, not a checkpoint trained with general SwiGLU."
+  },
+  "intervention": "Replace the scalar nonlinearity only, with all encoder/decoder weights frozen. Reuse exact parent pairs, codeword/random directions, backgrounds, anchor values, signs, grids and thresholds. No per-activation reselection, calibration, weight scaling or fitting.",
+  "task_fidelity": "Re-evaluate the same clean sample and single-feature probes against the original target ReLU(x). Save all gains and eligibility after each swap; retain original selected pairs even if their task fidelity declines.",
+  "primary_response": "L2 to each activation variant's own clean anchor output; parent threshold rule recalibrates per surface and fraction.",
+  "threshold_fractions": [0.25,0.5,0.75],
+  "primary_threshold_fraction": 0.5,
+  "baseline": "Read all frozen ReLU arrays from parent; independently recompute sampled ReLU grids and task metrics for parity.",
+  "fine_checks": "First frozen pair, inactive and negative anchor states, ++ sign, both direction kinds, each model, 81x81. All four activations. This adds the negative-anchor baseline check to the parent fine checks.",
+  "corruption": "Same 4096 clean samples, Gaussian noise draws/norms and five noise levels as parent; natural activation only for each swap, target remains ReLU(clean x). Gaussian noise distribution is unchanged.",
+  "analysis": "Original additive superellipse and PSD tilted-quadratic fits, three thresholds and per-background sensitivity. Retain flat, poor-fit and nonmonotone cases. Report same original feature cohorts and post-swap eligibility.",
+  "interpretation": "Frozen-weight nonlinear intervention and independent-coordinate control. No models are retrained; results do not measure grokking or establish what separately trained GELU/SiLU/full-SwiGLU models would learn.",
+  "stopping_rule": "Three activation swaps on all parent surfaces, fixed task/noise checks, and prespecified fine grids. No training, activation-parameter search, extra model families, or remote publication."
+}
