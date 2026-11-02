@@ -180,3 +180,6 @@ git diff --check
 The small wrapper tests cover output protection, staged-source integrity, and
 resume preflight. Scientific validation is recorded in the run audits and the
 reproduction receipts; the wrapper tests do not replace it.
+
+See the [portable reproduction check record](reproduction-checks.md) for what was
+actually rerun while adding these commands, including the fresh-clone check.
