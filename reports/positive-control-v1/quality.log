@@ -1,0 +1,88 @@
+{
+  "complete": true,
+  "all_assertions_passed": true,
+  "models": [
+    {
+      "model": "qwen17",
+      "complete": true,
+      "complete_surfaces": 3,
+      "surfaces": [
+        {
+          "pair": "gender_age",
+          "cases": 28830,
+          "matched_origin_max": 0.0,
+          "paper_origin_max": 42.01527404785156,
+          "norm_error_max": 0.0009732246398925781,
+          "seconds": 99.98806400306057,
+          "raw_sha256": "30d46780d4684b5dbb87c7be2da497421dd77e467172dcd1ada2451357eb0430"
+        },
+        {
+          "pair": "wealth_gender",
+          "cases": 28830,
+          "matched_origin_max": 0.0,
+          "paper_origin_max": 42.01527404785156,
+          "norm_error_max": 0.0008994936943054199,
+          "seconds": 93.58483545912895,
+          "raw_sha256": "365f30cd381f06041a97bb1fbcc6d13e8d983fb38a4ad148f2ea324ee6a96c63"
+        },
+        {
+          "pair": "random_000_001",
+          "cases": 28830,
+          "matched_origin_max": 0.0,
+          "paper_origin_max": 42.01527404785156,
+          "norm_error_max": 0.0009479522705078125,
+          "seconds": 93.07637358515058,
+          "raw_sha256": "a73156978175a8ec0f1a24a44c34190801191686e855075e56b76680e44a986e"
+        }
+      ],
+      "original_direction_cosines": {
+        "Age": 0.9999940395355225,
+        "Gender": 0.9999850988388062,
+        "Wealth": 0.9999955296516418,
+        "random_000": 1.0,
+        "random_001": 1.0
+      }
+    },
+    {
+      "model": "qwen35_4b",
+      "complete": true,
+      "complete_surfaces": 3,
+      "surfaces": [
+        {
+          "pair": "gender_age",
+          "cases": 28830,
+          "matched_origin_max": 0.0,
+          "paper_origin_max": 0.8387868404388428,
+          "norm_error_max": 0.0014011859893798828,
+          "seconds": 887.6303428772371,
+          "raw_sha256": "5a7cb87cb7008a0569287cc5e96e4fea2b2f030212dd3368743c2d8faa3b4be6"
+        },
+        {
+          "pair": "wealth_gender",
+          "cases": 28830,
+          "matched_origin_max": 0.0,
+          "paper_origin_max": 0.8387868404388428,
+          "norm_error_max": 0.0013075470924377441,
+          "seconds": 834.8544116249541,
+          "raw_sha256": "f5926dd2080581c5f367a2adbd43ea0323bf10aa2cfc423f02151ea0836dd1a0"
+        },
+        {
+          "pair": "random_000_001",
+          "cases": 28830,
+          "matched_origin_max": 0.0,
+          "paper_origin_max": 0.8387868404388428,
+          "norm_error_max": 0.0012476444244384766,
+          "seconds": 837.3585595862241,
+          "raw_sha256": "238453019c058b983cc60978e7d2e6f6bffdfb91916f4790e879d81e62d88119"
+        }
+      ],
+      "original_direction_cosines": {}
+    }
+  ],
+  "fresh_perturbation_cases": 172980,
+  "expected_cases": 172980,
+  "reference_modes": "Two L2 readings per native perturbed output; cases are not double counted.",
+  "historical_anchor_identity_verified": false,
+  "fresh_source_documents_shared": true,
+  "scope": "Numerical and artifact checks; not validation of semantic purity or error correction."
+}

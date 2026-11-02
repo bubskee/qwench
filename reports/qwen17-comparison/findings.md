@@ -1,5 +1,10 @@
 # Qwen3-1.7B reference comparison
 
+Follow-up: [the fresh 1.7B / 4B matched run is now complete](../positive-control-v1/findings.md).
+The intended positive control did not cleanly recover the old feature point
+estimates, and paired fresh-model intervals span zero. The cached-data
+comparison below should be read alongside that result.
+
 The paper includes **Qwen3-1.7B**, alongside Gemma-2-9B, Llama-3.1-8B,
 Mistral-7B-v0.3, Aya-Expanse-8B, and Yi-1.5-9B. There is no 3–4B model in
 the main six-model experiment. The loader also supports Qwen3-4B, but that

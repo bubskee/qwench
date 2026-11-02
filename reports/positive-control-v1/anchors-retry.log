@@ -1,0 +1,201 @@
+STREAM_START {'id': 'HuggingFaceFW/fineweb-edu', 'config': 'sample-10BT', 'revision': '87f09149ef4734204d70ed1d046ddc9ca3f2b8f9', 'split': 'train', 'streaming': True, 'shuffle_seed': 42, 'shuffle_buffer_size': 10000, 'tokenizer_batch_size': 1000}
+DATASET_READY
+SHUFFLE_READY
+STREAM_READ 100
+STREAM_READ 200
+STREAM_READ 300
+STREAM_READ 400
+STREAM_READ 500
+STREAM_READ 600
+STREAM_READ 700
+STREAM_READ 800
+STREAM_READ 900
+STREAM_READ 1000
+Timeout (0:00:45)!
+Thread 0x0000000177f7b000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/ssl.py", line 1117 in read
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/ssl.py", line 1244 in recv
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217 in _receive_event
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203 in _receive_response_body
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 127 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 153 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 951 in iter_raw
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 897 in iter_bytes
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 881 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 922 in send
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825 in request
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 535 in _http_backoff_base
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 627 in http_backoff
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1203 in _fetch_range
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/caching.py", line 279 in _fetch
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/spec.py", line 2178 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1247 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/utils/file_utils.py", line 838 in read_with_retries
+
+Thread 0x0000000177dd7000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/ssl.py", line 1117 in read
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/ssl.py", line 1244 in recv
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217 in _receive_event
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203 in _receive_response_body
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 127 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 153 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 951 in iter_raw
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 897 in iter_bytes
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 881 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 922 in send
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825 in request
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 535 in _http_backoff_base
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 627 in http_backoff
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1203 in _fetch_range
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/caching.py", line 279 in _fetch
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/spec.py", line 2178 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1247 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/utils/file_utils.py", line 838 in read_with_retries
+
+Thread 0x0000000178007000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/ssl.py", line 1117 in read
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/ssl.py", line 1244 in recv
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217 in _receive_event
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 203 in _receive_response_body
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 334 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 403 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 127 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 153 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 951 in iter_raw
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 897 in iter_bytes
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 881 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 922 in send
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825 in request
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 535 in _http_backoff_base
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 627 in http_backoff
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1203 in _fetch_range
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/caching.py", line 279 in _fetch
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/spec.py", line 2178 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1247 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/utils/file_utils.py", line 838 in read_with_retries
+
+Thread 0x0000000178723000 (most recent call first):
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_models.py", line 881 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 922 in send
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/httpx/_client.py", line 825 in request
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 535 in _http_backoff_base
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/utils/_http.py", line 627 in http_backoff
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1203 in _fetch_range
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/caching.py", line 279 in _fetch
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/fsspec/spec.py", line 2178 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/huggingface_hub/hf_file_system.py", line 1247 in read
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/utils/file_utils.py", line 838 in read_with_retries
+
+Thread 0x0000000177d4b000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000176d3f000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000175d33000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000174d27000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000173d1b000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000172d0f000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000171d03000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000170cf7000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016fceb000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016ecdf000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/concurrent/futures/thread.py", line 90 in _worker
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1012 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x000000016dcd3000 (most recent call first):
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 359 in wait
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 655 in wait
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/tqdm/_monitor.py", line 69 in run
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1075 in _bootstrap_inner
+  File "/Users/bubskee/.local/share/uv/python/cpython-3.12.14-macos-aarch64-none/lib/python3.12/threading.py", line 1032 in _bootstrap
+
+Thread 0x0000000202a77f80 (most recent call first):
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/iterable_dataset.py", line 901 in _iter_arrow
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/iterable_dataset.py", line 2108 in _iter_arrow
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/iterable_dataset.py", line 2593 in _iter_arrow
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/iterable_dataset.py", line 2562 in __iter__
+  File "/Users/bubskee/workspace/qwen35-4b-lenses/.venv/lib/python3.12/site-packages/datasets/iterable_dataset.py", line 3054 in __iter__
+  File "/Users/bubskee/Documents/Codex/2026-11-01/alri/outputs/qwench/scripts/prepare_positive_anchors.py", line 25 in <module>
+STREAM_BATCH 1000
+ANCHORS_SAVED 30
+0 {'qwen17': 'Researchers have uncovered a tooth', 'qwen35_4b': 'Researchers have uncovered a tooth'}
+1 {'qwen17': 'So many women experience different', 'qwen35_4b': 'So many women experience different'}
+2 {'qwen17': 'This five-part series chron', 'qwen35_4b': 'This five-part series chron'}
+3 {'qwen17': 'Farmers in designated Nit', 'qwen35_4b': 'Farmers in designated Nit'}
+4 {'qwen17': 'Snoring is an alarm', 'qwen35_4b': 'Snoring is an alarm'}
+5 {'qwen17': 'A really good read for', 'qwen35_4b': 'A really good read for'}
+6 {'qwen17': 'What is Tonsill', 'qwen35_4b': 'What is Tonsill'}
+7 {'qwen17': 'According to a recent study', 'qwen35_4b': 'According to a recent study'}
+8 {'qwen17': 'Safety Data Sheet Information\n', 'qwen35_4b': 'Safety Data Sheet Information\n'}
+9 {'qwen17': 'Hazard: Significant and', 'qwen35_4b': 'Hazard: Significant and'}
+10 {'qwen17': 'Both her and Romeo were', 'qwen35_4b': 'Both her and Romeo were'}
+11 {'qwen17': 'The United States is the', 'qwen35_4b': 'The United States is the'}
+12 {'qwen17': 'The bread glycemic index', 'qwen35_4b': 'The bread glycemic index'}
+13 {'qwen17': 'At the very beginning of', 'qwen35_4b': 'At the very beginning of'}
+14 {'qwen17': 'Iron is crucial in many', 'qwen35_4b': 'Iron is crucial in many'}
+15 {'qwen17': 'The eyes of many astronomers', 'qwen35_4b': 'The eyes of many astronomers'}
+16 {'qwen17': 'HIV-Related St', 'qwen35_4b': 'HIV-Related St'}
+17 {'qwen17': 'The number of Americans who', 'qwen35_4b': 'The number of Americans who'}
+18 {'qwen17': 'Details of a new species', 'qwen35_4b': 'Details of a new species'}
+19 {'qwen17': 'Kalends of January\n', 'qwen35_4b': 'Kalends of January\n'}
+20 {'qwen17': 'Around 12 million', 'qwen35_4b': 'Around 12 million'}
+21 {'qwen17': 'Eiffel**: An', 'qwen35_4b': 'Eiffel**: An'}
+22 {'qwen17': 'By Pamela Nathan\nIn', 'qwen35_4b': 'By Pamela Nathan\nIn'}
+23 {'qwen17': 'In its historical roots the', 'qwen35_4b': 'In its historical roots the'}
+24 {'qwen17': 'The human brain generates rhyth', 'qwen35_4b': 'The human brain generates rhyth'}
+25 {'qwen17': 'COPD (chron', 'qwen35_4b': 'COPD (chron'}
+26 {'qwen17': 'The following books, articles', 'qwen35_4b': 'The following books, articles'}
+27 {'qwen17': 'Contrary to popular belief', 'qwen35_4b': 'Contrary to popular belief'}
+28 {'qwen17': 'Ditch The Boxes!\n', 'qwen35_4b': 'Ditch The Boxes!'}
+29 {'qwen17': 'June 30,', 'qwen35_4b': 'June 30,'}

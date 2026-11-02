@@ -180,11 +180,11 @@ stress test beside the paper’s tested small model. The original feature median
 is 2.226 and the 17 available original isotropic-control raw refits have
 median 1.999. Our feature distribution is similar; both models have weaker
 geometry on the same 26-pair stress-test intersection. This is cached original
-data versus fresh 4B data, not fresh 1.7B inference. A strict fresh-model
-positive control remains the next validation step.
+data versus fresh 4B data, not fresh 1.7B inference. The [fresh positive-control attempt](reports/positive-control-v1/findings.md)
+is now complete and qualifies that comparison further.
 
 
-## Fresh positive control (running)
+## Fresh positive control (complete)
 
 The [frozen small protocol](configs/positive-control-v1.json) runs two exact
 contrastive pairs and the first isotropic pair on fresh Qwen3-1.7B, followed
@@ -192,3 +192,36 @@ by Qwen3.5-4B. Both use 30 regenerated seed-42 FineWeb-Edu anchors and the
 original 2-degree grid. [Methods and fidelity checks](reports/positive-control-v1/METHODS.md)
 document the original-reference measurement and batch-matched numerical check.
 Both models passed preparation and eligibility checks before the sweeps.
+
+
+The [completed findings](reports/positive-control-v1/findings.md) show fresh
+1.7B p values 1.997 / 1.767 / 1.735 and matched-setup 4B values
+2.049 / 1.929 / 1.900 (Gender×Age / Wealth×Gender / fixed random).
+The saved positive feature estimates were not cleanly recovered, and no
+paired cross-model interval excludes zero. This small positive-control
+attempt is inconclusive; it does not isolate a 4B-specific reproduction
+failure. All six surfaces and 172,980 perturbation cases passed artifact
+and numerical checks.
+
+To regenerate the plots from the saved response arrays without model weights:
+
+```bash
+uv run --no-project --with-requirements requirements-reproduction.txt \
+  --with safetensors==0.8.0 python scripts/analyze_positive_control.py --bootstrap 500
+```
+
+For native execution, use `requirements-positive.txt` and the pinned model
+weights. With the stored anchors and the reference checkout from the earlier
+checks, the preparation and sweep stages are:
+
+```bash
+python scripts/run_positive_control.py --stage prepare
+python scripts/run_positive_control.py --stage sweep
+python scripts/audit_positive_control.py
+```
+
+The sweep resumes complete anchors only with matching seals and source.
+`prepare_positive_anchors.py` documents regeneration of the FineWeb sampling
+recipe; it refuses to overwrite the stored input file. The historical
+authors’ token cache is unavailable, so historical input identity is not
+verified. Both fresh models use the same saved source documents.
