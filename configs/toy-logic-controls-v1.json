@@ -1,0 +1,12 @@
+{
+  "version": "toy-logic-controls-v1",
+  "status": "Secondary diagnostic, logged after the 5000-step clean/noise scores and before final recovery/geometry inspection. No new training or tuning.",
+  "question": "Does denoising training still improve logical recovery after giving every network the analytic references' known-subspace projection and matching output bounds?",
+  "models": "All 60 final checkpoints; same fixed held-out clean bits and paired noise as the primary pilot.",
+  "noise_std": [0, 0.35],
+  "maps": ["projected_natural", "projected_clipped_natural"],
+  "projection": "x -> x*A*A^T on all 32 observations; A has 16 orthonormal columns. This removes observation noise in dimensions uninformative about clean labels, leaving all feature-plane perturbations unchanged.",
+  "clipping": "Clip logical output predictions to [0,1], independently of their target labels.",
+  "verification": "Verify every final network's canonical feature-plane predictions are invariant under projection; reconstruct all class-conditional errors from stored float32 predictions. Keep this separate from primary geometry and scores.",
+  "stopping_rule": "One final-checkpoint diagnostic on the existing models and data, no extra seeds, training, task families or noise levels."
+}
