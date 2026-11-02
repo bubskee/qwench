@@ -255,24 +255,99 @@ def train_toys(out, resume=False, prepare_only=False):
     print(f'Full training and analysis complete: {combined}', flush=True)
 
 
+def prepare_study(out):
+    create_output(out)
+    staged = out / 'outputs/qwench'; staged.mkdir(parents=True)
+    for name in ('scripts', 'configs', 'vendor', 'requirements'):
+        shutil.copytree(ROOT / name, staged / name, ignore=shutil.ignore_patterns('__pycache__', '*.pyc'))
+    for path in ROOT.glob('requirements-*.txt'):
+        copy_file(path, staged / path.name)
+    copy_file(ROOT / 'reports/toy-cis-v1/prepared.json', staged / 'reports/toy-cis-v1/prepared.json')
+    for name in ('geometry-inputs.npz', 'geometry-inputs.json'):
+        relative = Path('reports/toy-scalar-comparison-v1') / name
+        copy_file(ROOT / relative, staged / relative)
+    for cohort in COHORTS:
+        for step in [10000, 30000, 100000]:
+            for name in [f'weights-{step:06d}.safetensors', f'eval-{step:06d}.json']:
+                relative = Path('reports') / cohort / name
+                copy_file(ROOT / relative, staged / relative)
+    files = {str(path.relative_to(staged)): sha(path) for path in sorted(staged.rglob('*')) if path.is_file()}
+    write(out / 'run.json', {'kind': 'full_toy_characterization', 'root': str(staged),
+          'source_files_sha256': files, 'fresh_networks': 120, 'updates_each': 100000,
+          'historical_networks_reused': 30, 'checkpoint_frames': 810,
+          'hardware': 'Native Apple MPS for training; CPU for analyses'})
+    print(f'Prepared full-study sources and historical inputs at {staged}', flush=True)
+    return staged
+
+
+def study_run(out, resume=False, prepare_only=False):
+    if resume:
+        state = json.loads((out / 'run.json').read_text()); staged = out / 'outputs/qwench'
+        if state['kind'] != 'full_toy_characterization' or Path(state['root']) != staged:
+            raise ValueError('Not a matching characterization workspace')
+        for relative, expected in state['source_files_sha256'].items():
+            if sha(staged / relative) != expected:
+                raise ValueError(f'Prepared source/input changed: {relative}')
+    else:
+        staged = prepare_study(out)
+    if prepare_only:
+        print(f'No training launched. Run study-run --resume --out {out} to execute.', flush=True)
+        return
+    run('characterization_study.py', root=staged)
+
+
+def study_figures(out):
+    create_output(out)
+    source = ROOT / 'reports/toy-characterization-study-v1/networks.json'
+    copy_file(source, out / source.name)
+    env = os.environ.copy(); env['QWENCH_STUDY_OUT'] = str(out); env['MPLCONFIGDIR'] = str(out / '.matplotlib')
+    run('plot_characterization.py', env=env)
+    assert sha(source) == sha(out / source.name)
+    write(out / 'reproduction-check.json', {'source_networks_sha256': sha(source),
+          'plot_source_sha256': sha(ROOT / 'scripts/plot_characterization.py'),
+          'source': 'reports/toy-characterization-study-v1',
+          'figures': sorted(path.name for path in out.glob('*.png')),
+          'meaning': 'Read-only saved-data redraw; no training or refitting.'})
+    print(f'Study figures saved to {out}', flush=True)
+
+
+def study_verify():
+    folder = ROOT / 'reports/toy-characterization-study-v1'
+    manifest = json.loads((folder / 'manifest.json').read_text())
+    for relative, expected in manifest['files'].items():
+        path = (ROOT / relative).resolve()
+        if not path.is_relative_to(ROOT) or not path.is_file():
+            raise ValueError(f'Missing study artifact: {relative}')
+        if path.stat().st_size != expected['bytes'] or sha(path) != expected['sha256']:
+            raise ValueError(f'Study artifact differs from manifest: {relative}')
+    audit = json.loads((folder / 'quality-audit.json').read_text())
+    if not audit['all_assertions_passed']:
+        raise ValueError('Combined study audit did not pass')
+    print(f'PASS {len(manifest["files"])} study manifest entries; saved combined audit passed.')
+    print('Artifact integrity check; this does not rerun training or the numerical audit.')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = parser.add_subparsers(dest='command', required=True)
     commands.add_parser('verify', help='Check saved toy artifacts against SHA-256 manifests (stdlib only)')
+    commands.add_parser('study-verify', help='Check characterization artifacts against their manifest (stdlib only)')
     for name, help_text in (
         ('toy-figures', 'Rebuild five toy figures from saved fits; CPU, no torch'),
         ('toy-refit', 'Refit saved toy response grids and rebuild figures; CPU, no torch'),
         ('paper', 'Fetch the pinned paper cache and reproduce Figure 2; CPU, network/git'),
         ('toy-train', 'Train all 30 networks from initialization, then measure geometry; Apple MPS'),
+        ('study-figures', 'Rebuild six characterization figures from saved data; CPU, no torch'),
+        ('study-run', 'Stage/reproduce the full 120-network characterization; Apple MPS'),
     ):
         child = commands.add_parser(name, help=help_text)
         child.add_argument('--out', help=f'New output under work/ (default: work/reproductions/{name})')
-        if name == 'toy-train':
+        if name in ('toy-train', 'study-run'):
             child.add_argument('--resume', action='store_true', help='Continue a matching prepared workspace')
             child.add_argument('--prepare-only', action='store_true', help='Stage sources/inputs without training')
     args = parser.parse_args()
-    if args.command == 'verify':
-        verify()
+    if args.command in ('verify', 'study-verify'):
+        verify() if args.command == 'verify' else study_verify()
         return
     out = output_path(args.out, args.command)
     if args.command in ('toy-figures', 'toy-refit'):
@@ -280,6 +355,10 @@ def main():
     elif args.command == 'paper':
         create_output(out)
         run('reproduce_paper.py', '--reference-dir', ROOT / 'work/fsec-reference', '--out', out)
+    elif args.command == 'study-figures':
+        study_figures(out)
+    elif args.command == 'study-run':
+        study_run(out, resume=args.resume, prepare_only=args.prepare_only)
     else:
         train_toys(out, resume=args.resume, prepare_only=args.prepare_only)
 

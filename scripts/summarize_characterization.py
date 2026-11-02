@@ -3,6 +3,8 @@ from pathlib import Path
 import csv
 import json
 import statistics as S
+from collections import Counter
+import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'reports/toy-characterization-study-v1'
@@ -22,7 +24,7 @@ def describe(values):
 
 def main():
     OUT.mkdir(exist_ok=True)
-    records = []; fine = []
+    records = []; fine = []; quality = {}; monotonicity = []
     for family, folder in FAMILIES.items():
         source = ROOT / 'reports' / folder
         plan = json.loads((source / 'analysis-plan.json').read_text())
@@ -30,6 +32,23 @@ def main():
         assert len(files) == len(plan['networks'])
         for path in files:
             data = json.loads(path.read_text()); meta = data['network']
+            if meta['track'] == 'new' and meta['step'] == 100000 and meta['task'].endswith('denoise'):
+                for kind in ['feature_axes', 'isotropic_observation_random']:
+                    selected_quality = [(i, r['fits']['0.5']) for i, r in enumerate(data['geometry'])
+                                        if r['kind'] == kind and r['anchor'] == 0 and r['sign'] == [1,1] and r['map'] == 'natural']
+                    quality.setdefault(family, {}).setdefault(kind, []).extend(f for i, f in selected_quality)
+                    if kind == 'feature_axes':
+                        with np.load(path.with_suffix('.npz')) as raw:
+                            for index, fit in selected_quality:
+                                if 'nonmonotone_axis' not in fit['flags']: continue
+                                grid = np.median(raw['response'][index], axis=0)
+                                for axis_curve in [grid[:,0],grid[0,:]]:
+                                    crossing = int(np.flatnonzero(axis_curve >= fit['threshold'])[0])
+                                    differences = np.diff(axis_curve)
+                                    monotonicity.append({'family':family,'key':meta['key'],
+                                        'reversal_before_first_crossing':bool((differences[:crossing] < -1e-8).any()),
+                                        'returns_below_threshold':bool((axis_curve[crossing:] < fit['threshold']-1e-8).any()),
+                                        'max_single_step_drop_fraction':float(max(0.,-differences.min())/axis_curve.max())})
             label = family if meta['track'] == 'new' else 'historical'
             row = {key: meta[key] for key in ['key', 'activation', 'task', 'seed', 'step']}
             row['family'] = label; row['competent_features'] = data['task_evaluation']['competent_features']
@@ -41,6 +60,11 @@ def main():
                 row[which + '_good_fits'] = len(good)
                 row[which + '_flagged_fits'] = sum(bool(r['flags']) for r in selected)
                 row[which + '_radial_residual'] = median([r.get('mean_radial_frac') for r in selected])
+                random_fits = [r['fits']['0.5'] for r in data['geometry'] if r['kind'] == 'isotropic_observation_random'
+                               and r['anchor'] == 0 and r['sign'] == [1, 1] and r['map'] == which]
+                row[which + '_random_p'] = median([r['p'] for r in random_fits])
+                row[which + '_random_good_fits'] = sum(not r['flags'] for r in random_fits)
+                row[which + '_random_flagged_fits'] = sum(bool(r['flags']) for r in random_fits)
                 scores = [r for r in data['recovery'] if r['map'] == which]
                 sigma = .075 if label == 'historical' else .35
                 clean = next(r for r in scores if r['sigma'] == 0)
@@ -76,6 +100,20 @@ def main():
                        'statistics': {metric: describe([r[metric] for r in selected]) for metric in metrics}})
     (OUT / 'seed-summary.json').write_text(json.dumps(groups, indent=2) + '\n')
     (OUT / 'fine-checks.json').write_text(json.dumps(fine, indent=2) + '\n')
+    quality_summary = {}
+    for family, kinds in quality.items():
+        quality_summary[family] = {}
+        for kind, fits in kinds.items():
+            quality_summary[family][kind] = {'attempted':len(fits),'unflagged':sum(not f['flags'] for f in fits),
+                'flags':dict(Counter(flag for f in fits for flag in f['flags'])),
+                'median_superellipse_residual':median([f.get('mean_radial_frac') for f in fits]),
+                'median_quadratic_residual':median([f['quadratic']['mean_radial_frac'] for f in fits if 'quadratic' in f])}
+    quality_summary['flag_location_diagnostic'] = {'axes_checked':len(monotonicity),
+        'reversals_before_threshold_crossing':sum(r['reversal_before_first_crossing'] for r in monotonicity),
+        'returns_below_threshold':sum(r['returns_below_threshold'] for r in monotonicity),
+        'max_single_step_drop_fraction':max(r['max_single_step_drop_fraction'] for r in monotonicity)}
+    (OUT / 'fit-quality.json').write_text(json.dumps(quality_summary,indent=2)+'\n')
+    (OUT / 'monotonicity-diagnostics.json').write_text(json.dumps(monotonicity,indent=2)+'\n')
     lines = ['# Final checkpoint descriptive summaries', '',
              'Mean over three initialization seeds; p is each network’s median across two fixed pairs.',
              'Nominal p includes flagged fits; the good-fit column shows how many of the six pair fits are unflagged.', '',

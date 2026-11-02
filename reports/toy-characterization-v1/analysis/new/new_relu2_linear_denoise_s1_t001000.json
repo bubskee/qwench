@@ -1,0 +1,6248 @@
+{
+  "network": {
+    "key": "new_relu2_linear_denoise_s1_t001000",
+    "track": "new",
+    "activation": "relu2",
+    "task": "linear_denoise",
+    "seed": 1,
+    "step": 1000,
+    "member": 4,
+    "weight_group": "relu2",
+    "weights": "reports/toy-characterization-v1/weights-001000.safetensors",
+    "evaluation": "reports/toy-characterization-v1/eval-001000.json"
+  },
+  "task_evaluation": {
+    "id": "relu2_linear_denoise_s1",
+    "activation": "relu2",
+    "task": "linear_denoise",
+    "seed": 1,
+    "step": 1000,
+    "clean": {
+      "mse": 0.019101949408650398,
+      "active_mse": 0.15465717017650604,
+      "inactive_mse": 0.0001330379454884678,
+      "per_feature_active_mse": [
+        0.1499931663274765,
+        0.15825225412845612,
+        0.16325503587722778,
+        0.16396193206310272,
+        0.1642320454120636,
+        0.16646119952201843,
+        0.1353733241558075,
+        0.1449546366930008,
+        0.156723290681839,
+        0.16426774859428406,
+        0.14503823220729828,
+        0.15919069945812225,
+        0.1557927131652832,
+        0.15482109785079956,
+        0.14787118136882782,
+        0.14539749920368195
+      ],
+      "per_feature_inactive_mse": [
+        0.00016214676725212485,
+        5.460874308482744e-05,
+        0.00016857509035617113,
+        4.74402513646055e-05,
+        7.029341213637963e-05,
+        0.00018026238831225783,
+        0.0001824538630899042,
+        0.0002930052869487554,
+        0.00021722658129874617,
+        6.365981244016439e-05,
+        5.65206391911488e-05,
+        4.4114065531175584e-05,
+        0.00018727661517914385,
+        0.0001462902728235349,
+        0.00016020865587051958,
+        9.503167530056089e-05
+      ]
+    },
+    "noise035": {
+      "mse": 0.041652411222457886,
+      "active_mse": 0.24391894042491913,
+      "inactive_mse": 0.01334825623780489,
+      "per_feature_active_mse": [
+        0.24782457947731018,
+        0.2569352686405182,
+        0.22944773733615875,
+        0.2541046738624573,
+        0.2597820460796356,
+        0.232904851436615,
+        0.24906271696090698,
+        0.2407413274049759,
+        0.24070340394973755,
+        0.2476128190755844,
+        0.24352052807807922,
+        0.22522620856761932,
+        0.25559836626052856,
+        0.24475198984146118,
+        0.23588645458221436,
+        0.23905397951602936
+      ],
+      "per_feature_inactive_mse": [
+        0.014427904970943928,
+        0.013173171319067478,
+        0.01403956487774849,
+        0.012722468934953213,
+        0.012195289134979248,
+        0.015386086888611317,
+        0.014621466398239136,
+        0.013783932663500309,
+        0.013505395501852036,
+        0.011669726110994816,
+        0.014361975714564323,
+        0.012201717123389244,
+        0.012871833518147469,
+        0.01277139037847519,
+        0.012945043854415417,
+        0.012885356321930885
+      ]
+    },
+    "competent_features": 0,
+    "competent_indices": [],
+    "min_context_single_feature_gains": [
+      0.5890635848045349,
+      0.5910147428512573,
+      0.5743616223335266,
+      0.5802392959594727,
+      0.5830328464508057,
+      0.5560591220855713,
+      0.608902633190155,
+      0.6005956530570984,
+      0.5835164189338684,
+      0.5800486207008362,
+      0.6076793670654297,
+      0.5981245636940002,
+      0.5854182839393616,
+      0.5932914018630981,
+      0.6072751879692078,
+      0.60206139087677
+    ]
+  },
+  "geometry": [
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.3024914145028009,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.210017226540821,
+            1.2099656580112037
+          ],
+          "p": 2.758290434731152,
+          "flags": [],
+          "mean_radial_frac": 0.0035289994909110537,
+          "max_radial_frac": 0.0065248126535980555,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.6594706976365365,
+            0.6682631051320552
+          ],
+          "quadratic": {
+            "cross_term": -0.15385890032804211,
+            "unconstrained_cross_term": -0.15385890032804211,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.012893243315787912,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.6049828290056019,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.210017226540821,
+            1.2099656580112037
+          ],
+          "p": 2.9675969065806567,
+          "flags": [],
+          "mean_radial_frac": 0.0032331488944695,
+          "max_radial_frac": 0.005786865490058912,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.005692558020621,
+            1.0112518842955724
+          ],
+          "quadratic": {
+            "cross_term": -0.17913079483888858,
+            "unconstrained_cross_term": -0.17913079483888858,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.014755304468055324,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.9074742435084028,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.210017226540821,
+            1.2099656580112037
+          ],
+          "p": 3.0758383874673356,
+          "flags": [],
+          "mean_radial_frac": 0.0029016304255342676,
+          "max_radial_frac": 0.005154345722209519,
+          "n_pts": 48,
+          "intercepts_feature_units": [
+            1.2733158250642167,
+            1.2759962191468257
+          ],
+          "quadratic": {
+            "cross_term": -0.19027548968405592,
+            "unconstrained_cross_term": -0.19027548968405592,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.015380767684218552,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.5969200811494908,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1973483319368547,
+            1.1938401622989816
+          ],
+          "p": 3.0424788335210233,
+          "flags": [],
+          "mean_radial_frac": 0.0028203640677631364,
+          "max_radial_frac": 0.0046956210130938425,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0077672732085403,
+            1.0142218335410977
+          ],
+          "quadratic": {
+            "cross_term": -0.1868682826925296,
+            "unconstrained_cross_term": -0.1868682826925296,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.015114250929095912,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5954824832316847,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1909649664633695,
+            1.1944135443091817
+          ],
+          "p": 2.8950962880572457,
+          "flags": [],
+          "mean_radial_frac": 0.004089509475206354,
+          "max_radial_frac": 0.0069128510505036544,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0097347321738341,
+            1.0118919932974786
+          ],
+          "quadratic": {
+            "cross_term": -0.17081862988038118,
+            "unconstrained_cross_term": -0.17081862988038118,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0148140665766486,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.6168790600141749,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2337581200283498,
+            1.2398257146323124
+          ],
+          "p": 3.005139717508031,
+          "flags": [],
+          "mean_radial_frac": 0.0030874859444047016,
+          "max_radial_frac": 0.006771697581290925,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0021773086886225,
+            1.0045855760495204
+          ],
+          "quadratic": {
+            "cross_term": -0.18359522655313634,
+            "unconstrained_cross_term": -0.18359522655313634,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.014798082408857488,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.6113430605723935,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.222686121144787,
+            1.225517771713226
+          ],
+          "p": 3.0109500441979122,
+          "flags": [],
+          "mean_radial_frac": 0.0030147350456594287,
+          "max_radial_frac": 0.005543754704167458,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.002008975941025,
+            1.0076390891487392
+          ],
+          "quadratic": {
+            "cross_term": -0.18406878086179035,
+            "unconstrained_cross_term": -0.18406878086179035,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.014861354119730741,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.3010329686007367,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.2041318744029468,
+            1.2080149718935775
+          ],
+          "p": 3.167829784969747,
+          "flags": [],
+          "mean_radial_frac": 0.0012259557976677404,
+          "max_radial_frac": 0.0023279008748753327,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.6630084911622387,
+            0.6688693536492312
+          ],
+          "quadratic": {
+            "cross_term": -0.1989611225564613,
+            "unconstrained_cross_term": -0.1989611225564613,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.014890111826184852,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.6020659372014734,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2041318744029468,
+            1.2080149718935775
+          ],
+          "p": 3.363499617739668,
+          "flags": [],
+          "mean_radial_frac": 0.0009693676630312836,
+          "max_radial_frac": 0.001969897045734137,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.007754857536926,
+            1.0102896765608986
+          ],
+          "quadratic": {
+            "cross_term": -0.2154745623422822,
+            "unconstrained_cross_term": -0.2154745623422822,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01667474483587623,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.9030989058022101,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.2041318744029468,
+            1.2080149718935775
+          ],
+          "p": 3.464107014216437,
+          "flags": [],
+          "mean_radial_frac": 0.0008093600986070667,
+          "max_radial_frac": 0.0015919799804710033,
+          "n_pts": 48,
+          "intercepts_feature_units": [
+            1.2743630919103945,
+            1.274046634345528
+          ],
+          "quadratic": {
+            "cross_term": -0.22346126458490775,
+            "unconstrained_cross_term": -0.22346126458490775,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.017108672223895477,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.5992838951920887,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1985677903841774,
+            1.2075979490698852
+          ],
+          "p": 3.376924242113716,
+          "flags": [],
+          "mean_radial_frac": 0.0009351047730807129,
+          "max_radial_frac": 0.0018003498689744823,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0099226461724176,
+            1.0079473652389932
+          ],
+          "quadratic": {
+            "cross_term": -0.2164995884931416,
+            "unconstrained_cross_term": -0.2164995884931416,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016781782365067777,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5992838951920891,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1985677903841783,
+            1.2075979490698863
+          ],
+          "p": 3.3769242421137213,
+          "flags": [],
+          "mean_radial_frac": 0.0009351047730806515,
+          "max_radial_frac": 0.0018003498689745934,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0099226461724178,
+            1.0079473652389936
+          ],
+          "quadratic": {
+            "cross_term": -0.21649958849314194,
+            "unconstrained_cross_term": -0.21649958849314194,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016781782365067794,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.6042159973586343,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2096959584217153,
+            1.2084319947172686
+          ],
+          "p": 3.3499958254898785,
+          "flags": [],
+          "mean_radial_frac": 0.001012139015288165,
+          "max_radial_frac": 0.0021427978229004996,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0049823538294258,
+            1.012024068863042
+          ],
+          "quadratic": {
+            "cross_term": -0.2144977325218231,
+            "unconstrained_cross_term": -0.2144977325218231,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016560950710895573,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.6042159973586345,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.209695958421715,
+            1.208431994717269
+          ],
+          "p": 3.3499958254898834,
+          "flags": [],
+          "mean_radial_frac": 0.0010121390152880833,
+          "max_radial_frac": 0.0021427978229006106,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.004982353829426,
+            1.0120240688630422
+          ],
+          "quadratic": {
+            "cross_term": -0.21449773252182336,
+            "unconstrained_cross_term": -0.21449773252182336,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01656095071089557,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.09052453872790142,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.4425937025214131,
+            0.3620981549116057
+          ],
+          "p": 1.473722214752909,
+          "flags": [],
+          "mean_radial_frac": 0.015363872873711503,
+          "max_radial_frac": 0.037076687906364536,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.3839494870907313,
+            0.4360786220615317
+          ],
+          "quadratic": {
+            "cross_term": 0.2615975385275564,
+            "unconstrained_cross_term": 0.2615975385275564,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.019012840684866063,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.18104907745580284,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4425937025214131,
+            0.3620981549116057
+          ],
+          "p": 1.5027367164551266,
+          "flags": [],
+          "mean_radial_frac": 0.015202503287457947,
+          "max_radial_frac": 0.03395396556722363,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7216843019932753,
+            0.8365834571878838
+          ],
+          "quadratic": {
+            "cross_term": 0.23843441653226768,
+            "unconstrained_cross_term": 0.23843441653226768,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01948048498755557,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.27157361618370424,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.4425937025214131,
+            0.3620981549116057
+          ],
+          "p": 1.543641162677398,
+          "flags": [],
+          "mean_radial_frac": 0.01613822324788671,
+          "max_radial_frac": 0.03879599982971704,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            1.0192427636514894,
+            1.1893410013160362
+          ],
+          "quadratic": {
+            "cross_term": 0.20840731803488832,
+            "unconstrained_cross_term": 0.20840731803488832,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.020076617949208224,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.14186659311189131,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.35393057803046796,
+            0.28373318622378263
+          ],
+          "p": 2.055598873450444,
+          "flags": [],
+          "mean_radial_frac": 0.012314352986499038,
+          "max_radial_frac": 0.01930721614294617,
+          "n_pts": 33,
+          "intercepts_feature_units": [
+            0.7719454131164584,
+            0.9124653510493681
+          ],
+          "quadratic": {
+            "cross_term": -0.019547986760641043,
+            "unconstrained_cross_term": -0.019547986760641043,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.012290682410312725,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.15490411771202164,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.767738245740242,
+            0.3098082354240433
+          ],
+          "p": 1.4843622963266827,
+          "flags": [],
+          "mean_radial_frac": 0.005419049288938382,
+          "max_radial_frac": 0.011335802812803997,
+          "n_pts": 24,
+          "intercepts_feature_units": [
+            0.3610380024998002,
+            0.8968686994245181
+          ],
+          "quadratic": {
+            "cross_term": 0.25964386903721437,
+            "unconstrained_cross_term": 0.25964386903721437,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0009336127738097805,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.211109938205867,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.422219876411734,
+            0.5715236839401411
+          ],
+          "p": 1.3178398524494337,
+          "flags": [],
+          "mean_radial_frac": 0.00853267205421812,
+          "max_radial_frac": 0.017184328555212014,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.8628824500368472,
+            0.5892749397882906
+          ],
+          "quadratic": {
+            "cross_term": 0.4157247014054659,
+            "unconstrained_cross_term": 0.4157247014054659,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007329190947341606,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.207194037199584,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.46296752863109225,
+            0.414388074399168
+          ],
+          "p": 2.9506513586084644,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.13587720598839031,
+          "max_radial_frac": 0.20126869158295135,
+          "n_pts": 37,
+          "intercepts_feature_units": [
+            0.776477568739933,
+            0.7890063457029559
+          ],
+          "quadratic": {
+            "cross_term": -0.4398375909579801,
+            "unconstrained_cross_term": -0.4398375909579801,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016558840379791183,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08311579079643326,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.429065101176078,
+            0.33246316318573305
+          ],
+          "p": 1.4993994998746218,
+          "flags": [],
+          "mean_radial_frac": 0.018085260592577222,
+          "max_radial_frac": 0.0396148923976839,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.3606968324791149,
+            0.4276463485852324
+          ],
+          "quadratic": {
+            "cross_term": 0.24005447033583382,
+            "unconstrained_cross_term": 0.24005447033583382,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02049297501955589,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.16623158159286652,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.429065101176078,
+            0.33246316318573305
+          ],
+          "p": 1.5283939510293412,
+          "flags": [],
+          "mean_radial_frac": 0.016459804320859948,
+          "max_radial_frac": 0.03898576483550387,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.6826918704454942,
+            0.8257364621939741
+          ],
+          "quadratic": {
+            "cross_term": 0.21992088204089186,
+            "unconstrained_cross_term": 0.21992088204089186,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01984232954138797,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.24934737238929977,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.429065101176078,
+            0.33246316318573305
+          ],
+          "p": 1.5689630587562886,
+          "flags": [],
+          "mean_radial_frac": 0.016423941672699793,
+          "max_radial_frac": 0.040843326373562916,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            0.969946913703821,
+            1.1824961587077047
+          ],
+          "quadratic": {
+            "cross_term": 0.19202780554848625,
+            "unconstrained_cross_term": 0.19202780554848625,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.019758265747651826,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.13059287500221836,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3313624675721334,
+            0.2611857500044367
+          ],
+          "p": 2.0900234737004175,
+          "flags": [],
+          "mean_radial_frac": 0.010780666355432095,
+          "max_radial_frac": 0.017224740219444534,
+          "n_pts": 32,
+          "intercepts_feature_units": [
+            0.7649230053942452,
+            0.9008202652745114
+          ],
+          "quadratic": {
+            "cross_term": -0.029204801870001205,
+            "unconstrained_cross_term": -0.029204801870001205,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.010664598951630674,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.13326227177412076,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7583648275578858,
+            0.2665245435482415
+          ],
+          "p": 1.5858539012987527,
+          "flags": [],
+          "mean_radial_frac": 0.00557373391017085,
+          "max_radial_frac": 0.010237846182995503,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.3148215871304687,
+            0.8947756550068261
+          ],
+          "quadratic": {
+            "cross_term": 0.18820252135017276,
+            "unconstrained_cross_term": 0.18820252135017276,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0016810600117445353,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.20272208502340536,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4054441700468107,
+            0.5505734684218226
+          ],
+          "p": 1.2457694592339432,
+          "flags": [],
+          "mean_radial_frac": 0.007157239976075902,
+          "max_radial_frac": 0.01452006412723772,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.859946650347141,
+            0.5767829801920359
+          ],
+          "quadratic": {
+            "cross_term": 0.5057203433838963,
+            "unconstrained_cross_term": 0.5057203433838963,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.005811935949625874,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.1992008914116123,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.45268603230534527,
+            0.3984017828232246
+          ],
+          "p": 1.827645160243457,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.2803752724053806,
+          "max_radial_frac": 0.4592261825542634,
+          "n_pts": 40,
+          "intercepts_feature_units": [
+            0.7580345383787799,
+            0.7778981432614229
+          ],
+          "quadratic": {
+            "cross_term": -0.5036719267309362,
+            "unconstrained_cross_term": -0.5036719267309362,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.017248624152689747,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.013819267175351785,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.210017226540821,
+            0.05527706870140714
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.06326533275196647,
+            0.09742633396208948
+          ]
+        },
+        "0.5": {
+          "threshold": 0.02763853435070357,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.210017226540821,
+            0.05527706870140714
+          ],
+          "p": 1.284020950928195,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.0390221690118285,
+          "max_radial_frac": 0.08759632323334676,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.11590949527256447,
+            0.5317240148745762
+          ],
+          "quadratic": {
+            "cross_term": 0.42708111634228246,
+            "unconstrained_cross_term": 0.42708111634228246,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.039417167889893995,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.041457801526055355,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.210017226540821,
+            0.05527706870140714
+          ],
+          "p": 1.5035843801827455,
+          "flags": [],
+          "mean_radial_frac": 0.0198427094737942,
+          "max_radial_frac": 0.04095518830870071,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.1618100826749143,
+            1.1192978911505944
+          ],
+          "quadratic": {
+            "cross_term": 0.24190899857673015,
+            "unconstrained_cross_term": 0.24190899857673015,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.015305091220239481,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.02688519196735493,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1973483319368547,
+            0.05377038393470986
+          ],
+          "p": 1.0251508191391752,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02537887959674074,
+          "max_radial_frac": 0.04623411291128121,
+          "n_pts": 16,
+          "intercepts_feature_units": [
+            0.11787632372912164,
+            0.7421254344938165
+          ],
+          "quadratic": {
+            "cross_term": 0.9178469814927891,
+            "unconstrained_cross_term": 0.9178469814927891,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.025294269327302076,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.03757138872710965,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1909649664633695,
+            0.0751427774542193
+          ],
+          "p": 1.8835536526385075,
+          "flags": [],
+          "mean_radial_frac": 0.010199339672368645,
+          "max_radial_frac": 0.020460210270806356,
+          "n_pts": 20,
+          "intercepts_feature_units": [
+            0.15485432481460365,
+            0.8598134441964549
+          ],
+          "quadratic": {
+            "cross_term": 0.04114685565174361,
+            "unconstrained_cross_term": 0.04114685565174361,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.009482355889144594,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.028391876734052204,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2337581200283498,
+            0.05678375346810441
+          ],
+          "p": 1.3559002015612076,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.026723056490095896,
+          "max_radial_frac": 0.06480199130266473,
+          "n_pts": 11,
+          "intercepts_feature_units": [
+            0.11237956114283307,
+            0.4611702916860604
+          ],
+          "quadratic": {
+            "cross_term": 0.3600337884110477,
+            "unconstrained_cross_term": 0.3600337884110477,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.026861777527974414,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.026700425578793804,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.222686121144787,
+            0.05340085115758761
+          ],
+          "p": 1.0419815520816642,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.030510152080420933,
+          "max_radial_frac": 0.07174733283436141,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.10899468752424213,
+            0.5518308409702668
+          ],
+          "quadratic": {
+            "cross_term": 0.8692581483239562,
+            "unconstrained_cross_term": 0.8692581483239562,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02971455600794236,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.006198051857010773,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.2041318744029468,
+            0.02479220742804309
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 0,
+          "intercepts_feature_units": [
+            0.030995153817285757,
+            0.04089868464256558
+          ]
+        },
+        "0.5": {
+          "threshold": 0.012396103714021545,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2041318744029468,
+            0.02479220742804309
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.059937805085765364,
+            0.08990323906112042
+          ]
+        },
+        "0.75": {
+          "threshold": 0.01859415557103232,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.2041318744029468,
+            0.02479220742804309
+          ],
+          "p": 1.7280936387784718,
+          "flags": [
+            "nonmonotone_axis"
+          ],
+          "mean_radial_frac": 0.018518731179852754,
+          "max_radial_frac": 0.03764966979549811,
+          "n_pts": 4,
+          "intercepts_feature_units": [
+            0.08562720410930506,
+            0.157930900987611
+          ],
+          "quadratic": {
+            "cross_term": 0.10880558666484207,
+            "unconstrained_cross_term": 0.10880558666484207,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016610158989096513,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.011963247707476534,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1985677903841774,
+            0.023926495414953067
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.06023409111769538,
+            0.08892909319702072
+          ]
+        },
+        {
+          "threshold": 0.011963247707476534,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1985677903841783,
+            0.023926495414953067
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.0602340911176953,
+            0.08892909319702072
+          ]
+        },
+        {
+          "threshold": 0.012835363529881997,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2096959584217153,
+            0.025670727059763993
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.05968646991272634,
+            0.09087246922884167
+          ]
+        },
+        {
+          "threshold": 0.012835363529881997,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.209695958421715,
+            0.025670727059763993
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.059686469912726234,
+            0.09087246922884167
+          ]
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08987932143544228,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.4425937025214131,
+            0.3595172857417691
+          ],
+          "p": 1.4606221065593932,
+          "flags": [],
+          "mean_radial_frac": 0.01255801027017384,
+          "max_radial_frac": 0.03232076083598856,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.38137309139362163,
+            0.42896212187388266
+          ],
+          "quadratic": {
+            "cross_term": 0.27427445429652547,
+            "unconstrained_cross_term": 0.27427445429652547,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.014758821642558402,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.17975864287088456,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4425937025214131,
+            0.3595172857417691
+          ],
+          "p": 1.4289717322992659,
+          "flags": [],
+          "mean_radial_frac": 0.011939906347884414,
+          "max_radial_frac": 0.025650416659491526,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7171805673740527,
+            0.8245564098109505
+          ],
+          "quadratic": {
+            "cross_term": 0.30197845037321863,
+            "unconstrained_cross_term": 0.30197845037321863,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01293892357218546,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.2696379643063268,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.4425937025214131,
+            0.3595172857417691
+          ],
+          "p": 1.4124470946002232,
+          "flags": [],
+          "mean_radial_frac": 0.01159334314090176,
+          "max_radial_frac": 0.025391958597926423,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            1.0132630815529118,
+            1.1801755326473775
+          ],
+          "quadratic": {
+            "cross_term": 0.31773458230560625,
+            "unconstrained_cross_term": 0.31773458230560625,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.011802266505960233,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.11922501559119425,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.35393057803046796,
+            0.2384500311823885
+          ],
+          "p": 1.5419440189311886,
+          "flags": [],
+          "mean_radial_frac": 0.00885636559030496,
+          "max_radial_frac": 0.01729835334069596,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.6725216677140458,
+            0.8713503798115058
+          ],
+          "quadratic": {
+            "cross_term": 0.2159768221190432,
+            "unconstrained_cross_term": 0.2159768221190432,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00891921685356183,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.12688452959208824,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.767738245740242,
+            0.25376905918417647
+          ],
+          "p": 3.1519223404727357,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02109879111295754,
+          "max_radial_frac": 0.046820662270016244,
+          "n_pts": 24,
+          "intercepts_feature_units": [
+            0.29874253696853537,
+            0.8425411452955174
+          ],
+          "quadratic": {
+            "cross_term": -0.2203661660005379,
+            "unconstrained_cross_term": -0.2203661660005379,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.012861574850096582,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.211109938205867,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.422219876411734,
+            0.5420004568636467
+          ],
+          "p": 4.066735379978799,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.046318523149134504,
+          "max_radial_frac": 0.07359634832258366,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.8628824500368472,
+            0.602171687071231
+          ],
+          "quadratic": {
+            "cross_term": -0.33293827059893205,
+            "unconstrained_cross_term": -0.33293827059893205,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00425212395740879,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.23148376431554613,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.46296752863109225,
+            0.4652655122993617
+          ],
+          "p": 1.2040446533512348,
+          "flags": [],
+          "mean_radial_frac": 0.005343988493115108,
+          "max_radial_frac": 0.011577191048726343,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.854502248501845,
+            0.8113308653932643
+          ],
+          "quadratic": {
+            "cross_term": 0.5663784480892948,
+            "unconstrained_cross_term": 0.5663784480892948,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004049785800037589,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08483857438600462,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.429065101176078,
+            0.33935429754401847
+          ],
+          "p": 1.448255108321061,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02283845230685547,
+          "max_radial_frac": 0.051462312658452136,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.3677334020531526,
+            0.43301264441210846
+          ],
+          "quadratic": {
+            "cross_term": 0.276686074685865,
+            "unconstrained_cross_term": 0.276686074685865,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.025901098581289337,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.16967714877200923,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.429065101176078,
+            0.33935429754401847
+          ],
+          "p": 1.4174445057332916,
+          "flags": [],
+          "mean_radial_frac": 0.018633787950129096,
+          "max_radial_frac": 0.042262388238887505,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.6953172031932351,
+            0.8304318880297025
+          ],
+          "quadratic": {
+            "cross_term": 0.30825436115662674,
+            "unconstrained_cross_term": 0.30825436115662674,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.020016338728149674,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.25451572315801385,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.429065101176078,
+            0.33935429754401847
+          ],
+          "p": 1.4035497106589092,
+          "flags": [],
+          "mean_radial_frac": 0.01637051193169602,
+          "max_radial_frac": 0.03980088042565566,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            0.9868172953752505,
+            1.183677528722661
+          ],
+          "quadratic": {
+            "cross_term": 0.3230371193974452,
+            "unconstrained_cross_term": 0.3230371193974452,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01684858814430773,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.11410106956796312,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3313624675721334,
+            0.22820213913592624
+          ],
+          "p": 1.547883319968315,
+          "flags": [],
+          "mean_radial_frac": 0.00818682637915508,
+          "max_radial_frac": 0.016137420585372264,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.6877217312836383,
+            0.877131152910475
+          ],
+          "quadratic": {
+            "cross_term": 0.21213841692610616,
+            "unconstrained_cross_term": 0.21213841692610616,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.008176001179421143,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.11692628132215298,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7583648275578858,
+            0.23385256264430596
+          ],
+          "p": 2.8406851444593326,
+          "flags": [],
+          "mean_radial_frac": 0.016635689617914774,
+          "max_radial_frac": 0.034330810405177825,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.27780105282643097,
+            0.8702816897986076
+          ],
+          "quadratic": {
+            "cross_term": -0.17787731798781334,
+            "unconstrained_cross_term": -0.17787731798781334,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.011877807823511317,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.20272208502340536,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4054441700468107,
+            0.5471852902185913
+          ],
+          "p": 2.861944580045627,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.14370321832746688,
+          "max_radial_frac": 0.2060629112291581,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.859946650347141,
+            0.577381678762567
+          ],
+          "quadratic": {
+            "cross_term": -0.4454514742259595,
+            "unconstrained_cross_term": -0.4454514742259595,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.009684359767751727,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2224280162218655,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.45268603230534527,
+            0.444856032443731
+          ],
+          "p": 1.169227250019147,
+          "flags": [],
+          "mean_radial_frac": 0.004670001172940675,
+          "max_radial_frac": 0.010143890048445403,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.8349442832789012,
+            0.809537248492272
+          ],
+          "quadratic": {
+            "cross_term": 0.6223866637259776,
+            "unconstrained_cross_term": 0.6223866637259776,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0034494229335734028,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.6179535724545322,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.471814289818129,
+            2.5043026325709237
+          ],
+          "p": 2.1206223167234555,
+          "flags": [],
+          "mean_radial_frac": 0.00270458644542573,
+          "max_radial_frac": 0.004764695140585085,
+          "n_pts": 18,
+          "intercepts_feature_units": [
+            0.5012027204079319,
+            0.4981784199821798
+          ],
+          "quadratic": {
+            "cross_term": -0.034952234110238345,
+            "unconstrained_cross_term": -0.034952234110238345,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004022259294493279,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 1.2359071449090644,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.471814289818129,
+            2.5043026325709237
+          ],
+          "p": 2.2823108182430496,
+          "flags": [],
+          "mean_radial_frac": 0.0030608727306079943,
+          "max_radial_frac": 0.005458989846976903,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8871411697886643,
+            0.8801787219546042
+          ],
+          "quadratic": {
+            "cross_term": -0.07399742755231765,
+            "unconstrained_cross_term": -0.07399742755231765,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006380180028508571,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 1.8538607173635966,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.471814289818129,
+            2.5043026325709237
+          ],
+          "p": 2.394896108543726,
+          "flags": [],
+          "mean_radial_frac": 0.0031226929076492403,
+          "max_radial_frac": 0.005609842831335365,
+          "n_pts": 46,
+          "intercepts_feature_units": [
+            1.2128333464683152,
+            1.2022776524686465
+          ],
+          "quadratic": {
+            "cross_term": -0.09718246423072188,
+            "unconstrained_cross_term": -0.09718246423072188,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00782032427706686,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 1.2293216717684332,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4586433435368664,
+            2.4884369151426577
+          ],
+          "p": 2.301002457756918,
+          "flags": [],
+          "mean_radial_frac": 0.0029496817577911514,
+          "max_radial_frac": 0.005478570946323202,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8888868243333908,
+            0.8817963096446384
+          ],
+          "quadratic": {
+            "cross_term": -0.07810906043148495,
+            "unconstrained_cross_term": -0.07810906043148495,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006474506834243188,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.22577732934936,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.45155465869872,
+            2.4877148962435633
+          ],
+          "p": 2.2553327816099635,
+          "flags": [],
+          "mean_radial_frac": 0.003485460538595811,
+          "max_radial_frac": 0.006464303268157834,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8884023861993109,
+            0.879791678478419
+          ],
+          "quadratic": {
+            "cross_term": -0.06786071618610214,
+            "unconstrained_cross_term": -0.06786071618610214,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006487087437301064,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2494038724730154,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.498807744946031,
+            2.5367618213485
+          ],
+          "p": 2.3037878407187926,
+          "flags": [],
+          "mean_radial_frac": 0.0029094550193787586,
+          "max_radial_frac": 0.00569199748882554,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8852155537520796,
+            0.8772311022887639
+          ],
+          "quadratic": {
+            "cross_term": -0.0786746940022919,
+            "unconstrained_cross_term": -0.0786746940022919,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00649589008958024,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2424926180496956,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.484985236099391,
+            2.520168349999189
+          ],
+          "p": 2.300325256261532,
+          "flags": [],
+          "mean_radial_frac": 0.0029591964448804665,
+          "max_radial_frac": 0.005672509478130028,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8854120669735416,
+            0.8785843177155426
+          ],
+          "quadratic": {
+            "cross_term": -0.07792210528817385,
+            "unconstrained_cross_term": -0.07792210528817385,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006499840257965187,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.6151588601932972,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.460635440773189,
+            2.492345514661992
+          ],
+          "p": 2.289843341118662,
+          "flags": [],
+          "mean_radial_frac": 0.0012495922212802876,
+          "max_radial_frac": 0.002361029179609564,
+          "n_pts": 19,
+          "intercepts_feature_units": [
+            0.5035093921429475,
+            0.4989493489796602
+          ],
+          "quadratic": {
+            "cross_term": -0.07643076169754556,
+            "unconstrained_cross_term": -0.07643076169754556,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00459475347103225,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 1.2303177203865945,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.460635440773189,
+            2.492345514661992
+          ],
+          "p": 2.468879280027767,
+          "flags": [],
+          "mean_radial_frac": 0.0015390548866392234,
+          "max_radial_frac": 0.002672631335731035,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8890849128995553,
+            0.8808733941784508
+          ],
+          "quadratic": {
+            "cross_term": -0.11129918466593446,
+            "unconstrained_cross_term": -0.11129918466593446,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007038488562669737,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 1.8454765805798918,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.460635440773189,
+            2.492345514661992
+          ],
+          "p": 2.593077861539207,
+          "flags": [],
+          "mean_radial_frac": 0.0016690557532772704,
+          "max_radial_frac": 0.002913076000436665,
+          "n_pts": 46,
+          "intercepts_feature_units": [
+            1.2138909801937767,
+            1.2027932087331337
+          ],
+          "quadratic": {
+            "cross_term": -0.13171182305283582,
+            "unconstrained_cross_term": -0.13171182305283582,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.008762219050171055,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 1.2294405943987314,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.458881188797463,
+            2.492224727332156
+          ],
+          "p": 2.4690359348762954,
+          "flags": [],
+          "mean_radial_frac": 0.0015375051753123736,
+          "max_radial_frac": 0.0026767147088871956,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8891704904202113,
+            0.8804378506021904
+          ],
+          "quadratic": {
+            "cross_term": -0.11132433044498677,
+            "unconstrained_cross_term": -0.11132433044498677,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0070411180327758765,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2294405943987308,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4588811887974615,
+            2.4922247273321547
+          ],
+          "p": 2.469035934876296,
+          "flags": [],
+          "mean_radial_frac": 0.0015375051753123638,
+          "max_radial_frac": 0.0026767147088867516,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8891704904202109,
+            0.8804378506021898
+          ],
+          "quadratic": {
+            "cross_term": -0.11132433044498703,
+            "unconstrained_cross_term": -0.11132433044498703,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007041118032775906,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2311948463744575,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.462389692748915,
+            2.492466301991828
+          ],
+          "p": 2.4687250731205648,
+          "flags": [],
+          "mean_radial_frac": 0.0015405020222988776,
+          "max_radial_frac": 0.0026743217968074884,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8889994551078922,
+            0.8813089094629719
+          ],
+          "quadratic": {
+            "cross_term": -0.11127455118151658,
+            "unconstrained_cross_term": -0.11127455118151658,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007035750273002441,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.231194846374459,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.462389692748918,
+            2.49246630199183
+          ],
+          "p": 2.468725073120563,
+          "flags": [],
+          "mean_radial_frac": 0.0015405020222988678,
+          "max_radial_frac": 0.0026743217968079325,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8889994551078931,
+            0.8813089094629734
+          ],
+          "quadratic": {
+            "cross_term": -0.1112745511815161,
+            "unconstrained_cross_term": -0.1112745511815161,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007035750273002409,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.09393338536059234,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.5340020977004065,
+            0.37573354144236937
+          ],
+          "p": 1.3222720983202265,
+          "flags": [],
+          "mean_radial_frac": 0.012882637625719472,
+          "max_radial_frac": 0.030321183340988656,
+          "n_pts": 13,
+          "intercepts_feature_units": [
+            0.2903657138087971,
+            0.4180015221923011
+          ],
+          "quadratic": {
+            "cross_term": 0.4079306074221978,
+            "unconstrained_cross_term": 0.4079306074221978,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01613896184865142,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.18786677072118468,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5340020977004065,
+            0.37573354144236937
+          ],
+          "p": 1.3358108239879811,
+          "flags": [],
+          "mean_radial_frac": 0.011807068232070792,
+          "max_radial_frac": 0.03127476492529724,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.5726812593974382,
+            0.8167127060359383
+          ],
+          "quadratic": {
+            "cross_term": 0.39325476481288313,
+            "unconstrained_cross_term": 0.39325476481288313,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.015377928555864563,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.281800156081777,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.5340020977004065,
+            0.37573354144236937
+          ],
+          "p": 1.3679832744570266,
+          "flags": [],
+          "mean_radial_frac": 0.012182086642887412,
+          "max_radial_frac": 0.030844656881947263,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            0.8431354362355101,
+            1.1778446735050996
+          ],
+          "quadratic": {
+            "cross_term": 0.3594731588594282,
+            "unconstrained_cross_term": 0.3594731588594282,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01595602348538228,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.15067049961501439,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4617416952305002,
+            0.30134099923002877
+          ],
+          "p": 1.4657429609059818,
+          "flags": [],
+          "mean_radial_frac": 0.0058957005102354765,
+          "max_radial_frac": 0.013790827465783084,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.5439793202268659,
+            0.873615593172954
+          ],
+          "quadratic": {
+            "cross_term": 0.27404846333883176,
+            "unconstrained_cross_term": 0.27404846333883176,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004783225816628855,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.15903461193834803,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8286002273498592,
+            0.31806922387669606
+          ],
+          "p": 1.3622895647773785,
+          "flags": [],
+          "mean_radial_frac": 0.0052239006606431835,
+          "max_radial_frac": 0.009886814680318379,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.3266195652642935,
+            0.8730200502955661
+          ],
+          "quadratic": {
+            "cross_term": 0.3683480793966515,
+            "unconstrained_cross_term": 0.3683480793966515,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0005364265480349368,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.25727401857634563,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5145480371526913,
+            0.5856552298978676
+          ],
+          "p": 1.2826445010282923,
+          "flags": [],
+          "mean_radial_frac": 0.005304349592512422,
+          "max_radial_frac": 0.011456220512053084,
+          "n_pts": 28,
+          "intercepts_feature_units": [
+            0.8019855446109091,
+            0.6906944090725243
+          ],
+          "quadratic": {
+            "cross_term": 0.4580366432769309,
+            "unconstrained_cross_term": 0.4580366432769309,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0037072918234411895,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2166989295040213,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5534561582481218,
+            0.4333978590080426
+          ],
+          "p": 2.9988105771183053,
+          "flags": [],
+          "mean_radial_frac": 0.017057939232630097,
+          "max_radial_frac": 0.041913763364343826,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.6345907731405817,
+            0.7745267732898836
+          ],
+          "quadratic": {
+            "cross_term": -0.19882200059196975,
+            "unconstrained_cross_term": -0.19882200059196975,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.011820109697671562,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08797751731518477,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.5164730193085179,
+            0.3519100692607391
+          ],
+          "p": 1.3311942689779535,
+          "flags": [],
+          "mean_radial_frac": 0.017814293368400194,
+          "max_radial_frac": 0.03357626818418591,
+          "n_pts": 13,
+          "intercepts_feature_units": [
+            0.281928857831939,
+            0.4182764762929721
+          ],
+          "quadratic": {
+            "cross_term": 0.39568594832600645,
+            "unconstrained_cross_term": 0.39568594832600645,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.018349387507566026,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.17595503463036954,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5164730193085179,
+            0.3519100692607391
+          ],
+          "p": 1.3538555630397953,
+          "flags": [],
+          "mean_radial_frac": 0.01544444310229323,
+          "max_radial_frac": 0.042950785774068745,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.5557025088485639,
+            0.8142258261020622
+          ],
+          "quadratic": {
+            "cross_term": 0.37225213411533387,
+            "unconstrained_cross_term": 0.37225213411533387,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.017806012460315268,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.2639325519455543,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.5164730193085179,
+            0.3519100692607391
+          ],
+          "p": 1.3914970949883991,
+          "flags": [],
+          "mean_radial_frac": 0.014384249392283192,
+          "max_radial_frac": 0.038043525456529226,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            0.8182030259046261,
+            1.1751145296347407
+          ],
+          "quadratic": {
+            "cross_term": 0.3350828714155277,
+            "unconstrained_cross_term": 0.3350828714155277,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.017294059311703112,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.14234148790587298,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.43752970139368697,
+            0.28468297581174595
+          ],
+          "p": 1.4254285724466011,
+          "flags": [],
+          "mean_radial_frac": 0.005136228057361732,
+          "max_radial_frac": 0.011979428058610297,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.5452843176685036,
+            0.8735262918752499
+          ],
+          "quadratic": {
+            "cross_term": 0.30838133282887104,
+            "unconstrained_cross_term": 0.30838133282887104,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0030844891881302797,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.14479445174561198,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8104001273217183,
+            0.28958890349122396
+          ],
+          "p": 1.3992442629097792,
+          "flags": [],
+          "mean_radial_frac": 0.005915370073245897,
+          "max_radial_frac": 0.011394318269998482,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.3060702519474583,
+            0.8693898976192701
+          ],
+          "quadratic": {
+            "cross_term": 0.332512586509872,
+            "unconstrained_cross_term": 0.332512586509872,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0017294335520128558,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.24842484783848648,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.49684969567697296,
+            0.5621340406415547
+          ],
+          "p": 1.2325038965355035,
+          "flags": [],
+          "mean_radial_frac": 0.005072325848900423,
+          "max_radial_frac": 0.011072343839240384,
+          "n_pts": 28,
+          "intercepts_feature_units": [
+            0.8017749326768033,
+            0.6882586630841826
+          ],
+          "quadratic": {
+            "cross_term": 0.5244918226136251,
+            "unconstrained_cross_term": 0.5244918226136251,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.003448637252263746,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.20711561751512708,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5360963429400627,
+            0.41423123503025416
+          ],
+          "p": 3.369300045527647,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.022865612673111713,
+          "max_radial_frac": 0.05652380969928639,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.6273341164493274,
+            0.7748413954368819
+          ],
+          "quadratic": {
+            "cross_term": -0.2449796145215651,
+            "unconstrained_cross_term": -0.2449796145215651,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01434585999255918,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.16149604242295748,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.471814289818129,
+            0.6459841696918299
+          ],
+          "p": 2.0825595325874495,
+          "flags": [],
+          "mean_radial_frac": 0.003992852053867435,
+          "max_radial_frac": 0.007028665613515006,
+          "n_pts": 5,
+          "intercepts_feature_units": [
+            0.14850357669152364,
+            0.1694306651064999
+          ],
+          "quadratic": {
+            "cross_term": -0.025793251935875568,
+            "unconstrained_cross_term": -0.025793251935875568,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0035235463847930414,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.32299208484591496,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.471814289818129,
+            0.6459841696918299
+          ],
+          "p": 2.0725449972198424,
+          "flags": [],
+          "mean_radial_frac": 0.003477584710909846,
+          "max_radial_frac": 0.007395210593086565,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2824779440412022,
+            0.3725112037969192
+          ],
+          "quadratic": {
+            "cross_term": -0.023026312946186536,
+            "unconstrained_cross_term": -0.023026312946186536,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0029627874196137085,
+            "better_than_superellipse": true
+          }
+        },
+        "0.75": {
+          "threshold": 0.48448812726887247,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.471814289818129,
+            0.6459841696918299
+          ],
+          "p": 1.960484992192269,
+          "flags": [],
+          "mean_radial_frac": 0.0051720231012927055,
+          "max_radial_frac": 0.012855996837801476,
+          "n_pts": 20,
+          "intercepts_feature_units": [
+            0.40584256872608515,
+            0.6439562082487534
+          ],
+          "quadratic": {
+            "cross_term": 0.011458069008485764,
+            "unconstrained_cross_term": 0.011458069008485764,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0055452179503283515,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.31540724051064395,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4586433435368664,
+            0.6308144810212879
+          ],
+          "p": 2.0819893936684224,
+          "flags": [],
+          "mean_radial_frac": 0.003452152944029544,
+          "max_radial_frac": 0.007079288656787197,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2790295684877878,
+            0.36759091359091933
+          ],
+          "quadratic": {
+            "cross_term": -0.02573121617569326,
+            "unconstrained_cross_term": -0.02573121617569326,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00284940111839078,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.31865750556658295,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.45155465869872,
+            0.6373150111331659
+          ],
+          "p": 2.1419472406099502,
+          "flags": [],
+          "mean_radial_frac": 0.004226615857523809,
+          "max_radial_frac": 0.009147379887658236,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2820959949794952,
+            0.37185429275600473
+          ],
+          "quadratic": {
+            "cross_term": -0.04256170431785759,
+            "unconstrained_cross_term": -0.04256170431785759,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0031219752357017814,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.33022084478582525,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.498807744946031,
+            0.6604416895716505
+          ],
+          "p": 2.059149094839123,
+          "flags": [],
+          "mean_radial_frac": 0.0031537440403220838,
+          "max_radial_frac": 0.00660123168697635,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2837125105305015,
+            0.3722104747930451
+          ],
+          "quadratic": {
+            "cross_term": -0.01899540062860757,
+            "unconstrained_cross_term": -0.01899540062860757,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0027325004228221095,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.32732666412524697,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.484985236099391,
+            0.6546533282504939
+          ],
+          "p": 2.062146305283133,
+          "flags": [],
+          "mean_radial_frac": 0.0031991840711570463,
+          "max_radial_frac": 0.006813101470418692,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2832928492045558,
+            0.3731494787787457
+          ],
+          "quadratic": {
+            "cross_term": -0.019897738387193168,
+            "unconstrained_cross_term": -0.019897738387193168,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0027423340713297237,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.15388867035631237,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.460635440773189,
+            0.6155546814252495
+          ],
+          "p": 1.9610874408512982,
+          "flags": [],
+          "mean_radial_frac": 0.0014855086370147764,
+          "max_radial_frac": 0.0030383062239744962,
+          "n_pts": 5,
+          "intercepts_feature_units": [
+            0.143623153280904,
+            0.16222670462834315
+          ],
+          "quadratic": {
+            "cross_term": 0.012703380452571586,
+            "unconstrained_cross_term": 0.012703380452571586,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0015109173205947845,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.30777734071262475,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.460635440773189,
+            0.6155546814252495
+          ],
+          "p": 1.9301205953302878,
+          "flags": [],
+          "mean_radial_frac": 0.0020641551181806625,
+          "max_radial_frac": 0.005154628772578107,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2733511114676703,
+            0.3549689081563098
+          ],
+          "quadratic": {
+            "cross_term": 0.023376874154786384,
+            "unconstrained_cross_term": 0.023376874154786384,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00220108018544087,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.4616660110689371,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.460635440773189,
+            0.6155546814252495
+          ],
+          "p": 1.824684037725952,
+          "flags": [],
+          "mean_radial_frac": 0.002811118504328919,
+          "max_radial_frac": 0.006684846277391854,
+          "n_pts": 19,
+          "intercepts_feature_units": [
+            0.39276330182908914,
+            0.6086794788980894
+          ],
+          "quadratic": {
+            "cross_term": 0.06372962353058607,
+            "unconstrained_cross_term": 0.06372962353058607,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004163967275269336,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.30714145115028374,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.458881188797463,
+            0.6142829023005675
+          ],
+          "p": 1.9304398175448367,
+          "flags": [],
+          "mean_radial_frac": 0.00219192028121439,
+          "max_radial_frac": 0.005248090976859521,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.27309603199873744,
+            0.3541554845935798
+          ],
+          "quadratic": {
+            "cross_term": 0.02331983093328074,
+            "unconstrained_cross_term": 0.02331983093328074,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002304026095814149,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.30714145115028385,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4588811887974615,
+            0.6142829023005677
+          ],
+          "p": 1.9304398175448594,
+          "flags": [],
+          "mean_radial_frac": 0.002191920281215639,
+          "max_radial_frac": 0.005248090976856412,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.27309603199873766,
+            0.35415548459357965
+          ],
+          "quadratic": {
+            "cross_term": 0.02331983093328217,
+            "unconstrained_cross_term": 0.02331983093328217,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0023040260958144265,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.30841323027496564,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.462389692748915,
+            0.6168264605499313
+          ],
+          "p": 1.9300250080728834,
+          "flags": [],
+          "mean_radial_frac": 0.0020184059260403933,
+          "max_radial_frac": 0.005037651360180417,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.27360577452273643,
+            0.3557818313209414
+          ],
+          "quadratic": {
+            "cross_term": 0.023327890314155237,
+            "unconstrained_cross_term": 0.023327890314155237,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0023668318254218093,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.30841323027496576,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.462389692748918,
+            0.6168264605499315
+          ],
+          "p": 1.9300250080728825,
+          "flags": [],
+          "mean_radial_frac": 0.002018405926040606,
+          "max_radial_frac": 0.0050376513601808615,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.27360577452273654,
+            0.355781831320941
+          ],
+          "quadratic": {
+            "cross_term": 0.023327890314154873,
+            "unconstrained_cross_term": 0.023327890314154873,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0023668318254219944,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.09543277373000691,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.5340020977004065,
+            0.38173109492002766
+          ],
+          "p": 1.9465236194067885,
+          "flags": [],
+          "mean_radial_frac": 0.010327542931973892,
+          "max_radial_frac": 0.02578031004451442,
+          "n_pts": 13,
+          "intercepts_feature_units": [
+            0.29495863120395593,
+            0.419898856775719
+          ],
+          "quadratic": {
+            "cross_term": 0.014029868655911593,
+            "unconstrained_cross_term": 0.014029868655911593,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.010152718934482493,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.19086554746001383,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5340020977004065,
+            0.38173109492002766
+          ],
+          "p": 1.8388971039448259,
+          "flags": [],
+          "mean_radial_frac": 0.00936154974931856,
+          "max_radial_frac": 0.021181996229189926,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.5815154587711115,
+            0.8144712155777922
+          ],
+          "quadratic": {
+            "cross_term": 0.055688585581521975,
+            "unconstrained_cross_term": 0.055688585581521975,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.009884689632518968,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.28629832119002074,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.5340020977004065,
+            0.38173109492002766
+          ],
+          "p": 1.7510743149732757,
+          "flags": [],
+          "mean_radial_frac": 0.009361423977217979,
+          "max_radial_frac": 0.02560104348298986,
+          "n_pts": 39,
+          "intercepts_feature_units": [
+            0.855751298778257,
+            1.1742670064914393
+          ],
+          "quadratic": {
+            "cross_term": 0.09482553296170645,
+            "unconstrained_cross_term": 0.09482553296170645,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.009798207226853562,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.13399031736095338,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4617416952305002,
+            0.26798063472190675
+          ],
+          "p": 2.7508151722659235,
+          "flags": [],
+          "mean_radial_frac": 0.013768791625495047,
+          "max_radial_frac": 0.03268815042369799,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.4858436658757144,
+            0.8440414570083291
+          ],
+          "quadratic": {
+            "cross_term": -0.16535811103528195,
+            "unconstrained_cross_term": -0.16535811103528195,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00721834874515318,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.13929479735188008,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8286002273498592,
+            0.27858959470376016
+          ],
+          "p": 3.911738090616296,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.05128485601808004,
+          "max_radial_frac": 0.08210647859702025,
+          "n_pts": 25,
+          "intercepts_feature_units": [
+            0.28722428925638527,
+            0.8260785122077616
+          ],
+          "quadratic": {
+            "cross_term": -0.33676135849758465,
+            "unconstrained_cross_term": -0.33676135849758465,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.009931482974082423,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.25727401857634563,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5145480371526913,
+            0.564725901187075
+          ],
+          "p": 3.864854897570863,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.0673082044771961,
+          "max_radial_frac": 0.0871066493477326,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8019855446109091,
+            0.7017171620240357
+          ],
+          "quadratic": {
+            "cross_term": -0.36374422152632613,
+            "unconstrained_cross_term": -0.36374422152632613,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004351911160623602,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.24243629756814755,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5534561582481218,
+            0.4848725951362951
+          ],
+          "p": 1.42991703748729,
+          "flags": [],
+          "mean_radial_frac": 0.004279416901536833,
+          "max_radial_frac": 0.009350331005776868,
+          "n_pts": 28,
+          "intercepts_feature_units": [
+            0.7065152954230876,
+            0.8079082041378545
+          ],
+          "quadratic": {
+            "cross_term": 0.30474018659949786,
+            "unconstrained_cross_term": 0.30474018659949786,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0014262023696852502,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        0,
+        1
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.090456787558678,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.5164730193085179,
+            0.361827150234712
+          ],
+          "p": 2.012275217586122,
+          "flags": [],
+          "mean_radial_frac": 0.01314300596117328,
+          "max_radial_frac": 0.03583776120010307,
+          "n_pts": 13,
+          "intercepts_feature_units": [
+            0.2897821733648868,
+            0.42527462913691416
+          ],
+          "quadratic": {
+            "cross_term": -0.008840282206693853,
+            "unconstrained_cross_term": -0.008840282206693853,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.013131083411118554,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.180913575117356,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5164730193085179,
+            0.361827150234712
+          ],
+          "p": 1.8792842317057965,
+          "flags": [],
+          "mean_radial_frac": 0.0112317032960886,
+          "max_radial_frac": 0.028285400567661156,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.5707917266352168,
+            0.8205237552271619
+          ],
+          "quadratic": {
+            "cross_term": 0.038729398213698966,
+            "unconstrained_cross_term": 0.038729398213698966,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.011196302347972305,
+            "better_than_superellipse": true
+          }
+        },
+        "0.75": {
+          "threshold": 0.271370362676034,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.5164730193085179,
+            0.361827150234712
+          ],
+          "p": 1.7725083222633424,
+          "flags": [],
+          "mean_radial_frac": 0.0107235469480281,
+          "max_radial_frac": 0.02487089740996451,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            0.8398403237414456,
+            1.1772229868603226
+          ],
+          "quadratic": {
+            "cross_term": 0.08482843735864258,
+            "unconstrained_cross_term": 0.08482843735864258,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.010391928122357315,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.12893839147125005,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.43752970139368697,
+            0.2578767829425001
+          ],
+          "p": 3.0856387763004967,
+          "flags": [],
+          "mean_radial_frac": 0.018980911773236374,
+          "max_radial_frac": 0.041813177678709845,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.4958728713519811,
+            0.8505694924264369
+          ],
+          "quadratic": {
+            "cross_term": -0.21017831216560082,
+            "unconstrained_cross_term": -0.21017831216560082,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007849860273076503,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.13144508352337655,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8104001273217183,
+            0.2628901670467531
+          ],
+          "p": 3.935986038121299,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.0490984217683067,
+          "max_radial_frac": 0.08166883626628985,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.2786324384391562,
+            0.8461864550778557
+          ],
+          "quadratic": {
+            "cross_term": -0.33240275712746553,
+            "unconstrained_cross_term": -0.33240275712746553,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.011113022444888704,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.24842484783848648,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.49684969567697296,
+            0.5601950007620308
+          ],
+          "p": 3.002219906162473,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.13767534005909404,
+          "max_radial_frac": 0.1852488120043969,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8017749326768033,
+            0.688340363265031
+          ],
+          "quadratic": {
+            "cross_term": -0.44150820881586694,
+            "unconstrained_cross_term": -0.44150820881586694,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.005520093744603027,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.23038206671133543,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5360963429400627,
+            0.46076413342267086
+          ],
+          "p": 1.3804433559121827,
+          "flags": [],
+          "mean_radial_frac": 0.004369801616827429,
+          "max_radial_frac": 0.008992203429733836,
+          "n_pts": 28,
+          "intercepts_feature_units": [
+            0.6945023300944176,
+            0.8060890153715963
+          ],
+          "quadratic": {
+            "cross_term": 0.35044033863117346,
+            "unconstrained_cross_term": 0.35044033863117346,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0008801661865519403,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.299302241283377,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.197208965133508,
+            1.2040797742239209
+          ],
+          "p": 3.1386458531256474,
+          "flags": [],
+          "mean_radial_frac": 0.000928176637844562,
+          "max_radial_frac": 0.001890572765445575,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.6621930223356224,
+            0.6626645124902458
+          ],
+          "quadratic": {
+            "cross_term": -0.19658792012750564,
+            "unconstrained_cross_term": -0.19658792012750564,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.013751570113682221,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.598604482566754,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.197208965133508,
+            1.2040797742239209
+          ],
+          "p": 3.2972066328367347,
+          "flags": [],
+          "mean_radial_frac": 0.0010853982111657433,
+          "max_radial_frac": 0.002762745673350997,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.008779572606197,
+            1.0063963300624994
+          ],
+          "quadratic": {
+            "cross_term": -0.2103539472754764,
+            "unconstrained_cross_term": -0.2103539472754764,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.015950674903492258,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.897906723850131,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.197208965133508,
+            1.2040797742239209
+          ],
+          "p": 3.3823230835360456,
+          "flags": [],
+          "mean_radial_frac": 0.0010323160952557114,
+          "max_radial_frac": 0.0023553044171322757,
+          "n_pts": 48,
+          "intercepts_feature_units": [
+            1.2749539567501624,
+            1.2712459561741785
+          ],
+          "quadratic": {
+            "cross_term": -0.21734137184818403,
+            "unconstrained_cross_term": -0.21734137184818403,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01651768326023926,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.5957140986067574,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1914281972135148,
+            1.197798119986474
+          ],
+          "p": 3.2809239522950455,
+          "flags": [],
+          "mean_radial_frac": 0.001262676528300588,
+          "max_radial_frac": 0.0032876223638301783,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0084522290055997,
+            1.0062009124142222
+          ],
+          "quadratic": {
+            "cross_term": -0.20899666642065645,
+            "unconstrained_cross_term": -0.20899666642065645,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01601867735053087,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5998231614282792,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1996463228565584,
+            1.2180256194358972
+          ],
+          "p": 3.3341748160783573,
+          "flags": [],
+          "mean_radial_frac": 0.0006139841417320532,
+          "max_radial_frac": 0.0013641565199542516,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0075081743305554,
+            0.9931494112817866
+          ],
+          "quadratic": {
+            "cross_term": -0.2140122486969557,
+            "unconstrained_cross_term": -0.2140122486969557,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01560624707897719,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5894336705765645,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.194771607410458,
+            1.178867341153129
+          ],
+          "p": 3.1940246572089124,
+          "flags": [],
+          "mean_radial_frac": 0.002186851976049012,
+          "max_radial_frac": 0.003752663500214415,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0024289553749017,
+            1.0161183232713902
+          ],
+          "quadratic": {
+            "cross_term": -0.20155682766129157,
+            "unconstrained_cross_term": -0.20155682766129157,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016005017451810474,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.6051807142306839,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2286464498712144,
+            1.2103614284613677
+          ],
+          "p": 3.498616647530083,
+          "flags": [],
+          "mean_radial_frac": 0.000604448652882371,
+          "max_radial_frac": 0.0013411379084404818,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            0.993144080782369,
+            1.010141880271156
+          ],
+          "quadratic": {
+            "cross_term": -0.22666820700380455,
+            "unconstrained_cross_term": -0.22666820700380455,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016131026121065862,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.2971698558652226,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.1886794234608904,
+            1.1903905997602466
+          ],
+          "p": 3.1788481409575917,
+          "flags": [],
+          "mean_radial_frac": 0.0012172562062178717,
+          "max_radial_frac": 0.002188095257306788,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.6677782659507885,
+            0.6700322451518044
+          ],
+          "quadratic": {
+            "cross_term": -0.20015382003241056,
+            "unconstrained_cross_term": -0.20015382003241056,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.014837433720980172,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.5943397117304452,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1886794234608904,
+            1.1903905997602466
+          ],
+          "p": 3.3813656989486147,
+          "flags": [],
+          "mean_radial_frac": 0.0010007527411934687,
+          "max_radial_frac": 0.0017799541666730923,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.011043813712526,
+            1.0119369677820766
+          ],
+          "quadratic": {
+            "cross_term": -0.21682733637363485,
+            "unconstrained_cross_term": -0.21682733637363485,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016839000734260527,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.8915095675956678,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.1886794234608904,
+            1.1903905997602466
+          ],
+          "p": 3.482057515845808,
+          "flags": [],
+          "mean_radial_frac": 0.0008019206446272428,
+          "max_radial_frac": 0.0014675240816662827,
+          "n_pts": 48,
+          "intercepts_feature_units": [
+            1.275912594115733,
+            1.2757064952792845
+          ],
+          "quadratic": {
+            "cross_term": -0.22478102465417965,
+            "unconstrained_cross_term": -0.22478102465417965,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01728365722843926,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.5917038406540831,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1885513509767414,
+            1.1834076813081662
+          ],
+          "p": 3.3700349315779925,
+          "flags": [],
+          "mean_radial_frac": 0.0010294288345966043,
+          "max_radial_frac": 0.0017802939646421878,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0084484933888231,
+            1.0114534330903444
+          ],
+          "quadratic": {
+            "cross_term": -0.21594705245758886,
+            "unconstrained_cross_term": -0.21594705245758886,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016783402972932765,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5917038406540831,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1885513509767411,
+            1.1834076813081662
+          ],
+          "p": 3.3700349315779943,
+          "flags": [],
+          "mean_radial_frac": 0.0010294288345965546,
+          "max_radial_frac": 0.0017802939646420768,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0084484933888231,
+            1.0114534330903442
+          ],
+          "quadratic": {
+            "cross_term": -0.21594705245758897,
+            "unconstrained_cross_term": -0.21594705245758897,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016783402972932727,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5944037479725199,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1888074959450399,
+            1.197373518212327
+          ],
+          "p": 3.3905407847302054,
+          "flags": [],
+          "mean_radial_frac": 0.0009605811309623738,
+          "max_radial_frac": 0.001871636623944295,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0111214575020337,
+            1.009924112341961
+          ],
+          "quadratic": {
+            "cross_term": -0.21751720366519986,
+            "unconstrained_cross_term": -0.21751720366519986,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01690497221598734,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.5944037479725196,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1888074959450392,
+            1.1973735182123273
+          ],
+          "p": 3.390540784730202,
+          "flags": [],
+          "mean_radial_frac": 0.0009605811309623416,
+          "max_radial_frac": 0.001871636623944184,
+          "n_pts": 38,
+          "intercepts_feature_units": [
+            1.0111214575020333,
+            1.0099241123419604
+          ],
+          "quadratic": {
+            "cross_term": -0.21751720366519975,
+            "unconstrained_cross_term": -0.21751720366519975,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01690497221598732,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08996747377057424,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.4218131396081631,
+            0.35986989508229694
+          ],
+          "p": 1.8325343097289497,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.04455030412158898,
+          "max_radial_frac": 0.07331472020806185,
+          "n_pts": 16,
+          "intercepts_feature_units": [
+            0.4068050810932416,
+            0.4320740190603625
+          ],
+          "quadratic": {
+            "cross_term": 0.0338150956102253,
+            "unconstrained_cross_term": 0.0338150956102253,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.04383347688895913,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.17993494754114847,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4218131396081631,
+            0.35986989508229694
+          ],
+          "p": 1.8910634075209227,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.044847847851441594,
+          "max_radial_frac": 0.08305997247178565,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.7577807385540952,
+            0.8310646177460548
+          ],
+          "quadratic": {
+            "cross_term": 0.0103974938941069,
+            "unconstrained_cross_term": 0.0103974938941069,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.043937737045038526,
+            "better_than_superellipse": true
+          }
+        },
+        "0.75": {
+          "threshold": 0.2699024213117227,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.4218131396081631,
+            0.35986989508229694
+          ],
+          "p": 1.962543709533351,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.044102779505169123,
+          "max_radial_frac": 0.0805417935447107,
+          "n_pts": 42,
+          "intercepts_feature_units": [
+            1.0620898835268076,
+            1.1857119757133936
+          ],
+          "quadratic": {
+            "cross_term": -0.01208567173820429,
+            "unconstrained_cross_term": -0.01208567173820429,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0430133489210852,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.14186659311189131,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.35393057803046796,
+            0.28373318622378263
+          ],
+          "p": 2.055598873450444,
+          "flags": [],
+          "mean_radial_frac": 0.012314352986499038,
+          "max_radial_frac": 0.01930721614294617,
+          "n_pts": 33,
+          "intercepts_feature_units": [
+            0.7719454131164584,
+            0.9124653510493681
+          ],
+          "quadratic": {
+            "cross_term": -0.019547986760641043,
+            "unconstrained_cross_term": -0.019547986760641043,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.012290682410312725,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.15490411771202164,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.767738245740242,
+            0.3098082354240433
+          ],
+          "p": 1.4843622963266827,
+          "flags": [],
+          "mean_radial_frac": 0.005419049288938382,
+          "max_radial_frac": 0.011335802812803997,
+          "n_pts": 24,
+          "intercepts_feature_units": [
+            0.3610380024998002,
+            0.8968686994245181
+          ],
+          "quadratic": {
+            "cross_term": 0.25964386903721437,
+            "unconstrained_cross_term": 0.25964386903721437,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0009336127738097805,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.18690513942621756,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3738102788524351,
+            0.40993155474055065
+          ],
+          "p": 1.5555325126293003,
+          "flags": [],
+          "mean_radial_frac": 0.009463095064418895,
+          "max_radial_frac": 0.019221279386582468,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.8860002397452703,
+            0.7107566442064254
+          ],
+          "quadratic": {
+            "cross_term": 0.2071221449458197,
+            "unconstrained_cross_term": 0.2071221449458197,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.008892099130296597,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.21200098197997416,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.46981600036389104,
+            0.4240019639599483
+          ],
+          "p": 2.8638159729225503,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.14704054812141304,
+          "max_radial_frac": 0.21504914949685494,
+          "n_pts": 36,
+          "intercepts_feature_units": [
+            0.779549688561312,
+            0.7918513483345069
+          ],
+          "quadratic": {
+            "cross_term": -0.44692646227646926,
+            "unconstrained_cross_term": -0.44692646227646926,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01568270513322505,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08347355318620901,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.40819933346533227,
+            0.33389421274483605
+          ],
+          "p": 1.7124070970962055,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.03683790478421496,
+          "max_radial_frac": 0.06517516175820393,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.38821003372391283,
+            0.42736529572733345
+          ],
+          "quadratic": {
+            "cross_term": 0.09398278632176316,
+            "unconstrained_cross_term": 0.09398278632176316,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03751303116295295,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.16694710637241802,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.40819933346533227,
+            0.33389421274483605
+          ],
+          "p": 1.7905116755979227,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.03625785630154123,
+          "max_radial_frac": 0.06700184425399858,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7266843901396531,
+            0.8253366676727119
+          ],
+          "quadratic": {
+            "cross_term": 0.055958738124745964,
+            "unconstrained_cross_term": 0.055958738124745964,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03682353797371164,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.250420659558627,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.40819933346533227,
+            0.33389421274483605
+          ],
+          "p": 1.8722811395951393,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.0372941849546225,
+          "max_radial_frac": 0.07036856803619651,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            1.023223139442803,
+            1.182212427794187
+          ],
+          "quadratic": {
+            "cross_term": 0.02308199942643534,
+            "unconstrained_cross_term": 0.02308199942643534,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03715345441149283,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.13059287500221836,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3313624675721334,
+            0.2611857500044367
+          ],
+          "p": 2.0900234737004175,
+          "flags": [],
+          "mean_radial_frac": 0.010780666355432095,
+          "max_radial_frac": 0.017224740219444534,
+          "n_pts": 32,
+          "intercepts_feature_units": [
+            0.7649230053942452,
+            0.9008202652745114
+          ],
+          "quadratic": {
+            "cross_term": -0.029204801870001205,
+            "unconstrained_cross_term": -0.029204801870001205,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.010664598951630674,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.13326227177412076,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7583648275578858,
+            0.2665245435482415
+          ],
+          "p": 1.5858539012987527,
+          "flags": [],
+          "mean_radial_frac": 0.00557373391017085,
+          "max_radial_frac": 0.010237846182995503,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.3148215871304687,
+            0.8947756550068261
+          ],
+          "quadratic": {
+            "cross_term": 0.18820252135017276,
+            "unconstrained_cross_term": 0.18820252135017276,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0016810600117445353,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.1816548862267672,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3633097724535344,
+            0.41065911921579523
+          ],
+          "p": 1.4576418671163727,
+          "flags": [],
+          "mean_radial_frac": 0.0077243126160373285,
+          "max_radial_frac": 0.01635095487511129,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.88267387891699,
+            0.6821874880894457
+          ],
+          "quadratic": {
+            "cross_term": 0.2804570240414159,
+            "unconstrained_cross_term": 0.2804570240414159,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0062113564383396176,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2006319409707153,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.45308889447713013,
+            0.4012638819414306
+          ],
+          "p": 1.9687692651401612,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.25160424263578446,
+          "max_radial_frac": 0.40887971271548107,
+          "n_pts": 40,
+          "intercepts_feature_units": [
+            0.7620334445024144,
+            0.7775798163133885
+          ],
+          "quadratic": {
+            "cross_term": -0.4950261435084856,
+            "unconstrained_cross_term": -0.4950261435084856,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016983685644345818,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.013462008790743326,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.197208965133508,
+            0.053848035162973304
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.06311452079094607,
+            0.09436354683415862
+          ]
+        },
+        "0.5": {
+          "threshold": 0.026924017581486652,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.197208965133508,
+            0.053848035162973304
+          ],
+          "p": 1.1823072755171444,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.07351244484377481,
+          "max_radial_frac": 0.1344048206652233,
+          "n_pts": 13,
+          "intercepts_feature_units": [
+            0.11548723828444118,
+            0.5943107077520466
+          ],
+          "quadratic": {
+            "cross_term": 0.5099168790986732,
+            "unconstrained_cross_term": 0.5099168790986732,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.07355659323903654,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.040386026372229974,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.197208965133508,
+            0.053848035162973304
+          ],
+          "p": 1.734860663283166,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.06479292064918576,
+          "max_radial_frac": 0.10983767007579437,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.16109479626368778,
+            1.07665084157613
+          ],
+          "quadratic": {
+            "cross_term": 0.06679287791908527,
+            "unconstrained_cross_term": 0.06679287791908527,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.06221086004855467,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.020151507355621375,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1914281972135148,
+            0.04030301471124275
+          ],
+          "p": 1.389073286807134,
+          "flags": [],
+          "mean_radial_frac": 0.015637103370368527,
+          "max_radial_frac": 0.025047738785980433,
+          "n_pts": 4,
+          "intercepts_feature_units": [
+            0.0908881818615219,
+            0.2063581047029322
+          ],
+          "quadratic": {
+            "cross_term": 0.3445478915898733,
+            "unconstrained_cross_term": 0.3445478915898733,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.017516295769186035,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.029293547274074086,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1996463228565584,
+            0.05858709454814817
+          ],
+          "p": 1.1755622441921576,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.025321674515010016,
+          "max_radial_frac": 0.04998690997273392,
+          "n_pts": 10,
+          "intercepts_feature_units": [
+            0.12320101953571272,
+            0.42435898661234156
+          ],
+          "quadratic": {
+            "cross_term": 0.6026787763301298,
+            "unconstrained_cross_term": 0.6026787763301298,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.027450318591332724,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.030774695940997753,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.194771607410458,
+            0.061549391881995506
+          ],
+          "p": 2.3274126142019527,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.038598237700230326,
+          "max_radial_frac": 0.061600013100181705,
+          "n_pts": 16,
+          "intercepts_feature_units": [
+            0.1348804122856214,
+            0.716657006130984
+          ],
+          "quadratic": {
+            "cross_term": -0.0976838326797389,
+            "unconstrained_cross_term": -0.0976838326797389,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.04029611645203955,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.024554487888899218,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.2286464498712144,
+            0.049108975777798436
+          ],
+          "p": 1.0160293763232218,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02199824145592191,
+          "max_radial_frac": 0.04306351230055494,
+          "n_pts": 9,
+          "intercepts_feature_units": [
+            0.10121648573150108,
+            0.44805175236249895
+          ],
+          "quadratic": {
+            "cross_term": 0.9490974802387271,
+            "unconstrained_cross_term": 0.9490974802387271,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02169792645107048,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.005871341711117653,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            1.1886794234608904,
+            0.023485366844470612
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 0,
+          "intercepts_feature_units": [
+            0.030565493333649236,
+            0.04048343599563527
+          ]
+        },
+        "0.5": {
+          "threshold": 0.011742683422235306,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1886794234608904,
+            0.023485366844470612
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.059194942411989894,
+            0.09307378827066463
+          ]
+        },
+        "0.75": {
+          "threshold": 0.01761402513335296,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            1.1886794234608904,
+            0.023485366844470612
+          ],
+          "p": 0.8324151158359164,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.10539884526891381,
+          "max_radial_frac": 0.1735908106405517,
+          "n_pts": 7,
+          "intercepts_feature_units": [
+            0.08444409232092395,
+            0.35662934392369605
+          ],
+          "quadratic": {
+            "cross_term": 1.0,
+            "unconstrained_cross_term": 1.4138721748769423,
+            "psd_boundary": true,
+            "mean_radial_frac": 0.11096983288029647,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.011926758994229389,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1885513509767414,
+            0.023853517988458778
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.059617145766357016,
+            0.0898432183702765
+          ]
+        },
+        {
+          "threshold": 0.011926758994229378,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1885513509767411,
+            0.023853517988458757
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.059617145766356947,
+            0.0898432183702765
+          ]
+        },
+        {
+          "threshold": 0.011558607850241227,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1888074959450399,
+            0.023117215700482453
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.058768406159795505,
+            0.0966989550172444
+          ]
+        },
+        {
+          "threshold": 0.011558607850241232,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            1.1888074959450392,
+            0.023117215700482464
+          ],
+          "p": null,
+          "flags": [
+            "insufficient_contour"
+          ],
+          "mean_radial_frac": null,
+          "max_radial_frac": null,
+          "n_pts": 2,
+          "intercepts_feature_units": [
+            0.058768406159795505,
+            0.09669895501724443
+          ]
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08913392259956343,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.4218131396081631,
+            0.3565356903982537
+          ],
+          "p": 1.5515144222261645,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.042817252797940734,
+          "max_radial_frac": 0.07514643474763161,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.4033306387928863,
+            0.4250750193787177
+          ],
+          "quadratic": {
+            "cross_term": 0.18100915186149394,
+            "unconstrained_cross_term": 0.18100915186149394,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.044508964667863284,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.17826784519912686,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4218131396081631,
+            0.3565356903982537
+          ],
+          "p": 1.493247841302242,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.03549007118578798,
+          "max_radial_frac": 0.06300632553954277,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7517893412060185,
+            0.8206523612821325
+          ],
+          "quadratic": {
+            "cross_term": 0.2308688129312927,
+            "unconstrained_cross_term": 0.2308688129312927,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03648060133252227,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.2674017677986903,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.4218131396081631,
+            0.3565356903982537
+          ],
+          "p": 1.4566249830605866,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.031437801780543964,
+          "max_radial_frac": 0.05569515654009338,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            1.0542166333274392,
+            1.1779991538497154
+          ],
+          "quadratic": {
+            "cross_term": 0.2658923517610524,
+            "unconstrained_cross_term": 0.2658923517610524,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.03183065471489729,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.11922501559119425,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.35393057803046796,
+            0.2384500311823885
+          ],
+          "p": 1.5419440189311886,
+          "flags": [],
+          "mean_radial_frac": 0.00885636559030496,
+          "max_radial_frac": 0.01729835334069596,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.6725216677140458,
+            0.8713503798115058
+          ],
+          "quadratic": {
+            "cross_term": 0.2159768221190432,
+            "unconstrained_cross_term": 0.2159768221190432,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00891921685356183,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.12688452959208824,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.767738245740242,
+            0.25376905918417647
+          ],
+          "p": 3.1519223404727357,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02109879111295754,
+          "max_radial_frac": 0.046820662270016244,
+          "n_pts": 24,
+          "intercepts_feature_units": [
+            0.29874253696853537,
+            0.8425411452955174
+          ],
+          "quadratic": {
+            "cross_term": -0.2203661660005379,
+            "unconstrained_cross_term": -0.2203661660005379,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.012861574850096582,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.18690513942621756,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3738102788524351,
+            0.4593023216123309
+          ],
+          "p": 2.709240414922825,
+          "flags": [],
+          "mean_radial_frac": 0.010764440967776767,
+          "max_radial_frac": 0.025015464562134326,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.8860002397452703,
+            0.667169063186659
+          ],
+          "quadratic": {
+            "cross_term": -0.15611712010438292,
+            "unconstrained_cross_term": -0.15611712010438292,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.005876282115520996,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2323927745163437,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.46981600036389104,
+            0.4647855490326874
+          ],
+          "p": 1.1994407782135241,
+          "flags": [],
+          "mean_radial_frac": 0.005189736537530485,
+          "max_radial_frac": 0.0113704362603132,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.8442380524723369,
+            0.8140751854288762
+          ],
+          "quadratic": {
+            "cross_term": 0.5734703609816598,
+            "unconstrained_cross_term": 0.5734703609816598,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0039428947998916275,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 0,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.08513758020481084,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.40819933346533227,
+            0.34055032081924336
+          ],
+          "p": 1.5000965062986344,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.028390832539521585,
+          "max_radial_frac": 0.052032943104219465,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.3954745472618815,
+            0.43253933215424717
+          ],
+          "quadratic": {
+            "cross_term": 0.23267230925944152,
+            "unconstrained_cross_term": 0.23267230925944152,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.030085726352944604,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.17027516040962168,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.40819933346533227,
+            0.34055032081924336
+          ],
+          "p": 1.4587207264218398,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.024411252933257004,
+          "max_radial_frac": 0.05150948977304759,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7392892649930864,
+            0.8298745304851061
+          ],
+          "quadratic": {
+            "cross_term": 0.26798797019964504,
+            "unconstrained_cross_term": 0.26798797019964504,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.025677789183848578,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.25541274061443253,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.40819933346533227,
+            0.34055032081924336
+          ],
+          "p": 1.4352583059059463,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.021874049168722973,
+          "max_radial_frac": 0.04761749349864719,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            1.0398749227988613,
+            1.1833271702852037
+          ],
+          "quadratic": {
+            "cross_term": 0.2909801260716633,
+            "unconstrained_cross_term": 0.2909801260716633,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.022832597694567032,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.11410106956796312,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3313624675721334,
+            0.22820213913592624
+          ],
+          "p": 1.547883319968315,
+          "flags": [],
+          "mean_radial_frac": 0.00818682637915508,
+          "max_radial_frac": 0.016137420585372264,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.6877217312836383,
+            0.877131152910475
+          ],
+          "quadratic": {
+            "cross_term": 0.21213841692610616,
+            "unconstrained_cross_term": 0.21213841692610616,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.008176001179421143,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.11692628132215298,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7583648275578858,
+            0.23385256264430596
+          ],
+          "p": 2.8406851444593326,
+          "flags": [],
+          "mean_radial_frac": 0.016635689617914774,
+          "max_radial_frac": 0.034330810405177825,
+          "n_pts": 22,
+          "intercepts_feature_units": [
+            0.27780105282643097,
+            0.8702816897986076
+          ],
+          "quadratic": {
+            "cross_term": -0.17787731798781334,
+            "unconstrained_cross_term": -0.17787731798781334,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.011877807823511317,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.1816548862267672,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.3633097724535344,
+            0.4661055593497621
+          ],
+          "p": 3.626367320824346,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02324430126318715,
+          "max_radial_frac": 0.05504191446207418,
+          "n_pts": 33,
+          "intercepts_feature_units": [
+            0.88267387891699,
+            0.6402703515225531
+          ],
+          "quadratic": {
+            "cross_term": -0.2649782663458603,
+            "unconstrained_cross_term": -0.2649782663458603,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00963320724632962,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.22362403949709037,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.45308889447713013,
+            0.44724807899418073
+          ],
+          "p": 1.1747478749193214,
+          "flags": [],
+          "mean_radial_frac": 0.004725225988697376,
+          "max_radial_frac": 0.010259595918462816,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.8380354929647449,
+            0.8088023538627279
+          ],
+          "quadratic": {
+            "cross_term": 0.6131287619722934,
+            "unconstrained_cross_term": 0.6131287619722934,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0034416871502620876,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.6153026924991243,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.461210769996497,
+            2.48209913469523
+          ],
+          "p": 2.2382633141902306,
+          "flags": [],
+          "mean_radial_frac": 0.0018456259097345594,
+          "max_radial_frac": 0.0037134248824659544,
+          "n_pts": 19,
+          "intercepts_feature_units": [
+            0.5036490948929919,
+            0.5003083075743178
+          ],
+          "quadratic": {
+            "cross_term": -0.06462109234917245,
+            "unconstrained_cross_term": -0.06462109234917245,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004579663763344499,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 1.2306053849982486,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.461210769996497,
+            2.48209913469523
+          ],
+          "p": 2.402930597424549,
+          "flags": [],
+          "mean_radial_frac": 0.0022482439899431986,
+          "max_radial_frac": 0.004044243321936203,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8892053256136597,
+            0.8840084317167349
+          ],
+          "quadratic": {
+            "cross_term": -0.09897803731070438,
+            "unconstrained_cross_term": -0.09897803731070438,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006955166968981391,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 1.8459080774973728,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.461210769996497,
+            2.48209913469523
+          ],
+          "p": 2.519326016075511,
+          "flags": [],
+          "mean_radial_frac": 0.002390358908245658,
+          "max_radial_frac": 0.00427487766449508,
+          "n_pts": 46,
+          "intercepts_feature_units": [
+            1.2139503237200062,
+            1.2068625057284792
+          ],
+          "quadratic": {
+            "cross_term": -0.11959011126343777,
+            "unconstrained_cross_term": -0.11959011126343777,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.008636226692110427,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 1.225350948731903,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.450701897463806,
+            2.478575786635973
+          ],
+          "p": 2.37836986885159,
+          "flags": [],
+          "mean_radial_frac": 0.002283148702691212,
+          "max_radial_frac": 0.0042604119043561095,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8898009255377115,
+            0.8822627314552631
+          ],
+          "quadratic": {
+            "cross_term": -0.094205491494818,
+            "unconstrained_cross_term": -0.094205491494818,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006714580367190311,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2304120633489264,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4608241266978528,
+            2.4856224827544864
+          ],
+          "p": 2.4125460440369673,
+          "flags": [],
+          "mean_radial_frac": 0.0019278256465465687,
+          "max_radial_frac": 0.0035213255307069424,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8893487265213473,
+            0.8826579419630832
+          ],
+          "quadratic": {
+            "cross_term": -0.10089240222732232,
+            "unconstrained_cross_term": -0.10089240222732232,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006760389942355538,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.230798706647571,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.461597413295142,
+            2.472494146157009
+          ],
+          "p": 2.389885263488205,
+          "flags": [],
+          "mean_radial_frac": 0.002293020316928903,
+          "max_radial_frac": 0.004032196297793167,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8890619582735415,
+            0.8883219930911889
+          ],
+          "quadratic": {
+            "cross_term": -0.09648164430373828,
+            "unconstrained_cross_term": -0.09648164430373828,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006829364071965255,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2452035085183435,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.490407017036687,
+            2.5035644458971738
+          ],
+          "p": 2.475726704093298,
+          "flags": [],
+          "mean_radial_frac": 0.0013829266144882414,
+          "max_radial_frac": 0.0024414604174169963,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8875339237092856,
+            0.8859988103331506
+          ],
+          "quadratic": {
+            "cross_term": -0.11259999543801937,
+            "unconstrained_cross_term": -0.11259999543801937,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006955419340012971,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.6120626249740763,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.448250499896305,
+            2.4669186071037545
+          ],
+          "p": 2.2938286361785956,
+          "flags": [],
+          "mean_radial_frac": 0.00132940877409643,
+          "max_radial_frac": 0.00229226178486186,
+          "n_pts": 20,
+          "intercepts_feature_units": [
+            0.5044615513774607,
+            0.5025999720549916
+          ],
+          "quadratic": {
+            "cross_term": -0.07702398907140014,
+            "unconstrained_cross_term": -0.07702398907140014,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004811912569737275,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 1.2241252499481525,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.448250499896305,
+            2.4669186071037545
+          ],
+          "p": 2.474854929040309,
+          "flags": [],
+          "mean_radial_frac": 0.0015535237328193096,
+          "max_radial_frac": 0.0027036370402457877,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.889942835843794,
+            0.8860106803516696
+          ],
+          "quadratic": {
+            "cross_term": -0.11240771048939649,
+            "unconstrained_cross_term": -0.11240771048939649,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00711904250303419,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 1.8361878749222287,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.448250499896305,
+            2.4669186071037545
+          ],
+          "p": 2.600289628279831,
+          "flags": [],
+          "mean_radial_frac": 0.0016896255488095958,
+          "max_radial_frac": 0.0029112019381859477,
+          "n_pts": 46,
+          "intercepts_feature_units": [
+            1.2143581182811631,
+            1.2083278268399837
+          ],
+          "quadratic": {
+            "cross_term": -0.13271674637366387,
+            "unconstrained_cross_term": -0.13271674637366387,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00893385173101048,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 1.2239459591965125,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.447891918393025,
+            2.4495492407896178
+          ],
+          "p": 2.47713012479445,
+          "flags": [],
+          "mean_radial_frac": 0.0015688404143406887,
+          "max_radial_frac": 0.002747725247926769,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.889953481912279,
+            0.8914815268976033
+          ],
+          "quadratic": {
+            "cross_term": -0.11285746106357113,
+            "unconstrained_cross_term": -0.11285746106357113,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007174495786403181,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2239459591965136,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.447891918393027,
+            2.4495492407896164
+          ],
+          "p": 2.4771301247944506,
+          "flags": [],
+          "mean_radial_frac": 0.0015688404143406169,
+          "max_radial_frac": 0.002747725247926991,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.8899534819122797,
+            0.8914815268976042
+          ],
+          "quadratic": {
+            "cross_term": -0.11285746106357103,
+            "unconstrained_cross_term": -0.11285746106357103,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00717449578640323,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2243045406997914,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.448609081399583,
+            2.4842879734178918
+          ],
+          "p": 2.4728907615625833,
+          "flags": [],
+          "mean_radial_frac": 0.0015405151356082474,
+          "max_radial_frac": 0.0026907351645115707,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.889932191948653,
+            0.8806167003507726
+          ],
+          "quadratic": {
+            "cross_term": -0.11201252232226562,
+            "unconstrained_cross_term": -0.11201252232226562,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0070896169271292405,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 1.2243045406997919,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4486090813995838,
+            2.4842879734178918
+          ],
+          "p": 2.472890761562585,
+          "flags": [],
+          "mean_radial_frac": 0.0015405151356081754,
+          "max_radial_frac": 0.0026907351645111266,
+          "n_pts": 34,
+          "intercepts_feature_units": [
+            0.889932191948653,
+            0.8806167003507726
+          ],
+          "quadratic": {
+            "cross_term": -0.11201252232226562,
+            "unconstrained_cross_term": -0.11201252232226562,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007089616927129185,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.12332261739281718,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.4932904695712687,
+            0.5586388942373581
+          ],
+          "p": 1.5925746174029798,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.020857158028271934,
+          "max_radial_frac": 0.04111280913466997,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.44094202755013645,
+            0.3726783079917458
+          ],
+          "quadratic": {
+            "cross_term": 0.1781832104983675,
+            "unconstrained_cross_term": 0.1781832104983675,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01971305735174195,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.24664523478563435,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4932904695712687,
+            0.5586388942373581
+          ],
+          "p": 1.6196135094556774,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.021308042402907512,
+          "max_radial_frac": 0.04573931494119643,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.835526611860619,
+            0.7217550682096355
+          ],
+          "quadratic": {
+            "cross_term": 0.16103471345086523,
+            "unconstrained_cross_term": 0.16103471345086523,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02066100496045363,
+            "better_than_superellipse": true
+          }
+        },
+        "0.75": {
+          "threshold": 0.3699678521784515,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.4932904695712687,
+            0.5586388942373581
+          ],
+          "p": 1.650027337703845,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.022885929673601178,
+          "max_radial_frac": 0.04736083316290418,
+          "n_pts": 41,
+          "intercepts_feature_units": [
+            1.1860512999974446,
+            1.0471803200947496
+          ],
+          "quadratic": {
+            "cross_term": 0.14333899911687656,
+            "unconstrained_cross_term": 0.14333899911687656,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.02220693729373743,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.21666716350423598,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.43333432700847196,
+            0.5177120509028388
+          ],
+          "p": 1.5326187071464934,
+          "flags": [],
+          "mean_radial_frac": 0.007304521089005404,
+          "max_radial_frac": 0.0157686332765673,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.8592162303477984,
+            0.7086962715407288
+          ],
+          "quadratic": {
+            "cross_term": 0.22347448194872707,
+            "unconstrained_cross_term": 0.22347448194872707,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00618999381384144,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.260457528092406,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8098606198056595,
+            0.520915056184812
+          ],
+          "p": 1.4909976381637424,
+          "flags": [],
+          "mean_radial_frac": 0.005183765989565902,
+          "max_radial_frac": 0.011387570374397304,
+          "n_pts": 26,
+          "intercepts_feature_units": [
+            0.548587106932336,
+            0.8334495354617142
+          ],
+          "quadratic": {
+            "cross_term": 0.25450799043741307,
+            "unconstrained_cross_term": 0.25450799043741307,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0013720682957847213,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.22405044612945052,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.44810089225890104,
+            0.5963627322899042
+          ],
+          "p": 1.461687835615829,
+          "flags": [],
+          "mean_radial_frac": 0.00652528963494929,
+          "max_radial_frac": 0.014203126366689522,
+          "n_pts": 27,
+          "intercepts_feature_units": [
+            0.845222330146918,
+            0.59928886422126
+          ],
+          "quadratic": {
+            "cross_term": 0.27747915587310756,
+            "unconstrained_cross_term": 0.27747915587310756,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004783446257087043,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2692400234418182,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5384800468836364,
+            0.6023623607369799
+          ],
+          "p": 2.5875550231959785,
+          "flags": [],
+          "mean_radial_frac": 0.009293524819051595,
+          "max_radial_frac": 0.025302458685678486,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.827485756287181,
+            0.714997484742467
+          ],
+          "quadratic": {
+            "cross_term": -0.1363712593400614,
+            "unconstrained_cross_term": -0.1363712593400614,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00824210169677844,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.12050746722081526,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.48202986888326105,
+            0.5019410571208702
+          ],
+          "p": 1.455157940931952,
+          "flags": [],
+          "mean_radial_frac": 0.01587960969908028,
+          "max_radial_frac": 0.03224165863432582,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.43428225196750336,
+            0.3952406794186853
+          ],
+          "quadratic": {
+            "cross_term": 0.278594716954717,
+            "unconstrained_cross_term": 0.278594716954717,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.016825525394280824,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.24101493444163052,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.48202986888326105,
+            0.5019410571208702
+          ],
+          "p": 1.4859429780461015,
+          "flags": [],
+          "mean_radial_frac": 0.017830124550179065,
+          "max_radial_frac": 0.0375684205557677,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.8278918901105621,
+            0.7701986485977962
+          ],
+          "quadratic": {
+            "cross_term": 0.25271552512964535,
+            "unconstrained_cross_term": 0.25271552512964535,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.017814848025731904,
+            "better_than_superellipse": true
+          }
+        },
+        "0.75": {
+          "threshold": 0.36152240166244576,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.48202986888326105,
+            0.5019410571208702
+          ],
+          "p": 1.5233674916632505,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.020103222553512,
+          "max_radial_frac": 0.0388921064151162,
+          "n_pts": 43,
+          "intercepts_feature_units": [
+            1.181284023690318,
+            1.1213473515769885
+          ],
+          "quadratic": {
+            "cross_term": 0.22423414887356158,
+            "unconstrained_cross_term": 0.22423414887356158,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.019789604578873007,
+            "better_than_superellipse": true
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.20846515021727977,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.41693030043455953,
+            0.4538376481697639
+          ],
+          "p": 1.4287753460989014,
+          "flags": [],
+          "mean_radial_frac": 0.007139566190424751,
+          "max_radial_frac": 0.015620205884160243,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.8522118143321983,
+            0.7617090216946106
+          ],
+          "quadratic": {
+            "cross_term": 0.3052340420363248,
+            "unconstrained_cross_term": 0.3052340420363248,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006109423406082123,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.22846550461966955,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7994666986071781,
+            0.4569310092393391
+          ],
+          "p": 1.4796711532342595,
+          "flags": [],
+          "mean_radial_frac": 0.005147438932370765,
+          "max_radial_frac": 0.009901043725021763,
+          "n_pts": 25,
+          "intercepts_feature_units": [
+            0.4892682092904117,
+            0.8219592450405543
+          ],
+          "quadratic": {
+            "cross_term": 0.26323964174838077,
+            "unconstrained_cross_term": 0.26323964174838077,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0010824796708701178,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2220079287896581,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4440158575793162,
+            0.5538806013101866
+          ],
+          "p": 1.3241666802214909,
+          "flags": [],
+          "mean_radial_frac": 0.005923001690268976,
+          "max_radial_frac": 0.012517384496663841,
+          "n_pts": 28,
+          "intercepts_feature_units": [
+            0.835163205460449,
+            0.6267326001967357
+          ],
+          "quadratic": {
+            "cross_term": 0.4089762247802598,
+            "unconstrained_cross_term": 0.4089762247802598,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.003789303371207709,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2600219400936029,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5200438801872058,
+            0.5469511050024014
+          ],
+          "p": 2.4884638080231483,
+          "flags": [],
+          "mean_radial_frac": 0.011172578706258197,
+          "max_radial_frac": 0.027001201724871082,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.8216933500376399,
+            0.744519954172825
+          ],
+          "quadratic": {
+            "cross_term": -0.12050669315454535,
+            "unconstrained_cross_term": -0.12050669315454535,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.010697135111459461,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.15516570641966476,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.461210769996497,
+            0.620662825678659
+          ],
+          "p": 2.000975852608309,
+          "flags": [],
+          "mean_radial_frac": 0.001667219764739003,
+          "max_radial_frac": 0.003120373154565481,
+          "n_pts": 5,
+          "intercepts_feature_units": [
+            0.14482837831249679,
+            0.16332655891568226
+          ],
+          "quadratic": {
+            "cross_term": -0.00043606507658389306,
+            "unconstrained_cross_term": -0.00043606507658389306,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.001657116878970366,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.3103314128393295,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.461210769996497,
+            0.620662825678659
+          ],
+          "p": 1.9708309933017574,
+          "flags": [],
+          "mean_radial_frac": 0.0010528646147218064,
+          "max_radial_frac": 0.002806728431016703,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2754651358897942,
+            0.35732651120004466
+          ],
+          "quadratic": {
+            "cross_term": 0.009356383333276654,
+            "unconstrained_cross_term": 0.009356383333276654,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0012361909027456264,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.4654971192589943,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.461210769996497,
+            0.620662825678659
+          ],
+          "p": 1.8469911100927576,
+          "flags": [],
+          "mean_radial_frac": 0.0014805852873531872,
+          "max_radial_frac": 0.0035756404543720866,
+          "n_pts": 19,
+          "intercepts_feature_units": [
+            0.3957046512496131,
+            0.6123174030620284
+          ],
+          "quadratic": {
+            "cross_term": 0.05467140858335296,
+            "unconstrained_cross_term": 0.05467140858335296,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0031376598003309245,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.3103925726911359,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.450701897463806,
+            0.6207851453822718
+          ],
+          "p": 1.9859364149582897,
+          "flags": [],
+          "mean_radial_frac": 0.0019941392060267107,
+          "max_radial_frac": 0.004875377129784697,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2771370607132642,
+            0.3581713531626382
+          ],
+          "quadratic": {
+            "cross_term": 0.004191846866346751,
+            "unconstrained_cross_term": 0.004191846866346751,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002093844504065153,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.31912823685420894,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4608241266978528,
+            0.6382564737084179
+          ],
+          "p": 1.947055680312491,
+          "flags": [],
+          "mean_radial_frac": 0.0016648056527203137,
+          "max_radial_frac": 0.004059659481920885,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2826892468366765,
+            0.36695670683606574
+          ],
+          "quadratic": {
+            "cross_term": 0.017455293454990434,
+            "unconstrained_cross_term": 0.017455293454990434,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0017660517606597943,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.3031478091064325,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.461597413295142,
+            0.606295618212865
+          ],
+          "p": 1.9955072080142375,
+          "flags": [],
+          "mean_radial_frac": 0.002686243264005054,
+          "max_radial_frac": 0.006212143152210414,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.26954720327909226,
+            0.35652110480747995
+          ],
+          "quadratic": {
+            "cross_term": 0.0009049574939234258,
+            "unconstrained_cross_term": 0.0009049574939234258,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002738577633935859,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.31027025298752314,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.490407017036687,
+            0.6205405059750463
+          ],
+          "p": 1.8931550175343865,
+          "flags": [],
+          "mean_radial_frac": 0.0016091830688016173,
+          "max_radial_frac": 0.004031822081640879,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2710958462545009,
+            0.35648030768995576
+          ],
+          "quadratic": {
+            "cross_term": 0.03692090287370825,
+            "unconstrained_cross_term": 0.03692090287370825,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.001933970438090719,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "feature_axes",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.1500866945936285,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            2.448250499896305,
+            0.600346778374514
+          ],
+          "p": 1.9673223657021557,
+          "flags": [],
+          "mean_radial_frac": 0.0018830562000706319,
+          "max_radial_frac": 0.0025369692958761014,
+          "n_pts": 5,
+          "intercepts_feature_units": [
+            0.1413932560309237,
+            0.1605110536738771
+          ],
+          "quadratic": {
+            "cross_term": 0.010496139869943346,
+            "unconstrained_cross_term": 0.010496139869943346,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002031211942959876,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.300173389187257,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.448250499896305,
+            0.600346778374514
+          ],
+          "p": 1.9303684396037315,
+          "flags": [],
+          "mean_radial_frac": 0.002180817529925716,
+          "max_radial_frac": 0.0055081594198771455,
+          "n_pts": 11,
+          "intercepts_feature_units": [
+            0.26919077257017204,
+            0.3509475354880421
+          ],
+          "quadratic": {
+            "cross_term": 0.023298813965042308,
+            "unconstrained_cross_term": 0.023298813965042308,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002451438318950712,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.4502600837808855,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            2.448250499896305,
+            0.600346778374514
+          ],
+          "p": 1.8286432471852525,
+          "flags": [],
+          "mean_radial_frac": 0.0029648096353675677,
+          "max_radial_frac": 0.007184793691981994,
+          "n_pts": 18,
+          "intercepts_feature_units": [
+            0.38677028611553443,
+            0.6007411013160795
+          ],
+          "quadratic": {
+            "cross_term": 0.062196668364974804,
+            "unconstrained_cross_term": 0.062196668364974804,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.004184069413469864,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.29970171509516574,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.447891918393025,
+            0.5994034301903315
+          ],
+          "p": 1.9288437049477882,
+          "flags": [],
+          "mean_radial_frac": 0.0022567339674171016,
+          "max_radial_frac": 0.005430661062792774,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.2688887809218765,
+            0.3534517234331824
+          ],
+          "quadratic": {
+            "cross_term": 0.023891446556118526,
+            "unconstrained_cross_term": 0.023891446556118526,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002413971211021354,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.29970171509516585,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.447891918393027,
+            0.5994034301903317
+          ],
+          "p": 1.928843704947736,
+          "flags": [],
+          "mean_radial_frac": 0.002256733967415353,
+          "max_radial_frac": 0.005430661062798103,
+          "n_pts": 12,
+          "intercepts_feature_units": [
+            0.26888878092187624,
+            0.3534517234331822
+          ],
+          "quadratic": {
+            "cross_term": 0.023891446556119973,
+            "unconstrained_cross_term": 0.023891446556119973,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002413971211021317,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.30064506327934815,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.448609081399583,
+            0.6012901265586963
+          ],
+          "p": 1.930928280085368,
+          "flags": [],
+          "mean_radial_frac": 0.0021566954541024945,
+          "max_radial_frac": 0.005487896276025195,
+          "n_pts": 11,
+          "intercepts_feature_units": [
+            0.26949263170994137,
+            0.34856551884425885
+          ],
+          "quadratic": {
+            "cross_term": 0.023088050731431536,
+            "unconstrained_cross_term": 0.023088050731431536,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002431347407040914,
+            "better_than_superellipse": false
+          }
+        },
+        {
+          "threshold": 0.30064506327934815,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            2.4486090813995838,
+            0.6012901265586963
+          ],
+          "p": 1.9309282800853869,
+          "flags": [],
+          "mean_radial_frac": 0.002156695454102636,
+          "max_radial_frac": 0.0054878962760236405,
+          "n_pts": 11,
+          "intercepts_feature_units": [
+            0.26949263170994087,
+            0.34856551884425885
+          ],
+          "quadratic": {
+            "cross_term": 0.023088050731428673,
+            "unconstrained_cross_term": 0.023088050731428673,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002431347407040904,
+            "better_than_superellipse": false
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "natural",
+      "fits": {
+        "0.25": {
+          "threshold": 0.11917754480383408,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.4932904695712687,
+            0.4767101792153363
+          ],
+          "p": 1.9927931698152048,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.02477739513784539,
+          "max_radial_frac": 0.052783364283482515,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.42683094124003845,
+            0.37659637192963336
+          ],
+          "quadratic": {
+            "cross_term": -0.01186920183019264,
+            "unconstrained_cross_term": -0.01186920183019264,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.024946847536693666,
+            "better_than_superellipse": false
+          }
+        },
+        "0.5": {
+          "threshold": 0.23835508960766816,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4932904695712687,
+            0.4767101792153363
+          ],
+          "p": 1.8545140077156685,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.020822425847313798,
+          "max_radial_frac": 0.04316568047079383,
+          "n_pts": 31,
+          "intercepts_feature_units": [
+            0.8104519904985429,
+            0.7581634112867077
+          ],
+          "quadratic": {
+            "cross_term": 0.04077325832579117,
+            "unconstrained_cross_term": 0.04077325832579117,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.021757409890161127,
+            "better_than_superellipse": false
+          }
+        },
+        "0.75": {
+          "threshold": 0.35753263441150224,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.4932904695712687,
+            0.4767101792153363
+          ],
+          "p": 1.7457391833421878,
+          "flags": [],
+          "mean_radial_frac": 0.017687906147042715,
+          "max_radial_frac": 0.03777877696544407,
+          "n_pts": 43,
+          "intercepts_feature_units": [
+            1.152577731958925,
+            1.1354970953934862
+          ],
+          "quadratic": {
+            "cross_term": 0.092089856849937,
+            "unconstrained_cross_term": 0.092089856849937,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.019211000408712854,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.19549207939888094,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.43333432700847196,
+            0.3909841587977619
+          ],
+          "p": 2.407717174017351,
+          "flags": [],
+          "mean_radial_frac": 0.009324053470318363,
+          "max_radial_frac": 0.02507391771280809,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.7866584169275969,
+            0.7400235761776801
+          ],
+          "quadratic": {
+            "cross_term": -0.10535420612729707,
+            "unconstrained_cross_term": -0.10535420612729707,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.00834336559918274,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.19531752255679022,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.8098606198056595,
+            0.39063504511358044
+          ],
+          "p": 3.241049308897751,
+          "flags": [],
+          "mean_radial_frac": 0.018390194254565628,
+          "max_radial_frac": 0.04199689068164303,
+          "n_pts": 24,
+          "intercepts_feature_units": [
+            0.41859045057292865,
+            0.738705741676791
+          ],
+          "quadratic": {
+            "cross_term": -0.2250364619817788,
+            "unconstrained_cross_term": -0.2250364619817788,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007345921523402461,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.22405044612945052,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.44810089225890104,
+            0.5642764347332669
+          ],
+          "p": 3.1736192384251756,
+          "flags": [],
+          "mean_radial_frac": 0.014628811275208466,
+          "max_radial_frac": 0.03000248758484947,
+          "n_pts": 29,
+          "intercepts_feature_units": [
+            0.845222330146918,
+            0.6119201342414695
+          ],
+          "quadratic": {
+            "cross_term": -0.21292887302759897,
+            "unconstrained_cross_term": -0.21292887302759897,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0013135453218710434,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2692400234418182,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5384800468836364,
+            0.5624361996329108
+          ],
+          "p": 1.461773241628026,
+          "flags": [],
+          "mean_radial_frac": 0.0071053491580187,
+          "max_radial_frac": 0.015057564662136702,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.827485756287181,
+            0.7387649716070938
+          ],
+          "quadratic": {
+            "cross_term": 0.2770405866768829,
+            "unconstrained_cross_term": 0.2770405866768829,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006160563123659013,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    },
+    {
+      "pair": [
+        4,
+        9
+      ],
+      "anchor": 1,
+      "sign": [
+        1,
+        -1
+      ],
+      "kind": "isotropic_observation_random",
+      "map": "separable",
+      "fits": {
+        "0.25": {
+          "threshold": 0.1135337588530293,
+          "threshold_fraction": 0.25,
+          "axis_max_response": [
+            0.48202986888326105,
+            0.4541350354121172
+          ],
+          "p": 2.2646153563731524,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.024090782936047946,
+          "max_radial_frac": 0.053640936714827614,
+          "n_pts": 15,
+          "intercepts_feature_units": [
+            0.4102337887720718,
+            0.38306369820983005
+          ],
+          "quadratic": {
+            "cross_term": -0.08725208363262099,
+            "unconstrained_cross_term": -0.08725208363262099,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.021407699732148216,
+            "better_than_superellipse": true
+          }
+        },
+        "0.5": {
+          "threshold": 0.2270675177060586,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.48202986888326105,
+            0.4541350354121172
+          ],
+          "p": 2.052769815465443,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.020414076739526017,
+          "max_radial_frac": 0.04163557711997301,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7844782206524641,
+            0.7664085772387325
+          ],
+          "quadratic": {
+            "cross_term": -0.027668741219470553,
+            "unconstrained_cross_term": -0.027668741219470553,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.01944651149570573,
+            "better_than_superellipse": true
+          }
+        },
+        "0.75": {
+          "threshold": 0.3406012765590879,
+          "threshold_fraction": 0.75,
+          "axis_max_response": [
+            0.48202986888326105,
+            0.4541350354121172
+          ],
+          "p": 1.8904982396210142,
+          "flags": [],
+          "mean_radial_frac": 0.016902685920654803,
+          "max_radial_frac": 0.03743650659219755,
+          "n_pts": 42,
+          "intercepts_feature_units": [
+            1.1225984700016294,
+            1.1404681440442637
+          ],
+          "quadratic": {
+            "cross_term": 0.030813397908338407,
+            "unconstrained_cross_term": 0.030813397908338407,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.0174994926363849,
+            "better_than_superellipse": false
+          }
+        }
+      },
+      "per_background": [
+        {
+          "threshold": 0.18520346357906026,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.41693030043455953,
+            0.3704069271581205
+          ],
+          "p": 2.886291115060008,
+          "flags": [],
+          "mean_radial_frac": 0.014429629928356225,
+          "max_radial_frac": 0.036867292402370966,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.7687388593868841,
+            0.7577898077398895
+          ],
+          "quadratic": {
+            "cross_term": -0.182906370892649,
+            "unconstrained_cross_term": -0.182906370892649,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.007408508289752687,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.18695727883384045,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.7994666986071781,
+            0.3739145576676809
+          ],
+          "p": 3.324945302775088,
+          "flags": [],
+          "mean_radial_frac": 0.019129335929714747,
+          "max_radial_frac": 0.04222515902593793,
+          "n_pts": 23,
+          "intercepts_feature_units": [
+            0.4049103404167408,
+            0.7574982189112786
+          ],
+          "quadratic": {
+            "cross_term": -0.2325178300013915,
+            "unconstrained_cross_term": -0.2325178300013915,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.006975328215588439,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2220079287896581,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.4440158575793162,
+            0.5502357337846877
+          ],
+          "p": 4.128631303541457,
+          "flags": [
+            "superellipse_residual_over_2pct"
+          ],
+          "mean_radial_frac": 0.05377901084111655,
+          "max_radial_frac": 0.07991556724806359,
+          "n_pts": 32,
+          "intercepts_feature_units": [
+            0.835163205460449,
+            0.627609518322701
+          ],
+          "quadratic": {
+            "cross_term": -0.35349612351977583,
+            "unconstrained_cross_term": -0.35349612351977583,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.002916695874854283,
+            "better_than_superellipse": true
+          }
+        },
+        {
+          "threshold": 0.2600219400936029,
+          "threshold_fraction": 0.5,
+          "axis_max_response": [
+            0.5200438801872058,
+            0.5343555131565535
+          ],
+          "p": 1.468757467014345,
+          "flags": [],
+          "mean_radial_frac": 0.00635624174568454,
+          "max_radial_frac": 0.014018739881540232,
+          "n_pts": 30,
+          "intercepts_feature_units": [
+            0.8216933500376399,
+            0.7523272164599654
+          ],
+          "quadratic": {
+            "cross_term": 0.2715795149807613,
+            "unconstrained_cross_term": 0.2715795149807613,
+            "psd_boundary": false,
+            "mean_radial_frac": 0.005361231924835622,
+            "better_than_superellipse": true
+          }
+        }
+      ]
+    }
+  ],
+  "fine_checks": [],
+  "recovery": [
+    {
+      "sigma": 0,
+      "map": "linear_reference",
+      "all_mse": 1.2136756794236231e-32,
+      "active_mse": 8.107829797601414e-32,
+      "inactive_mse": 2.1778920859436404e-33,
+      "negative_mse": null,
+      "active_miss_rate": 0.0,
+      "inactive_false_positive_rate": 0.0
+    },
+    {
+      "sigma": 0,
+      "map": "Bayes_oracle",
+      "all_mse": 1.2136756794236231e-32,
+      "active_mse": 8.107829797601414e-32,
+      "inactive_mse": 2.1778920859436404e-33,
+      "negative_mse": null,
+      "active_miss_rate": 0.0,
+      "inactive_false_positive_rate": 0.0
+    },
+    {
+      "sigma": 0,
+      "map": "natural",
+      "all_mse": 0.019578600551412972,
+      "active_mse": 0.15419190864221413,
+      "inactive_mse": 0.00013320231644672363,
+      "negative_mse": null,
+      "active_miss_rate": 0.0,
+      "inactive_false_positive_rate": 0.0,
+      "clean_output_mse": 0.0
+    },
+    {
+      "sigma": 0,
+      "map": "separable",
+      "all_mse": 0.020158902692536007,
+      "active_mse": 0.15905488101820123,
+      "inactive_mse": 9.485664772770353e-05,
+      "negative_mse": null,
+      "active_miss_rate": 0.0,
+      "inactive_false_positive_rate": 0.0,
+      "clean_output_mse": 0.0
+    },
+    {
+      "sigma": 0.15,
+      "map": "linear_reference",
+      "all_mse": 0.011203548305953232,
+      "active_mse": 0.010878983668606686,
+      "inactive_mse": 0.01125043288754255,
+      "negative_mse": null,
+      "active_miss_rate": 0.0007253384912959381,
+      "inactive_false_positive_rate": 0.0002444816987985471
+    },
+    {
+      "sigma": 0.15,
+      "map": "Bayes_oracle",
+      "all_mse": 0.00020904696384808596,
+      "active_mse": 0.001104459028883655,
+      "inactive_mse": 7.970132606563578e-05,
+      "negative_mse": null,
+      "active_miss_rate": 0.0014506769825918763,
+      "inactive_false_positive_rate": 0.00013970382788488405
+    },
+    {
+      "sigma": 0.15,
+      "map": "natural",
+      "all_mse": 0.022281410056425505,
+      "active_mse": 0.166932486859005,
+      "inactive_mse": 0.0013860184087771115,
+      "negative_mse": null,
+      "active_miss_rate": 0.22412959381044487,
+      "inactive_false_positive_rate": 0.0,
+      "clean_output_mse": 0.00407882006818054
+    },
+    {
+      "sigma": 0.15,
+      "map": "separable",
+      "all_mse": 0.022867651339964965,
+      "active_mse": 0.1727131054450677,
+      "inactive_mse": 0.0012219123703259309,
+      "negative_mse": null,
+      "active_miss_rate": 0.24202127659574468,
+      "inactive_false_positive_rate": 0.0,
+      "clean_output_mse": 0.003892139834963284
+    },
+    {
+      "sigma": 0.35,
+      "map": "linear_reference",
+      "all_mse": 0.06062802872705417,
+      "active_mse": 0.05869607220319746,
+      "inactive_mse": 0.06090710710728159,
+      "negative_mse": null,
+      "active_miss_rate": 0.07156673114119923,
+      "inactive_false_positive_rate": 0.07648784576697401
+    },
+    {
+      "sigma": 0.35,
+      "map": "Bayes_oracle",
+      "all_mse": 0.03256038017184568,
+      "active_mse": 0.1613835355988434,
+      "inactive_mse": 0.01395139124875046,
+      "negative_mse": null,
+      "active_miss_rate": 0.22558027079303675,
+      "inactive_false_positive_rate": 0.017812238055322716
+    },
+    {
+      "sigma": 0.35,
+      "map": "natural",
+      "all_mse": 0.04226905670702286,
+      "active_mse": 0.2434993059346233,
+      "inactive_mse": 0.013200590976184803,
+      "negative_mse": null,
+      "active_miss_rate": 0.3650870406189555,
+      "inactive_false_positive_rate": 0.006146968426934898,
+      "clean_output_mse": 0.029123191748343817
+    },
+    {
+      "sigma": 0.35,
+      "map": "separable",
+      "all_mse": 0.041874433893837534,
+      "active_mse": 0.25062880969052503,
+      "inactive_mse": 0.011719079804179128,
+      "negative_mse": null,
+      "active_miss_rate": 0.3808027079303675,
+      "inactive_false_positive_rate": 0.005238893545683152,
+      "clean_output_mse": 0.027185627564686753
+    },
+    {
+      "sigma": 0.6,
+      "map": "linear_reference",
+      "all_mse": 0.15042929884209516,
+      "active_mse": 0.14668939892329866,
+      "inactive_mse": 0.1509695414400325,
+      "negative_mse": null,
+      "active_miss_rate": 0.19922630560928434,
+      "inactive_false_positive_rate": 0.20271025426096675
+    },
+    {
+      "sigma": 0.6,
+      "map": "Bayes_oracle",
+      "all_mse": 0.07413850552542965,
+      "active_mse": 0.4256803505351327,
+      "inactive_mse": 0.02335696490793413,
+      "negative_mse": null,
+      "active_miss_rate": 0.621615087040619,
+      "inactive_false_positive_rate": 0.022981279687063424
+    },
+    {
+      "sigma": 0.6,
+      "map": "natural",
+      "all_mse": 0.12882552697681174,
+      "active_mse": 0.49632595947987673,
+      "inactive_mse": 0.07573870842300212,
+      "negative_mse": null,
+      "active_miss_rate": 0.41150870406189555,
+      "inactive_false_positive_rate": 0.07526543727298128,
+      "clean_output_mse": 0.12681797099031847
+    },
+    {
+      "sigma": 0.6,
+      "map": "separable",
+      "all_mse": 0.12020774457769967,
+      "active_mse": 0.49181474088925,
+      "inactive_mse": 0.06652771744915217,
+      "negative_mse": null,
+      "active_miss_rate": 0.4318181818181818,
+      "inactive_false_positive_rate": 0.06719754121262922,
+      "clean_output_mse": 0.11525930553245675
+    }
+  ],
+  "dependencies": {
+    "source_sha256": "c3cd6ffa637de82728bc7509208eaf4801ad10439d13bc737618d9eabd6f6910",
+    "core_sha256": "15eb89bd1515d12b2f00d24835284f8ef6401892e0090c83861e9c3674ade5eb",
+    "fit_helper_sha256": "b5e49e67fe0ea5015fef32397ae18e3242f558b98bd0d05fe430402528d79dc0",
+    "inputs_sha256": "b2d84c511856a4505a585458740f0f82a64ed66cdb23659fd85741ae1f0b1f95",
+    "weights_sha256": "c88127ac701b583037cc1b473b6abda1060984d7f24bbde43b14b48484b5a00f"
+  },
+  "raw_sha256": "da8a47d0e27af1a431d3eec706886d2797f714cada6ebea29e71fb729546a7c6"
+}

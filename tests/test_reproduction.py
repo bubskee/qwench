@@ -101,6 +101,33 @@ class ReproductionTests(unittest.TestCase):
                         {**close, 'flagged': 0}, {'p': [2.4], 'count': 30}):
             self.assertFalse(R.compare_numerical(changed, expected)['within_tolerance'])
 
+    def test_full_study_stages_required_history_and_rejects_changed_resume_sources(self):
+        self.seed_repository()
+        (self.root / 'requirements').mkdir()
+        (self.root / 'requirements/figures.txt').write_text('numpy\n')
+        for relative in ('reports/toy-scalar-comparison-v1/geometry-inputs.npz',
+                         'reports/toy-scalar-comparison-v1/geometry-inputs.json'):
+            path = self.root / relative; path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(b'frozen')
+        for cohort in R.COHORTS:
+            for step in [10000, 30000, 100000]:
+                for name in [f'weights-{step:06d}.safetensors', f'eval-{step:06d}.json']:
+                    path = self.root / 'reports' / cohort / name
+                    path.parent.mkdir(parents=True, exist_ok=True); path.write_bytes(b'frozen')
+        out = self.root / 'work/study'
+        with patch.object(R, 'run') as run:
+            R.study_run(out, prepare_only=True)
+            R.study_run(out, resume=True, prepare_only=True)
+            run.assert_not_called()
+        state = json.loads((out / 'run.json').read_text())
+        self.assertEqual(state['fresh_networks'], 120)
+        self.assertEqual(state['checkpoint_frames'], 810)
+        staged = out / 'outputs/qwench'
+        for relative, digest in state['source_files_sha256'].items():
+            self.assertEqual(R.sha(staged / relative), digest)
+        (staged / 'configs/example.json').write_text('changed')
+        with self.assertRaisesRegex(ValueError, 'source/input changed'):
+            R.study_run(out, resume=True, prepare_only=True)
+
 
 if __name__ == '__main__':
     unittest.main()

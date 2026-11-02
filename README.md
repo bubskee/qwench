@@ -18,8 +18,9 @@ perturbations are shown; the axes are rescaled to compare shapes.*
 
 ## What we've found
 
-- **Toy networks:** a squarer boundary can appear without neurons sharing more
-  work. Shape alone isn't proof of error correction. [Results and limitations](reports/toy-scalar-comparison-v1/findings.md).
+- **Toy networks:** similar shapes can hide different amounts of noise repair.
+  [Training/recovery study](reports/toy-characterization-study-v1/findings.md) ·
+  [Earlier neuron-sharing test](reports/toy-scalar-comparison-v1/findings.md).
 - **Qwen3-1.7B:** fixing an anchor-sampling mismatch recovered a strong paper
   result: p = 2.442 versus 2.415. [Sampler audit](reports/implementation-audit-v1/findings.md).
 - **Qwen3.5-4B:** results are exploratory; the comparison using historical

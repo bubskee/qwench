@@ -179,6 +179,12 @@ optimizer checkpoints, and raw response grids (several hundred MB each).
 
 ## Tiny matched-control recovery follow-up
 
+For the larger training/task/activation study, use the
+[characterization reproduction guide](../reports/toy-characterization-study-v1/METHODS.md).
+`scripts/reproduce.py study-figures` redraws six main figures from saved data on
+CPU, `study-verify` checks its artifact manifest, and `study-run --prepare-only`
+stages the full 120-network reproduction without launching training.
+
 The separate [squared-ReLU matched-control/recovery follow-up](../reports/squared-recovery-v1/METHODS.md)
 uses one saved checkpoint and an independent-feature control. Its fixed-target
 corruption measurement runs on CPU with `requirements/toy.txt`; plotting and
