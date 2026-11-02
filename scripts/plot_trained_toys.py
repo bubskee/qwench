@@ -16,7 +16,7 @@ def main():
  snapshots=[json.loads(p.read_text()) for p in sorted(OUT.glob('eval-*.json'))]
  assert snapshots and snapshots[-1]['step']==100000
  final=snapshots[-1]['networks'];cohorts=json.loads((AN/'cohorts.json').read_text());names=[a['name'] for a in P['architectures']]
- fig,axes=plt.subplots(2,3,figsize=(14,8),sharex=True)
+ fig,axes=plt.subplots(2,3,figsize=(14,8),sharex=True,sharey='col')
  for ri,exp in enumerate([2,4]):
   for col,(metric,title) in enumerate([('competent_features','Accurately computed features'),('mean_per_feature_positive_mse','Positive-active MSE, all features'),('mean_neuron_feature_participation','Functional sharing among competent features')]):
    ax=axes[ri,col]
@@ -29,6 +29,7 @@ def main():
     ax.plot([s['step'] for s in snapshots],mean,color=COLORS[name],label=LABELS[name],lw=1.8)
    ax.set(title=f'L{exp}: '+title,xlabel='Training updates',ylabel='Features / 100' if col==0 else 'MSE' if col==1 else 'Effective features per hidden output');ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.15)
    if col==0:ax.set_ylim(0,102)
+   if col==2:ax.set_ylim(0,12)
  axes[0,0].legend(fontsize=8);fig.suptitle('Training from scratch: three initialization seeds per architecture/objective\nIdentical data/minibatches, 100,000 updates each. Bold: mean over seeds; faint: individual seeds.',fontsize=12)
  fig.tight_layout();fig.savefig(OUT/'training-and-sharing.png',dpi=170,bbox_inches='tight');plt.close(fig)
  fig,axes=plt.subplots(2,3,figsize=(14,8),sharey=True)
@@ -41,9 +42,9 @@ def main():
      for r in selected:
       if r['median_p'] is None:continue
       x=i+offset+(r['seed']-1)*.035
-      ax.scatter(x,r['median_p'],s=40,color=COLORS[name],marker=marker,alpha=.8)
+      ax.scatter(x,r['median_p'],s=40,color=COLORS[name],marker=marker,alpha=.8) if marker=='x' else ax.scatter(x,r['median_p'],s=40,facecolors='none' if r['flagged'] else COLORS[name],edgecolors=COLORS[name],marker=marker,alpha=.8)
    ax.axhline(2,color='#aaa',ls='--');ax.set(title=f'L{exp}, pair inputs {anchor:+.1f}',xticks=range(len(names)),xticklabels=[LABELS[n].replace(' ','\n') for n in names],ylabel='Median fitted p, ++ sign');ax.spines[['top','right']].set_visible(False);ax.grid(axis='y',alpha=.15)
- axes[0,0].legend(handles=[Line2D([0],[0],color='#444',ls='',marker='o',label='Encoder columns'),Line2D([0],[0],color='#444',ls='',marker='x',label='Gram-matched random')],fontsize=8)
+ axes[0,0].legend(handles=[Line2D([0],[0],color='#444',ls='',marker='o',label='Encoder columns'),Line2D([0],[0],color='#444',ls='',marker='x',label='Gram-matched random'),Line2D([0],[0],color='#444',ls='',marker='o',markerfacecolor='none',label='Any pair fit flagged')],fontsize=8)
  fig.suptitle('Geometry on three task-competent pairs per trained network\nEach point: one network; selection uses task accuracy before p. Missing points mean no valid eligible fit. All flags retained in data.',fontsize=12)
  fig.tight_layout();fig.savefig(OUT/'geometry-comparison.png',dpi=170,bbox_inches='tight');plt.close(fig)
  fig,axes=plt.subplots(1,2,figsize=(11,4.6))
@@ -51,9 +52,11 @@ def main():
   for r in final:
    record=next(c for c in cohorts if c['id']==r['id'] and c['cohort']=='competence_conditioned' and c['kind']=='encoder_columns' and c['quadrant']=='++' and c['anchor_value']==anchor)
    if record['median_p'] is None or r['mean_neuron_feature_participation'] is None:continue
-   ax.scatter(r['mean_neuron_feature_participation'],record['median_p'],color=COLORS[r['architecture']],marker='o' if r['loss_exponent']==2 else 'D',s=40,alpha=.8)
-  ax.axhline(2,ls='--',color='#aaa');ax.set(title=f'Pair inputs {anchor:+.1f}',xlabel='Effective competent features per hidden output',ylabel='Median fitted p');ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.15)
- fig.suptitle('Functional sharing and geometry are separate measurements\nOne point per network; circles L2, diamonds L4. Descriptive, not a causal or population correlation.',fontsize=12);fig.tight_layout();fig.savefig(OUT/'sharing-versus-p.png',dpi=170,bbox_inches='tight');plt.close(fig)
+   ax.scatter(r['mean_neuron_feature_participation'],record['median_p'],facecolors='none' if record['flagged'] else COLORS[r['architecture']],edgecolors=COLORS[r['architecture']],marker='o' if r['loss_exponent']==2 else 'D',s=40,alpha=.8)
+  ax.axhline(2,ls='--',color='#aaa');ax.set(title=f'Pair inputs {anchor:+.1f}',xlabel='Effective competent features per neuron',ylabel='Median fitted p');ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.15)
+ fig.suptitle('Functional sharing and geometry are separate measurements\nOne point per network with a competent-feature fit; circles L2, diamonds L4; hollow markers include flagged pair fits.',fontsize=12)
+ fig.legend(handles=[Line2D([0],[0],color=COLORS[n],ls='',marker='o',label=LABELS[n]) for n in names],loc='lower center',ncol=len(names),fontsize=8)
+ fig.tight_layout(rect=(0,.09,1,1));fig.savefig(OUT/'sharing-versus-p.png',dpi=170,bbox_inches='tight');plt.close(fig)
  fig,axes=plt.subplots(1,2,figsize=(12,4.5),sharey=True)
  for ax,exp in zip(axes,[2,4]):
   for name in names:
@@ -81,7 +84,7 @@ def main():
      for key in ['median_p','finite','flagged','median_radial_residual']:result[f'{cohort}_{short}_{tag}_{key}']=c[key]
   records.append(result)
  with (OUT/'models.csv').open('w') as file:
-  writer=csv.DictWriter(file,fieldnames=list(records[0]));writer.writeheader();writer.writerows(records)
+  writer=csv.DictWriter(file,fieldnames=list(records[0]),lineterminator="\n");writer.writeheader();writer.writerows(records)
  (OUT/'model-summary.json').write_text(json.dumps(records,indent=2)+'\n')
  print('PLOTS_COMPLETE',len(records),'networks',flush=True)
 

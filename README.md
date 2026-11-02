@@ -10,6 +10,7 @@ is still pending; the existing 4B results are exploratory.
 
 - [Sampler audit and findings](reports/implementation-audit-v1/findings.md)
 - [Exploratory 4B findings](reports/stress-4b-v1/findings.md)
+- [Activations trained from scratch: sharing versus p](reports/toy-scalar-comparison-v1/findings.md)
 - [Local toy-CiS pilot](reports/toy-cis-v1/findings.md)
 - [Reproduction notes and experiment index](docs/reproduction.md)
 - [Original implementation](https://github.com/FranciscoHS/fsec-paper)

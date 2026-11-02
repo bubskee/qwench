@@ -1,0 +1,54 @@
+{
+  "identity": "For bias-free SwiGLU, f(x)+f(-x)=W_out[(W_gate x)*(W_value x)], exactly quadratic. The target ReLU(x)+ReLU(-x)=abs(x) is degree one.",
+  "interpretation": "A structural exact-representation mismatch on signed amplitudes; this does not attribute the entire observed error gap to that constraint.",
+  "checks": [
+    {
+      "id": "swiglu33_L2_s0",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 1.6653345369377348e-16
+    },
+    {
+      "id": "swiglu33_L2_s1",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 2.7755575615628914e-16
+    },
+    {
+      "id": "swiglu33_L2_s2",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 2.7755575615628914e-16
+    },
+    {
+      "id": "swiglu33_L4_s0",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 1.3877787807814457e-16
+    },
+    {
+      "id": "swiglu33_L4_s1",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 1.3877787807814457e-16
+    },
+    {
+      "id": "swiglu33_L4_s2",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 1.6653345369377348e-16
+    },
+    {
+      "id": "swiglu50_L2_s0",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 3.3306690738754696e-16
+    },
+    {
+      "id": "swiglu50_L2_s1",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 3.885780586188048e-16
+    },
+    {
+      "id": "swiglu50_L2_s2",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 3.3306690738754696e-16
+    },
+    {
+      "id": "swiglu50_L4_s0",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 2.220446049250313e-16
+    },
+    {
+      "id": "swiglu50_L4_s1",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 1.6653345369377348e-16
+    },
+    {
+      "id": "swiglu50_L4_s2",
+      "half_amplitude_even_response_vs_quadratic_scaling_max_abs": 1.6653345369377348e-16
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+STAGE assemble
+ASSEMBLED 30 fully trained scalar networks
+STAGE implementation-check
+IMPLEMENTATION_CHECKS_PASS 100000 30 networks; max intervention error 6.661338147750939e-16
+STAGE prepare-geometry
+GEOMETRY_PREPARED 30 networks; shortfalls [('relu2_50_L4_s0', 3), ('relu2_50_L4_s1', 3), ('relu2_50_L4_s2', 3)]
+STAGE seal-pairs
+STAGE commit-pairs
+[main bf23d98] Seal final trained scalar weights, task checks and pair selection before p fits
+ 8 files changed, 16919 insertions(+)
+ create mode 100644 reports/toy-scalar-comparison-v1/TRAINING-COMPLETE.json
+ create mode 100644 reports/toy-scalar-comparison-v1/assembly.json
+ create mode 100644 reports/toy-scalar-comparison-v1/eval-100000.json
+ create mode 100644 reports/toy-scalar-comparison-v1/geometry-inputs.json
+ create mode 100644 reports/toy-scalar-comparison-v1/geometry-inputs.npz
+ create mode 100644 reports/toy-scalar-comparison-v1/geometry-plan.json
+ create mode 100644 reports/toy-scalar-comparison-v1/implementation-checks-100000.json
+ create mode 100644 reports/toy-scalar-comparison-v1/weights-100000.safetensors
+STAGE geometry
+SURFACE 1 /30 relu50_L2_s0 216 grids; total seconds 0.4
+SURFACE 2 /30 relu50_L2_s1 216 grids; total seconds 0.8
+SURFACE 3 /30 relu50_L2_s2 216 grids; total seconds 1.3
+SURFACE 4 /30 relu50_L4_s0 216 grids; total seconds 1.7
+SURFACE 5 /30 relu50_L4_s1 216 grids; total seconds 2.1
+SURFACE 6 /30 relu50_L4_s2 216 grids; total seconds 2.5
+SURFACE 7 /30 gelu50_L2_s0 216 grids; total seconds 3.2
+SURFACE 8 /30 gelu50_L2_s1 216 grids; total seconds 3.8
+SURFACE 9 /30 gelu50_L2_s2 216 grids; total seconds 4.5
+SURFACE 10 /30 gelu50_L4_s0 216 grids; total seconds 5.1
+SURFACE 11 /30 gelu50_L4_s1 216 grids; total seconds 5.8
+SURFACE 12 /30 gelu50_L4_s2 216 grids; total seconds 6.5
+SURFACE 13 /30 silu50_L2_s0 216 grids; total seconds 7.0
+SURFACE 14 /30 silu50_L2_s1 216 grids; total seconds 7.5
+SURFACE 15 /30 silu50_L2_s2 216 grids; total seconds 8.0
+SURFACE 16 /30 silu50_L4_s0 216 grids; total seconds 8.5
+SURFACE 17 /30 silu50_L4_s1 216 grids; total seconds 9.0
+SURFACE 18 /30 silu50_L4_s2 216 grids; total seconds 9.4
+SURFACE 19 /30 leakyrelu50_L2_s0 216 grids; total seconds 9.9
+SURFACE 20 /30 leakyrelu50_L2_s1 216 grids; total seconds 10.3
+SURFACE 21 /30 leakyrelu50_L2_s2 216 grids; total seconds 10.7
+SURFACE 22 /30 leakyrelu50_L4_s0 216 grids; total seconds 11.1
+SURFACE 23 /30 leakyrelu50_L4_s1 216 grids; total seconds 11.6
+SURFACE 24 /30 leakyrelu50_L4_s2 216 grids; total seconds 12.0
+SURFACE 25 /30 relu2_50_L2_s0 216 grids; total seconds 12.4
+SURFACE 26 /30 relu2_50_L2_s1 216 grids; total seconds 12.9
+SURFACE 27 /30 relu2_50_L2_s2 216 grids; total seconds 13.3
+SURFACE 28 /30 relu2_50_L4_s0 144 grids; total seconds 13.6
+SURFACE 29 /30 relu2_50_L4_s1 144 grids; total seconds 13.8
+SURFACE 30 /30 relu2_50_L4_s2 144 grids; total seconds 14.1
+STAGE fit
+WARN `--no-project` was provided, but no project was found
+FIT_COMPLETE relu50_L2_s0 elapsed seconds 3.8
+FIT_COMPLETE relu50_L2_s1 elapsed seconds 7.6
+FIT_COMPLETE relu50_L2_s2 elapsed seconds 11.4
+FIT_COMPLETE relu50_L4_s0 elapsed seconds 15.2
+FIT_COMPLETE relu50_L4_s1 elapsed seconds 19.0
+FIT_COMPLETE relu50_L4_s2 elapsed seconds 22.8
+FIT_COMPLETE gelu50_L2_s0 elapsed seconds 26.5
+FIT_COMPLETE gelu50_L2_s1 elapsed seconds 30.4
+FIT_COMPLETE gelu50_L2_s2 elapsed seconds 34.2
+FIT_COMPLETE gelu50_L4_s0 elapsed seconds 37.9
+FIT_COMPLETE gelu50_L4_s1 elapsed seconds 41.7
+FIT_COMPLETE gelu50_L4_s2 elapsed seconds 45.4
+FIT_COMPLETE silu50_L2_s0 elapsed seconds 49.1
+FIT_COMPLETE silu50_L2_s1 elapsed seconds 52.9
+FIT_COMPLETE silu50_L2_s2 elapsed seconds 56.6
+FIT_COMPLETE silu50_L4_s0 elapsed seconds 60.4
+FIT_COMPLETE silu50_L4_s1 elapsed seconds 64.1
+FIT_COMPLETE silu50_L4_s2 elapsed seconds 67.8
+FIT_COMPLETE leakyrelu50_L2_s0 elapsed seconds 71.6
+FIT_COMPLETE leakyrelu50_L2_s1 elapsed seconds 75.3
+FIT_COMPLETE leakyrelu50_L2_s2 elapsed seconds 79.0
+FIT_COMPLETE leakyrelu50_L4_s0 elapsed seconds 82.8
+FIT_COMPLETE leakyrelu50_L4_s1 elapsed seconds 86.6
+FIT_COMPLETE leakyrelu50_L4_s2 elapsed seconds 90.3
+FIT_COMPLETE relu2_50_L2_s0 elapsed seconds 94.0
+FIT_COMPLETE relu2_50_L2_s1 elapsed seconds 97.8
+FIT_COMPLETE relu2_50_L2_s2 elapsed seconds 101.5
+FIT_COMPLETE relu2_50_L4_s0 elapsed seconds 104.0
+FIT_COMPLETE relu2_50_L4_s1 elapsed seconds 106.4
+FIT_COMPLETE relu2_50_L4_s2 elapsed seconds 108.9
+STAGE plots
+WARN `--no-project` was provided, but no project was found
+PLOTS_COMPLETE 30 networks
+STAGE summaries
+# Generated numerical summary
+
+| Activation | Loss | Competent features, seed range | Mean active MSE | Mean feature reuse per unit | p, absent pair | p, negative pair |
+|---|---:|---:|---:|---:|---:|---:|
+| relu50 | L2 | 50–50 | 0.15564 | 1.00 | 2.010 (3/3 nets) | 4.611 (3/3 nets) |
+| relu50 | L4 | 100–100 | 0.02200 | 10.32 | 2.162 (3/3 nets) | 3.801 (3/3 nets) |
+| gelu50 | L2 | 50–50 | 0.16428 | 1.00 | 2.019 (3/3 nets) | 4.821 (3/3 nets) |
+| gelu50 | L4 | 100–100 | 0.02363 | 10.71 | 2.530 (3/3 nets) | 4.125 (3/3 nets) |
+| silu50 | L2 | 50–50 | 0.16497 | 1.00 | 2.061 (3/3 nets) | 4.960 (3/3 nets) |
+| silu50 | L4 | 100–100 | 0.02440 | 10.67 | 2.637 (3/3 nets) | 4.106 (3/3 nets) |
+| leakyrelu50 | L2 | 50–50 | 0.15657 | 1.00 | 2.006 (3/3 nets) | 4.239 (3/3 nets) |
+| leakyrelu50 | L4 | 100–100 | 0.02229 | 10.34 | 2.078 (3/3 nets) | 3.286 (3/3 nets) |
+| relu2_50 | L2 | 50–50 | 0.17664 | 1.00 | 4.044 (3/3 nets) | 7.200 (3/3 nets) |
+| relu2_50 | L4 | 0–0 | 0.06350 | — | — (0/3 nets) | — (0/3 nets) |
+
+Geometry entries use encoder columns, ++ sign and competence-conditioned pairs. These are point summaries; flag counts, all signs and task-ineligible fixed pairs remain in the full records.
+
+STAGE audit
+{
+  "all_assertions_passed": true,
+  "trained_networks": 30,
+  "updates_each": 100000,
+  "source_training_proofs": [
+    {
+      "run": "toy-scalars-core-v1",
+      "networks": 18,
+      "log_records": 101,
+      "dataset_sha256": "e22d5099faa1179c3aa952519d3f377348c7e8a8f8108a207010ce0183d2cdb6",
+      "completion_sha256": "b031933fe3d3f4a03395372bd0a669636675c3f2fa3bd87de9ca01a8134f1040"
+    },
+    {
+      "run": "toy-scalar-additions-v1",
+      "networks": 12,
+      "log_records": 101,
+      "dataset_sha256": "e22d5099faa1179c3aa952519d3f377348c7e8a8f8108a207010ce0183d2cdb6",
+      "completion_sha256": "3bc33cefaeda683ceabdee93f0eab6995148f415897dd7636b1cce7e0c58d107"
+    }
+  ],
+  "all_parameters_changed_from_initialization": true,
+  "perturbation_response_points": 43536312,
+  "primary_aggregate_surfaces": 6264,
+  "invalid_primary_fits": 95,
+  "flagged_finite_primary_fits": 2255,
+  "fine_max_abs_delta_p": 0.052103722535172814,
+  "scalar_activations_trained_from_scratch_or_exact_checkpoint_continuation": true,
+  "scope": "Numerical/artifact/training checks, not validation of a universal CiS metric or an error-correction mechanism."
+}
+DATA_PIPELINE_COMPLETE
