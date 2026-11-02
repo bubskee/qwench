@@ -1,7 +1,8 @@
 """Verify independent-network gradients, paired initialization and architecture counts."""
 from pathlib import Path
 import json,torch
-import train_toy_activations as T
+import importlib,os
+T=importlib.import_module(os.environ.get('QWENCH_TRAINED_DRIVER','train_scalar_core'))
 
 def main():
  torch.set_num_threads(2);groups,params=T.initialize('cpu');g=torch.Generator().manual_seed(8989)
@@ -19,10 +20,10 @@ def main():
     if float(w.grad.norm())>0:ratios.append(float(group[role].grad[i].norm()/w.grad.norm()))
   count=sum(w[0].numel() for w in group.values());assert count==a['parameters']
   for w in group.values():assert torch.equal(w[:3],w[3:])
-  independent=True
+  independent=None
   if a['activation']=='swiglu':independent=not torch.equal(group['gate'],group['value']);assert independent
   rows.append({'architecture':a['name'],'per_network_parameters':count,'max_independent_vs_batched_gradient_error':max(errors),'gradient_norm_ratio_range':[min(ratios),max(ratios)],'paired_objective_initialization_exact':True,'gate_value_independent':independent})
- result={'all_assertions_passed':True,'architectures':rows,'claim':'Joint training sums per-network losses; no seed or objective gradient dilution. Proper SwiGLU has independent trainable branches.'}
+ result={'all_assertions_passed':True,'architectures':rows,'claim':'Joint training sums per-network losses; no seed or objective gradient dilution. Parameter counts and objective-paired initialization are verified.'}
  T.write(T.OUT/'preflight-checks.json',result);print(json.dumps(result,indent=2))
 
 if __name__=='__main__':main()

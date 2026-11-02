@@ -6,10 +6,11 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
-ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'reports/toy-trained-v1';AN=OUT/'analysis'
-P=json.loads((ROOT/'configs/toy-trained-v1.json').read_text())
-COLORS={'relu50':'#666666','gelu50':'#377bad','silu50':'#368866','swiglu33':'#b66d3e','swiglu50':'#9364a4'}
-LABELS={'relu50':'ReLU 50','gelu50':'GELU 50','silu50':'SiLU 50','swiglu33':'SwiGLU 33','swiglu50':'SwiGLU 50'}
+import importlib,os
+T=importlib.import_module(os.environ.get('QWENCH_TRAINED_DRIVER','train_scalar_core'))
+ROOT=T.ROOT;OUT=T.OUT;AN=OUT/'analysis';P=T.P
+COLORS={'relu50':'#666666','gelu50':'#377bad','silu50':'#368866','swiglu33':'#b66d3e','swiglu50':'#9364a4','leakyrelu50':'#b66d3e','relu2_50':'#9364a4'}
+LABELS={'relu50':'ReLU 50','gelu50':'GELU 50','silu50':'SiLU 50','swiglu33':'SwiGLU 33','swiglu50':'SwiGLU 50','leakyrelu50':'Leaky ReLU 0.1','relu2_50':'Squared ReLU'}
 
 def main():
  snapshots=[json.loads(p.read_text()) for p in sorted(OUT.glob('eval-*.json'))]
@@ -41,7 +42,7 @@ def main():
       if r['median_p'] is None:continue
       x=i+offset+(r['seed']-1)*.035
       ax.scatter(x,r['median_p'],s=40,color=COLORS[name],marker=marker,alpha=.8)
-   ax.axhline(2,color='#aaa',ls='--');ax.set(title=f'L{exp}, pair inputs {anchor:+.1f}',xticks=range(5),xticklabels=[LABELS[n].replace(' ','\n') for n in names],ylabel='Median fitted p, ++ sign');ax.spines[['top','right']].set_visible(False);ax.grid(axis='y',alpha=.15)
+   ax.axhline(2,color='#aaa',ls='--');ax.set(title=f'L{exp}, pair inputs {anchor:+.1f}',xticks=range(len(names)),xticklabels=[LABELS[n].replace(' ','\n') for n in names],ylabel='Median fitted p, ++ sign');ax.spines[['top','right']].set_visible(False);ax.grid(axis='y',alpha=.15)
  axes[0,0].legend(handles=[Line2D([0],[0],color='#444',ls='',marker='o',label='Encoder columns'),Line2D([0],[0],color='#444',ls='',marker='x',label='Gram-matched random')],fontsize=8)
  fig.suptitle('Geometry on three task-competent pairs per trained network\nEach point: one network; selection uses task accuracy before p. Missing points mean no valid eligible fit. All flags retained in data.',fontsize=12)
  fig.tight_layout();fig.savefig(OUT/'geometry-comparison.png',dpi=170,bbox_inches='tight');plt.close(fig)
@@ -61,7 +62,7 @@ def main():
    ax.plot(np.arange(1,101),values.mean(0),color=COLORS[name],label=LABELS[name],lw=1.8)
   ax.axhline(.05,color='#aaa',ls='--',label='Competence MSE cutoff');ax.set(title=f'L{exp}: all feature errors',xlabel='Feature rank, sorted within each network',ylabel='Positive-active MSE');ax.spines[['top','right']].set_visible(False);ax.grid(alpha=.12)
  axes[0].legend(fontsize=8);fig.tight_layout();fig.savefig(OUT/'feature-errors.png',dpi=170,bbox_inches='tight');plt.close(fig)
- fig,axes=plt.subplots(2,5,figsize=(16,6.8),sharey=True)
+ fig,axes=plt.subplots(2,len(names),figsize=(max(10,3.2*len(names)),6.8),sharey=True)
  for ri,exp in enumerate([2,4]):
   for ci,name in enumerate(names):
    ax=axes[ri,ci]

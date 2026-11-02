@@ -3,7 +3,8 @@ from pathlib import Path
 import json,time
 import numpy as np
 import analyze_toy_cis as A
-import train_toy_activations as T
+import importlib,os
+T=importlib.import_module(os.environ.get('QWENCH_TRAINED_DRIVER','train_scalar_core'))
 OUT=T.OUT;AN=OUT/'analysis'
 
 def main():

@@ -5,7 +5,8 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from safetensors.torch import load_file
-import train_toy_activations as T
+import importlib,os
+T=importlib.import_module(os.environ.get('QWENCH_TRAINED_DRIVER','train_scalar_core'))
 ROOT=T.ROOT;OUT=T.OUT;P=T.P;S=OUT/'surfaces';torch.set_num_threads(2)
 
 def weights():
@@ -19,7 +20,7 @@ def weights():
 
 def forward_latent(z,model):
  n=model['gate'].shape[0];kind=model['activation'];g=z[...,:n]
- h=g.relu() if kind=='relu' else F.gelu(g,approximate='none') if kind=='gelu' else F.silu(g)
+ h=g.relu() if kind=='relu' else F.gelu(g,approximate='none') if kind=='gelu' else F.leaky_relu(g,negative_slope=P.get('leaky_slope',.1)) if kind=='leaky_relu' else g.relu().square() if kind=='relu2' else F.silu(g)
  if kind=='swiglu':h=h*z[...,n:]
  return h@model['out'].T
 
@@ -43,7 +44,7 @@ def prepare():
   networks.append({'id':row['id'],'architecture':row['architecture'],'activation':row['activation'],'loss_exponent':row['loss_exponent'],'seed':row['seed'],
    'competent_features':len(competent),'conditioned_pairs':chosen,'pairs':pairs,'selection_shortfall':P['geometry']['eligible_pairs']-len(chosen)})
  plan={'networks':networks,'weights_sha256':T.sha(OUT/'weights-100000.safetensors'),'evaluation_sha256':T.sha(OUT/'eval-100000.json'),
-  'input_sha256':T.sha(OUT/'geometry-inputs.npz'),'protocol_sha256':T.sha(ROOT/'configs/toy-trained-v1.json'),'source_sha256':T.sha(__file__),
+  'input_sha256':T.sha(OUT/'geometry-inputs.npz'),'protocol_sha256':T.sha(ROOT/'configs'/(P['version']+'.json')),'source_sha256':T.sha(__file__),
   'selection':'Only frozen task competence is used. This file is written before measuring final-network p.'}
  T.write(OUT/'geometry-plan.json',plan);print('GEOMETRY_PREPARED',len(networks),'networks; shortfalls',[(r['id'],r['selection_shortfall']) for r in networks if r['selection_shortfall']],flush=True)
 

@@ -1,0 +1,61 @@
+{
+  "all_assertions_passed": true,
+  "architectures": [
+    {
+      "architecture": "relu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 7.275957614183426e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": null
+    },
+    {
+      "architecture": "gelu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 3.637978807091713e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0000001192092896
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": null
+    },
+    {
+      "architecture": "silu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 3.637978807091713e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": null
+    },
+    {
+      "architecture": "leakyrelu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 7.275957614183426e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": null
+    },
+    {
+      "architecture": "relu2_50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 9.094947017729282e-13,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0000001192092896
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": null
+    }
+  ],
+  "claim": "Joint training sums per-network losses; no seed or objective gradient dilution. Parameter counts and objective-paired initialization are verified."
+}

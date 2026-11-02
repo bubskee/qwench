@@ -1,5 +1,7 @@
 # Training activation variants from scratch
 
+**Stopped and superseded:** The user abandoned SwiGLU. The scalar networks continue from the step-30,000 checkpoint in `../toy-scalars-core-v1`; two new scalar controls train separately in `../toy-scalar-additions-v1`. This original 30-network cohort was not completed. Its partial records are retained as provenance.
+
 This experiment trains each architecture separately. It replaces the abandoned
 fixed-weight activation-swap idea; those scratch results are excluded here.
 
