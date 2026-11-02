@@ -1,0 +1,61 @@
+{
+  "all_assertions_passed": true,
+  "architectures": [
+    {
+      "architecture": "relu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 7.275957614183426e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": true
+    },
+    {
+      "architecture": "gelu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 3.637978807091713e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0000001192092896
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": true
+    },
+    {
+      "architecture": "silu50",
+      "per_network_parameters": 10000,
+      "max_independent_vs_batched_gradient_error": 3.637978807091713e-12,
+      "gradient_norm_ratio_range": [
+        1.0,
+        1.0
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": true
+    },
+    {
+      "architecture": "swiglu33",
+      "per_network_parameters": 9900,
+      "max_independent_vs_batched_gradient_error": 4.547473508864641e-13,
+      "gradient_norm_ratio_range": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": true
+    },
+    {
+      "architecture": "swiglu50",
+      "per_network_parameters": 15000,
+      "max_independent_vs_batched_gradient_error": 3.410605131648481e-13,
+      "gradient_norm_ratio_range": [
+        0.9999999403953552,
+        1.0000001192092896
+      ],
+      "paired_objective_initialization_exact": true,
+      "gate_value_independent": true
+    }
+  ],
+  "claim": "Joint training sums per-network losses; no seed or objective gradient dilution. Proper SwiGLU has independent trainable branches."
+}
