@@ -88,6 +88,8 @@ to repeat the four canonical oracle cases on 61/121 grids. Main model selection,
 training and primary fitting settings were unchanged. Figure recovery panels
 show the projected/clipped secondary comparison explicitly; raw primary scores
 remain in the tables and stored predictions.
+The invariance check concerns projection only. Geometry always uses raw outputs;
+clipping is a separate score control and is not assumed to preserve contours.
 
 ## Reproduction
 
@@ -125,3 +127,7 @@ numerical checks. Its sealing path additionally verifies the 180 derived rows
 and 60 seed summaries against their source records. The primary audit's
 geometry-recalculation field is a deterministic rerun of the measurement
 function; the separate controls audit constructs canonical grids independently.
+All three figures were also redrawn from a fresh export of 186 tracked inputs
+and sources in a CPU environment without PyTorch. Figure pixels matched exactly;
+the four derived table files matched byte for byte. The detailed proof is in
+[reproduction-checks.json](reproduction-checks.json).

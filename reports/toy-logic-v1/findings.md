@@ -21,6 +21,9 @@ All clean-trained networks achieve very small held-out clean error.
 Noise-trained networks make softer predictions and tolerate corruption better.
 Held-out targets always remain the original clean logical labels.
 
+The figure's recovery panels use projection/clipping; its geometry panels use
+the original raw network outputs.
+
 ![Recovery and conditional geometry](overview.png)
 
 ## Recovery: the controls matter
@@ -38,8 +41,9 @@ The known-code linear-decode/logic reference already reaches 0.05853 for AND
 and 0.10947 for XOR. Noise-trained networks make a small additional improvement
 over this informed reference. The much larger raw, unconstrained clean/noise
 gaps—AND 0.217→0.0585, XOR 0.500→0.1105—partly reflect irrelevant observation
-directions and predictions outside the target range. These controls do not
-change any tested feature-plane geometry.
+directions and predictions outside the target range. Projection leaves tested
+feature-plane predictions unchanged. Clipping is a separate recovery-scoring
+control; we do not claim that it preserves geometry.
 
 **AND's overall gain has a class tradeoff.** After projection/clipping,
 positive-example MSE worsens from 0.1101 to 0.1272, while negative-example MSE
