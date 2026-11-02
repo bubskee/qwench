@@ -1,8 +1,6 @@
 """Prepare or resume a small AND/XOR reproduction; outputs stay under work/."""
 from pathlib import Path
 import argparse
-import hashlib
-import json
 import os
 import subprocess
 import sys
@@ -15,7 +13,7 @@ def main():
     parser.add_argument('--out', type=Path, default=Path('work/reproductions/toy-logic-v1'))
     parser.add_argument('--prepare-only', action='store_true')
     parser.add_argument('--resume', action='store_true')
-    args = parser.parse_args(); out = args.out.resolve()
+    args = parser.parse_args(); out = (ROOT / args.out).resolve()
     assert out.is_relative_to((ROOT / 'work').resolve()) and out != (ROOT / 'work').resolve(), '--out must be below work/'
     if args.resume:
         assert (out / 'prepared.json').exists(), 'Not a prepared logical-task workspace.'
@@ -43,6 +41,7 @@ def main():
     if not (out / 'ANALYSIS-COMPLETE.json').exists(): run('analyze_logic.py')
     run('check_logic.py', '--stage', 'audit'); run('logic_controls.py')
     run('plot_logic.py', '--source', str(out))
+    run('verify_logic.py', '--out', str(out), '--seal')
     print('Training, analysis and checks complete:', out)
 
 

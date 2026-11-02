@@ -25,6 +25,7 @@ def main():
     assets = C.load_assets(); encoder = assets['encoder']; projection = encoder @ encoder.T
     bits = assets['recovery_bits'].astype(float); clean = bits @ encoder.T
     records = []; raw_predictions = []; invariance_error = 0.; independent_error = 0.; audited_frames = 0
+    geometry_error = 0.; interaction_error = 0.
     for path in sorted((C.OUT / 'analysis').glob('*_t*.json')):
         record = json.loads(path.read_text()); task = record['network']['task']
         with np.load(path.with_suffix('.npz')) as raw:
@@ -39,6 +40,8 @@ def main():
     assert audited_frames == 180 and independent_error < 1e-12
     for meta in C.network_rows(C.P['training']['steps']):
         model = A.model_from(meta); predict = lambda x: C.numpy_forward(x, model, meta['activation'])
+        path = C.OUT / 'analysis' / (meta['key'] + '.json')
+        measured = json.loads(path.read_text())
         stored = []
         for sigma in [0., .35]:
             x = clean[None] + sigma * assets['recovery_noise']
@@ -49,12 +52,29 @@ def main():
                 records.append({'network': meta, 'sigma': sigma, 'map': which, **score})
             stored.append(pred)
         raw_predictions.append(np.stack(stored))
-        for pair in C.P['geometry']['pairs']:
-            z = assets['background_bits'][3].copy(); z[pair['bits']] = 0
-            axis = np.linspace(0, 1, 31); aa, bb = np.meshgrid(axis, axis, indexing='ij')
-            x = z @ encoder.T + np.stack([aa.ravel(), bb.ravel()], -1) @ encoder[:, pair['bits']].T
-            invariance_error = max(invariance_error, float(np.abs(predict(x) - predict(x @ projection)).max()))
+        with np.load(path.with_suffix('.npz')) as raw:
+            for pair in C.P['geometry']['pairs']:
+                z = assets['background_bits'][3].copy(); z[pair['bits']] = 0
+                axis = np.linspace(0, 1, 31); aa, bb = np.meshgrid(axis, axis, indexing='ij')
+                x = z @ encoder.T + np.stack([aa.ravel(), bb.ravel()], -1) @ encoder[:, pair['bits']].T
+                output = predict(x)
+                invariance_error = max(invariance_error, float(np.abs(output - predict(x @ projection)).max()))
+                # Independent grid construction, without calling geometry_case.
+                delta = (output - output[0]).reshape(31, 31, 8)
+                norm = np.sqrt(np.square(delta).sum(-1))
+                index = next(i for i, case in enumerate(measured['geometry']) if case['pair'] == pair and case['state'] == [0, 0])
+                geometry_error = max(geometry_error, float(np.abs(norm - raw['response'][index, 3]).max()))
+                residual = np.sqrt(np.square(delta - delta[:, :1] - delta[:1, :]).sum(-1)).mean() / max(float(norm.max()), 1e-15)
+                interaction_error = max(interaction_error, abs(residual - measured['geometry'][index]['backgrounds'][3]['mean_vector_interaction_residual']))
     assert invariance_error < 1e-10
+    assert geometry_error < 1e-10 and interaction_error < 1e-6
+    oracle_checks = []
+    for task in ['and', 'xor']:
+        oracle = lambda x: C.references(x, encoder, task, .35)['Bayes_oracle']
+        for pair in C.P['geometry']['pairs']:
+            for n in [31, 61, 121]:
+                response, _, _, _ = A.geometry_case(oracle, assets, pair, [0, 0], n)
+                oracle_checks.append({'task': task, 'pair': pair['name'], 'grid': n, 'fit': A.fit(response[3])})
     raw_path = C.OUT / 'projection-predictions.npz'
     np.savez_compressed(raw_path, predictions=np.stack(raw_predictions))
     with np.load(raw_path) as raw:
@@ -70,6 +90,9 @@ def main():
             'primary_frames_independently_audited': audited_frames,
             'Boolean_label_and_sum_count_audit_max_error': independent_error,
             'feature_plane_projection_invariance_max_error': invariance_error,
+            'independent_primary_geometry_max_error': geometry_error,
+            'independent_vector_interaction_max_error': interaction_error,
+            'oracle_grid_refinement': oracle_checks,
             'dependencies': C.dependencies(), 'source_sha256': C.sha(__file__),
             'protocol_sha256': C.sha(C.ROOT / 'configs/toy-logic-controls-v1.json'),
             'raw_sha256': C.sha(raw_path),
