@@ -176,6 +176,11 @@ copying a saved final checkpoint into that test copy, the independent null and
 geometry-calibration checks passed too. These checks do not claim a second
 independent training run.
 
+The six main figures were also rebuilt in a fresh export of tracked Git inputs
+and sources, in a CPU environment without PyTorch. All six matched the saved
+figure pixels exactly. The [reproduction receipt](reproduction-checks.json)
+records the exported commit and file hashes.
+
 Saved-data numerical checks can be rerun with full dependencies:
 
 ```bash
