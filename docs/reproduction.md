@@ -4,6 +4,30 @@ Run all commands from the repository root. Python **3.12** is the tested version
 The portable entry point is `scripts/reproduce.py`; `--help` lists its commands.
 Saved results live in `reports/`. New runs go below `work/`, which git ignores.
 
+## Lightweight AND/XOR figure checkout
+
+The complete repo retains large raw grids and checkpoints. To try a CPU redraw,
+fetch just the AND/XOR figure inputs and plotting source:
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/bubskee/qwench.git
+cd qwench
+git show HEAD:docs/logic-figure-files.txt | git sparse-checkout set --no-cone --stdin
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements/figures.txt
+.venv/bin/python scripts/plot_logic.py --out work/reproductions/logic-figures
+```
+
+The figure inputs are about 20 MB, plus Git metadata and Python dependencies.
+This redraws three figures and their numerical tables, using saved measurements;
+it performs no training or refitting. Outputs appear under
+`work/reproductions/logic-figures/`. Choose another `--out work/...` to repeat.
+
+This is a partial checkout for that redraw. To obtain all reports, checkpoints
+and inputs for the integrity checks and other commands below, run
+`git sparse-checkout disable`; Git will fetch the remaining files. Full toy
+training uses Apple Silicon MPS and `requirements/toy.txt`.
+
 ## Choose a reproduction level
 
 | Command | What it actually does | Dependencies / hardware |
@@ -48,7 +72,7 @@ Expected outputs in `work/reproductions/toy-figures/`:
 
 - `training-and-sharing.png`: training trajectories and competent neuron sharing.
 - `geometry-comparison.png`: encoder versus matched random directions by activity.
-- `sharing-versus-p.png`: the visual embedded in the README.
+- `sharing-versus-p.png`: a summary of sharing and geometry across models.
 - `feature-errors.png`: all feature errors, including failures.
 - `feature-sharing-and-error.png`: contribution spread alongside task error.
 - `models.csv`, `model-summary.json`, and `reproduction-check.json`.
